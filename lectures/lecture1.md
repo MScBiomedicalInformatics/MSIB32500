@@ -265,14 +265,16 @@ kidney beans
 dry apples
  
  
-$ cat list2.txt | sed 's/bean/button/g'       ### Replace bean with button
+$ cat list2.txt | sed 's/bean/button/g'       ### Replace bean with button *g*lobally, try also sed 's/bean/button/2'
 Apple Sauce
 wild rice
 black buttons
 kidney buttons
 dry apples
  
-$ cat list2.txt | tr /a-z/ /A-Z/              ### Change lower case to upper case
+$ cat list2.txt | tr /a-z/ /A-Z/              ### Change lower case to upper case (tr: translate)
+thegeekstuff
+THEGEEKSTUFF
 APPLE SAUCE
 WILD RICE
 BLACK BEANS
@@ -290,7 +292,7 @@ e. Table manipulation: sort, uniq, cut, awk, and paste
 cp /group/mscbmi/lecture1/table.txt ~/
 cd ~
 ls -l
-$ cat table.txt                                      ### show the contents on table.txt
+$ cat table.txt                                      ### show the contents of file table.txt
  CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            P           OR
   19   rs10401969   19268718    C      222      890    T      0.03462       0.8524       0.9857
    1   rs10873883   76734548    G      934     3811    A       0.5325       0.4656       0.9691
@@ -313,7 +315,7 @@ CHR  SNP         BP         A1  C_A  C_U   A2  CHISQ    P       OR
 $ sort -k1n table.txt  > table_sorted1.txt         ### sort the table by the first column in numerical order
                                                    ### and write the results to a new file
  ls -l
-$ cat cat table_sorted1.txt
+$ cat table_sorted1.txt | column -t
 CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            P           OR
    1   rs10873883   76734548    G      934     3811    A       0.5325       0.4656       0.9691
    1   rs11589256  214196749    C      271     1084    T      0.01928       0.8896       0.9902
@@ -487,7 +489,7 @@ cat top_1000_tab.txt
 ```
 **c. Using 'awk' to work with data in columns**
 
-The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in tabular format (like the result files on the previous excersice). The name stands for Aho, Weinberger and Kernighan (yes, [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
+The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in tabular format (like the result files on the previous excersice). The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
 
 What is it that awk does?
 
