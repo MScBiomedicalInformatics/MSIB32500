@@ -273,13 +273,16 @@ As described before, a job submittion script will look like the following:
 
 ```
 
+
+
+
 In the following exercise, you are going to perform the quality control of two RNA-seq dataset from Illumina’s Human [BodyMap 2.0 project](http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-513/). The sequence data, generated on HiSeq 2000 instruments in 2010, consist of 16 different human tissue types. We will use a subset of the data that contains 50bp paired-end reads (PE) from 2 tissues.
 
 First you need to download the compressed sequence read files (*.fastq.gz) to your working directory on TARBELL cluster using the command **wget or curl**. Note that FastQC program accepts both .fastq and fastq.gz file formats.
 
 ```bash
 cd ~/mscbmi/Ex3
-wget ftp://logia.cri.uchicago.edu/bioinformatics/MSIB32500/Lecture3/Ex3/*.gz
+cp /group/mscbmi/lecture1/*.gz ./
 ls
 ```
 You can check the compressed fastq.gz file using the command zcat or zless:
