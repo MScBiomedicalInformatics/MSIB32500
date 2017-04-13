@@ -545,7 +545,7 @@ sed stands for **s**tream **ed**itor is a stream oriented editor which was creat
 The general syntax for sed is:
 
 ```
-/pattern/action
+sed /pattern/action
 ```
 Where 'pattern' is a regular expression, and action is one of the following: 'p'= Prints the line; 'd'= Deletes the line; and
 's/pattern1/pattern2/' = Substitutes the first occurrence of pattern1 with pattern2. If 'pattern' is omitted, action is performed for every line.
