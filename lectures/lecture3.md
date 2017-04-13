@@ -395,9 +395,6 @@ fastqc -o $seqPath $seqfile2 &>> $seqPath\/kidney.fastqc.log
 
 Save and close nano. Then submit the job and check the status:
 
-/home/t.cri.biowksp40/mscbmi/Ex3/kidney_ERR030886.sample.1.fastq.gz' which didn't exist, or couldn't be read
-
-
 ```bash
 qsub run_fastqc_kidney.pbs
 qstat
@@ -432,6 +429,7 @@ First, copy the pair-end Illumina sequence files for heart from Exercise 3
 
 ```bash
 cp ~/mscbmi/Ex3/*.fastq.gz ~/mscbmi/Ex4
+cd ~/mscbmi/Ex4
 ```
 
 To run the alignment using **bwa** on the cluster, you need to create a new job submission script named **run_bwa_heart.pbs** in nano:
@@ -577,14 +575,14 @@ Trasfer the *bam* and *bai* files from TARBELL to your local computer.
 To transfer a file from TARBELL to your local computer, open a new comand line in your local computer and use the **scp** command: 
 
 ```bash
-scp jandrade@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam ./
-scp jandrade@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam.bai ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam.bai ./
 ```
 Move the files you just downloaded to a folder in your Desktop (bwa_r)
 
 ```bash
-scp jandrade@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam ./
-scp jandrade@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam.bai ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam.bai ./
 ```
 Move the files you just downloaded to a another folder in your Desktop (bowtie2_r)
 
@@ -595,5 +593,7 @@ Now search for the gene ** TOMM40L** on IGV. You should be able to see the mappi
 
 ## Week 3 Homework: :house: 
 
-Investigate how to use the UCSC genome browser online, to replace the IGV visualiztion of the previous results. Send me an e-mail with the image of your UCSC genome browser session showing the **TOMM40L** gene.
+Create an analysis pipeline (one script) that performs the raw data QC for heart and kidney files, then perform the mapping of those files using both bwa and bowtie2 tools. Screen capture the vizualization of your mapping results using IGV. 
+
+Please submit your code and vizualizations via e-mail.
 
