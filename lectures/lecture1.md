@@ -346,7 +346,7 @@ $ awk 'NR==1;NR>1 {print $0 | "sort -k2"}' table.txt | column -t
    1   rs11589256  214196749    C      271     1084    T      0.01928       0.8896       0.9902
   13   rs11589552 2014196749    C      221     1184    T      0.01878       0.8796       0.1202
  
-$ cut -f1,2,3,5 table.txt                ####Extract columns (*f*ields) 1, 2, 3, and 5 from table.txt
+$ cut -f1,2,3,5 table.txt | column -t               ####Extract columns (*f*ields) 1, 2, 3, and 5 from table.txt
 CHR     SNP             BP              C_A
 19      rs10401969      19268718        222
 1       rs10873883      76734548        934
@@ -479,7 +479,7 @@ tail -40000 SRR001655.fastq > bottom_10000.fastq
 ```
 **b. Using the 'paste' command to format your data**
 
-Showing fastq formated data as a table (i.e. in columns) can be very useful to explore the data, the 'paste' command writes lines in a file as columns separated by a the tab character. The command take character '-' as an option to represent the standard input, e.g.: the option '- - - -', will be trasalated as 'read four lines', and write them out as four columns:
+Showing fastq formated data as a table (i.e. in columns) can be very useful to explore the data, the 'paste' command writes lines in a file **as columns separated by a the tab character**. The command take character '-' as an option to represent the standard input, e.g.: the option '- - - -', will be trasalated as 'read four lines', and write them out as four columns:
 
 ```bash
 cat bottom_10000.fastq | paste - - - - | head -10
