@@ -292,7 +292,7 @@ zless heart_ERR030886.sample.1.fastq.gz
 ```
 Type **q** to exit 
 
-Next we will create a script for the QC for each tissue (four files) based on the above template. You can use any text editor write your script. Here we will use **nano** tool that is installed on TARBELL.
+Next we will create a script that performs the QC for each tissue (four files) based on the above template. You can use any text editor to write your script. Here we will use **nano** tool that is installed on TARBELL.
 
 ```bash
 nano run_fastqc_heart.pbs
@@ -366,7 +366,7 @@ Copy & paste the following script to the **nano** text editor:
 # Resource Manager Directives #
 ###############################
 ### Set the name of the job
-#PBS -N run_fastqc_heart
+#PBS -N run_fastqc_kidney
 ### Select the shell you would like to script to execute within
 #PBS -S /bin/bash
 ### Inform the scheduler of the expected runtime
@@ -386,14 +386,17 @@ Copy & paste the following script to the **nano** text editor:
 module load fastqc
 # set the paths
 seqPath=~/mscbmi/Ex3
-seqfile1=$seqPath/heart_ERR030886.sample.1.fastq.gz
-seqfile2=$seqPath/heart_ERR030886.sample.2.fastq.gz
+seqfile1=$seqPath/kidney_ERR030885.sample.1.fastq.gz
+seqfile2=$seqPath/kidney_ERR030885.sample.2.fastq.gz
 # run fastqc
 fastqc -o $seqPath $seqfile1 &> $seqPath\/kidney.fastqc.log
 fastqc -o $seqPath $seqfile2 &>> $seqPath\/kidney.fastqc.log
 ```
 
 Save and close nano. Then submit the job and check the status:
+
+/home/t.cri.biowksp40/mscbmi/Ex3/kidney_ERR030886.sample.1.fastq.gz' which didn't exist, or couldn't be read
+
 
 ```bash
 qsub run_fastqc_kidney.pbs
