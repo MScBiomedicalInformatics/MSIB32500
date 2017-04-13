@@ -117,7 +117,9 @@ TARBELL cluster uses **Torque** as a resource manager (Provides low-level functi
  
 ![PBS](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/PBS.jpeg)
 
-Torque provides user commands such as **qsub, qdel, qstat, etc.,** which are used to submit, delete and check the status of jobs on the cluster. TARBELL cluster supports two types of job submission:  and **batch mode** 
+Torque provides user commands such as **qsub, qdel, qstat, etc.,** which are used to submit, delete and check the status of jobs on the cluster. 
+
+TARBELL cluster supports two types of job submission: **Interactive**  and **batch** modes 
 
 - Interactive mode (qsub -I): You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
 
@@ -137,7 +139,7 @@ You can do so using the command **wget or curl**:
 Your command should look like: 
 
 ```bash
-cd ~/msbmi/Ex2
+cd ~/mscbmi/Ex2
 wget ftp://logia.cri.uchicago.edu/bioinformatics/MSIB32500/Lecture3/Ex2/seqGood.fastq
 wget ftp://logia.cri.uchicago.edu/bioinformatics/MSIB32500/Lecture3/Ex2/seqBad.fastq
 ls -l
@@ -172,14 +174,38 @@ module load fastqc
 fastqc seqGood.fastq
 ls
 ```
-
 This will generate a self-contained directory called **"seqGood_fastqc.html"** which contains an HTML formatted report that can be loaded into a browser and a compressed file with all the results named **"seqGood_fastqc.zip**
 
-Lets use the scp command, to copy the result files from your working directory in TARBELL to your local computer, so that we can explore the results. Open a new command line on your local computer and then run the following commands (you will need to use your own username and password):
+Explore the files created by the execution of FastQC.
+
+Other usefull **module** commands:
+
+- module avail: List all 'modules' (tools) available to the current user. 
+  Try: 
+  $ module av R
+  $ module load R/3.2.0
+  $ which R
+  $ module load R/3.3.1  
+   $ which R
+- module switch: Switch to a different version of the module 
+  Try:
+  $ which R
+  $ module switch R/3.2.0 R/3.1.0
+  $ which R
+
+- module unload: Unloada module
+  Try:
+  $ which R
+  $ module unload R
+  which R
+
+Let's now use the **scp** command, to copy the result files from your working directory in TARBELL to your local computer, so that we can vizualize the results. 
+
+Open a **new command line on your local** computer and then run the following commands (you will need to use your own username and password):
 
 ```bash
-scp jandrade@tarbell.cri.uchicago.edu:/home/jandrade/mscbmi/Ex2/seqGood_fastqc.zip ./
-scp jandrade@tarbell.cri.uchicago.edu:/home/jandrade/mscbmi/Ex2/seqGood_fastqc.html ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqGood_fastqc.html ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqGood_fastqc.zip ./
 ```
 
 Now, in your local computer, go to the folder were you just copied the files (in my case is ./ or my home) and open the **seqGood_fastqc.html** file to explore the FastQC results. You can also unzip the **seqGood_fastqc.zip** file and review the **summary.txt** file for a summary of **PASS** and **FAIL** tests.
@@ -192,13 +218,15 @@ cd ~/mscbmi/Ex2
 fastqc seqBad.fastq
 exit
 ```
-Note that after FastQC on the **seqBad.fastq** file, we used the command: **exit** to exit the **interactive** mode session.
+
+
+**Note** that after we run FastQC on the **seqBad.fastq** file, we used the command: **exit** to exit the **interactive** mode session.
 
 Open a new command line on your local computer and then run the following commands (you will need to use your own username and password):
 
 ```bash
-scp jandrade@tarbell.cri.uchicago.edu:/home/jandrade/mscbmi/Ex2/seqBad_fastqc.zip ./
-scp jandrade@tarbell.cri.uchicago.edu:/home/jandrade/mscbmi/Ex2/seqBad_fastqc.html ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.zip ./
+scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.html ./
 ```
 Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, we will take a look at the Per base quality test:
 
