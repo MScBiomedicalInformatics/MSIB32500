@@ -336,7 +336,8 @@ $ sort -k2 table.txt                               ### sort the table by the sec
  
 #### Note that the header is now at the end of the table, we can fix it with 'awk':
 
-$ awk 'NR==1;NR>1{print $0 | "sort -k2"}' table.txt | column -t
+$ awk 'NR==1;NR>1 {print $0 | "sort -k2"}' table.txt | column -t
+#### Print the first row *NR==1*, then perform the sorting starting
  CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            P           OR
   15   rs10401369   19268718    C      232      890    T      0.03232       0.2524       0.1157
   19   rs10401969   19268718    C      222      890    T      0.03462       0.8524       0.9857
@@ -345,7 +346,7 @@ $ awk 'NR==1;NR>1{print $0 | "sort -k2"}' table.txt | column -t
    1   rs11589256  214196749    C      271     1084    T      0.01928       0.8896       0.9902
   13   rs11589552 2014196749    C      221     1184    T      0.01878       0.8796       0.1202
  
-$ cut -f1,2,3,5 table.txt                ####Extract columns 1, 2, 3, and 5 from table.txt
+$ cut -f1,2,3,5 table.txt                ####Extract columns (*f*ields) 1, 2, 3, and 5 from table.txt
 CHR     SNP             BP              C_A
 19      rs10401969      19268718        222
 1       rs10873883      76734548        934
