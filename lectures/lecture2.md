@@ -164,6 +164,6 @@ In order to use the HPC compute nodes, you must first log in to one of the head 
 
 
 
-## Week 2 Homework: :house:
+## Week 2 Challange: :white_check_mark:
 Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html and submit via e-mail a one page critical commentary.
 
