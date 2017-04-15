@@ -386,7 +386,7 @@ Apple   23.03
 SAP     11.22
 Yahoo   15.8
  
-> paste -d ":" p1.txt p2.txt  ### Paste the files delimited by ':'  
+$ paste -d ":" p1.txt p2.txt  ### Paste the files delimited by ':'  
 IBM:25.23
 MSFT:234.02
 Apple:23.03
