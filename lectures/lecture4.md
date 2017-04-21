@@ -949,6 +949,41 @@ head(mydata, 4)
 summary(mydata[,2:3])
 ```
 
+*
+    ```{r,echo=F}
+data1<-read.csv("NeuralStemCellData.csv", row.names=1, header=T)
+head(data1, n=7)
+```
+* Loading data from a delimited text file 
+    + comma-separated values (CSV) data - "NeuralStemCellData.csv"
+        - `read.csv("filePath/fileName.csv", ...)`
+        - 
+            ```{r}
+mydata.csv<-read.csv("NeuralStemCellData.csv", row.names=1, header=T)
+```
+    + tab-delimited data - "NeuralStemCellData.tab"
+        - `read.delim("filePath/fileName.tab", ...)`
+        - 
+            ```{r}
+mydata<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
+```
+
+## Loading data to R {.smaller}
+* One way to do all: `read.table()`
+
+    + comma-separated values data (csv)
+    
+        - `read.table("filePath/fileName", sep=",", ...)` 
+        
+    + tab-delimited data
+    
+        - `read.table("filePath/fileName", sep="\t", ...)` 
+        
+    + space-delimited data
+    
+        - `read.table("filePath/fileName", sep=" ", ...)`
+		
+
 #### Names of the variable in the dataset
 ```{r}
 names(mydata)
