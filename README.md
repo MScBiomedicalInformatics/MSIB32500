@@ -1,5 +1,5 @@
 # MSIB32500
-##1.	COURSE INFORMATION 
+## 1.	COURSE INFORMATION 
 
 **Time:**	Saturday from 9:00AM – 12:00PM			
 **Location:** Gleacher Center (room assignments are posted on the day; please check Graham screen in lobby or outside Graham office on lower level)		
