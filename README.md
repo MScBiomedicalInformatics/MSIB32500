@@ -9,33 +9,33 @@
 
 * Important Note: Changes may occur to the syllabus at the instructor's discretion. When changes are made, students will be notified via Canvas and in-class announcement. More details for assignments will be provided at least one week prior to their due date.
 
-##2.	COURSE DESCRIPTION 
+## 2.	COURSE DESCRIPTION 
 This course will follow on from the Introduction to Bioinformatics and include advanced bioinformatics analysis topics such as: Linux and high performance computing; R programming for bioinformatics; genomic data visualization; and RNA sequencing data analysis. The course will emphasize hands-on tutorials on how to perform analysis of gene expression microarrays, RNA-Seq data and integration of genomics and clinical data in lab sessions designed to reinforce lecture material.  
 
 ##3.	COURSE OBJECTIVES
 By taking this course, students will learn how to perform advanced bioinformatics data analysis of high throughput genetics data using High Performance Computing Infrastructures.
 
-##4.	COURSE WORKLOAD
+## 4.	COURSE WORKLOAD
 
 •	3 hours of lecture, class discussion, and in-class activities per week.
 •	There is approximately 6 hours of outside class work assigned each week.
 
-##5.	GRADING POLICY
+## 5.	GRADING POLICY
 •	To allow students to practice and develop the skills learned in class, grading will be based on 5 homework assignments spread out thru the duration of the course. Homework assignments given one week are due by the beginning of next week session. When deemed necessary, the beginning of the next class or lab may include a review of common mistakes found on the homework from the previous week. Final grade will be an average of grades over the 5 homework assignments.   
 
-##6.	ATTENDANCE POLICY
+## 6.	ATTENDANCE POLICY
 This course involves regular hands-on use of bioinformatics tools in lab sessions in addition to more formal lectures.
 •	At least 80% attendance is expected (not more than 2 absences for the quarter).
 •	The Instructor would expect a notification via e-mail from students for the missed session.
 •	Making up missed lectures could be done via recorded session.
 
-##7.	LATE WORK
+## 7.	LATE WORK
 •	Under special justified circumstances, students could be eligible for additional time to submit their homework up to two business days after the original deadline. Students should request this extension upon presenting evidence of especial/extraordinary circumstances (i.e. medical or family emergency).
 
-##8.	LAPTOP POLICY
+## 8.	LAPTOP POLICY
 MSc BMI is a program that focuses heavily on computer science and hands-on practice. Students are required to have a laptop available to bring to courses for in-class lab work. Students should not have laptops open during lecture time or in-class activities that are not related to computer usage. Please limit computer usage to note-taking; some instructors may request that laptops be closed for portions of class. This provides a more interactive and engaging experience for both students and the instructor.
 
-##9.	COURSE MATERIALS and SOFTWARE 
+## 9.	COURSE MATERIALS and SOFTWARE 
 
 Reading assignments will be available on the Course Management System (Canvas).  
 
@@ -50,7 +50,7 @@ ISBN-13: 978-1439809754, ISBN-10: 1439809755.
 (Available at http://proquestcombo.safaribooksonline.com.proxy.uchicago.edu/book/bioinformatics/9781449367480)
 - Introduction to Parallel Computing by Zbigniew J. Czech, ISBN-13: 978-1107174399, ISBN-10: 1107174392.
 
-**10.	COURSE SCHEDULE and WEEKLY REQUIRED READINGS
+** 10.	COURSE SCHEDULE and WEEKLY REQUIRED READINGS
 
 **Week 1: – Introduction to Linux for Bioinformatics** 
 
@@ -126,7 +126,7 @@ Required Reading: TBA
 Recommended:
 
 
-##10. Weekly Class Schedule
+## 11. Weekly Class Schedule
 
 Week	Date	Session Leader/ Guest Lecturer	Topic	In-class activity	Assignment due
 1 	4/1/17	Jorge Andrade			
@@ -140,22 +140,22 @@ Week	Date	Session Leader/ Guest Lecturer	Topic	In-class activity	Assignment due
 9	5/27/17	Riyue Bao			
 10	6/3/17	Riyue Bao			
 
-##11.	COURSE EVALUATION
+## 12.	COURSE EVALUATION
 
 The Graham School administers web-based course evaluations to students for each course near the end of the quarter.  Your completion of both the Unit (course) and Faculty evaluations is required.  You will be sent the web-link and instructions via e-mail later in the quarter.  Your evaluation of the course and faculty is anonymous; your identity can not be linked with your responses.
 
-##12.	STUDENTS WITH DISABILITIES
+## 13.	STUDENTS WITH DISABILITIES
 
 In compliance with University of Chicago policy and equal access laws, we are available to discuss appropriate academic accommodations you may require as a student with a disability.  Request for academic accommodations need to be made during the first week of the quarter, except for unusual circumstances, so arrangements can be made.  Students are encouraged to register with Services for Students with Disabilities (SSD) for disability verification and for determination of reasonable academic accommodations.  
 
-##13.	ACADEMIC INTEGRITY AT UNIVERSITY OF CHICAGO
+## 14.	ACADEMIC INTEGRITY AT UNIVERSITY OF CHICAGO
 
 Students are expected to comply with University regulations regarding academic integrity.  If you are in doubt about what constitutes academic dishonesty, please speak to us before the assignment is due and/or examine the University’s Academic and Plagiarism Policy at http://studentmanual.uchicago.edu/policies
 
 Academic dishonesty includes, but is not limited to cheating on an exam (e.g., copying others’ answers, providing information to others, using a crib sheet) or plagiarism of a paper (e.g., taking material from readings without citation, copying another student’s paper). Students are required to abide by University of Chicago’s academic integrity policy and failure to maintain academic integrity will likely result in a failing grade in the class and/or expulsion from the University.
 
 
-##14.	SEXUAL HARASSMENT POLICY
+## 15.	SEXUAL HARASSMENT POLICY
 
 It is the policy of University of Chicago that no male or female member of the University of Chicago – students, faculty, administrators or staff – may sexually harass any other member of the community.  Sexual advances, requests for sexual favors, and other verbal or physical conduct of a sexual nature constitute harassment when: submission to such conduct is made or threatened to be made, either explicitly or implicitly, a term or condition of an individual’s employment or education; or submission to or rejection of such conduct is used or threatened to be used as the basis for academic or employment decisions affecting that individual; or such conduct has the purpose or effect of substantially interfering with an individual’s academic or professional performance or creating what a reasonable person would sense as an intimidating, hospital, or offensive  employment, educational, or living environment. 
 
