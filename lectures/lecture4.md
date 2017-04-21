@@ -169,7 +169,7 @@ Explore the effect of the following commands:
 > my_vector[4:1]
 ```
 
-####Task2
+#### Task2
 Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction 
 
 ```{r}
@@ -220,7 +220,7 @@ sum(big_vector)
 mean(big_vector)
 ```
 
-####Task4: 
+#### Task4: 
 Explore at the help for the command **sample()** and **sort()** and then try them out on big_vector
 
 
@@ -331,7 +331,7 @@ plot(dat, col='blue', type='l')
 ```{r}
 plot(dat, col='hotpink', type='h', main='Plot',)
 ```
-
+We will review in detail how to use R for basics graphics and plotting on the next lesson.
 
 #### More about functions
 
@@ -514,7 +514,7 @@ mar – A numeric vector of length 4, which sets the margin sizes in the followi
   * The median is the same as the 50th percentile 
   * The first quartile is the 25th percentile, the third is the 75th
 
-####Try: summary(dat) and summary(dat2)
+#### Try: summary(dat) and summary(dat2)
 
 ```{r}
 summary(dat)
@@ -523,7 +523,7 @@ summary(dat2)
 
 The command **ecdf()** (empirical cumulative distribution)  calculates "all" percentiles in your data - and also understands the **plot()** function. 
 
-####Try: 
+#### Try: 
 
 ```{r}
 plot (ecdf(dat2))
