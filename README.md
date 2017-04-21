@@ -82,11 +82,11 @@ Objectives:  Develop R programming skills and learn how to use R for Bioinformat
 Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 6 
 Recommended:
 
-**Week 5 – Elements of Statistics in R for gene expression analysis** 
+**Week 5 – Data Visualization in  R ** 
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD 
-Objectives: Understand classical statistics approaches for the analysis of genomics data, including statistical hypothesis testing, analysis of variance and linear models.
-Required Reading:  Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 12, 13 and 14.
+Objectives: Develop a working knowledge on how to use R and Bioconductor for basic data visualization 
+Required Reading:  
 
 **Week 6 - Analysis of Microarrays Using R and Bioconductor** 
  
@@ -94,7 +94,7 @@ Session Leader or Guest Lecturer: Jorge Andrade, PhD
 Objectives:  Learn how to perform the analysis of DNA Microarray data using R and Bioconductor. 
 Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 3, 14, 16, 19, 20 and 21.
 
-**Week 7 – Genomics Data Visualization **
+**Week 7 – Genomics Data Visualization**
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD
 Objectives:  Learn how to visualize genomics data using a genome browser; Learn how to generate high-quality figures for publication (PCA, heatmap, sample/gene cluster, GO/pathways, etc.)
