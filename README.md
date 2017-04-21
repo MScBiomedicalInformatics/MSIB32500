@@ -87,15 +87,12 @@ Recommended:
 Session Leader or Guest Lecturer: Jorge Andrade, PhD 
 Objectives: Understand classical statistics approaches for the analysis of genomics data, including statistical hypothesis testing, analysis of variance and linear models.
 Required Reading:  Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 12, 13 and 14.
-Recommended: 
 
 **Week 6 - Analysis of Microarrays Using R and Bioconductor** 
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD
 Objectives:  Learn how to perform the analysis of DNA Microarray data using R and Bioconductor. 
 Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 3, 14, 16, 19, 20 and 21.
-Recommended:
-
 
 **Week 7 – Genomics Data Visualization **
  
