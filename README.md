@@ -82,7 +82,7 @@ Objectives:  Develop R programming skills and learn how to use R for Bioinformat
 Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 6 
 Recommended:
 
-**Week 5 – Data Visualization in  R ** 
+**Week 5 – Data Visualization in  R** 
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD 
 Objectives: Develop a working knowledge on how to use R and Bioconductor for basic data visualization 
