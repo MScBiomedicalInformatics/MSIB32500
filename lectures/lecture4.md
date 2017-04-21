@@ -148,10 +148,10 @@ The commands returns no value to the screen, a variable of type **vector** calle
 
 The anatomy of the vector:
 
-Name   | my_vector | &nbsp;  | &nbsp;  | &nbsp; | &nbsp;
------- | -------- | -------- | ------- | ------- | -------- | --------
-Values | 1 |	5	| 10	| 7	| 2 
-Index	 |[1]	| [2] |	[3] | [4] |	[5] 
+Name   | my_vector |        |        |       |       | 
+------ | --------- | ------ | ------ | ----- | ----- | 
+Values |    1      |   5    |   10   |   7   |   2   | 
+Index  |   [1]	   |  [2]   |	[3]  |  [4]  |	[5]  | 
 
 
 We can access part of the vector using the corresponding index:
