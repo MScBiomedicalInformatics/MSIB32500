@@ -944,32 +944,25 @@ R can process input data sets can be in various formats (.XLS, .TXT, .CSV, JSON 
 
 
 ```{r}
-mydata <- read.csv(file="http://www.ats.ucla.edu/stat/data/binary.csv", header=T) 
-head(mydata, 4)
-summary(mydata[,2:3])
+> mydata <- read.csv(file="http://www.ats.ucla.edu/stat/data/binary.csv", header=T) 
+> head(mydata, 4)
+> summary(mydata[,2:3])
 ```
 
-*
-    ```{r,echo=F}
-data1<-read.csv("NeuralStemCellData.csv", row.names=1, header=T)
-head(data1, n=7)
-```
-* Loading data from a delimited text file 
-    + comma-separated values (CSV) data - "NeuralStemCellData.csv"
-        - `read.csv("filePath/fileName.csv", ...)`
-        - 
-            ```{r}
-mydata.csv<-read.csv("NeuralStemCellData.csv", row.names=1, header=T)
-```
-    + tab-delimited data - "NeuralStemCellData.tab"
-        - `read.delim("filePath/fileName.tab", ...)`
-        - 
-            ```{r}
-mydata<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
+* Reading a comma delimitted text file (csv) from your compueter: (files are available in the 'data' folder on the GitHub)
+
+```{r}
+> data1<-read.csv("NeuralStemCellData.csv", row.names=1, header=T)
+> head(data1, n=7)
 ```
 
-## Loading data to R {.smaller}
-* One way to do all: `read.table()`
+* Loading data from a tab delimited text file 
+  
+```{r}
+> data2<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
+```
+
+* One way to read several formats: **read.table()**
 
     + comma-separated values data (csv)
     
@@ -984,14 +977,29 @@ mydata<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
         - `read.table("filePath/fileName", sep=" ", ...)`
 		
 
-#### Names of the variable in the dataset
+### Loading data with missing values:
+
 ```{r}
-names(mydata)
+> mydata.missing <- read.csv( "NeuralStemCellDataMissing.csv", row.names=1, na.strings = c(" ", "NA", "NaN"))
+> head(mydata.missing , n=15)
 ```
 
-#### Number of rows and columns in the dataset
+## Knowning the data 
+
+**head()** and **tail()** - returns the first or last lines of a vector, matrix, table, data frame or function
+
 ```{r}
-dim(mydata)
+> head(mydata)
+> tail(mydata)
+```
+### Names of the variable in the dataset
+```{r}
+> names(mydata)
+```
+
+### Number of rows and columns in the dataset
+```{r}
+> dim(mydata)
 ```
 
 We will learn more on data exploration on the following lesson.
@@ -1059,6 +1067,33 @@ boxplot(gre~admit, data=mydata, xlab="Admit",
         ylab="GRE", main="Boxplot GRE and admit")
 ```
 
+### Data management - sorting 
+* Sort or order a data vector into ascending or descending order
+
+```{r}
+> head(sort(rownames(mydata), decreasing=F))
+> head(order(rownames(mydata), decreasing=F))
+```    
+
+#### Data management - sorting 
+
+```{r}
+> mydata.sort <- mydata[order(rownames(mydata), decreasing=F) ,]
+> head(mydata.sort)
+> head(mydata)
+```
+
+## 7. Writing datasets to a text file
+
+```{r}
+write.table(mydata, file="test.txt", sep="\t", 
+              row.names=FALSE, quote=FALSE)
+list.files(path=getwd(), pattern="test.txt",
+           full.names=T)
+```
+
+## 8.  Statistical hypothesis testing
+
 #### T-test for gre scores for admit=0 vs admit=1
 
 ```{r}
@@ -1082,14 +1117,7 @@ print(summary(fit)$coef, digits=2)
 ```
 
 
-## 7. Writing datasets to a text file
 
-```{r}
-write.table(mydata, file="test.txt", sep="\t", 
-              row.names=FALSE, quote=FALSE)
-list.files(path=getwd(), pattern="test.txt",
-           full.names=T)
-```
 
 
 
