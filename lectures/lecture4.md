@@ -1116,9 +1116,16 @@ fit <- glm(admit~gpa+gre+factor(rank), data=mydata,
 print(summary(fit)$coef, digits=2)
 ```
 
+## Week 4 Homework: :house: 
 
 
+1. Copy all .fasta available at: /group/mscbmi/hw4/*.fasta into your home directory:
 
+```
+mkdir hw4
+cd hw4
+cp /group/mscbmi/hw4/*.fasta ./
+```
 
 
 
