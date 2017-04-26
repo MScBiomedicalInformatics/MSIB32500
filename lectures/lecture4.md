@@ -1161,14 +1161,14 @@ time.taken
 sink()
 
 ```
-A. Develop an analysis pipeline that uses CRI's TARBELL cluster to perform the alignment of the input **queary** sequence against the full  **reference** file: **reference.fasta**
-B. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt'. 
-c. What is the maximun and minimum alignment score obtaine?
-D. Record and report the total runtime (execution time) for your script running with the following hardware configurations:
+* A. Develop an analysis pipeline that uses CRI's TARBELL cluster to perform the alignment of the input **queary** sequence against the full  **reference** file: **reference.fasta**
+* B. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt'. 
+* c. What is the maximun and minimum alignment score obtaine?
+* D. Record, report and explain the total runtime (execution time) for your script running with the following hardware configurations:
 	- 2 nodes; 4 cpus; 4gb of RAM
-	- 2 nodes; 8 cpus; 8gb 0f RAM
-	- 4 nodes; 16 cpus; 16gb of RAM
-D. Submit all developed scripts 
+	- 2 nodes; 8 cpus; 4gb 0f RAM
+	- 4 nodes; 16 cpus; 8gb of RAM
+* D. Submit all developed scripts 
 
 
 
