@@ -1119,7 +1119,7 @@ print(summary(fit)$coef, digits=2)
 ## Week 4 Homework: :house: 
 
 
-1. Copy all .fasta available at: /group/mscbmi/hw4/*.fasta into your home directory:
+- Copy all .fasta available at: **/group/mscbmi/hw4/** into  a working directory under home:
 
 ```
 $ mkdir hw4
@@ -1127,9 +1127,48 @@ $ cd hw4
 $ cp /group/mscbmi/hw4/*.fasta ./
 ```
 
-2. The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package: 
+- The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package to perform pairwise sequences alignment. It will align the input **queary** sequence in .fasta format (*query1.fasta*), against all sequences in the **reference** file (*shor_reference.fasta*). The *shor_reference.fasta* contains 200 lines corresponding to 100 sequences. The R code will generate an output file named **alignment.txt** containing the sequence alaignmets and alignment scores.
 
+```{r}
+setwd('/Users/jorgeandrade/Desktop/hw4')
+#install.packages('seqinr')
 
+library("seqinr")
+library(Biostrings)
+
+start.time <- Sys.time() ## record start time
+
+seq1<- read.fasta(file = 'query1.fasta')
+seq2<- read.fasta(file = 'shor_reference.fasta')
+
+length(seq2)
+
+n1 <- toupper(c2s(seq1[[1]]))
+n2 <- toupper(c2s(seq2[[2]]))
+
+sink("alignment.txt") ## direct R output to a file
+n<-length(seq2)
+for (i in 2:n-1){
+  n1 <- toupper(c2s(seq2[[i]]))
+  n2 <- toupper(c2s(seq2[[i+1]]))
+  globalAlign<- pairwiseAlignment(n1, n2)
+  print(globalAlign)
+}
+
+end.time <- Sys.time() ## record start time
+time.taken <- end.time - start.time
+time.taken
+sink()
+
+```
+A. Develop an analysis pipeline that uses CRI's TARBELL cluster to perform the alignment of the input **queary** sequence against the full  **reference** file: **reference.fasta**
+B. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt'. 
+c. What is the maximun and minimum alignment score obtaine?
+D. Record and report the total runtime (execution time) for your script running with the following hardware configurations:
+	- 2 nodes; 4 cpus; 4gb of RAM
+	- 2 nodes; 8 cpus; 8gb 0f RAM
+	- 4 nodes; 16 cpus; 16gb of RAM
+D. Submit all developed scripts 
 
 
 
