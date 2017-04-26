@@ -1122,12 +1122,12 @@ print(summary(fit)$coef, digits=2)
 1. Copy all .fasta available at: /group/mscbmi/hw4/*.fasta into your home directory:
 
 ```
-mkdir hw4
-cd hw4
-cp /group/mscbmi/hw4/*.fasta ./
+$ mkdir hw4
+$ cd hw4
+$ cp /group/mscbmi/hw4/*.fasta ./
 ```
 
-
+2. The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package: 
 
 
 
