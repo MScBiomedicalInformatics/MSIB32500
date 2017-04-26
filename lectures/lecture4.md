@@ -1097,23 +1097,23 @@ list.files(path=getwd(), pattern="test.txt",
 #### T-test for gre scores for admit=0 vs admit=1
 
 ```{r}
-t.test(gre~admit,data=mydata)
+> t.test(gre~admit,data=mydata)
 ```
 
 #### Simple regression between gre and gpa
 
 ```{r}
-fit1 <- lm(gre~gpa, data=mydata) 
-plot(gre~gpa, data=mydata)
-abline(fit1,col="red")
+> fit1 <- lm(gre~gpa, data=mydata) 
+> plot(gre~gpa, data=mydata)
+> abline(fit1,col="red")
 ```
 
 #### Logistic regression
 
 ```{r}
-fit <- glm(admit~gpa+gre+factor(rank), data=mydata, 
+> fit <- glm(admit~gpa+gre+factor(rank), data=mydata, 
            family=binomial)
-print(summary(fit)$coef, digits=2)
+> print(summary(fit)$coef, digits=2)
 ```
 
 ## Week 4 Homework: :house: 
@@ -1168,6 +1168,7 @@ sink()
 	- 2 nodes; 4 cpus; 4gb of RAM
 	- 2 nodes; 8 cpus; 4gb 0f RAM
 	- 4 nodes; 16 cpus; 8gb of RAM
+	- 8 nodes; 16 cpus; 16gb of RAM
 * D. Submit all developed scripts 
 
 
