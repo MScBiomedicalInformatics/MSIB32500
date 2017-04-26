@@ -1168,7 +1168,6 @@ sink()
 	- 2 nodes; 4 cpus; 4gb of RAM
 	- 2 nodes; 8 cpus; 4gb 0f RAM
 	- 4 nodes; 16 cpus; 8gb of RAM
-	- 8 nodes; 16 cpus; 16gb of RAM
 * D. Submit all developed scripts and results files via e-mail.
 
 
