@@ -199,13 +199,13 @@ The entire *m* row of matrix A can be extracted as A[m, ]:
 Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction 
 
 ```{r}
-my_vector<- c(1,5,10, 7, 2)   # define the vector
+> my_vector<- c(1,5,10, 7, 2)   # define the vector
 ```
 ```{r}
-my_vector[5:1]
-my_vector[c(5,4,3,2,1)]
-c<- c(my_vector[5],my_vector[4],my_vector[3],my_vector[2], my_vector[1])
-rev(my_vector)
+> my_vector[5:1]
+> my_vector[c(5,4,3,2,1)]
+> c<- c(my_vector[5],my_vector[4],my_vector[3],my_vector[2], my_vector[1])
+> rev(my_vector)
 ```
 
 #### Naming rules and the danger of over-writing 
@@ -213,9 +213,9 @@ rev(my_vector)
 A good practice, in any programming language, is to assign meaninful names to variables/vector. In R, never start a vector name with a number
 
 ```{r}
-  > a<- c(1,5,4,2)    #OK
-  > 1a<- c(1,5,4,2)		# NOT OK  Error: syntax error
-  > a1<- c(1,5,4,2)   # OK
+> a<- c(1,5,4,2)    #OK
+> 1a<- c(1,5,4,2)		# NOT OK  Error: syntax error
+> a1<- c(1,5,4,2)   # OK
 ```
 
 #### Over-writing
@@ -223,8 +223,8 @@ A good practice, in any programming language, is to assign meaninful names to va
 As with any variable assignment, you must be aware of overwriting. Try: 
 
 ```{r}
-  > my_vector<- c(1,5,10, 7, 2)
-  > my_vector<- c(10,5,2, 3, 1)
+> my_vector<- c(1,5,10, 7, 2)
+> my_vector<- c(10,5,2, 3, 1)
 ```
 What does my_vector contain now?
 
@@ -232,9 +232,9 @@ What does my_vector contain now?
 
 #### Analyzing vectors
 
-There are many prebuild R functions to work with vectors. Most have logical/meaninfull names. For instance, length(my_vector) gives the number of items in the vector (= 5).
+There are many prebuild R functions to work with vectors. Most have logical/meaninfull names. For instance, **length(my_vector)** gives the number of items in the vector (= 5).
 
-####Task3: 
+#### Task3: 
 Create a vector called **big_vector** with values 1 to 10000, then find:
   
   * Length of the vector
