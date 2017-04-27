@@ -242,9 +242,9 @@ Create a vector called **big_vector** with values 1 to 10000, then find:
   * Mean(average) of all items in the vector
 
 ```{r}
-big_vector<-(1:10000); length(big_vector)
-sum(big_vector)
-mean(big_vector)
+> big_vector<-(1:10000); length(big_vector)
+> sum(big_vector)
+> mean(big_vector)
 ```
 
 #### Task4: 
@@ -252,49 +252,49 @@ Explore at the help for the command **sample()** and **sort()** and then try the
 
 
 ```{r}
-x <-sample(big_vector,100)
-x[1:20]
-plot(x)
+> x <-sample(big_vector,100)
+> x[1:20]
+> plot(x)
 ```
 
 ```{r}
-sort(x, decreasing = FALSE)[1:20]
-hist(x)
+> sort(x, decreasing = FALSE)[1:20]
+> hist(x)
 ```
 
 #### Adding and multiplying a number to a vector
 Sometimes we want to add a constant (like a number), to each element in the vector, test the following code: 
 
 ```{r}
-big_vector2<-big_vector +10 
-min(big_vector) 
-max(big_vector) 
-min(big_vector2) 
-max(big_vector2) 
+> big_vector2<-big_vector +10 
+> min(big_vector) 
+> max(big_vector) 
+> min(big_vector2) 
+> max(big_vector2) 
 ```
 #### Adding vectors
 
 We can also add one vector to another vector, create the following vectors: 
   
 ```{r}
-A<-c(10, 20, 30, 50) 
-B<-c(1,4,2,3) 
-C<-c(2.5, 3.5) 
+> A<-c(10, 20, 30, 50) 
+> B<-c(1,4,2,3) 
+> C<-c(2.5, 3.5) 
 ```
 Test what happens and explain the outcome: 
 
 ```{r}
-A+B 
-A+C
+> A+B 
+> A+C
 ```
 
 #### Adding vectors
 ```{r}
-A<-c(10 ,  20, 30, 50)
-B<-c(1  ,   4,  2,  3)
-C<-c(2.5, 3.5        )
-A+B
-A+C
+> A<-c(10 ,  20, 30, 50)
+> B<-c(1  ,   4,  2,  3)
+> C<-c(2.5, 3.5        )
+> A+B
+> A+C
 ```
 A+B is easy to understand : A[1]+B[1] , etc. 
 A+C is trickier - the C vector is just of length 2. It is re-used. This is what is happening also with the earlier A+10 example. The 10 is used many times.
@@ -305,27 +305,27 @@ A+C is trickier - the C vector is just of length 2. It is re-used. This is what 
 Lets make up some semi-random data:
 
 ```{r}
-dat<-rnorm (100)   #draw 100 random, normal distributed data points 
+> dat<-rnorm (100)   #draw 100 random, normal distributed data points 
 ```
 Test the following:
 
 ```{r}
-plot(dat)
-plot(dat,type='l')
-barplot(dat)
-hist(dat)
+> plot(dat)
+> plot(dat,type='l')
+> barplot(dat)
+> hist(dat)
 ```
 
 Now observe the effect o using the command: par( mfrow=c(2,2) )
 
 
 ```{r}
-par( mfrow=c(2,2) )
-dat<-rnorm (100) 
-plot(dat)
-plot(dat,type="l")
-barplot(dat)
-hist(dat)
+> par( mfrow=c(2,2) )
+> dat<-rnorm (100) 
+> plot(dat)
+> plot(dat,type="l")
+> barplot(dat)
+> hist(dat)
 ```
 
 - Why are your three first plots different from mine? 
@@ -343,29 +343,30 @@ You can give extra 'options' to graphical commands, for example:
 
 In plot try the effect of the following options: - note that you can use several at once  
 
-type='b'  
-col='hotpink'  
-main='plot'  
-type='h'  
-type='S'  
+- type='b'  
+- col='hotpink'  
+- main='plot'  
+- type='h'  
+- type='S'  
 
 These options are 'arguments' to the *plot()* function
 
 
 ```{r}
-plot(dat, col='blue', type='l')
+> plot(dat, col='blue', type='l')
 ```
 ```{r}
-plot(dat, col='hotpink', type='h', main='Plot',)
+> plot(dat, col='hotpink', type='h', main='Plot',)
 ```
 We will review in detail how to use R for basics graphics and plotting on the next lesson.
 
 #### More about functions
 
-In most cases, a function needs some **input**, like in *plot(dat)* 'dat' here is an *unnamed argument,* and this works because plot() assumes we mean: x values = dat.
+In most cases, a function needs some **input**, like in *plot(dat)* 'dat' here is an *unnamed argument,* and this works because **plot()** assumes we mean: x values = dat.
 
-We could also say: plot(x=dat)  - a *named argument.* If you have many arguments, most of them are named - such as in the followinf example:
-plot (some_vector, col="blue", type="s"). The help pages will tell you what type of arguments you can use for a particualr command.
+We could also say: **plot(x=dat)**  - a *named argument.* If you have many arguments, most of them are named - such as in the following example:
+
+- plot (some_vector, col="blue", type="s"). The help pages will tell you what type of arguments you can use for a particualr command.
 
 
 #### The danger of unnamed arguments.
@@ -400,22 +401,22 @@ Try the follwoing commands. Observe the differences between the following two co
 
 #### A:
 ```{r}
-par( mfrow=c(3,1) )
-plot(a,b); plot(b,a); plot(x=b, y=a)
+> par( mfrow=c(3,1) )
+> plot(a,b); plot(b,a); plot(x=b, y=a)
 ```
 
 #### B:
 ```{r}
-par( mfrow=c(2,2) )
-plot(a,b); plot(b,a); plot(x=b, y=a)
+> par( mfrow=c(2,2) )
+> plot(a,b); plot(b,a); plot(x=b, y=a)
 ```
 
 Now, print the three plots in one row using mfrow: 
 
 #### C:
 ```{r}
-par( mfrow=c(1,3) )
-plot(a,b); plot(b,a); plot(x=b, y=a)
+> par( mfrow=c(1,3) )
+> plot(a,b); plot(b,a); plot(x=b, y=a)
 ```
 
 #### Overlaying plots
@@ -425,8 +426,8 @@ plot(a,b); plot(b,a); plot(x=b, y=a)
 
 
 ```{r}
-plot(b, type="l", col="blue")
-lines(a, col="red")
+> plot(b, type="l", col="blue")
+> lines(a, col="red")
 ```
 
 - Why did we start with plotting b? 
@@ -442,9 +443,9 @@ lines(a, col="red")
 Let's try the code bellow:
 
 ```{r}
-par(mfrow=c(1,2))
-plot(a, type="l", col="blue")
-plot(a, type="l", col="blue", ylim=c(-5,5))
+> par(mfrow=c(1,2))
+> plot(a, type="l", col="blue")
+> plot(a, type="l", col="blue", ylim=c(-5,5))
 ```
 
 #### Saving graphs
@@ -473,12 +474,11 @@ plot(a, type="l", col="blue", ylim=c(-5,5))
 
   - **hist()** (= Histogram) is a graphical way of summarizing distributions - it creates a number of "bins" and calculates how many of the data points fall into each bin. 
   - We can also summarize by the center point in the data:
-
-  * **mean():**
+  - **mean():**
 
 ![mean](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/mean.png)
 
-  * **median():**
+  - **median():**
 Sort the data, pick the number in the center. If the number of data points is even, take the mean of the two center points.
 
 #### Task:
@@ -502,11 +502,11 @@ Sort the data, pick the number in the center. If the number of data points is ev
 
 
 ```{r}
-dat<-rnorm(10)
-dat2<-c(dat, 10, 10.5, 30 )
-median(dat2)
-mean(dat2)
-hist(dat2)
+> dat<-rnorm(10)
+> dat2<-c(dat, 10, 10.5, 30 )
+> median(dat2)
+> mean(dat2)
+> hist(dat2)
 ```
 
 Means are sensitive to outliers! Very common situation in genomics. 
@@ -531,21 +531,21 @@ Means are sensitive to outliers! Very common situation in genomics.
 > par( mfrow=c(1,2) )
 > boxplot(dat); boxplot(dat2)
 ```
-mar – A numeric vector of length 4, which sets the margin sizes in the following order: bottom, left, top, and right. The default is c(5.1, 4.1, 4.1, 2.1).
+**mar** – A numeric vector of length 4, which sets the margin sizes in the following order: bottom, left, top, and right. The default is: c(5.1, 4.1, 4.1, 2.1).
 
 #### Percentiles
 
   * An extension of the median concept
   * Best explained by example: 
-  * the 20th percentile is the value (or score) below which 20 percent of the observations may be found. 
+  * The 20th percentile is the value (or score) below which 20 percent of the observations may be found. 
   * The median is the same as the 50th percentile 
   * The first quartile is the 25th percentile, the third is the 75th
 
 #### Try: summary(dat) and summary(dat2)
 
 ```{r}
-summary(dat)
-summary(dat2)
+> summary(dat)
+> summary(dat2)
 ```
 
 The command **ecdf()** (empirical cumulative distribution)  calculates "all" percentiles in your data - and also understands the **plot()** function. 
@@ -553,7 +553,7 @@ The command **ecdf()** (empirical cumulative distribution)  calculates "all" per
 #### Try: 
 
 ```{r}
-plot (ecdf(dat2))
+> plot (ecdf(dat2))
 ```
 
 The figure shows what fraction of the data has been covered at point X. 
@@ -586,10 +586,10 @@ Any data observation which lies more than 1.5*IQR lower than the first quartile 
 Try the follwoing code:
 
 ```{r}
-par(mfrow=c(1,3))
-hist(rnorm(100,sd=1), xlim=c(-100, 100), main="histogram of rnorm(100,sd=1)")
-hist(rnorm(100,sd=10),xlim=c(-100, 100), main="histogram of rnorm(100,sd=10)")
-hist(rnorm(100,sd=100),xlim=c(-100, 100), main="histogram of rnorm(100,sd=100)")
+> par(mfrow=c(1,3))
+> hist(rnorm(100,sd=1), xlim=c(-100, 100), main="histogram of rnorm(100,sd=1)")
+> hist(rnorm(100,sd=10),xlim=c(-100, 100), main="histogram of rnorm(100,sd=10)")
+> hist(rnorm(100,sd=100),xlim=c(-100, 100), main="histogram of rnorm(100,sd=100)")
 ```
 
 
@@ -616,13 +616,13 @@ What is the difference between these distributions?
 Observe the ooutput of the two code blocks bellow:
 
 ```{r}
-x<-rnorm(100, sd=1)
-y<-rnorm(100, sd=10)
-z<-rnorm(100, sd=100)
-par( mfrow=c(1,3) )
-hist(x, xlim=c(-100, 100))
-hist(y, xlim=c(-100, 100))
-hist(z, xlim=c(-100, 100))
+> x<-rnorm(100, sd=1)
+> y<-rnorm(100, sd=10)
+> z<-rnorm(100, sd=100)
+> par( mfrow=c(1,3) )
+> hist(x, xlim=c(-100, 100))
+> hist(y, xlim=c(-100, 100))
+> hist(z, xlim=c(-100, 100))
 ```
 
 ```{r}
@@ -652,11 +652,11 @@ Let us try them with some random data:
 
 
 ```{r}
-var(smallset)
-var(largeset)
-sd(largeset)
-sd(smallset)
-sqrt(var(smallset)) ##Calculating SD manually
+> var(smallset)
+> var(largeset)
+> sd(largeset)
+> sd(smallset)
+> sqrt(var(smallset)) ##Calculating SD manually
 ```
 Why do we get about the same variance?  
 
