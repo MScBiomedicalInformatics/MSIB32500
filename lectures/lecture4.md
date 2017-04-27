@@ -112,7 +112,7 @@ When you start a session in R, it is a good idea to first clean all R abjects, s
 #### Task1:
 
 * Make the following vector:
-45,5,12,10
+- 45,5,12,10
 * What happens with the following commands?
 - c(1:100)   
 - c(50:2) 
