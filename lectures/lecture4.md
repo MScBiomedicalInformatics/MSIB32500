@@ -114,11 +114,19 @@ When you start a session in R, it is a good idea to first clean all R abjects, s
 * Make the following vector:
 45,5,12,10
 * What happens with the following commands?
-c(1:100)   
-c(50:2) 
+- c(1:100)   
+- c(50:2) 
 
-A vector is a data structure, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors.
+A vector is a data structure, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors. For example, we can create a memory representation of the matrix in R with the **matrix** function ( the data elements must be of the same basic type). See bellow:
 
+```{r}
+> A = matrix(c(2, 4, 3, 1, 5, 7), nrow=2, ncol=3, byrow = TRUE)
+> A                     
+     [,1] [,2] [,3] 
+[1,]    2    4    3 
+[2,]    1    5    7
+
+```
 
 ####Use a Reference sheet:
 
@@ -126,7 +134,7 @@ You may get overwhelmed by different command names fast, use the reference sheet
 
 #### Assignment to memory
 
-The **c()** command is almost useless in itself - we want to keep/save/use the contents of a vector for other analyses, we can do that using the assignment concept:
+The **c()** command is almost useless by itself - we want to keep/save/use the contents of a vector for other analyses, we can do that using the assignment concept:
 
 ```{r}
 4+5           # add 4 and 5
