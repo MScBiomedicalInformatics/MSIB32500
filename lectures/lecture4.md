@@ -117,7 +117,12 @@ When you start a session in R, it is a good idea to first clean all R abjects, s
 - c(1:100)   
 - c(50:2) 
 
-A vector is a data structure, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors. For example, we can create a memory representation of the matrix in R with the **matrix** function ( the data elements must be of the same basic type). See bellow:
+A vector is a data structure, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors (matrix). 
+
+A matrix:
+we can create a memory representation of a matrix in R with the **matrix** function (the data elements must be of the same basic type). 
+
+See bellow:
 
 ```{r}
 > A = matrix(c(2, 4, 3, 1, 5, 7), nrow=2, ncol=3, byrow = TRUE)
