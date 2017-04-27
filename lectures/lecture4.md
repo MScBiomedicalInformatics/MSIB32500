@@ -116,10 +116,11 @@ When you start a session in R, it is a good idea to first clean all R abjects, s
   - c(1:100)   
   - c(50:2) 
 
-A vector is a data structure, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors (matrix). 
+A vector is a **data structure**, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors (matrix). 
 
-A matrix:
-we can create a memory representation of a matrix in R with the **matrix** function (the data elements must be of the same basic type). 
+#### A matrix:
+
+We can create a memory representation of a matrix in R with the **matrix** function (the data elements must be of the same basic type). 
 
 See bellow:
 
@@ -146,9 +147,9 @@ The **c()** command is almost useless by itself - we want to keep/save/use the c
 > b <-  5       # store 5 as "b"
 > a             # just checking
 > b
-> a+b     # add a+b (4+5)
+> a+b           # add a+b (4+5)
 ```
-in R the symbol **<-** and **=** have the effect of assigning **value** to a **variable**. Many R traditionalists prefer **<-** for clarity (to distinguish **'is assigned to'** from **'is equal to'**). 
+In R the symbol **<-** and **=** have the effect of assigning **value** to a **variable**. Many R traditionalists prefer **<-** for clarity (to distinguish **'is assigned to'** from **'is equal to'**). 
 
 #### Expanding assignment to a whole vector:
 
@@ -194,6 +195,7 @@ The entire *m* row of matrix A can be extracted as A[m, ]:
 ```
 
 #### Task2
+
 Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction 
 
 ```{r}
@@ -207,6 +209,7 @@ rev(my_vector)
 ```
 
 #### Naming rules and the danger of over-writing 
+
 A good practice, in any programming language, is to assign meaninful names to variables/vector. In R, never start a vector name with a number
 
 ```{r}
