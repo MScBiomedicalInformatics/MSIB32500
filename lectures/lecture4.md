@@ -962,7 +962,7 @@ return (fibvals)
 ```
 
 
-##5. Basic data exploration
+## 5. Basic data exploration
 
 ### How to load data files
 
@@ -1035,8 +1035,8 @@ We will learn more on data exploration on the following lesson.
 
 #### Add a new column: id
 ```{r}
-mydata$id=1:400
-head(mydata, 5)
+> mydata$id=1:400
+> head(mydata, 5)
 ```
 
 #### Subset the dataset
@@ -1090,7 +1090,7 @@ admit gre  gpa rank id
 
 #### Boxplot for GRE and admit
 ```{r}
-boxplot(gre~admit, data=mydata, xlab="Admit", 
+> boxplot(gre~admit, data=mydata, xlab="Admit", 
         ylab="GRE", main="Boxplot GRE and admit")
 ```
 
@@ -1113,7 +1113,7 @@ boxplot(gre~admit, data=mydata, xlab="Admit",
 ## 7. Writing datasets to a text file
 
 ```{r}
-write.table(mydata, file="test.txt", sep="\t", 
+> write.table(mydata, file="test.txt", sep="\t", 
               row.names=FALSE, quote=FALSE)
 list.files(path=getwd(), pattern="test.txt",
            full.names=T)
