@@ -128,7 +128,7 @@ A vector is a data structure, and the most fundamental in R. Almost everything i
 
 ```
 
-####Use a Reference sheet:
+#### Use a Reference sheet:
 
 You may get overwhelmed by different command names fast, use the reference sheet available [here](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ShortRrefcard.pdf) as a guide while you learn.
 
@@ -137,16 +137,17 @@ You may get overwhelmed by different command names fast, use the reference sheet
 The **c()** command is almost useless by itself - we want to keep/save/use the contents of a vector for other analyses, we can do that using the assignment concept:
 
 ```{r}
-4+5           # add 4 and 5
-a <-  4       # store 4 as "a"
-b <-  5       # store 5 as "b"
-a             # just checking
-b
-a+b     # add a+b (4+5)
+> 4+5           # add 4 and 5
+> a <-  4       # store 4 as "a"
+> b <-  5       # store 5 as "b"
+> a             # just checking
+> b
+> a+b     # add a+b (4+5)
 ```
-in R the symbol **<-** and **=** have the effect of assigning **value** to a **variable**. Many R traditionalists prefer **<-** for clarity (to distinguish **'is assigned to'** from **'is equal to'**. 
+in R the symbol **<-** and **=** have the effect of assigning **value** to a **variable**. Many R traditionalists prefer **<-** for clarity (to distinguish **'is assigned to'** from **'is equal to'**). 
 
 #### Expanding assignment to a whole vector:
+
 ```{r}
 my_vector <- c(1,5,10, 7, 2)
 ```
@@ -173,6 +174,19 @@ Explore the effect of the following commands:
 > my_vector [c(1,3,5)] 
 > my_vector[1:4] 
 > my_vector[4:1]
+```
+
+In a matrix, an element at the *m* row and *n* column, can be accessed by the expression A[m, n]:
+
+```{r}
+> A[2, 3]      # element at 2nd row, 3rd column 
+[1] 7
+```
+The entire *m* row of matrix A can be extracted as A[m, ]:
+
+```{r}
+> A[2, ]       # the 2nd row 
+[1] 1 5 7
 ```
 
 #### Task2
