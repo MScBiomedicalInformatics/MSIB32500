@@ -81,9 +81,7 @@ Most R functions have online documentation.
  A vector is an collection of numbers and/or strings:
  
 - ("jorge", "wenjun", "ron") 
-<br>
 - (10, 5.2, 1,  7,  2, 21) 
-<br>
 - (3) 
 
 The last example is a vector of length 1
@@ -113,10 +111,10 @@ When you start a session in R, it is a good idea to first clean all R abjects, s
 
 #### Task1:
 
-* Make the following vector <br> 
+* Make the following vector:
 45,5,12,10
-* What happens with the following commands? <br> 
-c(1:100)   <br> 
+* What happens with the following commands?
+c(1:100)   
 c(50:2) 
 
 A vector is a data structure, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors.
