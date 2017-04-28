@@ -23,7 +23,7 @@ R is a free software environment for statistical computing and graphics. It comp
       - [FAQs](http://cran.r-project.org/faqs.html)
       - [Contributed Guides](http://cran.r-project.org/other-docs.html)
 * [R Home](http://www.r-project.org/) The R Project for Statistical Computing
-      - [R Wiki](http://wiki.r-project.org/) 
+	* [R Wiki](http://wiki.r-project.org/) 
       - [R Journal] (http://journal.r-project.org/)
       - [Mailing Lists] (http://www.r-project.org/mail.html)
       - [Bioconductor] (http://www.bioconductor.org/)
