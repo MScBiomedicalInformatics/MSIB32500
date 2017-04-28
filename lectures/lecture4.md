@@ -1120,6 +1120,8 @@ list.files(path=getwd(), pattern="test.txt",
 
 ## 8.  Statistical hypothesis testing
 
+The **t.test()** function produces a variety of t-tests. Unlike most statistical packages, the default assumes unequal variance and applies the (Welsh df modification){https://en.wikipedia.org/wiki/Welch%27s_t-test} 
+
 #### T-test for gre scores for admit=0 vs admit=1
 
 ```{r}
@@ -1128,6 +1130,8 @@ list.files(path=getwd(), pattern="test.txt",
 
 #### Simple regression between gre and gpa
 
+**lm()** is used to fit linear models. It can be used to carry out regression, single stratum analysis of variance and analysis of covariance
+
 ```{r}
 > fit1 <- lm(gre~gpa, data=mydata) 
 > plot(gre~gpa, data=mydata)
@@ -1135,6 +1139,8 @@ list.files(path=getwd(), pattern="test.txt",
 ```
 
 #### Logistic regression
+
+Generalized linear models are fit using the **glm()** function:
 
 ```{r}
 > fit <- glm(admit~gpa+gre+factor(rank), data=mydata, 
