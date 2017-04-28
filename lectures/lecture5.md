@@ -401,7 +401,7 @@ Using the data file: NeuralStemCellData.tab
   -  a Histogram of cell G166
   -  a density plot of cell G166
   -  the expression of gene TP53
-  -  the pearson correlation of Tecnical Replicates  for neural stem (NS) cells 
+  -  the Pearson correlation of Tecnical Replicates for neural stem (NS) cells 
  
 * Send your homework via e-mail as a .pdf or .png
 
