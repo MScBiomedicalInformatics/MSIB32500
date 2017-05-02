@@ -25,7 +25,7 @@ For this tutorial we will use the  Gene expression dataset from **Golub et. al. 
 * Results are reported in terms of adjusted p-values, confidence regions and test statistic cutoffs. 
 * The procedures are directly applicable to identifying differentially expressed genes in DNA microarray experiments.
 
-####Installing multtest Bioconductor package:
+#### Installing multtest Bioconductor package:
 
 ```{r}
 source("http://bioconductor.org/biocLite.R")
@@ -52,7 +52,7 @@ As we can see, it contains gene expression data from the leukemia micro-array st
 - **golub.gnames:** a matrix containing the names of the 3051 genes for the expression matrix golub. The three columns correspond to the gene *index,* *ID,* and *Name*, respectively.
         
 
-##3. Basic plots  
+## 3. Basic plots  
 
 Let's start by looking into the golub data (3051 gene expression values for 38 tummor mRNA samples):
 
@@ -68,7 +68,7 @@ Let's start by looking into the golub data (3051 gene expression values for 38 t
 The gene names for golub are stored in **golub.gnames**, let's list the first 10 rows:
 
 ```{r}
-golub.gnames[1:10, ]
+> golub.gnames[1:10, ]
 [,1] [,2]                                               [,3]                         
  [1,] "36" "AFFX-HUMISGF3A/M97935_MA_at (endogenous control)" "AFFX-HUMISGF3A/M97935_MA_at"
  [2,] "37" "AFFX-HUMISGF3A/M97935_MB_at (endogenous control)" "AFFX-HUMISGF3A/M97935_MB_at"
