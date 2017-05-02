@@ -292,6 +292,19 @@ We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in
 ```
 ![piebase](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/piebase.png)
 
+### Computing simple test statistics
+
+The **mt.teststat** and **mt.teststat.num.denum** functions of the **multtest** package provide a convenient way to compute test statistics for each row of a data frame, e.g., **two-sample Welch t-statistics, Wilcoxon statistics, F-statistics, paired t-statistics, and block F-statistics.**.
+
+Let's compute two-sample t-statistics that compares the gene expressions for each gene in the ALL and AML cases. This can be done with the mt.teststat function. The default test is the two-sample [Welch t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test)
+
+```{r}
+> teststat = mt.teststat(golub, golub.cl)
+```
+
+
+
+
 
 ### Basic plots practice:
 
