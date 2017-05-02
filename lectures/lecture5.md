@@ -314,7 +314,7 @@ Now let's plot the t-test statistics:
 ![qqplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/qqplot.png)
 
 
- Those points on the plot that look like outliers, correspond to genes whose expression levels are different between the ALL and AML groups.
+ Those points on the plot that look like outliers, correspond to genes whose expression levels are different between the ALL and AML groups. We will learn how to detect statistically significant differentially expressed genes in the next lecture.
 
 
 
