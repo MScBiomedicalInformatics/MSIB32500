@@ -313,8 +313,7 @@ Now let's plot the t-test statistics:
 
 ![qqplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/qqplot.png)
 
-
- Those points on the plot that look like outliers, correspond to genes whose expression levels are different between the ALL and AML groups. We will learn how to detect statistically significant differentially expressed genes in the next lecture.
+The quantile-quantile (stat_qq) plot is a graphical technique used for determining if two data sets come from populations with a common distribution (plot of the quantiles of the first data set against the quantiles of the second data set). Those points on the plot that look like outliers, correspond to genes whose expression levels are different between the ALL and AML groups. We will learn how to detect statistically significant differentially expressed genes in the next lecture.
 
 
 
@@ -420,6 +419,8 @@ Export as png:
 ```
 ## Week 5 Homework: :house: 
 
+Create an script that used CRI's HPC to perform the following task:
+
 Using the data file: NeuralStemCellData.tab
 
 * In only one page, plot:
@@ -428,6 +429,6 @@ Using the data file: NeuralStemCellData.tab
   -  The expression of gene TP53 across all samples 
   -  The Pearson correlation of Tecnical Replicates for neural stem (NS) cells 
  
-* Send your homework via e-mail as a .pdf or .png
+* Send your script and plot via e-mail
 
 
