@@ -28,16 +28,16 @@ For this tutorial we will use the  Gene expression dataset from **Golub et. al. 
 #### Installing multtest Bioconductor package:
 
 ```{r}
-source("http://bioconductor.org/biocLite.R")
-biocLite("multtest")
-library(multtest)
-data(golub)
+> source("http://bioconductor.org/biocLite.R")
+> biocLite("multtest")
+> library(multtest)
+> data(golub)
 ```
 We will also need the R package **knitr**, it is a general-purpose literate programming engine, designed to give users full control of the output without heavy coding work:
 
 ```{r}
-install.packages('knitr', dependencies = TRUE)
-library(knitr)
+> install.packages('knitr', dependencies = TRUE)
+> library(knitr)
 ```
 
 First, let us take a look what is available on the **golub** dataset:
@@ -126,8 +126,7 @@ Try altering the values of 'pch' and 'col'
 
 ### Bar plot 
 
-To compare and contrast the gene expression of several samples, we can us the **barplot()** command in R. For example, to plot the expression of 
-4 Cyclin genes expression values in 3 ALL and 3 AML samples.
+To compare and contrast the gene expression of several samples, we can us the **barplot()** command in R. For example, to plot the expression of 4 Cyclin genes expression values in 3 ALL and 3 AML samples:
 
 ```{r}
 > grep("CCN", golub.gnames[,2])
@@ -207,9 +206,9 @@ main = "Histogram of gene CCND3 expression values", ylab = "Density", xlab = "CC
 Let's use them:
 
 ```{r}
-par(mar=c(6,4,2,1)) #margin in line
-plot(mygene,type="l", col="red", lwd=3, lty=2);
-mtext("gene expression values of CCND3", side=1, line=5)
+> par(mar=c(6,4,2,1)) #margin in line
+> plot(mygene,type="l", col="red", lwd=3, lty=2);
+> mtext("Gene expression values of CCND3", side=1, line=5)
 ``` 
 
 ![plotlinered](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/plotlinered.png)
@@ -242,8 +241,8 @@ For example, to add a **density curve line** to a histogram we can use:
 * E.g.3: Add a diagonal line to the gene expression plot between patient 1 (ALL) and patient 38 (AML)
 
 ```{r}
-plot(golub[,1], golub[,38], ylab = "Expression of Sample 38", xlab = "Expression of Sample 1")
-abline(a=0, b=1, col="red", lwd=3)
+> plot(golub[,1], golub[,38], ylab = "Expression of Sample 38", xlab = "Expression of Sample 1")
+> abline(a=0, b=1, col="red", lwd=3)
 ```
 ![sample1and38](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/sample1and38.png)
 
@@ -270,9 +269,10 @@ abline(a=0, b=1, col="red", lwd=3)
 
 ![boxcolor](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/boxplotcolor.png)
 
-We will now use the **ape* library in Bioconductor to explore the composition of the DNA sequences:
+We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in Bioconductor to explore the composition of the DNA sequences. The ape library provides functions for reading and manipulating phylogenetic trees and DNA sequences.
 
-* We start by reading one sequence using the **read.GeneBank** function of **ape**
+* We start by reading the sequence of mRNA X94991.1 using the **read.GeneBank** function of **ape** 
+(see: https://www.ncbi.nlm.nih.gov/nuccore/X94991)
 *
 ```{r}
 > library(ape)
