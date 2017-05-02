@@ -306,9 +306,16 @@ Now let's plot the t-test statistics:
 
 ```{r}
 > require(ggplot2) ## ggplot2 is a plotting system for R, based on the grammar of graphics
-> plt = ggplot(data.frame(teststat), aes(sample = teststat)) + stat_qq() + theme_bw()
+> plt = ggplot(data.frame(teststat), aes(sample = teststat)) + stat_qq() + theme_grey()
 > plt
+
 ```
+
+![qqplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/qqplot.png)
+
+
+ Those points on the plot that look like outliers, correspond to genes whose expression levels are different between the ALL and AML groups.
+
 
 
 ### Basic plots practice:
