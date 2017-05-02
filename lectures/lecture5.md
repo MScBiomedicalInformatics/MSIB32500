@@ -305,9 +305,9 @@ Let's compute two-sample t-statistics that compares the gene expressions for eac
 Now let's plot the t-test statistics:
 
 ```{r}
-require(ggplot2) ## ggplot2 is a plotting system for R, based on the grammar of graphics
-plt = ggplot(data.frame(teststat), aes(sample = teststat)) + stat_qq() + theme_bw()
-plt
+> require(ggplot2) ## ggplot2 is a plotting system for R, based on the grammar of graphics
+> plt = ggplot(data.frame(teststat), aes(sample = teststat)) + stat_qq() + theme_bw()
+> plt
 ```
 
 
