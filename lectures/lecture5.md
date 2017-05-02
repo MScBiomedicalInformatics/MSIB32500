@@ -273,7 +273,7 @@ We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in
 
 * We start by reading the sequence of mRNA X94991.1 using the **read.GeneBank** function of **ape** 
 (see: https://www.ncbi.nlm.nih.gov/nuccore/X94991)
-*
+
 ```{r}
 > library(ape)
 > dnaseq <- read.GenBank("X94991.1", as.character=T)
@@ -284,18 +284,18 @@ We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in
 > str(dnaseq)
 ```
 
-* Make a pie plot: 
+* Make a pie plot of the sequences for that gene: 
 
 ```{r}
 > pie(table(dnaseq), radius=0.7)
-> mtext("Base Composition of gene: Zyxin ", side=1, line=-2)
+> mtext("Base Composition of gene: Zyxin ", side=1, line=-1)
 ```
 ![piebase](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/piebase.png)
 
 
 ### Basic plots practice:
 
-* Read the file: "NeuralStemCellData.tab" (the file is available at the 8data* folder on the GitHub repository.
+* Read the file: "NeuralStemCellData.tab" (the file is available at the *data* folder on the GitHub repository.
 
 ```{r}
 > mydata<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
@@ -384,24 +384,24 @@ Export as png:
 ```
  
 
-### Multiple plots on one page  
+### Saving multiple plots on one page:  
 
 ```{r}
-par(mfrow=c(1,3), mar=c(5,3,2,1))
-hist(log10(mydata$G144), main = '', xlab ='Histogram of G144', breaks=50, col="red")
-plot(d, col="blue", main = '', xlab ='Density of G144', type="l", lwd=5)
-boxplot(log10(mydata))
-graphics.off()
+> par(mfrow=c(1,3), mar=c(5,3,2,1))
+> hist(log10(mydata$G144), main = '', xlab ='Histogram of G144', breaks=50, col="red")
+> plot(d, col="blue", main = '', xlab ='Density of G144', type="l", lwd=5)
+> boxplot(log10(mydata))
+> graphics.off()
 ```
 ## Week 5 Homework: :house: 
 
 Using the data file: NeuralStemCellData.tab
 
 * In only one page, plot:
-  -  a Histogram of cell G166
-  -  a density plot of cell G166
-  -  the expression of gene TP53
-  -  the Pearson correlation of Tecnical Replicates for neural stem (NS) cells 
+  -  A Histogram of sample G166
+  -  A density plot of sample G166
+  -  The expression of gene TP53 across all samples 
+  -  The Pearson correlation of Tecnical Replicates for neural stem (NS) cells 
  
 * Send your homework via e-mail as a .pdf or .png
 
