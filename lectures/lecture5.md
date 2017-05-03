@@ -10,11 +10,12 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 
 ## Learning Objectives
 
-- Develop a working knowledge on how to use R and Bioconductor for basic data visualization 
+- Develop a working knowledge on how to use R and Bioconductor for basic data visualizations of genomics data
+- Develop a working knowledge on how to use R and Bioconductor for basic multiple testing for gene expression data
 
 ## 1. Introduction
 
-R Programming offers a set of builtin function and libraries (i.e. ggplot2, leaflet, lattice) to build data visualizations and present data analysis results. In this tutorial, you will learn the steps to create common as well as advanced visualizations in R. 
+R Programming offers a set of builtin function and libraries (i.e. base, ggplot2, leaflet, lattice) to build data visualizations and present data analysis results. In this tutorial, you will learn the steps to create common as well as advanced visualizations in R using the base and some ggplot2 functions.
 
 ## 2. Data download
 
