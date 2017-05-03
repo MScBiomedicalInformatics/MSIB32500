@@ -316,6 +316,46 @@ Now let's plot the t-test statistics:
 The quantile-quantile (stat_qq) plot is a graphical technique used for determining if two data sets come from populations with a common distribution (plot of the quantiles of the first data set against the quantiles of the second data set). Those points on the plot that look like outliers, correspond to genes whose expression levels are different between the ALL and AML groups. We will learn how to detect statistically significant differentially expressed genes in the next lecture.
 
 
+### Adjusting p-values
+
+* The **mt.rawp2adj** function of the **multtest** package computes adjusted p-values for simple multiple testing procedures from a vector of raw (unadjusted) p-values. The procedures include the Bonferroni, Holm (1979), Hochberg (1988), and Sidak procedures for strong control of the family-wise Type I error rate **(FWER)**, and the Benjamini and Hochberg (1995) and Benjamini and Yekutieli (2001) procedures for (strong) control of the false discovery rate **(FDR)**. 
+
+* First we will calculate the raw nominal two-sided p-values. For this data, we will assume that a standard normal distribution for the 3,051 test statistics.
+
+```{r}
+> rawp = 2 * (1 - pnorm(abs(teststat)))
+
+```
+We can adjust these p-values using the specified procedure as follows:
+
+```{r}
+> procedures = c("Bonferroni", "Holm", "Hochberg", "SidakSS", "SidakSD", "BH", "BY")
+> adjusted = mt.rawp2adjp(rawp, procedures)
+> adjusted$adjp[1:10, ]
+             rawp   Bonferroni         Holm     Hochberg      SidakSS      SidakSD
+ [1,] 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+ [2,] 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+ [3,] 8.881784e-16 2.709832e-12 2.708056e-12 2.708056e-12 2.709832e-12 2.708056e-12
+ [4,] 1.332268e-15 4.064749e-12 4.060752e-12 4.060752e-12 4.064749e-12 4.060752e-12
+ [5,] 1.554312e-15 4.742207e-12 4.735989e-12 4.735989e-12 4.742207e-12 4.735989e-12
+ [6,] 4.418688e-14 1.348142e-10 1.345932e-10 1.345932e-10 1.348142e-10 1.345932e-10
+ [7,] 1.207923e-13 3.685372e-10 3.678124e-10 3.678124e-10 3.685372e-10 3.678124e-10
+ [8,] 2.009504e-13 6.130996e-10 6.116929e-10 6.116929e-10 6.130996e-10 6.116929e-10
+ [9,] 2.606804e-13 7.953358e-10 7.932504e-10 7.932504e-10 7.953358e-10 7.932504e-10
+[10,] 3.419487e-13 1.043285e-09 1.040208e-09 1.040208e-09 1.043285e-09 1.040208e-09
+                BH           BY
+ [1,] 0.000000e+00 0.000000e+00
+ [2,] 0.000000e+00 0.000000e+00
+ [3,] 9.032775e-13 7.768732e-12
+ [4,] 9.484413e-13 8.157168e-12
+ [5,] 9.484413e-13 8.157168e-12
+ [6,] 2.246903e-11 1.932472e-10
+ [7,] 5.264817e-11 4.528061e-10
+ [8,] 7.663745e-11 6.591283e-10
+ [9,] 8.837064e-11 7.600409e-10
+[10,] 1.043285e-10 8.972885e-10
+```
+
 
 ### Basic plots practice:
 
