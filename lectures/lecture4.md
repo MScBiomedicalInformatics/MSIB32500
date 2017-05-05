@@ -1164,8 +1164,9 @@ $ cp /group/mscbmi/hw4/*.fasta ./
 ```{r}
 setwd('/Users/jorgeandrade/Desktop/hw4')
 #install.packages('seqinr')
+#install.packages('Biostrings')
 
-library("seqinr")
+library(seqinr)
 library(Biostrings)
 
 start.time <- Sys.time() ## record start time
