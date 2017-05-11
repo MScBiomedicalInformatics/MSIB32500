@@ -152,11 +152,11 @@ Now let's try:
 
 ```{r}
 > par(mar=c(6,6,1,1)) #Define margins 
-> barplot(mygenelist, beside=T, horiz=F, col=c(4:8), ylim=c(-2,2))
+> barplot(mygenelist, beside=T, horiz=F, col=c(4:7), ylim=c(-2,2))
 > mtext("Expression of 4 'Cyclin' genes for 3 ALL and 3 AML samples", side=1, at=12.5, line=1)
-> legend(14,2.1, golub.gnames[c(85,1042,1212,2240),2] ,cex=1.2, col=c(4:8), pch=15, bty="n")
+> legend(14,2.1, golub.gnames[c(85,1042,1212,2240),2] ,cex=1.2, col=c(4:7), pch=15, bty="n")
 ```
-![barplotB](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/barplotB.png)
+![barplotB](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/newbox4c.png)
 
 
 ### Histograms and Density Plots  
@@ -268,7 +268,7 @@ For example, to add a **density curve line** to a histogram we can use:
 > axis(side=1, line=1.5, cex.axis=0.8, lwd=0, labels=c("Sample 1", "Sample 10", "Sample 38"), at=c(1,2,3))
 ```
 
-![boxcolor](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/newbox4c.png)
+![boxcolor](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/boxplotcolor.png)
 
 We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in Bioconductor to explore the composition of the DNA sequences. The ape library provides functions for reading and manipulating phylogenetic trees and DNA sequences.
 
