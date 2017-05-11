@@ -268,7 +268,7 @@ For example, to add a **density curve line** to a histogram we can use:
 > axis(side=1, line=1.5, cex.axis=0.8, lwd=0, labels=c("Sample 1", "Sample 10", "Sample 38"), at=c(1,2,3))
 ```
 
-![boxcolor](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/boxplotcolor.png)
+![boxcolor](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/newbox4c.png)
 
 We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in Bioconductor to explore the composition of the DNA sequences. The ape library provides functions for reading and manipulating phylogenetic trees and DNA sequences.
 
