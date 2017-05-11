@@ -152,7 +152,7 @@ Now let's try:
 
 ```{r}
 > par(mar=c(6,6,1,1)) #Define margins 
-> barplot(mygenelist, beside=T, horiz=F, col=c(4:8), ylim=c(-2,2));
+> barplot(mygenelist, beside=T, horiz=F, col=c(4:8), ylim=c(-2,2))
 > mtext("Expression of 4 'Cyclin' genes for 3 ALL and 3 AML samples", side=1, at=12.5, line=1)
 > legend(14,2.1, golub.gnames[c(85,1042,1212,2240),2] ,cex=1.2, col=c(4:8), pch=15, bty="n")
 ```
