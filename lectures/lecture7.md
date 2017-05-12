@@ -17,7 +17,9 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 * A user manual for the edgeR package is available [here](http://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf)
 
 
-### What is edgeR?edgeR is an R package that performs differential tag/gene expression using count data under a negative binomial model. The methods used in edgeR *do NOT support FPKM, RPKM* or other types of data that are not reads counts.
+### What is edgeR?
+
+edgeR is an R package that performs differential tag/gene expression using count data under a negative binomial model. The methods used in edgeR *do NOT support FPKM, RPKM* or other types of data that are not reads counts.
 
 
 ## 2. Installing the package
@@ -38,7 +40,8 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 * Download to your local computer the raw version of the dataset: 'expression.txt', from the *data* folder on the github, and load that data to your R working enviroment:
 
 ```{r}
-> raw.data <- read.table( file = "expression.txt" , header = TRUE )> head(raw.data)
+> raw.data <- read.table( file = "expression.txt" , header = TRUE )
+> head(raw.data)
 		ensembl_ID lane1 lane2 lane3 lane4 lane5 lane6 lane8  len
 1 ENSG00000215696     0     0     0     0     0     0     0  330
 2 ENSG00000215700     0     0     0     0     0     0     0 2370
@@ -67,12 +70,15 @@ Data summaries:
 
 ```{r}
 > dim(counts)
-[1] 37435     7> colSums(counts)/1e06 # Library Sizes in millions of reads
+[1] 37435     7
+
+> colSums(counts)/1e06 # Library Sizes in millions of reads
 
 C_R1     C_R2     C_R3     C_R4     T_R1     T_R2     T_R3 
 0.978576 1.156844 1.442169 1.485604 1.823460 1.834335 0.681743
 
-> table(rowSums(counts))[ 1:30 ] # Number of genes with low (<30) counts
+
+> table(rowSums(counts))[ 1:30 ] # Number of genes with low (<30) counts
 
     0     1     2     3     4     5     6     7     8     9    10    11    12    13 
 15558  1826  1149   717   635   388   447   291   308   240   248   191   252   157 
@@ -126,7 +132,8 @@ T_R3     T   681743            1
 * Once this filtering is done, we can calculate the normalization factors which correct for the different compositions of the samples. * The effective library sizes are then the product of the actual library sizes and these factors.
 
 ```{r}
-> cds <- cds[rowSums(1e+06 * cds$counts/expandAsMatrix(cds$samples$lib.size, dim(cds)) > 1) >= 3, ]> dim(cds)
+> cds <- cds[rowSums(1e+06 * cds$counts/expandAsMatrix(cds$samples$lib.size, dim(cds)) > 1) >= 3, ]
+> dim(cds)
 [1] 16494     7
 ```
 
@@ -153,11 +160,14 @@ T_R1     T  1823460    0.9534767
 T_R2     T  1834335    0.9524461
 T_R3     T   681743    0.9576010
 
-> # effective library sizes> cds$samples$lib.size * cds$samples$norm.factors
+> # effective library sizes
+> cds$samples$lib.size * cds$samples$norm.factors
 
 ```
 
-## 5. Multi-Dimensional Scaling (MDS) Plot* An MDS plot measures the similarity of the samples and projects this measure into 2-dimensions. Let's create an MDS plot for our samples:
+## 5. Multi-Dimensional Scaling (MDS) Plot
+
+* An MDS plot measures the similarity of the samples and projects this measure into 2-dimensions. Let's create an MDS plot for our samples:
 
 ```{r}
 > plotMDS(cds , main="MDS Plot for Count Data", labels= colnames(cds$counts))
@@ -166,7 +176,9 @@ T_R3     T   681743    0.9576010
 ![mdsplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MDSplotC.png)
 
 
-## 6. Estimating DispersionsWe will now proceed to estimate the common dispersion values across all genes by the Conditional Maximum Likelihood **(CML)** method *see Robinson MD and Smyth GK 2008* [paper](http://biostatistics.oxfordjournals.org/content/9/2/321).
+## 6. Estimating Dispersions
+
+We will now proceed to estimate the common dispersion values across all genes by the Conditional Maximum Likelihood **(CML)** method *see Robinson MD and Smyth GK 2008* [paper](http://biostatistics.oxfordjournals.org/content/9/2/321).
 
 The **CML** method involves computing a matrix of quantile-quantile normalized counts, *called pseudo-counts.* The pseudo-counts are adjusted in such a way that the library sizes are equal for all samples, while preserving differences between groups and variability within each group. The pseudo-counts are included in the output of the function, but are intended mainly for internal use of edgeR.
 
@@ -266,7 +278,12 @@ $AveLogCPM
 
 > de.common <- exactTest(cds, pair=c("C","T"), dispersion="common" )
 > de.tagwise <- exactTest(cds, pair=c("C","T"), dispersion="tagwise" )
-> de.auto <- exactTest(cds, pair=c("C","T"), dispersion="auto" )> names(de.tagwise)> de.tagwise$comparison # which groups have been compared> head(de.tagwise$table) # results table > head(cds$counts)
+> de.auto <- exactTest(cds, pair=c("C","T"), dispersion="auto" )
+
+> names(de.tagwise)
+> de.tagwise$comparison # which groups have been compared
+> head(de.tagwise$table) # results table 
+> head(cds$counts)
 
 ```
 * As you can see, the **table of results** from **exactTest()** contains 'raw' p-values, they are not adjusted for multiple testing. 
@@ -275,7 +292,9 @@ $AveLogCPM
 * We can also use topTags() to return the original counts of the top differentially expressed genes, by setting the *n* parameter to the total number of genes, we can save the entire topTags() results table.
 
 ```{r}
-# Top tags for tagwise analysis> options(digits=3) # print only 3 digits> topTags(de.tagwise, n = 20 , sort.by = "p.value" ) # top 20 DE genes
+# Top tags for tagwise analysis
+> options(digits=3) # print only 3 digits
+> topTags(de.tagwise, n = 20 , sort.by = "p.value" ) # top 20 DE genes
 Comparison of groups:  T-C 
                 logFC logCPM    PValue       FDR
 ENSG00000151503  5.82   9.71  0.00e+00  0.00e+00
@@ -364,7 +383,8 @@ Store full topTags results table
 
 ## 10. Saving the results
 
-Now that the analysis is completed, we want to create an output table (or a csv file) containing all the results. We will pull together the concentrations, fold-changes, p-values, adjusted p-values, up/down regulated variable, dispersions, and the count matrix
+
+Now that the analysis is completed, we want to create an output table (or a csv file) containing all the results. We will pull together the concentrations, fold-changes, p-values, adjusted p-values, up/down regulated variable, dispersions, and the count matrix
 
 ```{r}
 # Change column names to be specific to the analysis
@@ -400,8 +420,8 @@ Finally, we will save the complete results table on a file:
 
 ## Week 7 Homework: :house: 
 
-* For this tutorial, we used the **tagwise** disperssion to estimate the DEGs (see section 8. Detecting Differentially Expressed Genes). Using the other available methods *common, and auto*, repeat the detection of the top 100 statistically significant genes (DEGs).
-* Create a list of the overlaping DEGs among the detectected with each disperssion method
+* For this tutorial, we used the **tagwise** dispersion to estimate the DEGs (see section 8. Detecting Differentially Expressed Genes). Using the other available methods *common*, and *auto*, repeat the detection of the **top 100** statistically significant genes (DEGs). One list ofr each method.
+* Create a list of the overlaping DEGs
 * Send your homework via e-mail  
 
 
