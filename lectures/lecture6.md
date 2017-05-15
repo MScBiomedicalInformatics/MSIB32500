@@ -541,10 +541,13 @@ write.table(top20DEGs,file="top20DEGs.xls", quote=FALSE, row.names=T, sep="\t")
 Next we are going to create a **heatmap** of the expression of highly significant genes:
 
 ```{r}
-> selected  <- tab.sig[,1] ## select the IDs of significant genes 
+> top20DEGs<-head(sortedDEG,20)
+> write.table(top20DEGs,file="top20DEGs.xls", quote=FALSE, row.names=T, sep="\t")
+
+> selected  <- rownames(tab.sig) ## select the IDs of significant genes 
 > M6dataSel <- M6data[rownames(M6data) %in% selected, ] ## subsetting
-> ## Ploting a heatmap of the 367 Significant DEGs
 > heatmap(M6dataSel, labRow=c(""), col=topo.colors(16), cexCol=0.6,  xlab = "Samples", ylab = "Features", main = "DEGs")
+
 ```
 ![heatmap](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/heatmap.png)
 
