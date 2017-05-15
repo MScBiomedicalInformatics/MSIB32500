@@ -536,7 +536,7 @@ write.table(top20DEGs,file="top20DEGs.xls", quote=FALSE, row.names=T, sep="\t")
 ```
 
 
-##12. Visualizing the expression of DEGs in a heatmap
+## 12. Visualizing the expression of DEGs in a heatmap
 
 Next we are going to create a **heatmap** of the expression of highly significant genes:
 
@@ -551,7 +551,7 @@ Next we are going to create a **heatmap** of the expression of highly significan
 ```
 ![heatmap](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/heatmap.png)
 
-##13. Annotation 
+## 13. Annotation 
 
 The final step in this analysis will be the annotation of the DEGs. First we are going to download and install the libraries we need for the annoation:
 
