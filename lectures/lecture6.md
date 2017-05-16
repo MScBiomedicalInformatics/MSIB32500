@@ -639,7 +639,7 @@ Browse the created out.html file on your working directory and try the links.
 
 ## Week 6 Homework: :house: 
 
-In this tutorial, we detected the DEGs between WT Control (3 samples) and KO Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipleine (script) to detect the DEGs between WT Control and KO Treatment at 8 hour. Create a list of **overlaping significant DEG** with the top 100 DEGs between KO Treatment at 24 hours and KO Treatment at 8 hour. Define 'significant' as those genes with a **adjusted p-value less than 0.1.**
+In this tutorial, we detected the DEGs between WT Control (3 samples) and KO Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipleine (script) to detect the DEGs between WT Control and KO Treatment at 8 hour. Create a list of **overlaping significant DEG** with the top 100 DEGs between KO Treatment at 24 hours and KO Treatment at 8 hour. Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
 
 Submit your homework via e-mail.
 
