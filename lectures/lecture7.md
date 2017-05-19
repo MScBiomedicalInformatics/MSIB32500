@@ -270,7 +270,7 @@ $AveLogCPM
 ## 8. Detecting Differentially Expressed Genes
 
 * The function **exactTest()** performs pair-wise tests for differential expression between two groups of  Negative-Binomial Counts 
-* The important parameters are **dispersion** which can have the following values: *common, tagwise, and auto*, and **pair** which indicates which two groups should be compared. 
+* The important parameters are **dispersion** (which can have the following values: *common, tagwise, and auto*), and **pair** which indicates which two groups should be compared. 
 * The output of **exactTest()** is a list of elements, one of which is a **table of the results.** 
 
 
