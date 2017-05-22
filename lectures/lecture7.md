@@ -170,7 +170,8 @@ T_R3     T   681743    0.9576010
 * An MDS plot measures the similarity of the samples and projects this measure into 2-dimensions. Let's create an MDS plot for our samples:
 
 ```{r}
-> plotMDS(cds , main="MDS Plot for Count Data", labels= colnames(cds$counts))
+
+> plotMDS(cds , main="MDS Plot for Count Data", col=c(rep("green",4), rep("red",3)), labels= colnames(cds$counts))
 
 ```
 ![mdsplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MDSplotC.png)
