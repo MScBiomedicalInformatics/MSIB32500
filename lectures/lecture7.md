@@ -366,11 +366,6 @@ Store full topTags results table
 
 ```{r}
 
-> plotSmear(cds, de.tags=de.genes.poi, main="Poisson",
-           pair = c("C","T"),
-           cex = .35,
-           xlab="Log Concentration", ylab="Log Fold-Change")
-> abline(h = c(-2, 2) , col = "dodgerblue")
 > plotSmear(cds, de.tags=de.genes.tgw, main="Tagwise",
            pair = c("C","T"),
            cex = .35,
