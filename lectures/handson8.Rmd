@@ -780,7 +780,7 @@ Open IGV, and import both the BAM and the index files. In the search window, typ
 
 **Make sure to select hg38 or GRCh38 in the reference genome window**.
 
-<img src='../cheatsheets/ipynb_data/assets/Figure30.png', title = 'RNAseq objective', width = 1000, height = 600>
+<img src='https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure30.png', title = 'IGV', width = 1000, height = 600>
 
 ***
 
