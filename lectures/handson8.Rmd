@@ -18,7 +18,7 @@ The workshop materials are available on [Github](https://github.com/MScBiomedica
 * Use a series of command line tools to execute a RNAseq workflow
 * Becoming familiar with data formats encountered during analysis
 
-<img src='../cheatsheets/ipynb_data/assets/Figure24.png', title = 'RNAseq objective', width = 600, height = 600>
+![objective]('https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure24.png')
 
 ***
 
@@ -780,7 +780,7 @@ Open IGV, and import both the BAM and the index files. In the search window, typ
 
 **Make sure to select hg38 or GRCh38 in the reference genome window**.
 
-<img src='https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure30.png', title = 'IGV', width = 1000, height = 600>
+![igv]('https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure30.png')
 
 ***
 
