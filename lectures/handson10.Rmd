@@ -134,6 +134,7 @@ install.packages('gplots')
 install.packages('survival') 
 install.packages('NMF') 
 install.packages('imager') 
+install.packages('broom')
 ```
 
 ***
