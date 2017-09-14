@@ -12,7 +12,7 @@
 ## 2.	COURSE DESCRIPTION 
 This course will follow on from the Introduction to Bioinformatics and include advanced bioinformatics analysis topics such as: Linux and high performance computing; R programming for bioinformatics; genomic data visualization; and RNA sequencing data analysis. The course will emphasize hands-on tutorials on how to perform analysis of gene expression microarrays, RNA-Seq data and integration of genomics and clinical data in lab sessions designed to reinforce lecture material.  
 
-##3.	COURSE OBJECTIVES
+## 3.	COURSE OBJECTIVES
 By taking this course, students will learn how to perform advanced bioinformatics data analysis of high throughput genetics data using High Performance Computing Infrastructures.
 
 ## 4.	COURSE WORKLOAD
@@ -126,7 +126,7 @@ Recommended:
 ## 11. Weekly Class Schedule
 
 Week	Date	Session Leader/ Guest Lecturer	Topic	In-class activity	Assignment due
-1 	4/1/17	Jorge Andrade			
+1 4/1/17	Jorge Andrade			
 2	4/8/17	Jorge Andrade			
 3	4/15/17	Jorge Andrade			
 4	4/22/17	Jorge Andrade			
