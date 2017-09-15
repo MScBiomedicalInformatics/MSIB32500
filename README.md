@@ -50,7 +50,7 @@ ISBN-13: 978-1439809754, ISBN-10: 1439809755.
 (Available at http://proquestcombo.safaribooksonline.com.proxy.uchicago.edu/book/bioinformatics/9781449367480)
 - Introduction to Parallel Computing by Zbigniew J. Czech, ISBN-13: 978-1107174399, ISBN-10: 1107174392.
 
-** 10.	COURSE SCHEDULE and WEEKLY REQUIRED READINGS
+## 10.	COURSE SCHEDULE and WEEKLY REQUIRED READINGS
 
 **Week 1: – Introduction to Linux for Bioinformatics** 
 
@@ -85,7 +85,7 @@ Recommended:
 **Week 5 – Data Visualization in  R** 
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD 
-Objectives: Develop a working knowledge on how to use R and Bioconductor for basic data visualization 
+Objectives: To master common data visualization techniques used to present  and display analysis results using basic R visualization packages.
 Required Reading:  
 
 **Week 6 - Analysis of Microarrays Using R and Bioconductor** 
@@ -126,16 +126,17 @@ Recommended:
 ## 11. Weekly Class Schedule
 
 Week	Date	Session Leader/ Guest Lecturer	Topic	In-class activity	Assignment due
-1 4/1/17	Jorge Andrade			
-2	4/8/17	Jorge Andrade			
-3	4/15/17	Jorge Andrade			
-4	4/22/17	Jorge Andrade			
-5	4/29/17	Jorge Andrade			
-6	5/6/17	Jorge Andrade			
-7	5/13/17	Jorge Andrade			
-8	5/20/17	Riyue Bao			
-9	5/27/17	Riyue Bao			
-10	6/3/17	Riyue Bao			
+1.  9/30/17	Jorge Andrade
+2.  10/7/17	Jorge Andrade
+3.  10/14/17	Jorge Andrade
+4.  10/21/17	Jorge Andrade
+5.  10/28/17	Jorge Andrade
+6.  11/4/17	Jorge Andrade
+7.  11/11/17	Jorge Andrade
+8.  11/18/17	Riyue Bao
+9.  11/25/17	Riyue Bao
+10. 12/2/17	Riyue Bao
+
 
 ## 12.	COURSE EVALUATION
 
