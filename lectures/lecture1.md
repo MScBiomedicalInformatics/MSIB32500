@@ -180,7 +180,7 @@ The *scp* (secure copy command) allows you to copy/move files between compters o
 ```bash
 scp example1.txt username@gardner.cri.uchicago.edu:.
 ```
-We will now use the scp command to transfer a file from your local computer to your **home** directory on CRI's ![GARDNER](https://en.wikipedia.org/wiki/Martin_Gardner)infrastructure. 
+We will now use the scp command to transfer a file from your local computer to your **home** directory on CRI's [GARDNER](https://en.wikipedia.org/wiki/Martin_Gardner) infrastructure. 
 
 First, download the file available at the following link, to your local computer:
 
