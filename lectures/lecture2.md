@@ -163,6 +163,44 @@ do
 done < greetings.txt
 ```
 
+**if statements** 
+
+The syntax for if...then...else... is:
+
+```
+if [ ... ]
+then
+  # if-code
+else
+  # else-code
+fi
+```
+Note that **fi** is **if** backwards. This concept was already used in the previous example with **case** and **esac**
+
+
+Let's try to create a script to evaluate if a number is a prime. As you know, prime numbers are numbers that are bigger than 1 and **cannot** be divided evenly by any other number except 1 and itself
+
+**isprime.sh**
+```bash
+#!/bin/bash
+while [ "$num" != "bye" ]
+do
+  echo -n "Enter a number, type 'bye' to quit "
+  read num
+  i=2
+  while [ $i -lt $num ]
+  do
+   if [ `expr $num % $i` -eq 0 ]
+    then
+      echo "$num is not a prime number"
+      echo "Since it is divisible by $i"
+   fi
+  i=`expr $i + 1`
+  done
+  echo "$num is a prime number "
+done
+```
+
 
 
 
