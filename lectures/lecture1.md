@@ -8,19 +8,19 @@ Saturdays 9/30/17; 9:00AM - 12:00PM
 
 ## Learning Objectives
 
-- This training will teach you all you need to know to start using Linux, be it on the CRI’s High Performance Infrastructure (HPC), or on your own computer (even if you are already running Windows or Mac OS).
+- This training will teach you all you need to know to start using Linux, be it on the CRI’s High-Performance Infrastructure (HPC), or on your own computer (even if you are already running Windows or Mac OS).
 - After this training you will: 
   - Feel comfortable using Linux
   - Know how software works on Linux  and how to use it
   - Use bash to execute commands in Linux and know your way around the file system
   - Have an overview of Linux tools that are extremely useful for bioinformatics
 
-## Log on to CRI's High Performance Computing (HPC) system
+## Log on to CRI's High-Performance Computing (HPC) system
 
 :pushpin:**Microsoft Windows user** you will need to install a tool for remote computing: [MobaXterm](http://mobaxterm.mobatek.net) and/or
-[PuTTY](http://www.putty.org). PuTTY user go to: http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html locate the apropiate binary file (executable putty.exe file) for your hardware (32bits or 64 bits laptop). Place this file on your destop (or other folder that you can access easyly). You will need to 'double-click' this file each time you need to access it.
+[PuTTY](http://www.putty.org). PuTTY user go to http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html locate the appropriate binary file (executable putty.exe file) for your hardware (32bits or 64 bits laptop). Place this file on your desktop (or another folder that you can access easily). You will need to 'double-click' this file each time you need to access it.
 
-Open a PuTTY session, on 'Host Name (or IP address)' type: **tarbell.cri.uchicago.edu**,  select SSH as the Connection Type, verify the port number in the'Port' Box is **22**. Press the 'Open' button, then type in the provided **username and password** when prompted. Type **yes** if you are prompted to accept a key before entering username.
+Open a PuTTY session, on 'Host Name (or IP address)' type: **gardner.cri.uchicago.edu**,  select SSH as the Connection Type, verify the port number in the'Port' Box is **22**. Press the 'Open' button, then type in the provided **username and password** when prompted. Type **yes** if you are prompted to accept a key before entering a username.
 
 **Login**
 
@@ -29,7 +29,7 @@ For MacOS or Unix/Linux users:
 2. Connect to the login node of TARBELL cluster:
 
 ```bash
-ssh username@tarbell.cri.uchicago.edu
+ssh t.cri.biowksp01@gardner.cri.uchicago.edu
 ```
 Enter your **_password_** when prompted. Type yes if you are prompted to accept a key.
 
@@ -55,7 +55,7 @@ a. List files in your home directory
 ls            ### List the files in your current directory
 ls -a         ### List the files in your current directory; do not ignore entries starting with .
 ```
-b. Change current directory to the root of the file system and explore the directory structure
+b. Change current directory to the root directory of the file system and explore the directory structure
 ```bash
 cd /          ### / represents the root of the file system
 ls -l         ### List files in long format
@@ -148,6 +148,24 @@ ls -l
 gunzip SRR001655.fastq.gz      ### Decompress a file
 ls -l
 ```
+h. Compress files protected by a password
+
+```bash
+zip -er SRR.zip SRR001655.fastq 
+```
+This will prompt you for a password. 
+-e enables encryption for your zip file. This is what makes it ask for the password.
+-r makes the command recursive, meaning that all the files inside a folder will be added to the zip file.
+
+i. Unzip a file
+
+```bash
+unzip SRR.zip 
+```
+
+### File structure challange
+
+1. Create the following file structure
 
 ## File transfer between computers
 
