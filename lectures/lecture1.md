@@ -186,7 +186,7 @@ First, download the file available at the following link, to your local computer
 
 https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/data/GSE31736_RAW.tar
 
-:red_circle: Using your computer's command line (**open a new terminal**), navigate (use the cd command) to the directory where file 'GSE31736_RAW.tar' is located.
+:red_circle: Using your computer's command line (**open a new terminal**), navigate to the directory where file 'GSE31736_RAW.tar' is located (use the **cd** command).
 
 Now use the **scp** command with your username and password, to securely copy the file. Your command should look like:
 
@@ -196,7 +196,8 @@ scp ./GSE31736_RAW.tar t.cri.biowksp01@gardner.cri.uchicago.edu:~/
 
 :bulb: The [hypexr.org](http://www.hypexr.org/linux_scp_help.php) website has a list of examples on how to use secure copy. 
 
-b. You can use *wget* to get a file from the internet directly to your working directory in Linux
+b. You can use *wget* command to get a file from the internet directly to your working directory in Linux
+
 ```bash
 cd ~
 wget http://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff
@@ -209,7 +210,7 @@ a. Use the symbol '>' to redirect the output of a command to a file
 cd ~
 nano text1.txt                       ### Create a new file and write some text on it
  
-cat text1.txt                        ### Print file1.txt to screen
+cat text1.txt                        ### Print file1.txt to the screen
  
 cat text1.txt > text2.txt            ### Print file1.txt to file2.txt
  
@@ -219,12 +220,12 @@ nano text2.txt                       ### Use nano to view file2.txt
 b. Use the symbol '>>' to redirect the output of a command to a file using 'append'
 
 ```bash
-cat file1.txt >> file2.txt           ### Append file1.txt to file2.txt
-nano file2.txt                       ### View file2.txt
+cat text1.txt >> text2.txt           ### Append text1.txt to text2.txt
+nano text2.txt                       ### View text2.txt
 ```
 c. Use the symbol '<' to redirect the input
 ```bash
-cat < file1.txt                      ### Print file1.txt to screen
+cat < text1.txt                      ### Print file1.txt to screen
 ```
 d. Use the symbol '|' to pipe the output of one command as the input of another 
 
@@ -245,13 +246,14 @@ head -20 SRR001655.fastq             ### Show the first 20 line of the file
 tail -20 SRR001655.fastq             ### Show the last 20 lines of the file
 
 ```
-b. Pattern Search with 'grep'. The grep command searches specified files or other input(stdin) for patterns matching a given expression(s).
+b. Pattern Search with 'grep'. The grep command searches specified files or other input (stdin) for patterns matching a given expression(s).
 
 ```bash
 cp /group/mscbmi/lecture1/list1.txt ~/
 cp /group/mscbmi/lecture1/list2.txt ~/
 cd ~
 ls -l
+
 $ cat list1.txt                      ### See the contents of file list1.txt
 apples
 bananas
@@ -293,7 +295,9 @@ wild rice
 black buttons
 kidney buttons
 dry apples
- 
+
+$ cat list2.txt  ### why there is no changes in list2.txt?
+
 $ cat list2.txt | tr /a-z/ /A-Z/              ### Change lower case to upper case (tr: translate)
 thegeekstuff
 THEGEEKSTUFF
@@ -303,7 +307,8 @@ BLACK BEANS
 KIDNEY BEANS
 DRY APPLES
  
- 
+$ cat list2.txt 
+
 $ echo 'attgctcgat' | tr /atgc/ /tacg/ | rev  ### Find a complement DNA sequence and then reverse it
 atcgagcaat
 ```
@@ -346,6 +351,8 @@ CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            
   15   rs10401369   19268718    C      232      890    T      0.03232       0.2524       0.1157
   19   rs10401969   19268718    C      222      890    T      0.03462       0.8524       0.9857
  
+$ sort -k8n table.txt  > table_sorted2.txt        ### sort by CHISQ value 
+ 
 $ sort -k2 table.txt                               ### sort the table by the second column
  
   15   rs10401369   19268718    C      232      890    T      0.03232       0.2524       0.1157
@@ -356,7 +363,7 @@ $ sort -k2 table.txt                               ### sort the table by the sec
   13   rs11589552 2014196749    C      221     1184    T      0.01878       0.8796       0.1202
  CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            P           OR
  
-#### Note that the header is now at the end of the table, we can fix it with 'awk':
+#### Note that if the header is now at the end of the table, we can fix it with 'awk':
 
 $ awk 'NR==1;NR>1 {print $0 | "sort -k2"}' table.txt | column -t
 #### Print the first row *NR==1*, then perform the sorting starting
