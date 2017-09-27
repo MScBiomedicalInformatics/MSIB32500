@@ -1,5 +1,5 @@
 
-# Introduction to Parallel and distributed computing
+# Introduction to Shell scripting; Using Linux in practical Bioinformatics Problems; and Introduction to Parallel and distributed computing
 
 **Center for Research Informatics, University of Chicago**
 
@@ -10,10 +10,168 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 
 ## Learning Objectives
 
+- Learn the basics of developing useful shell scripts.
+- Learn how to use important Linux command to solve commun tasks in bioinformatics.
 - Learn the basics of parallel and distributed computing environments.
 - Get familiar with basic models for parallel computation, and design of parallel and distributed algorithms. 
 
-## 1. Why Parallel Computing
+
+## 1. Introduction to Shell scripting
+
+*Why shell scripting?* if you need to repeat a process 1000 times, you could either retype the commands 1000 times or you can create a small 'script' (set of instructions) that tells the system to repeat it 1000 times.
+
+Let's create a simple shell script, **on your comand line** open a text editor ($ nano hello.sh), type the following text on the editor:
+
+```text
+#!/bin/bash
+echo "Hello World!."
+echo "I am going to generate 10 files: file1.txt, file2.txt, ..., file10.txt"
+for i in {1..10}
+do echo "this is file $i" > file$i.txt
+done
+echo "Done"
+```
+Now we need to make the script excutable 
+
+```bash
+chmod u+x hello.sh         ### Make your shell script executable
+ 
+./hello.sh                 ### Execute your first shell script
+ls file*                   ### List the files you just created 
+```
+
+## 2. Using Linux command line to solve commun tasks in Bioinformatics
+
+**a. Processing FASTQ files**
+
+Next Generation Sequencing platfoms generate sequence data in [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format)
+FASTQ format has 4 lines per read, e.g.:
+```text
+@SRR001665.1 071112_SLXA-EAS1_s_4:1:1:672:654/1
+GCTACGGAATAAAACCAGGAACAACAGACCCAGCAC
++
+IIIIIIIIIIIIIIIIIIIIIIIIEII9IIIEIIII
+```
+Where:
+
+```
+line 1: @SRR001665.1...- a unique identifier for the sequence read
+line 2: GCTACGGAA.... - the sequence read
+line 3: + - a separator between the read and the quality values (this sometimes replicates the sequence ID)
+line 4: IIIIIIIIIIIIIIIIIII.... - the quality values. 
+```
+
+Exploring a fastq file using 'less', use <space> or f to go to the Next Page; b to the Previous Page; q to Exit;
+
+```bash
+cd ~
+less SRR001655.fastq
+```
+1. How many reads are there in the file SRR001655.fastq? (Hint: use cat, grep and wc) 
+2. Display the first 25 reads in file SRR001655.fastq (Hint: use head) 
+3. Create the file 'short_list.txt' with a copy of the sequences in file SRR001655.fastq that contains GAGAGAGC (Hint: use grep) 
+4. Write the last 10000 reads to a new file called bottom_10000.fastq (Hint: use tail)
+
+```bash
+cat SRR001655.fastq | grep '@SRR'| wc -l
+```
+```bash
+head -n100 SRR001655.fastq
+```
+```bash
+grep 'GAGAGAGC' SRR001655.fastq > short_list.txt
+```
+```bash
+tail -40000 SRR001655.fastq > bottom_10000.fastq
+```
+**b. Using the 'paste' command to format your data**
+
+Showing fastq formated data as a table (i.e. in columns) can be very useful to explore the data, the 'paste' command writes lines in a file **as columns separated by a the tab character**. The command take character '-' as an option to represent the standard input, e.g.: the option '- - - -', will be trasalated as 'read four lines', and write them out as four columns:
+
+```bash
+cat bottom_10000.fastq | paste - - - - | head -10
+```
+```bash
+cat bottom_10000.fastq | paste - - - - | head -1000 > top_1000_tab.txt 
+cat top_1000_tab.txt 
+```
+**c. Using 'awk' to work with data in columns**
+
+The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in tabular format (like the result files on the previous excersice). The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
+
+What is it that awk does?
+
+awk is a utility/language designed for data extraction awk is often used with 'sed' to perform useful and practical text manipulation tasks in bioinformatics. One of the most simple and popular uses of 'awk' is selecting a column from a text file, or other command's output. 
+
+The general syntax of awk is:
+
+```
+awk '/search pattern/{Actions}' filename
+```
+
+'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed
+
+```bash
+awk '/N/{print}' top_1000_tab.txt
+```
+This will prints out all lines in the file that contain an N (i.e. when you want to know if your sequence failed!!)
+
+Now explore the result of the following command:
+
+```bash
+awk '/N/{print $1,"\t",$2,"\t",$3,"\t",$4}' top_1000_tab.txt
+```
+Note the effect of $1, $2, $3 and $4 (change the order in the command). The '\t' is a 'scape' sequence, used to represent a tab delimited. Other scape sequences are: '\n' = new line; '\r' = carriage return; '\\' = a literal backslash.
+
+Now explore the result of the following command:
+
+```bash
+awk $3 '/N/{print $1,"\t",$3}' top_1000_tab.txt
+```
+For each line, search for 'N' in the 3th. column, if N is found, print the first and thirth column separed by a tab. Now try:
+
+```bash
+awk $2 '/389/{print $1,"\t",$2}' top_1000_tab.txt
+```
+Yes, you guessed right, search for 389 in the second column and print columns 1 and 2.
+
+Here is an example on how to count the number of fail reads in our sequence file:
+```bash
+awk '$3 ~ /N/ {print $1}' top_1000_tab.txt | wc -l
+```
+The follwong command will convert FASTQ to FASTA file format:
+```bash
+cat SRR001655.fastq | paste - - - - | awk '{print ">"$1,$2,"\n"$3}'
+```
+Now try saving the result of the conversion on a new file.
+
+**d. Text manipulation with sed**
+ 
+sed stands for **s**tream **ed**itor is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
+
+The general syntax for sed is:
+
+```
+sed /pattern/action
+```
+Where 'pattern' is a regular expression, and action is one of the following: 'p'= Prints the line; 'd'= Deletes the line; and
+'s/pattern1/pattern2/' = Substitutes the first occurrence of pattern1 with pattern2. If 'pattern' is omitted, action is performed for every line.
+
+Explore the result of the following comand:
+
+```bash
+sed 's/N/0/g' top_1000_tab.txt 
+```
+Check that the orininal top_1000_tab.txt  file was not altered.
+
+To logout of TARBELL, type:
+
+```bash
+exit
+```
+
+
+## 3. Introduction to Parallel Computing
 
 Moore's law refers to an observation made by Intel co-founder Gordon Moore in 1965. He noticed that the number of transistors per square inch on integrated circuits had doubled every year since their invention. Moore's law predicts that this trend will continue into the foreseeable future ***the number of transistors per square inch has since doubled approximately every 18 months.***
 The figure bellow shows the number of trasistors on integrated circuits chips from 1971 to 2016: 
@@ -120,7 +278,7 @@ Cloud Computing: on-demand access to a shared pool of configurable computing res
 - Charge model: I/O fees 
 
 
-## 3. Programming strategies for Parallel Computation: 
+## Programming strategies for Parallel Computation: 
 
 - Split the data
 
@@ -143,7 +301,7 @@ There are tasks that are both computational and data intensive, they usually nee
 
 See Robert Bukowski's Trinity workshop and hands-on exercises at: http://cbsu.tc.cornell.edu/lab/doc/Trinity_workshop_Part1.pdf 
 
-## 4. Programing languages for Distributed Computing:
+## Programing languages for Distributed Computing:
 
 [BigDataScript](https://pcingola.github.io/BigDataScript/)
 
@@ -163,7 +321,6 @@ In order to use the HPC compute nodes, you must first log in to one of the head 
 
 
 
-
-## Week 2 Challange: :white_check_mark:
+## Week 2 Suguested reading: :white_check_mark:
 Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html and submit via e-mail a one page critical commentary.
 
