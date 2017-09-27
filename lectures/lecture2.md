@@ -30,7 +30,7 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 6. To excute the script 
 
 
-Let's create a simple shell script, **on your comand line** open a text editor ($ nano hello.sh), type the following text on the editor:
+Let's create a simple shell script, **on your comand line** open a **text editor** ($ nano hello.sh). On the editor type the following:
 
 ```text
 #!/bin/bash
@@ -41,14 +41,22 @@ do echo "this is file $i" > file$i.txt
 done
 echo "Done"
 ```
+
 Now we need to make the script excutable 
 
 ```bash
 chmod u+x hello.sh         ### Make your shell script executable
- 
-./hello.sh                 ### Execute your first shell script
+```
+
+We can now execute our first shell script
+
+```bash
+./hello.sh                
 ls file*                   ### List the files you just created 
 ```
+
+Now, create a shell script to remove (delete) the 10 files you just created.
+
 
 ## 2. Using Linux command line to solve commun tasks in Bioinformatics
 
