@@ -194,7 +194,7 @@ Now use the **scp** command with your username and password, to securely copy th
 scp ./GSE31736_RAW.tar t.cri.biowksp01@gardner.cri.uchicago.edu:~/
 ```
 
-:bulb: The [hypexr.org](http://www.hypexr.org/linux_scp_help.php) website has a list of examples on how to use secure copy (also some [computer comics and cartoons](http://www.hypexr.org/comics.php))
+:bulb: The [hypexr.org](http://www.hypexr.org/linux_scp_help.php) website has a list of examples on how to use secure copy. 
 
 b. You can use *wget* to get a file from the internet directly to your working directory in Linux
 ```bash
@@ -614,13 +614,12 @@ exit
 ```
 :point_right: Send your homework via e-mail, your homework should have the answers and commands used for each item. 
     
-## Week 1 Challange: :white_check_mark:
-
+## Week 1 Challange: :white_check_mark: 
 
 - Follow the tutorial: [CloudEnviromentSetup.pdf] (https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/CloudEnviromentSetup.pdf) to learn how to confirure your owm Elastic Cloud Computing instance (EC2) using  Amazon Web Services (AWS). 
 - Send me an e-mal with the IP address of your cloud instance.
 
-
+Some [computer comics and cartoons](http://www.hypexr.org/comics.php))
 
     
 
