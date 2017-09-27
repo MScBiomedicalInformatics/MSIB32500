@@ -55,15 +55,17 @@ ISBN-13: 978-1439809754, ISBN-10: 1439809755.
 **Week 1: – Introduction to Linux for Bioinformatics** 
 
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
-Objectives:  Learn how the Linux file system is organized and how to navigate it; Learn to perform basic operations with directories and files in Linux; Learn how to transfer files between computers; Learn useful text searching, text extraction and text manipulation techniques, and its application in bioinformatics; Understand how to use Linux commands for data management and text manipulation in bioinformatics.
+Objectives:  Learn how the Linux file system is organized and how to navigate it; Learn to perform basic operations with directories and files in Linux; Learn how to transfer files between computers; Learn useful text searching, text extraction and text manipulation techniques; Learn how to set permissions in a Linux enviroment.
 
 Required Reading: Developing Bioinformatics Computer Skills. Chapter 3, 4 and 5. 
 Recommended: Bioinformatics Data Skills, Chapter 3, 4.
 
-**Week 2 – Introduction to Parallel and distributed computing**
+**Week 2 – Introduction to Shell scripting; Using Linux in practical Bioinformatics Problems; and Introduction to Parallel and distributed computing**
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD
-Objectives: Learn the basics of parallel and distributed computing environments, basic models for parallel computation, and design of parallel and distributed algorithms. 
+Objectives: Learn how to develop linux Shell scripts.
+Learn how to use Linux commands to solve commun bioinformatics taks.
+Learn the basics of parallel and distributed computing environments, basic models for parallel computation, and design of parallel and distributed algorithms. 
 Required Reading:  
 Recommended: Introduction to Parallel Computing, chapters 1, 3 and 4; Applied Parallel Computing Springer series Lecture Notes in Computer Science. (LNCS). Volume 4699. pp 791-798 2007
 
