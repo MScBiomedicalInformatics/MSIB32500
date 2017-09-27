@@ -543,7 +543,7 @@ ls -l
 Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html and submit via e-mail a one page critical commentary.
 
 
-Some [computer comics and cartoons](http://www.hypexr.org/comics.php))
+Some [computer comics and cartoons](http://www.hypexr.org/comics.php)
 
     
 
