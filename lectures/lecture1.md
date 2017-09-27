@@ -167,6 +167,8 @@ unzip SRR.zip
 
 1. Create the following file structure
 
+![filestructure](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/filestructure.jpg)
+
 ## File transfer between computers
 
 a. Windows user download and install [WinSCP](http://winscp.net/eng/index.php). MacOS users open the Terminal
