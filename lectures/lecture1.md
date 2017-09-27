@@ -169,6 +169,9 @@ unzip SRR.zip
 
 ![filestructure](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/filestructure.jpg)
 
+2. Copy the file *SRR001655.fastq* from */group/mscbmi/lecture1/* to the *folder4*
+3. Move a password encrypted copy of SRR001655.fastq from *folder4* to *folder1* 
+
 ## File transfer between computers
 
 a. Windows user download and install [WinSCP](http://winscp.net/eng/index.php). MacOS users open the Terminal
