@@ -163,7 +163,7 @@ i. Unzip a file
 unzip SRR.zip 
 ```
 
-:mortar_board: Your turn: File structure challange
+## :mortar_board:Your turn: File structure challange
 
 1. Create the following file structure
 
