@@ -173,6 +173,8 @@ unzip SRR.zip
 3. Move a password protected encrypted copy of SRR001655.fastq from *folder4* to *folder1* 
 4. Remove recursively the contents of the folder *ex1*
 
+## :clap: Well done!
+
 
 ## File transfer between computers
 
