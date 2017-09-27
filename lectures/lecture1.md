@@ -457,7 +457,81 @@ Each file or directory has three basic permission types:
 
 You can view the permissions by checking the file or directory permissions with the **ls -l** command.
 
-The permission in the command line is displayed as: ** _rwxrwxrwx 1 owner:group **
+The permission in the command line is displayed as: **_rwxrwxrwx 1 owner:group**
+
+- The first character, marked with an *underscore* is the special permission flag that can vary. For a directory, that space will be marked with a *d*.
+- The following set of three characters (rwx) is for the **owner** permissions
+- The second set of three characters (rwx) is for the **Group** permissions
+- The third set of three characters (rwx) is for the **All Users** permissions.
+
+**Explicitly Defining Permissions**
+
+For explicit definition of permissions, linux uses the following nomenclature:
+
+u - User (Owner)
+g - Group
+o - Others
+a - All users
+
+**+** (plus) and **-** (minus) are used to tell the system whether to **add** or **remove** the specific permissions.
+
+The Permission Types that are used are:
+
+r - Read
+w - Write
+x - Execute
+
+To make this modification you would use the command: **chmod** Let's see some examples:
+
+Enable Read, Write and Execute for all users on file list1.txt
+
+```bash
+ls -l
+chmod a+rwx list1.txt
+ls -l
+```
+
+Remove Read and Write permission for Others on file list1.txt
+
+```bash
+ls -l
+chmod o-rw list1.txt
+ls -l
+```
+
+Enable Execute permission for Group on list1.txt  
+
+```bash
+chmod g+x list1.txt
+```
+
+**Using Binary References to Set permissions**
+
+The setting is done by entering three integers numbers. The first number represents the **Owner** permission; the second represents the **Group** permissions; and the last number represents the permissions for **all other** users. The numbers are a binary representation of the **rwx** string
+
+r = 4
+w = 2
+x = 1
+
+You add the numbers to get the integer/number representing the permissions you wish to set. 
+
+Let's see some examples:
+
+```bash
+ls -l
+chmod 740 list2.txt
+ls -l
+```
+This command enable **rwx** (7) to the user/owner, only **r** (4) to the group and no right to **rwx** for all other user.
+
+Another example:
+
+```bash
+chmod 777 list2.txt
+ls -l
+```
+
+
 
 :bulb: Download and Review the [LinuxReference.pdf](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/LinuxReference.pdf) file, a compilation of basic and most useful Linux comand for bioinformatics 
 
