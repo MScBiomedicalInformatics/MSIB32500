@@ -319,8 +319,34 @@ To run a job on CRI's HPC cluster, you will need to set up a Portable Batch Syst
 **Submitting a Job**
 In order to use the HPC compute nodes, you must first log in to one of the head nodes, and submit a PBS job. The **qsub** command is used to submit a job to the PBS queue and to request additional resources. The **qstat** command is used to check on the status of a job already in the PBS queue. To simplify submitting a job, you can create a PBS script and use the qsub and qstat commands to interact with the PBS queue.
 
+## Week 2 Homework: :house:
+
+1. Download the Generic Feature Format (GFF) version of the Saccharomyces Cerevisiae yeast genome to your home directory. 
+
+    The genome is available at: http://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff 
+
+    A description of the GFF format is available [here](http://www.sequenceontology.org/gff3.shtml)
+
+2. Using the Linux command line, asnwer the following questions:
+```
+    a. How many genes are there in the data?
+    
+    b. How many genes on chromosome 2?
+    
+    c. How many mRNAs are there on chromosome 10?
+    
+    d. Describe what the following command do: sed '/#/d' saccharomyces_cerevisiae.gff > features.gff
+    
+    e. How many features (lines) are there in the file features.gff
+    
+    f. Describe what the following command do: cut -f 1 features.gff | sort | uniq -c | sort -k1n
+    
+    g. Which chromosome is the longest and which one is the shortest?
+    
+    h. Describe what the following command do: sed 's/chrI/chr1/g' features.gff > new_features.gff
+```
+:point_right: Send your homework via e-mail, your homework should have the answers and commands used for each item. 
+    
 
 
-## Week 2 Suguested reading: :white_check_mark:
-Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html and submit via e-mail a one page critical commentary.
 
