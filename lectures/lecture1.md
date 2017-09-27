@@ -436,6 +436,29 @@ $ wc -w list2.txt                        ###Count the number of words in list2.t
 $ wc list2.txt                           ###There are 5 lines, 10 words and 58 bytes in list2.txt
  5 10 58 list2.txt
 ```
+
+## Linux File Permissions
+
+**Permission Groups**
+
+Each file and directory has three user based permission groups:
+
+**owner** - The Owner permissions apply only the owner of the file or directory, they will not impact the actions of other users.
+**group** - The Group permissions apply only to the group that has been assigned to the file or directory, they will not effect the actions of other users.
+**all users** - The All Users permissions apply to all other users on the system, this is the permission group that you want to watch the most.
+
+**Permission Types**
+
+Each file or directory has three basic permission types:
+
+**read** - The Read permission refers to a user's capability to read the contents of the file.
+**write** - The Write permissions refer to a user's capability to write or modify a file or directory.
+**execute** - The Execute permission affects a user's capability to execute a file or view the contents of a directory.
+
+You can view the permissions by checking the file or directory permissions with the **ls -l** command.
+
+The permission in the command line is displayed as: ** _rwxrwxrwx 1 owner:group **
+
 :bulb: Download and Review the [LinuxReference.pdf](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/LinuxReference.pdf) file, a compilation of basic and most useful Linux comand for bioinformatics 
 
 ## Shell scripting
