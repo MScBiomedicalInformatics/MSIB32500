@@ -170,7 +170,7 @@ unzip SRR.zip
 ![filestructure](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/files.jpg)
 
 2. Copy the file *SRR001655.fastq* from */group/mscbmi/lecture1/* to the *folder4*
-3. Move a password encrypted copy of SRR001655.fastq from *folder4* to *folder1* 
+3. Move a password protected encrypted copy of SRR001655.fastq from *folder4* to *folder1* 
 4. Remove recursively the contents of the folder *ex1*
 
 ## File transfer between computers
@@ -178,9 +178,9 @@ unzip SRR.zip
 a. Windows user download and install [WinSCP](http://winscp.net/eng/index.php). MacOS users open the Terminal
 The *scp* (secure copy command) allows you to copy/move files between compters on the command line
 ```bash
-scp example1.txt username@tarbell.cri.uchicago.edu:.
+scp example1.txt username@gardner.cri.uchicago.edu:.
 ```
-We will now use the scp command to transfer a file from your local compuer to your **home** directory on TARBELL
+We will now use the scp command to transfer a file from your local computer to your **home** directory on CRI's ![GARDNER](https://en.wikipedia.org/wiki/Martin_Gardner)infrastructure. 
 
 First, download the file available at the following link, to your local computer:
 
