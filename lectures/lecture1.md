@@ -561,10 +561,14 @@ ls -l
 ```
 :point_right: Send your homework via e-mail, your homework should have the answers and commands used for each item. 
     
-## Week 1 Challange: :white_check_mark: 
+## Week 1 Challange: :white_check_mark: (Not graded)
 
 - Follow the tutorial: [CloudEnviromentSetup.pdf] (https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/CloudEnviromentSetup.pdf) to learn how to confirure your owm Elastic Cloud Computing instance (EC2) using  Amazon Web Services (AWS). 
 - Send me an e-mal with the IP address of your cloud instance.
+
+## Week 1 Suguested reading: :white_check_mark:
+Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html and submit via e-mail a one page critical commentary.
+
 
 Some [computer comics and cartoons](http://www.hypexr.org/comics.php))
 
