@@ -11,7 +11,7 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 ## Learning Objectives
 
 - Learn the basics of developing useful shell scripts.
-- Learn how to use important Linux command to solve commun tasks in bioinformatics.
+- Learn how to use important Linux command to solve commun/routine tasks in bioinformatics.
 - Learn the basics of parallel and distributed computing environments.
 - Get familiar with basic models for parallel computation, and design of parallel and distributed algorithms. 
 
