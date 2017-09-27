@@ -186,15 +186,15 @@ First, download the file available at the following link, to your local computer
 
 https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/data/GSE31736_RAW.tar
 
-Using your computer command line (**open a new terminal**), navigate (use the cd command) to the directory where file 'GSE31736_RAW.tar' is located.
+:red_circle: Using your computer's command line (**open a new terminal**), navigate (use the cd command) to the directory where file 'GSE31736_RAW.tar' is located.
 
-Now use the **scp** command with your username and password, your command should look like:
+Now use the **scp** command with your username and password, to securely copy the file. Your command should look like:
 
 ```bash
-scp ./GSE31736_RAW.tar t.cri.biowksp40@tarbell.cri.uchicago.edu:~/
+scp ./GSE31736_RAW.tar t.cri.biowksp01@gardner.cri.uchicago.edu:~/
 ```
 
-:bulb: The [hypexr.org](http://www.hypexr.org/linux_scp_help.php) website has nice list of examples on how to use secure copy (also some [computer comics and cartoons](http://www.hypexr.org/comics.php))
+:bulb: The [hypexr.org](http://www.hypexr.org/linux_scp_help.php) website has a list of examples on how to use secure copy (also some [computer comics and cartoons](http://www.hypexr.org/comics.php))
 
 b. You can use *wget* to get a file from the internet directly to your working directory in Linux
 ```bash
