@@ -163,7 +163,7 @@ i. Unzip a file
 unzip SRR.zip 
 ```
 
-### File structure challange
+:mortar_board: Your turn: File structure challange
 
 1. Create the following file structure
 
@@ -172,6 +172,7 @@ unzip SRR.zip
 2. Copy the file *SRR001655.fastq* from */group/mscbmi/lecture1/* to the *folder4*
 3. Move a password protected encrypted copy of SRR001655.fastq from *folder4* to *folder1* 
 4. Remove recursively the contents of the folder *ex1*
+
 
 ## File transfer between computers
 
