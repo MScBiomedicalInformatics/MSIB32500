@@ -167,10 +167,11 @@ unzip SRR.zip
 
 1. Create the following file structure
 
-![filestructure](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/filestructure.jpg)
+![filestructure](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/files.jpg)
 
 2. Copy the file *SRR001655.fastq* from */group/mscbmi/lecture1/* to the *folder4*
 3. Move a password encrypted copy of SRR001655.fastq from *folder4* to *folder1* 
+4. Remove recursively the contents of the folder *ex1*
 
 ## File transfer between computers
 
