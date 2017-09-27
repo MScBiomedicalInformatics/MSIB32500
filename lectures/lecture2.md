@@ -82,7 +82,6 @@ Now, execute your script.
 **for** loops iterate through a set of values until the list is exhausted. We used a for loop on the previous example, let's see other examples:
 
 **for1.sh**
-
 ```bash
 #!/bin/bash
 for i in 1 2 3 4 5
@@ -94,7 +93,6 @@ done
 Let's try something a bit more useful:
 
 **for2.sh**
-
 ```bash
 #!/bin/bash
 for i in {1..100}
@@ -116,6 +114,56 @@ done
 Explore the files you just created and confirm that you have a copy of SRR001655.fastq on each file
 
 ## :mortar_board: Your turn, create a shell script to remove (delete) the 100 files you just created.
+
+**While Loops**
+
+While loops will execute the instruction(s) *while* the evaluation condition is TRUE
+
+**while1.sh**
+```bash
+#!/bin/bash
+INPUT_STRING=hello
+while [ "$INPUT_STRING" != "bye" ]
+do
+  echo "Type something, type 'bye' to quit"
+  read INPUT_STRING
+  echo "You typed: $INPUT_STRING"
+done
+```
+
+Let's convine while loops with conditinal statements:
+
+First, copy on your home directory the file greetings.txt form /group/mscbmi/lecture1/, this file contains several ways to say hello in different languages.
+
+```bash
+cd ~
+cp /group/mscbmi/lecture1/greetings.txt .
+```
+
+Let's now create a script that will recognize the language for each each line in the file:
+
+**while2.sh**
+```bash
+#!/bin/bash
+while read f
+do
+  case $f in
+  hello)        echo English    ;;
+  bonjour)	    echo French     ;;
+  'guten tag')  echo German     ;;
+  hej)          echo Swedish    ;;
+  holla)        echo Spanish    ;;
+  ciao)         echo Italian    ;;
+  namaste)	    echo Hindi	;;
+  marhaba)	    echo Arabic     ;;
+  'ni hau')     echo Mandarinan ;;
+        *)	    echo Unknown Language: $f
+                ;;
+   esac
+done < greetings.txt
+```
+
+
 
 
 
