@@ -1,5 +1,5 @@
 
-# Introduction to Shell scripting; Using Linux in practical Bioinformatics Problems; and Introduction to Parallel and distributed computing
+# Introduction to Shell scripting; Useful Linux commands to solve common Bioinformatics tasks; and Introduction to Parallel and distributed computing
 
 **Center for Research Informatics, University of Chicago**
 
@@ -18,7 +18,17 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 
 ## 1. Introduction to Shell scripting
 
-*Why shell scripting?* if you need to repeat a process 1000 times, you could either retype the commands 1000 times or you can create a small 'script' (set of instructions) that tells the system to repeat it 1000 times.
+*Why shell scripting?* if you need to repeat a process 1000 times, you could either retype the commands 1000 times. Or you can create a small 'script' (set of instructions) that tells the system to repeat it 1000 times.
+
+**Steps to create a Shell Script**
+
+1. Create a file using a nano editor (or any other editor you like i.e. vi).  Name script file **with extension .sh**
+2. Start the script with #! /bin/bash (or #! /bin/sh depending of your operative system and preference)
+3. Write some code
+4. Save the script file as filename.sh
+5. Set the executable permisson for filename.sh for the target users
+6. To excute the script 
+
 
 Let's create a simple shell script, **on your comand line** open a text editor ($ nano hello.sh), type the following text on the editor:
 
