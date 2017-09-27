@@ -531,8 +531,6 @@ chmod 777 list2.txt
 ls -l
 ```
 
-
-
 :bulb: Download and Review the [LinuxReference.pdf](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/LinuxReference.pdf) file, a compilation of basic and most useful Linux comand for bioinformatics 
 
 ## Shell scripting
