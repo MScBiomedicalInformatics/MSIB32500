@@ -55,7 +55,69 @@ We can now execute our first shell script
 ls file*                   ### List the files you just created 
 ```
 
-Now, create a shell script to remove (delete) the 10 files you just created.
+## :mortar_board: Your turn, create a shell script to remove (delete) the 10 files you just created.
+
+**Shell Variables**
+
+Shell variables store data in the form of characters and numbers, the following creates a shell variable and then prints it:
+
+```text
+variable ="Hello"
+echo $variable
+```
+Let's use the the concept of variables is a small script. Create the following script using a text editor (nano greetings.sh)
+
+```bash
+#!/bin/bash
+echo "what is your name?"
+read name
+echo "How are you, $name?"
+read remark
+echo "I am $remark too!"
+```
+Now, execute your script.
+
+**Shell Loops**
+
+**for** loops iterate through a set of values until the list is exhausted. We used a for loop on the previous example, let's see other examples:
+
+**for1.sh**
+
+```bash
+#!/bin/bash
+for i in 1 2 3 4 5
+do
+  echo "Looping ... number $i"
+done
+```
+
+Let's try something a bit more useful:
+
+**for2.sh**
+
+```bash
+#!/bin/bash
+for i in {1..100}
+do
+  echo "I will create folder # $i"
+  mkdir "folder$i"
+done
+
+echo "Now I will copy the sequence file: SRR001655.fastq on each of the 100 folders"
+cd ~
+
+for i in {1..100}
+do
+  echo "Copying sequence on folder # $i"
+  cp /group/mscbmi/lecture1/SRR001655.fastq "folder$i"
+done
+```
+
+Explore the files you just created and confirm that you have a copy of SRR001655.fastq on each file
+
+## :mortar_board: Your turn, create a shell script to remove (delete) the 100 files you just created.
+
+
 
 
 ## 2. Using Linux command line to solve commun tasks in Bioinformatics
