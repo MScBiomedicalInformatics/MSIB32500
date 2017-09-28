@@ -201,7 +201,12 @@ do
 done
 ```
 
+### Learn more:
 
+- A good reference book: Linux Command Line and Shell Scripting Bible 3rd Edition by Richard Blum and Christine Bresnahan 
+- On-line tutorials:
+  - Shell Scripting Tutorial: https://www.shellscript.sh 
+  - Linux Shell Scripting Tutorial. A Beginner's handbook: http://www.freeos.com/guides/lsst/
 
 
 
