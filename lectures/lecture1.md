@@ -524,12 +524,12 @@ cd ~
 cp /group/mscbmi/lecture2/bwa.txt . 
 cat bwa.txt
 ```
-Replacing the nth occurrence of a pattern in a line
+Replacing the *n*th occurrence of a pattern in a line
 
 ```bash
 sed 's/BWA-/Burrows-Wheeler-Aligner/2' bwa.txt
 ```
-Replacing all the occurrence of the pattern in a line
+Replacing all occurrences of the pattern in a line
 
 ```bash
 sed 'p/BWA-/Burrows-Wheeler-Aligner/g' bwa.txt
