@@ -1,5 +1,5 @@
 
-# Introduction to Shell scripting; Linux power tools for routine Bioinformatics tasks; and Introduction to Parallel and distributed computing
+# Introduction to Shell scripting; Linux commands for routine Bioinformatics tasks; and Introduction to Parallel and distributed computing
 
 **Center for Research Informatics, University of Chicago**
 
@@ -211,7 +211,7 @@ done
 ____________________________________________________________
 
 
-## 2. Linux power tools for routine Bioinformatics tasks
+## 2. Linux commands for routine Bioinformatics tasks
 
 **a. Processing FASTQ files**
 
@@ -268,44 +268,6 @@ cat top_1000_tab.txt
 ```
 **c. Using 'awk' to work with data in columns**
 
-The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in tabular format (like the result files on the previous excersice). The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
-
-What is it that awk does?
-
-awk is a utility/language designed for data extraction awk is often used with 'sed' to perform useful and practical text manipulation tasks in bioinformatics. One of the most simple and popular uses of 'awk' is selecting a column from a text file, or other command's output. 
-
-The general syntax of awk is:
-
-```
-awk '/search pattern/{Actions}' filename
-```
-
-'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed
-
-```bash
-awk '/N/{print}' top_1000_tab.txt
-```
-This will prints out all lines in the file that contain an N (i.e. when you want to know if your sequence failed!!)
-
-Now explore the result of the following command:
-
-```bash
-awk '/N/{print $1,"\t",$2,"\t",$3,"\t",$4}' top_1000_tab.txt
-```
-Note the effect of $1, $2, $3 and $4 (change the order in the command). The '\t' is a 'scape' sequence, used to represent a tab delimited. Other scape sequences are: '\n' = new line; '\r' = carriage return; '\\' = a literal backslash.
-
-Now explore the result of the following command:
-
-```bash
-awk $3 '/N/{print $1,"\t",$3}' top_1000_tab.txt
-```
-For each line, search for 'N' in the 3th. column, if N is found, print the first and thirth column separed by a tab. Now try:
-
-```bash
-awk $2 '/389/{print $1,"\t",$2}' top_1000_tab.txt
-```
-Yes, you guessed right, search for 389 in the second column and print columns 1 and 2.
-
 Here is an example on how to count the number of fail reads in our sequence file:
 ```bash
 awk '$3 ~ /N/ {print $1}' top_1000_tab.txt | wc -l
@@ -317,16 +279,6 @@ cat SRR001655.fastq | paste - - - - | awk '{print ">"$1,$2,"\n"$3}'
 Now try saving the result of the conversion on a new file.
 
 **d. Text manipulation with sed**
- 
-sed stands for **s**tream **ed**itor is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
-
-The general syntax for sed is:
-
-```
-sed /pattern/action
-```
-Where 'pattern' is a regular expression, and action is one of the following: 'p'= Prints the line; 'd'= Deletes the line; and
-'s/pattern1/pattern2/' = Substitutes the first occurrence of pattern1 with pattern2. If 'pattern' is omitted, action is performed for every line.
 
 Explore the result of the following comand:
 
@@ -335,13 +287,13 @@ sed 's/N/0/g' top_1000_tab.txt
 ```
 Check that the orininal top_1000_tab.txt  file was not altered.
 
-To logout of TARBELL, type:
+To logout of gardner, type:
 
 ```bash
 exit
 ```
 
-
+________________________________________________________________
 ## 3. Introduction to Parallel Computing
 
 Moore's law refers to an observation made by Intel co-founder Gordon Moore in 1965. He noticed that the number of transistors per square inch on integrated circuits had doubled every year since their invention. Moore's law predicts that this trend will continue into the foreseeable future ***the number of transistors per square inch has since doubled approximately every 18 months.***
