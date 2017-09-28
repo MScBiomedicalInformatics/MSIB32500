@@ -316,7 +316,7 @@ $ echo 'attgctcgat' | tr /atgc/ /tacg/ | rev  ### Find a complement DNA sequence
 atcgagcaat
 ```
 
-e. Table manipulation: sort, uniq, cut, awk, and paste
+e. Table manipulation: sort, uniq, cut, and paste
 
 ```bash
 cp /group/mscbmi/lecture1/table.txt ~/
@@ -366,17 +366,6 @@ $ sort -k2 table.txt                               ### sort the table by the sec
   13   rs11589552 2014196749    C      221     1184    T      0.01878       0.8796       0.1202
  CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            P           OR
  
-#### Note that if the header is now at the end of the table, we can fix it with 'awk':
-
-$ awk 'NR==1;NR>1 {print $0 | "sort -k2"}' table.txt | column -t
-#### Print the first row *NR==1*, then perform the sorting starting
- CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            P           OR
-  15   rs10401369   19268718    C      232      890    T      0.03232       0.2524       0.1157
-  19   rs10401969   19268718    C      222      890    T      0.03462       0.8524       0.9857
-  11   rs10873487  767334548    G      964     3811    A       0.5525       0.2356       0.2391
-   1   rs10873883   76734548    G      934     3811    A       0.5325       0.4656       0.9691
-   1   rs11589256  214196749    C      271     1084    T      0.01928       0.8896       0.9902
-  13   rs11589552 2014196749    C      221     1184    T      0.01878       0.8796       0.1202
  
 $ cut -f1,2,3,5 table.txt | column -t               ####Extract columns (*f*ields) 1, 2, 3, and 5 from table.txt
 CHR     SNP             BP              C_A
@@ -440,6 +429,60 @@ $ wc list2.txt                           ###There are 5 lines, 10 words and 58 b
  5 10 58 list2.txt
 ```
 
+### Linux power tools awk and sed
+
+**awk** The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in tabular format (like the result files on the previous excersice). The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
+
+What is it that awk does?
+
+awk is a utility/language designed for data extraction awk is often used with 'sed' to perform useful and practical text manipulation tasks in bioinformatics. One of the most simple and popular uses of 'awk' is selecting a column from a text file, or other command's output. 
+
+The general syntax of awk is:
+
+```
+awk '/search pattern/{Actions}' filename
+```
+
+'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed
+
+```bash
+awk '/N/{print}' top_1000_tab.txt
+```
+This will prints out all lines in the file that contain an N (i.e. when you want to know if your sequence failed!!)
+
+Now explore the result of the following command:
+
+```bash
+awk '/N/{print $1,"\t",$2,"\t",$3,"\t",$4}' top_1000_tab.txt
+```
+Note the effect of $1, $2, $3 and $4 (change the order in the command). The '\t' is a 'scape' sequence, used to represent a tab delimited. Other scape sequences are: '\n' = new line; '\r' = carriage return; '\\' = a literal backslash.
+
+Now explore the result of the following command:
+
+```bash
+awk $3 '/N/{print $1,"\t",$3}' top_1000_tab.txt
+```
+For each line, search for 'N' in the 3th. column, if N is found, print the first and thirth column separed by a tab. Now try:
+
+```bash
+awk $2 '/389/{print $1,"\t",$2}' top_1000_tab.txt
+```
+Yes, you guessed right, search for 389 in the second column and print columns 1 and 2.
+
+ 
+**sed** stands for **s**tream **ed**itor is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
+
+The general syntax for sed is:
+
+```
+sed /pattern/action
+```
+Where 'pattern' is a regular expression, and action is one of the following: 'p'= Prints the line; 'd'= Deletes the line; and
+'s/pattern1/pattern2/' = Substitutes the first occurrence of pattern1 with pattern2. If 'pattern' is omitted, action is performed for every line.
+
+
+
+________________________________________
 ## Linux File Permissions
 
 **Permission Groups**
