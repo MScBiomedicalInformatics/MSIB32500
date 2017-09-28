@@ -1,5 +1,5 @@
 
-# Introduction to Shell scripting; Useful Linux commands to solve common Bioinformatics tasks; and Introduction to Parallel and distributed computing
+# Introduction to Shell scripting; Linux power tools for routine Bioinformatics tasks; and Introduction to Parallel and distributed computing
 
 **Center for Research Informatics, University of Chicago**
 
@@ -211,7 +211,7 @@ done
 ____________________________________________________________
 
 
-## 2. Using Linux command line to solve commun tasks in Bioinformatics
+## 2. Linux power tools for routine Bioinformatics tasks
 
 **a. Processing FASTQ files**
 
