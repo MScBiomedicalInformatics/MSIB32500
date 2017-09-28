@@ -429,13 +429,13 @@ $ wc list2.txt                           ###There are 5 lines, 10 words and 58 b
  5 10 58 list2.txt
 ```
 
-### Linux power tools awk and sed
+### Linux power tools: awk and sed
 
-**awk** The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in tabular format (like the result files on the previous excersice). The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
+**awk** The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in *tabular format.* The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
 
 What is it that awk does?
 
-awk is a utility/language designed for data extraction awk is often used with 'sed' to perform useful and practical text manipulation tasks in bioinformatics. One of the most simple and popular uses of 'awk' is selecting a column from a text file, or other command's output. 
+**awk** is a utility/language designed for data extraction awk is often used with 'sed' to perform useful and practical text manipulation tasks in bioinformatics. One of the most simple and popular uses of 'awk' is selecting a column from a text file, or other command's output. 
 
 The general syntax of awk is:
 
