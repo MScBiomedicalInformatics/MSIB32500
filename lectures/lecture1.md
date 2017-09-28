@@ -8,7 +8,7 @@ Saturdays 9/30/17; 9:00AM - 12:00PM
 
 ## Learning Objectives
 
-- This training will teach you all you need to know to start using Linux, be it on the CRI’s High-Performance Infrastructure (HPC), or on your own computer.
+- This training will teach you the basics on how to start using Linux, be it on the CRI’s High-Performance Infrastructure (HPC), or on your own computer.
 - After this training you will: 
   - Feel comfortable using Linux
   - Know how software works on Linux and how to use it
