@@ -431,7 +431,7 @@ $ wc list2.txt                           ###There are 5 lines, 10 words and 58 b
 
 ### Linux power tools: awk and sed
 
-**awk** The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in *tabular format.* The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
+**awk** The linux command 'awk' is very useful and practical for text manipulation in bioinformatics, 'awk' works with data in **tabular format.** The name stands for Aho, Weinberger and Kernighan [Brian Kernighan](https://www.cs.princeton.edu/~bwk/)), the authors of the language, which started in 1977.
 
 What is it that awk does?
 
@@ -445,30 +445,52 @@ awk '/search pattern/{Actions}' filename
 
 'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed
 
+Let's see awk in action. First copy the file *mappingtools.txt* from /group/mscbmi/lecture2.txt This is a tab delimited file containing a list of common mapping tools for NGS data
+
 ```bash
-awk '/N/{print}' top_1000_tab.txt
+cd ~
+cp /group/mscbmi/lecture2/mappingtools.txt . 
 ```
-This will prints out all lines in the file that contain an N (i.e. when you want to know if your sequence failed!!)
+To explore the contents of mappingtools.txt we can use:
+
+```bash
+cat mappingtools.txt | column -t 
+```
+
+We can use awk to select and print one column on the tab delimited file:
+
+```bash
+awk '{print $2}' mappingtools.txt
+```
+
+How to omit the header for the column and get only the names printed?
+
+```bash
+awk 'NR!=1{print $1}' mappingtools.txt
+```
+
+Let's see which mapping tool can be used with Illumina technology:
+
+```bash
+awk '/Illumina/{print$1}' mappingtools.txt
+```
+
+Now, give me the name of the Software and the Notes for all mappers that can use 454 tecnology 
+
+```bash
+awk '/454/{print $1,"\t",$5}' mappingtools.txt
+```
+Note the effect of $1, and $5 (test to change the order in the command). 
+
+The '\t' is a 'scape' sequence, used to represent a tab delimited. Other scape sequences are: '\n' = new line; '\r' = carriage return; '\\' = a literal backslash.
 
 Now explore the result of the following command:
 
 ```bash
-awk '/N/{print $1,"\t",$2,"\t",$3,"\t",$4}' top_1000_tab.txt
+awk $5 '/Fast/{print $1,"\t",$2, "\t",$3}' mappingtools.txt
 ```
-Note the effect of $1, $2, $3 and $4 (change the order in the command). The '\t' is a 'scape' sequence, used to represent a tab delimited. Other scape sequences are: '\n' = new line; '\r' = carriage return; '\\' = a literal backslash.
-
-Now explore the result of the following command:
-
-```bash
-awk $3 '/N/{print $1,"\t",$3}' top_1000_tab.txt
-```
-For each line, search for 'N' in the 3th. column, if N is found, print the first and thirth column separed by a tab. Now try:
-
-```bash
-awk $2 '/389/{print $1,"\t",$2}' top_1000_tab.txt
-```
-Yes, you guessed right, search for 389 in the second column and print columns 1 and 2.
-
+Observe and explain the result.
+ 
  
 **sed** stands for **s**tream **ed**itor is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
 
