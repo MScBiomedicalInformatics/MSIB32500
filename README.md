@@ -40,6 +40,8 @@ MSc BMI is a program that focuses heavily on computer science and hands-on pract
 Reading assignments will be available on the Course Management System (Canvas).  
 
 **Required:** 
+- Linux Command Line and Shell Scripting Bible 3rd Edition by Richard Blum and Christine Bresnahan ISBN: 978-1-118-98384-3 
+
 - Developing Bioinformatics Computer Skills: An Introduction to Software Tools for Biological Applications by Cynthia Gibas and Per Jambeck. ISBN-13: 978-1565926646, ISBN-10: 1565926641.
 
 - Statistics and Data Analysis for Microarrays Using R and Bioconductor, Second Edition by Sorin Drăghici. 
@@ -60,7 +62,7 @@ Objectives:  Learn how the Linux file system is organized and how to navigate it
 Required Reading: Developing Bioinformatics Computer Skills. Chapter 3, 4 and 5. 
 Recommended: Bioinformatics Data Skills, Chapter 3, 4.
 
-**Week 2 – Introduction to Shell scripting; Using Linux in practical Bioinformatics Problems; and Introduction to Parallel and distributed computing**
+**Week 2 – Introduction to Shell scripting; Linux commands for routine Bioinformatics tasks; and Introduction to Parallel and distributed computing**
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD
 Objectives: Learn how to develop linux Shell scripts.
