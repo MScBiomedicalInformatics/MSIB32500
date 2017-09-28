@@ -11,7 +11,7 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 ## Learning Objectives
 
 - Learn the basics of developing useful shell scripts.
-- Learn how to use important Linux command to solve commun/routine tasks in bioinformatics.
+- Learn how to use important Linux command on routine tasks in bioinformatics.
 - Learn the basics of parallel and distributed computing environments.
 - Get familiar with basic models for parallel computation, and design of parallel and distributed algorithms. 
 
@@ -26,7 +26,7 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 2. Start the script with #! /bin/bash (or #! /bin/sh depending of your operative system and preference)
 3. Write some code
 4. Save the script file as filename.sh
-5. Set the executable permisson for filename.sh for the target users
+5. Set the executable permission for filename.sh for the target users
 6. To excute the script 
 
 
@@ -442,7 +442,7 @@ To run a job on CRI's HPC cluster, you will need to set up a Portable Batch Syst
 **Submitting a Job**
 In order to use the HPC compute nodes, you must first log in to one of the head nodes, and submit a PBS job. The **qsub** command is used to submit a job to the PBS queue and to request additional resources. The **qstat** command is used to check on the status of a job already in the PBS queue. To simplify submitting a job, you can create a PBS script and use the qsub and qstat commands to interact with the PBS queue.
 
-## Week 2 Homework: :house:
+## Week 2 Homework: :house: (Graded!)
 
 1. Download the Generic Feature Format (GFF) version of the Saccharomyces Cerevisiae yeast genome to your home directory. 
 
