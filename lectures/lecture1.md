@@ -445,7 +445,7 @@ awk '/search pattern/{Actions}' filename
 
 'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed
 
-Let's see awk in action. First copy the file *mappingtools.txt* from /group/mscbmi/lecture2.txt This is a tab delimited file containing a list of common mapping tools for NGS data
+Let's see awk in action. First copy the file *mappingtools.txt* from /group/mscbmi/lecture2.txt. This is a tab delimited file containing a list of common mapping tools for NGS data.
 
 ```bash
 cd ~
@@ -490,7 +490,8 @@ Now explore the result of the following command:
 awk $5 '/Fast/{print $1,"\t",$2, "\t",$3}' mappingtools.txt
 ```
 Observe and explain the result.
- 
+
+--------------
  
 **sed** stands for **s**tream **ed**itor is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
 
