@@ -493,18 +493,65 @@ Observe and explain the result.
 
 --------------
  
-**sed** stands for **s**tream **ed**itor is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
+**sed** stands for **s**tream **ed**itor and is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
 
 The general syntax for sed is:
 
-```
+```bash
 sed /pattern/action
 ```
-Where 'pattern' is a regular expression, and action is one of the following: 'p'= Prints the line; 'd'= Deletes the line; and
-'s/pattern1/pattern2/' = Substitutes the first occurrence of pattern1 with pattern2. If 'pattern' is omitted, action is performed for every line.
+Where 'pattern' is a regular expression, and action is one of the following: 
 
+- 'p'= Prints the line
+- 'd'= Deletes the line
+- 's/pattern1/pattern2/' = Substitutes the first occurrence of pattern1 with pattern2. 
 
+If 'pattern' is omitted, action is performed for every line.
 
+**Sed Command Examples**
+
+Replacing or substituting string
+
+```bash
+cat mappingtools.txt | column -t
+sed 's/Fast/Ultra_Fast/' mappingtools.txt
+cat mappingtools.txt | column -t
+```
+The **sed** command also works on plain text files:
+
+```bash
+cd ~
+cp /group/mscbmi/lecture2/bwa.txt . 
+cat bwa.txt
+```
+Replacing the nth occurrence of a pattern in a line
+
+```bash
+sed 's/BWA-/Burrows-Wheeler-Aligner/2' bwa.txt
+```
+Replacing all the occurrence of the pattern in a line
+
+```bash
+sed 'p/BWA-/Burrows-Wheeler-Aligner/g' bwa.txt
+```
+
+Using **sed** to delete a especific line
+
+```bash
+sed '5d' bwa.txt
+```
+
+Using **sed** to delete several lines
+
+```bash
+sed '2d;3d;4d;5d' bwa.txt
+```
+
+Using **sed** to print a especific line
+
+```bash
+sed '1p;7p' bwa.txt
+```
 ________________________________________
 ## Linux File Permissions
 
@@ -606,7 +653,7 @@ ls -l
 :bulb: Download the [LinuxReference.pdf](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/LinuxReference.pdf) file, review and practice at home.
 
 - Follow the tutorial: [CloudEnviromentSetup.pdf] (https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/CloudEnviromentSetup.pdf) to learn how to confirure your owm Elastic Cloud Computing instance (EC2) using  Amazon Web Services (AWS). 
-- Send me an e-mal with the IP address of your cloud instance.
+- Send me an e-mal with the IP address of your cloud instance. (Extra credit)
 
 ## Week 1 Suguested reading: :white_check_mark:
 Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html 
