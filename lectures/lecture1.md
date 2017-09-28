@@ -8,10 +8,10 @@ Saturdays 9/30/17; 9:00AM - 12:00PM
 
 ## Learning Objectives
 
-- This training will teach you all you need to know to start using Linux, be it on the CRI’s High-Performance Infrastructure (HPC), or on your own computer (even if you are already running Windows or Mac OS).
+- This training will teach you all you need to know to start using Linux, be it on the CRI’s High-Performance Infrastructure (HPC), or on your own computer.
 - After this training you will: 
   - Feel comfortable using Linux
-  - Know how software works on Linux  and how to use it
+  - Know how software works on Linux and how to use it
   - Use bash to execute commands in Linux and know your way around the file system
   - Have an overview of Linux tools that are extremely useful for bioinformatics
 
