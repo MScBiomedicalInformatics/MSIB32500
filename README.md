@@ -25,9 +25,9 @@ By taking this course, students will learn how to perform advanced bioinformatic
 
 ## 6.	ATTENDANCE POLICY
 This course involves regular hands-on use of bioinformatics tools in lab sessions in addition to more formal lectures.
-•	At least 80% attendance is expected (not more than 2 absences for the quarter).
-•	The Instructor would expect a notification via e-mail from students for the missed session.
-•	Making up missed lectures could be done via recorded session.
+- At least 80% attendance is expected (not more than 2 absences for the quarter).
+- The Instructor would expect a notification via e-mail from students for the missed session.
+- Making up missed lectures could be done via recorded session.
 
 ## 7.	LATE WORK
 •	Under special justified circumstances, students could be eligible for additional time to submit their homework up to two business days after the original deadline. Students should request this extension upon presenting evidence of especial/extraordinary circumstances (i.e. medical or family emergency).
