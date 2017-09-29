@@ -584,18 +584,18 @@ The permission in the command line is displayed as: **_rwxrwxrwx 1 owner:group**
 
 For explicit definition of permissions, linux uses the following nomenclature:
 
-u - User (Owner)
-g - Group
-o - Others
-a - All users
+- u - User (Owner)
+- g - Group
+- o - Others
+- a - All users
 
 **+** (plus) and **-** (minus) are used to tell the system whether to **add** or **remove** the specific permissions.
 
 The Permission Types that are used are:
 
-r - Read
-w - Write
-x - Execute
+- r - Read
+- w - Write
+- x - Execute
 
 To make this modification you would use the command: **chmod** Let's see some examples:
 
@@ -625,9 +625,9 @@ chmod g+x list1.txt
 
 The setting is done by entering three integers numbers. The first number represents the **Owner** permission; the second represents the **Group** permissions; and the last number represents the permissions for **all other** users. The numbers are a binary representation of the **rwx** string
 
-r = 4
-w = 2
-x = 1
+- r = 4
+- w = 2
+- x = 1
 
 You add the numbers to get the integer/number representing the permissions you wish to set. 
 
