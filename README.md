@@ -17,8 +17,8 @@ By taking this course, students will learn how to perform advanced bioinformatic
 
 ## 4.	COURSE WORKLOAD
 
-•	3 hours of lecture, class discussion, and in-class activities per week.
-•	There is approximately 6 hours of outside class work assigned each week.
+- 3 hours of lecture, class discussion, and in-class activities per week.
+- There is approximately 6 hours of outside class work assigned each week.
 
 ## 5.	GRADING POLICY
 •	To allow students to practice and develop the skills learned in class, grading will be based on 5 homework assignments spread out thru the duration of the course. Homework assignments given one week are due by the beginning of next week session. When deemed necessary, the beginning of the next class or lab may include a review of common mistakes found on the homework from the previous week. Final grade will be an average of grades over the 5 homework assignments.   
