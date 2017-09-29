@@ -119,7 +119,7 @@ Objectives: Learn how to perform the downstream analysis of RNA-seq data; Detect
 Required Reading:  TBA
 Recommended: 
 
-**Week 10 –  Associating Gene Expression with Clinical Data
+**Week 10 –  Associating Gene Expression with Clinical Data**
 
 Session Leader or Guest Lecturer: Riyue Bao, PhD
 Objectives: Learn the background and application of The Cancer Genome Atlas (TCGA) project; Learn the structure and access of Genomics Data Commons (GDC); Explore datasets hosted on GDC and Learn how to associate gene expression with clinical data.
