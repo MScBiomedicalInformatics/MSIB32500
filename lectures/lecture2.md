@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+Saturdays 10/07/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -29,8 +29,30 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 5. Set the executable permission for filename.sh for the target users
 6. To excute the script 
 
+Let's create a very simple first shell script, **on your comand line** open a **text editor** ($ nano simple.sh).
 
-Let's create a simple shell script, **on your comand line** open a **text editor** ($ nano hello.sh). On the editor type the following:
+```text
+#!/bin/bash
+#This script display the date, who is logged on, and your working directory
+echo "Today's date is:"
+date
+echo "You are logged in as:"
+whoami
+echo "You are working on the follwoing directory:"
+pwd
+```
+Now we need to make the script excutable 
+
+```bash
+chmod u+x simple.sh         
+```
+We can now execute our first shell script
+
+```bash
+./simple.sh                
+```
+
+Let's see another example **on your comand line** open a **text editor** ($ nano hello.sh). On the editor type the following:
 
 ```text
 #!/bin/bash
@@ -45,10 +67,10 @@ echo "Done"
 Now we need to make the script excutable 
 
 ```bash
-chmod u+x hello.sh         ### Make your shell script executable
+chmod u+x hello.sh         
 ```
 
-We can now execute our first shell script
+We can now execute your shell script
 
 ```bash
 ./hello.sh                
@@ -77,9 +99,21 @@ echo "I am $remark too!"
 ```
 Now, execute your script.
 
+You can also access Linux environment variables ($HOME, $USER, etc.) from within your shell scripts. Try the follwoing script:
+
+environment.sh
+
+```bash
+#!/bin/bash
+#Display user information from the system
+echo "User info for user: $USER"
+echo "User's HOME: $HOME"
+echo "Your UID is: $UID" 
+```
+
 **Shell Loops**
 
-**for** loops iterate through a set of values until the list is exhausted. We used a for loop on the previous example, let's see other examples:
+**for** loops iterate through a set of values until the list is exhausted. Let's see some examples:
 
 **for1.sh**
 ```bash
