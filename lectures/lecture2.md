@@ -609,8 +609,9 @@ In order to use the HPC compute nodes, you must first log in to one of the head 
     h. Describe what the following command do: sed 's/chrI/chr1/g' features.gff > new_features.gff
 
 ```
-3. Develop a Linux Shell script to generate the first *n* numbers of the [FIBONACCI](https://en.wikipedia.org/wiki/Fibonacci_number) series
+3. Develop a Linux Shell script to generate the first *n* numbers of the [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_number) series
 
+4. Measure and report the time it takes to execute your script
 
 :point_right: Send your homework via e-mail, your homework should have the answers and commands used for each item. 
     
