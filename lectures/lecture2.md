@@ -555,9 +555,9 @@ There are tasks that are both computational and data-intensive, they usually nee
 (i.e. multiplying two big matrices), to compute that kind of problems, it is needed to access HPC resources with nodes that share large amounts of RAM memory. 
 
 In Bioinformatics a common problem that often needs such setting is **De novo transcriptome assembly** from RNA-Seq data this task usually demand ~1G of RAM per ~1M pairs Illumina reads. Some opensource bioinformatics software tools available for this task:
-- [SOAPdenovo-trans](http://soap.genomics.org.cn/SOAPdenovo-Trans.html), 
-- [TransABYSS](https://github.com/bcgsc/transabyss) a
-- [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki))
+- [SOAPdenovo-trans](http://soap.genomics.org.cn/SOAPdenovo-Trans.html) 
+- [TransABYSS](https://github.com/bcgsc/transabyss)
+- [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki)
 
 See Robert Bukowski's Trinity workshop and hands-on exercises at http://cbsu.tc.cornell.edu/lab/doc/Trinity_workshop_Part1.pdf 
 
@@ -567,11 +567,13 @@ See Robert Bukowski's Trinity workshop and hands-on exercises at http://cbsu.tc.
 [BigDataScript](https://pcingola.github.io/BigDataScript/)
 
 Develop ONE data pipeline and run exactly the same script everywhere. No matter how big the computer. Created by: [Pablo Cingolani](https://www.linkedin.com/in/pablocingolani/) Director of IT and Bioinformatics at Kew Inc.
-Your program/pipeline will runs on a 25,000 cores cluster or a single CPU laptop.
+Your program/pipeline will run on a 25,000 cores cluster or a single CPU laptop.
 
 ![BigDataScript](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/BigDataScript.jpeg)
 
-It is of course also possible to develop scripts for running jobs on HPC and/or multi-core processors using other scripting languages such as PERL, python, R, C++, and others.
+It is of course also possible to develop scripts for running jobs on HPC and/or multi-core processors using other scripting languages such as SHELL, python, R, C++, and others.
+
+_____________________
 
 **Running a Job on HPC using Portable Batch System (PBS)**
 
@@ -592,7 +594,7 @@ In order to use the HPC compute nodes, you must first log in to one of the head 
 ```
     a. How many genes are there in the data?
     
-    b. How many genes on chromosome 2?
+    b. How many genes are there on chromosome 2?
     
     c. How many mRNAs are there on chromosome 10?
     
@@ -605,7 +607,11 @@ In order to use the HPC compute nodes, you must first log in to one of the head 
     g. Which chromosome is the longest and which one is the shortest?
     
     h. Describe what the following command do: sed 's/chrI/chr1/g' features.gff > new_features.gff
+
 ```
+3. Develop a Linux Shell script to generate the first *n* numbers of the [FIBONACCI](https://en.wikipedia.org/wiki/Fibonacci_number) series
+
+
 :point_right: Send your homework via e-mail, your homework should have the answers and commands used for each item. 
     
 
