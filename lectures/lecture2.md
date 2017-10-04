@@ -469,7 +469,8 @@ https://www.illumina.com/systems/sequencing-platforms.html
 
 **Two examples:**
 - The European Bioinformatics Institute _(EBI)_ in the UK currently stores **120 Petabytes of data** and back-ups, see: https://www.ebi.ac.uk/about/our-impact
-- The Genomics Data Commons initiative _(GDC)_ at the University of Chicago, **currently host 5.42 petabytes of data and 87.96 Terabytes of RAM).** See the GDC's infrastructure statistics at (https://gdc-portal.nci.nih.gov)
+- The Genomics Data Commons initiative _(GDC)_ at the University of Chicago, **470.59 TB** and growing See:
+(https://gdc-portal.nci.nih.gov)
 
 ## 2. Hardware Paradigms for Parallel Computation: 
 
