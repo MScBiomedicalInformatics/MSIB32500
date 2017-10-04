@@ -165,7 +165,7 @@ do
 done
 ```
 
-Let's convine while loops with conditinal statements:
+Let's convine while loops with conditional statements:
 
 First, copy on your home directory the file greetings.txt form /group/mscbmi/lecture1/, this file contains several ways to say hello in different languages.
 
