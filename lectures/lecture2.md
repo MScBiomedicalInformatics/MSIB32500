@@ -236,8 +236,8 @@ done
 ```
 
 **Numeric comparisons**
-
-- n1 -ep n2  Checks if n1 is **equal** to n2
+ 
+- |n1 -ep n2 |  Checks if n1 is **equal** to n2
 - n1 -ge n2  Checks if n1 is **greater than or equal** to n2
 - n1 -gt n2  Checks if n1 is **greater than** n2
 - n1 -le n2  Checks if n1 is **less than or equal** to n2
