@@ -150,7 +150,7 @@ wc -l seqGood.fastq
 And divide the result by 4.
 
 
-To **launch an interactive session using one core, use the following command:
+To launch an **interactive session** using one core, use the following command:
 
 ```bash
 qsub -I
@@ -160,6 +160,7 @@ cd ~/mscbmi/Ex2
 Now You can run FastQC by typing:
 
 ```bash
+module load java-jdk
 module load fastqc
 fastqc seqGood.fastq
 ls
@@ -167,6 +168,57 @@ ls
 This will generate a self-contained directory called **"seqGood_fastqc.html"** which contains an HTML formatted report that can be loaded into a browser and a compressed file with all the results named **"seqGood_fastqc.zip**
 
 Explore the files created by the execution of FastQC.
+
+--------------------
+## Software Environment set up on Gardner ##
+
+Gardner uses **Lmod** as Environment Module System, Lmod handels the environment configuration as a Hierarchical structure. 
+User must:
+
+- First load the core compiler. To see a list of available compilers use:
+
+```
+module avail
+```
+
+We will be using the lates gcc and java-jdk compilers"
+
+```
+module load java-jdk
+module load gcc
+```
+
+After the compilers are loaded, we can then load the tools/packages available for the compiler loaded, try the module avail again:
+
+```
+module avail
+```
+
+Now you can load any package from the list of available:
+
+```
+module load fastqc
+module load bowtie2
+module load samtools
+```
+To see which packages are loaded in your current enviroment use:
+
+```
+module list
+```
+
+To unload a package use: module unload <package>
+
+```
+module unload gcc java-jdk
+```
+If you now try: module load fastqc it will fail, because you unloaded the java-jdk compiler mode. Let's load the compilers and packages again:
+
+```
+module load gcc java-jdk
+module av
+module load fastqc
+```
 
 Other usefull **module** commands:
 
@@ -189,6 +241,8 @@ Other usefull **module** commands:
   $ module unload R
   which R
 
+
+-----------------
 Let's now use the **scp** command, to copy the result files from your working directory in TARBELL to your local computer, so that we can vizualize the results. 
 
 Open a **new command line on your local** computer and then run the following commands (you will need to use your own username and password):
