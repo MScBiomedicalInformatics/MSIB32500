@@ -92,7 +92,7 @@ rsync -avz GSE31736_RAW.tar username@gardner.cri.uchicago.edu:~/mscbmi/Ex1
 Windows users can also use GUI tools like WinSCP (http://winscp.net/download/winscp514setup.exe) to transfer files.
 
 
-## 4. Setting up Jobs to run on GARDNER HPC cluster
+## 4. Executing jobs on GARDNER HPC cluster
 
 **Note: DO NOT RUN JOBS on the login nodes of the cluster. Always submit jobs to the compute nodes (qsub), or use the interactive mode (qsub -I)**
 
@@ -127,7 +127,7 @@ You can do so using the command **wget or curl**:
 - seqBad.fastq (https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/data/seqBad.fastq) 
 
 Your command should look like: 
-
+----------------------------
 ```bash
 cd ~/mscbmi/Ex2
 wget ftp://logia.cri.uchicago.edu/bioinformatics/MSIB32500/Lecture3/Ex2/seqGood.fastq
