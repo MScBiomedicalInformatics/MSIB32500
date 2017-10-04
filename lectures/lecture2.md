@@ -463,9 +463,13 @@ How much data is produced? take a look at the throughput of the latest Illumina 
 
 https://www.illumina.com/systems/sequencing-platforms.html
 
+- Current Illumina sequencing machines are able to produce about 6 Terabytes of data every day!!
+- Genomics data repositories are growing in size every day!!
+
+
 **Two examples:**
-- The European Bioinformatics Institute _(EBI)_ in the UK currently stores **20 petabytes of data** and back-ups about genes, proteins and small molecules. 
-- The Genomics Data Commons initiative _(GDC)_ at the University of Chicago, **currently host 5.42 petabytes of data and 87.96 Terabytes of RAM).** See the GDC's infrastructure statistics at: (https://gdc-portal.nci.nih.gov)
+- The European Bioinformatics Institute _(EBI)_ in the UK currently stores **20 petabytes of data** and back-ups about genes, proteins, and small molecules. 
+- The Genomics Data Commons initiative _(GDC)_ at the University of Chicago, **currently host 5.42 petabytes of data and 87.96 Terabytes of RAM).** See the GDC's infrastructure statistics at (https://gdc-portal.nci.nih.gov)
 
 ## 2. Hardware Paradigms for Parallel Computation: 
 
