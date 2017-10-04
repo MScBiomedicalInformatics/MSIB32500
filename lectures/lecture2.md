@@ -500,9 +500,9 @@ High-performance computing (HPC) is the use of **parallel processing** for runni
 
 Although a single grid can be dedicated to a particular application, commonly a grid is used for a variety of purposes. Grids are often constructed with general-purpose grid middleware software libraries. The idea of connecting heterogeneous computers together in a Grid was developed at the European Organization for Nuclear Research [CERN](https://home.cern/about).
 
-Grid enviroments consist at least of 3 main componets: the hardware, the middleware (like the Advanced Resource Connector ARC)  and the applications (like software).
+Grid environments consist at least of 3 main components: the hardware, the middleware (like the Advanced Resource Connector ARC)  and the applications (like software).
 
-Recomened read on this topic: [The Grid: Blueprint for a New Computing Infrastructure](https://books.google.com/books?id=ONRQAAAAMAAJ) by the University of Chicago Professor [Ian Foster](https://cs.uchicago.edu/directory/ian-foster)
+Recommended read on this topic: [The Grid: Blueprint for a New Computing Infrastructure](https://books.google.com/books?id=ONRQAAAAMAAJ) by the University of Chicago Professor [Ian Foster](https://cs.uchicago.edu/directory/ian-foster)
 
 **CLOUD Computing**
 
@@ -513,9 +513,10 @@ Cloud Computing: on-demand access to a shared pool of configurable computing res
 **Cloud Services**
 - Software as a Service (SaaS) applications are hosted by a vendor and made available to customers over the Internet
 - Platform as a Service (PaaS) is a way to rent hardware, operating systems, storage and network capacity (and all associated service) over the internet
-- Infrastructure as a Service (IaaS) an organization outsources the equipment used to support operations, including storage, hardware, servers and networking components. The service provider owns the equipment and is responsible for housing, running and maintaining it. The client typically pays on as per-use basis.
+- Infrastructure as a Service (IaaS) an organization outsources the equipment used to support operations, including storage, hardware, servers and networking components. The service provider owns the equipment and is responsible for housing, running and maintaining it. 
 
 ![CloudServices](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/CloudServices.jpeg)
+
 
 **Cloud Computing Advantages**
 
