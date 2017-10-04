@@ -469,8 +469,8 @@ https://www.illumina.com/systems/sequencing-platforms.html
 
 **Two examples:**
 - The European Bioinformatics Institute _(EBI)_ in the UK currently stores **120 Petabytes of data** and back-ups, see: https://www.ebi.ac.uk/about/our-impact
-- The Genomics Data Commons initiative _(GDC)_ at the University of Chicago, **470.59 TB** and growing See:
-(https://gdc-portal.nci.nih.gov)
+- The Genomics Data Commons initiative _(GDC)_ at the University of Chicago, **470.59 TB** and growing as new datasets and analysis are added see:
+https://gdc-portal.nci.nih.gov
 
 ## 2. Hardware Paradigms for Parallel Computation: 
 
@@ -478,13 +478,13 @@ https://www.illumina.com/systems/sequencing-platforms.html
 
 A **multi-core processor** is a single computing component with *two or more independent actual processing units* (called "cores"), which are units that read and execute program instructions.
 
-Although multicore chips were designed for game playing, they are becomming more and more popular in scientific computing. Now days, dual–core, quad–core, or even sixteen–core chips are commun on modern computers. These chips attain more integrated speed with less heat and more energy efficiency than single–core.
+Although multicore chips were designed for game playing, they are becoming more and more popular in scientific computing. Nowadays, dual–core, quad–core, or even sixteen–core chips are common on modern computers. These chips attain more integrated speed with less heat and more energy efficiency than single–core.
 
 As an example: The *Sparc64-IXfx chip* has 16 Sparc cores that run at 1.85GHz and delivers 236 GFLOPS of double-precision floating point operations. Bellow the real architectural design of the chip:
 
 ![Fujitsu's Sparc64-IXfx processor](https://regmedia.co.uk/2011/11/20/fujitsu_sparc64_ixfx_chip.jpg)
 
-**High Performance Computing** 
+**High-Performance Computing** 
 
 High-performance computing (HPC) is the use of **parallel processing** for running advanced application programs efficiently, reliably and quickly. The term applies especially to systems that function **above a TFLOP** or 10^12 floating-point operations per second. The term HPC is not a synonym for supercomputing, technically a supercomputer is a system that performs at the currently highest operational rate of more than a PFLOPS (10^15 floating-point operations per second).
 
