@@ -381,12 +381,11 @@ Here is an example on how to identify reads with fail sequences:
 ###awk '{print $3}' top_1000_tab.txt 
 awk '$3 ~ /N/ {print $1,"\t",$3}' top_1000_tab.txt 
 ```
-The follwong command will convert FASTQ to (FASTA){https://en.wikipedia.org/wiki/FASTA_format} file format:
+The follwong command will convert FASTQ to [FASTA](https://en.wikipedia.org/wiki/FASTA_format) file format:
 ```bash
 cat SRR001655.fastq | paste - - - - | awk '{print ">"$1,$2,"\n"$3}'
 ```
-Now try saving the result of the conversion on a new file.
-
+Now try saving the result of the conversion to a new file.
 
 
 **d. Text manipulation with sed**
