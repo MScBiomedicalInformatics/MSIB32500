@@ -109,17 +109,17 @@ GARDNER cluster uses **Torque** as a *resource manager* (Provides low-level func
 
 Torque provides user commands such as **qsub, qdel, qstat, etc.,** which are used to submit, delete and check the status of jobs on the cluster. 
 
-TARBELL cluster supports two types of job submission: **Interactive**  and **batch** modes 
+GARDNER cluster supports two types of job submission: **Interactive**  and **batch** modes 
 
 - Interactive mode (qsub -I): You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
 
 - Batch mode: In a batch mode you first write a PBS script with all the instructions/code you want to execute, and then you submit that script to the scheduler. The batch job script contains all the information needed, such as the location of the input and output files, as well as run parameters. Once the batch job starts, you can log off and the job will remain running. 
 
-** Exercise 2. Running job in interactive mode**
+**Exercise 2: Running job in interactive mode**
 
 In this exercise, you will conduct the quality control analysis on a "good" quality sequence file and on a "bad" quality sequence file using FastQC program. 
 
-First you will need to download two raw sequence files to your **home** directory on TARBELL cluster. 
+First you will need to download two raw sequence files to your **home** directory on GARDNER cluster. 
 
 You can do so using the command **wget or curl**:
 
