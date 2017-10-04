@@ -239,7 +239,7 @@ done
 
 | Comparison    | Description                                      |
 | ------------- |:------------------------------------------------:|
-| n1 -ep n2     | Checks if n1 is **equal** to n2
+| n1 -ep n2     | Checks if n1 is **equal** to n2                  |
 | n1 -ge n2     | Checks if n1 is **greater than or equal** to n2  |
 | n1 -gt n2     | Checks if n1 is **greater than** n2              |
 | n1 -le n2     | Checks if n1 is **less than or equal** to n2     |
@@ -250,10 +250,62 @@ done
 
 In Shell, you can test the status of filrs and directories on the Linux filesystem with the follwoing file comparisons
 
-- -e file Checks if file exist
-- -d file Checks if file exist and is a directory
-- -f file Checks if file exist and is a directory
+| Comparison    | Description                              |
+| ------------- |:----------------------------------------:|
+| -e file       | Checks if file exist                     |
+| -d file       | Checks if file exist and is a directory  |
+| -f file       | Checks if file exist and is a file       |
 
+
+Let's see some examples
+
+**checkdir.sh**
+```bash
+#!/bin/bash
+
+goto_directory=/group/mscbmi
+
+if [ -d $goto_directory ] 
+then
+  echo "The $goto_directory directory exists" 
+  cd $goto_directory
+  ls
+else
+  echo "The $goto_directory directory does not exist"
+fi
+```
+
+**checkdirorfile.sh**
+```bash
+#!/bin/bash
+# Check if either a directory or file exists #
+
+location=$HOME
+file_name="SRR001655.fastq"
+
+if [ -e $location ]
+  then #Folder exist
+    echo "OK on the $location directory."
+    echo "Now checking on the file, $file_name." 
+    #
+    if [ -e $location/$file_name ]
+    then #File exist
+      echo "OK on the filename"
+      echo "Updating Current Date..." 
+      date >> $location/$file_name
+    #
+    else #File does not exist
+      echo "File does not exist"
+      echo "Nothing to update" 
+   fi
+#
+else #Directory does not exist
+  echo "The $location directory does not exist."
+ echo "Nothing to update" 
+fi
+```
+
+## :mortar_board: Your turn,create a script or use a comand to remove (delete) the line that the previous schipt inserted on *file_name*
 
 
 ### :book: Learn more:
