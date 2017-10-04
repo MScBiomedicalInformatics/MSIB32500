@@ -235,6 +235,25 @@ do
 done
 ```
 
+**Numeric comparisons**
+
+- n1 -ep n2  Checks if n1 is **equal** to n2
+- n1 -ge n2  Checks if n1 is **greater than or equal** to n2
+- n1 -gt n2  Checks if n1 is **greater than** n2
+- n1 -le n2  Checks if n1 is **less than or equal** to n2
+- n1 -lt n2  Checks if n1 is **less than** n2
+- n1 -ne n2  Checks if n1 is **not equal to** n2
+
+**File comparisons**
+
+In Shell, you can test the status of filrs and directories on the Linux filesystem with the follwoing file comparisons
+
+- -e file Checks if file exist
+- -d file Checks if file exist and is a directory
+- -f file Checks if file exist and is a directory
+
+
+
 ### :book: Learn more:
 
 - A good reference book: Linux Command Line and Shell Scripting Bible 3rd Edition by Richard Blum and Christine Bresnahan 
