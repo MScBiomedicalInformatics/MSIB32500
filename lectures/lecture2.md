@@ -358,6 +358,7 @@ head -n100 SRR001655.fastq
 ```
 ```bash
 grep 'GAGAGAGC' SRR001655.fastq > short_list.txt
+cat short_list.txt
 ```
 ```bash
 tail -40000 SRR001655.fastq > bottom_10000.fastq
@@ -375,15 +376,18 @@ cat top_1000_tab.txt
 ```
 **c. Using 'awk' to work with data in columns**
 
-Here is an example on how to count the number of fail reads in our sequence file:
+Here is an example on how to identify reads with fail sequences:
 ```bash
-awk '$3 ~ /N/ {print $1}' top_1000_tab.txt | wc -l
+###awk '{print $3}' top_1000_tab.txt 
+awk '$3 ~ /N/ {print $1,"\t",$3}' top_1000_tab.txt 
 ```
-The follwong command will convert FASTQ to FASTA file format:
+The follwong command will convert FASTQ to (FASTA){https://en.wikipedia.org/wiki/FASTA_format} file format:
 ```bash
 cat SRR001655.fastq | paste - - - - | awk '{print ">"$1,$2,"\n"$3}'
 ```
 Now try saving the result of the conversion on a new file.
+
+
 
 **d. Text manipulation with sed**
 
