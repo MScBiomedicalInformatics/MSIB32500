@@ -25,29 +25,30 @@ For MacOS or Unix/Linux users:
 2. Connect to the login node of GARDNER cluster:
 
 ```bash
-$ssh username@tarbell.cri.uchicago.edu
+$ssh username@gardner.cri.uchicago.edu
 ```
 **CRI's GARDNER HPC diagram**
 
-![tarbell](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/tarbell.jpeg)
+![gardner](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/tarbell.jpeg)
 
-By default, you will be logged into to the 'log-in' nodes **(in01 or in02)**, from there you will have access to the **storage/labshares** and **scratch** spaces (1Gb and 56 Gb speeds respectively). The log-in node also have access to the **scheduler and RM** nodes, the scheduler is the interface, to the **compute nodes (cn1, cn2, .. cn500)**. The log-in nodes also have access to the **cri-syncmon** node which is a dedicated Input gate node with several protocols/ports for data transfer enabeled.
+- By default, you will be logged into to the 'log-in' nodes **(in001 or in002)**, from there you will have access to the **storage/labshares** and **scratch** spaces (1Gb and 56 Gb speeds respectively). 
 
+- The log-in node also have access to the **scheduler and RM** nodes, the scheduler is the interface, to the **compute nodes (cn1, cn2, .. cn500)**. The log-in nodes also have access to the **cri-syncmon** node which is a dedicated Input gate node with several protocols/ports for data transfer enabeled.
 
-Create a working directory and four sub-directories under your **home** directory for this had-on tutorial:
+Create a working directory and four sub-directories under your **home** directory for this tutorial:
 
 ```bash
 $ mkdir ~/mscbmi
 $ cd mscbmi
 $ mkdir Ex1 Ex2 Ex3 Ex4
 ```
-## 3. Transfering data files
+## 3. Review: How to transfering data files
 
-You can transfer files from your local computer to your home directory on the cluster or download the files from public databases and repositories. 
+As we learned on week1, you can transfer files from your local computer to your **home** directory on the cluster or download the files from public databases and repositories. 
 
-To download data from a website directly to your **working directory** on TARBELL cluster, you can use either the command **wget** or **curl** 
+To download data from a website directly to your **working directory** on GARDNER cluster, you can use either the command **wget** or **curl** 
 
-**Exercise 1.1:** Download a microarray expression raw data file from NCBI's Gene Expression Omnibus (GEO) (http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE31736) to your home directory on TARBELL cluster.
+**Exercise 1.1:** Let's recall how to download a microarray expression raw data file from NCBI's Gene Expression Omnibus (GEO) (http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE31736) to your home directory on GARDNER cluster.
 
 ```bash
 $ cd Ex1
@@ -64,33 +65,34 @@ $ rm GSE31736_RAW.tar
 ```
 The '-o' option redirect the content to a file, otherwise it will appear on stdout, i.e. the screen.
 
-To **upload the files from your local computer to TARBELL cluster**, you can use **scp or rsync** commands on Mac/Unix/Linux or Winscp on Windows.
+To **upload the files from your local computer to GARDNER cluster**, you can use **scp or rsync** commands on Mac/Unix/Linux or Winscp on Windows.
 
-**Exercise 1.2: ** Upload a file from your laptop/computer to your home directory on TARBELL cluster:
+**Exercise 1.2: ** Upload a file from your laptop/computer to your home directory on GARDNER cluster:
 
 First, download the file available at the following link, to your local computer:
 
 https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/data/GSE31736_RAW.tar 
 
-Using computer command line (open a new terminal), navigate (use the cd command) to the directory where file 'GSE31736_RAW.tar' is located.
+Using you computer command line (open a new terminal), navigate (use the cd command) to the directory where file 'GSE31736_RAW.tar' is located.
 
 For Mac/Unix/Linux users:
 
 To upload files from your local computer using **scp** use the following command:
 
 ```bash
-scp PATH_TO_GSE31736_RAW.tar username@tarbell.cri.uchicago.edu:~/mscbmi/Ex1
+scp PATH_TO_GSE31736_RAW.tar username@gardner.cri.uchicago.edu:~/mscbmi/Ex1
 ```
 Your command should look like: 
 
 ```bash
-scp ./GSE31736_RAW.tar jandrade@tarbell.cri.uchicago.edu:~/mscbmi/Ex1
+scp ./GSE31736_RAW.tar jandrade@gardner.cri.uchicago.edu:~/mscbmi/Ex1
 ```
 To upload files from your local computer using **rsync** use the following command:
 
 ```bash
-rsync -avz GSE31736_RAW.tar username@tarbell.cri.uchicago.edu:~/mscbmi/Ex1
+rsync -avz GSE31736_RAW.tar username@gardner.cri.uchicago.edu:~/mscbmi/Ex1
 ```
+
 Windows users can also use GUI tools like WinSCP (http://winscp.net/download/winscp514setup.exe) to transfer files.
 
 
