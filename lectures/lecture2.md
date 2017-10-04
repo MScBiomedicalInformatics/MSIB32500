@@ -388,6 +388,12 @@ cat SRR001655.fastq | paste - - - - | awk '{print ">"$1,$2,"\n"$3}'
 Now try saving the result of the conversion to a new file.
 
 
+Get all reads – excluding headers and save it to a text file
+
+```bash
+awk '$1!~/@/' SRR001655.fastq > readswithnoheader.txt
+```
+
 **d. Text manipulation with sed**
 
 Explore the result of the following comand:
@@ -397,7 +403,17 @@ sed 's/N/0/g' top_1000_tab.txt
 ```
 Check that the orininal top_1000_tab.txt  file was not altered.
 
-To logout of gardner, type:
+Making sed work like grep
+
+```bash
+grep 'TTTGGCACCATTGAA' top_1000_tab.txt 
+
+sed -n '/TTTGGCACCATTGAA/ p' top_1000_tab.txt
+```
+
+---------------
+
+To log-out of CRI's GARDNER cluster use:
 
 ```bash
 exit
