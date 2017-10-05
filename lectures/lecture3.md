@@ -123,15 +123,15 @@ First you will need to download two raw sequence files to your **home** director
 
 You can do so using the command **wget or curl**:
 
-- seqGood.fastq (https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/data/seqGood.fastq) 
-- seqBad.fastq (https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/data/seqBad.fastq) 
+- seqGood.fastq (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqGood.fastq) 
+- seqBad.fastq (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqBad.fastq) 
 
 Your command should look like: 
 ----------------------------
 ```bash
 cd ~/mscbmi/Ex2
-wget ftp://logia.cri.uchicago.edu/bioinformatics/MSIB32500/Lecture3/Ex2/seqGood.fastq
-wget ftp://logia.cri.uchicago.edu/bioinformatics/MSIB32500/Lecture3/Ex2/seqBad.fastq
+wget https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqGood.fastq
+wget https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqBad.fastq
 ls -l
 ```
 
@@ -149,49 +149,64 @@ wc -l seqGood.fastq
 ```
 And divide the result by 4.
 
+------------------
+## Executing jobs on GARDNER using the interactive mode
 
-To launch an **interactive session** using one core, use the following command:
+To launch an **interactive session** using one core, use the **qsub -I** command:
 
 ```bash
 qsub -I
-
-cd ~/mscbmi/Ex2
 ```
 Now You can run FastQC by typing:
 
 ```bash
-module load java-jdk
+cd ~/mscbmi/Ex2
+module load gcc java-jdk
 module load fastqc
 fastqc seqGood.fastq
 ls
 ```
-This will generate a self-contained directory called **"seqGood_fastqc.html"** which contains an HTML formatted report that can be loaded into a browser and a compressed file with all the results named **"seqGood_fastqc.zip**
+This will generate a self-contained directory called **"seqGood_fastqc.html"** which contains an HTML formatted report that can be loaded into a browser, and a compressed file with all the results named **"seqGood_fastqc.zip**
 
-Explore the files created by the execution of FastQC.
+Move the results of *fastqc* to your local computer and explore the files created by *fastqc seqGood.fastq*
+
+We now need to understand how to set the user enviroment on CRI's GARDNER cluster.
 
 --------------------
 ## Software Environment set up on Gardner ##
 
 Gardner uses **Lmod** as Environment Module System, Lmod handels the environment configuration as a Hierarchical structure. 
+
 User must:
 
-- First load the core compiler. To see a list of available compilers use:
+- First load the core compiler(s). To see a list of available compilers use the *module avail* command:
 
 ```
-module avail
+$ module purge
+$ module avail
+------------------------------------------------------------------------------------ /apps/modulefiles/Core -------------------------------------------------------------------------------------
+   dmd/2.072.1    gcc/4.9.4    gcc/5.4.0    gcc/6.2.0 (D)    intel/2017    java-jdk/1.6.0_45    java-jdk/1.7.0_80    java-jdk/1.8.0_92 (D)    pgi/16.9
+
+--------------------------------------------------------------------------- /apps/default/lmod/lmod/modulefiles/Core ----------------------------------------------------------------------------
+   lmod/6.4    settarg/6.4
+
+  Where:
+   D:  Default Module
+
 ```
 
-We will be using the lates gcc and java-jdk compilers"
+*fastqc* is a *java* application, so we will need to load the module: *java-jdk*. We will be also using the lates version of the *gcc* (default) compilers to load other tools like NGS mapping tools.
+
+To load the lates gcc and java-jdk compilers use:
 
 ```
-module load java-jdk
-module load gcc
+module load gcc java-jdk
 ```
 
-After the compilers are loaded, we can then load the tools/packages available for the compiler loaded, try the module avail again:
+After the compilers are loaded, we can then load all the tools/packages available for that particular compiler, try the module avail again:
 
 ```
-module avail
+$ module avail
 ```
 
 Now you can load any package from the list of available:
@@ -201,7 +216,9 @@ module load fastqc
 module load bowtie2
 module load samtools
 ```
-To see which packages are loaded in your current enviroment use:
+or: *module load fastqc bowtie2 samtools*
+
+To see which packages are loaded in your current user enviroment use:
 
 ```
 module list
@@ -257,7 +274,7 @@ module purge
 
 
 -----------------
-Let's now use the **scp** command, to copy the result files from your working directory on GARDNER to your local computer, so that we can vizualize the results. 
+Use the **scp** command, copy the result files from your GARDNER working directory to your local computer, so that we can vizualize the results. 
 
 Open a **new command line on your local** computer and then run the following commands (you will need to use your own username and password):
 
