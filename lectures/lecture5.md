@@ -3,13 +3,27 @@
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+Saturdays 10/21/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
-
 ## Learning Objectives
 
+- Develop a working knowledge of how to use R and Bioconductor for basic data visualizations of genomics data
+- Develop a working knowledge of how to use R and Bioconductor for basic multiple testing for gene expression data
+
+## 1. Introduction
+
+R Programming offers a set of builtin function and libraries (i.e. base, ggplot2, leaflet, lattice) to build data visualizations and present data analysis results. In this tutorial, you will learn the steps to create common as well as advanced visualizations in R using the base and some ggplot2 functions.
+
+## 2. Data download
+
+For this tutorial, we will use the  Gene expression dataset from **Golub et. al. (1999)** and the R Bioconductor package for **Resampling-based multiple hypothesis testing: multtest**. 
+
+* The **multtest** package includes non-parametric bootstrap and permutation resampling-based multiple testing procedures (including empirical Bayes methods) for controlling the family-wise error rate (FWER), generalized family-wise error rate (gFWER), the tail probability of the proportion of false positives (TPPFP), and false discovery rate (FDR). Several choices of bootstrap-based null distribution are implemented (centered, centered and scaled, quantile-transformed). Single-step and step-wise methods are available. Tests based on a variety of t- and F-statistics (including t-statistics based on regression parameters from linear and survival models as well as those based on correlation parameters) are included. 
+* When probing hypotheses with t-statistics, users may also select a potentially faster null-distribution which is multivariate normal with mean zero and variance-covariance matrix derived from the vector influence function. 
+* Results are reported in terms of adjusted p-values, confidence regions, and test statistic cutoffs. 
+* The procedures are directly applicable to identifying differentially expressed genes in DNA microarray experiments.
 - Develop a working knowledge on how to use R and Bioconductor for basic data visualizations of genomics data
 - Develop a working knowledge on how to use R and Bioconductor for basic multiple testing for gene expression data
 
@@ -49,7 +63,7 @@ First, let us take a look what is available on the **golub** dataset:
 As we can see, it contains gene expression data from the leukemia micro-array study of Golub et. al. (1999). There are 3051 genes and 38 tumor mRNA samples. 3 datasets are available:
 
 - **golub:** matrix of gene expression levels for the 38 tumor mRNA samples, rows correspond to genes (3051 genes) and columns to mRNA samples.
-- **golub.cl:** numeric vector clasiffying the tumors, 27 acute lymphoblastic leukemia (ALL) cases (code 0) and 11 acute myeloid leukemia (AML) cases (code 1).
+- **golub.cl:** numeric vector classifying the tumors, 27 acute lymphoblastic leukemia (ALL) cases (code 0) and 11 acute myeloid leukemia (AML) cases (code 1).
 - **golub.gnames:** a matrix containing the names of the 3051 genes for the expression matrix golub. The three columns correspond to the gene *index,* *ID,* and *Name*, respectively.
         
 
@@ -214,7 +228,7 @@ Let's use them:
 
 ![plotlinered](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/plotlinered.png)
 
-One can also add lines to an existing the plot with the command **lines()** 
+One can also add lines to an existing plot with the command **lines()** 
 
 For example, to add a **density curve line** to a histogram we can use:
 
@@ -297,7 +311,7 @@ We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in
 
 The **mt.teststat** and **mt.teststat.num.denum** functions of the **multtest** package provide a convenient way to compute test statistics for each row of a data frame, e.g., **two-sample Welch t-statistics, Wilcoxon statistics, F-statistics, paired t-statistics, and block F-statistics.**.
 
-Let's compute two-sample t-statistics that compares the gene expressions for each gene in the ALL and AML cases. This can be done with the mt.teststat function. The default test is the two-sample [Welch t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test), it is more reliable when the two samples have unequal variances and unequal sample sizes.
+Let's compute two-sample t-statistics that compare the gene expressions for each gene in the ALL and AML cases. This can be done with the mt.teststat function. The default test is the two-sample [Welch t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test), it is more reliable when the two samples have unequal variances and unequal sample sizes.
 
 ```{r}
 > teststat = mt.teststat(golub, golub.cl)
@@ -314,7 +328,7 @@ Now let's plot the t-test statistics:
 
 ![qqplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/qqplot.png)
 
-The quantile-quantile (stat_qq) plot is a graphical technique used for determining if two data sets come from populations with a common distribution (plot of the quantiles of the first data set against the quantiles of the second data set). Those points on the plot that look like outliers, correspond to genes whose expression levels are different between the ALL and AML groups. We will learn how to detect statistically significant differentially expressed genes in the next lecture.
+The quantile-quantile (stat_qq) plot is a graphical technique used for determining if two data sets come from populations with a common distribution (plot of the quantiles of the first data set against the quantiles of the second data set). Those points on the plot that look like outliers correspond to genes whose expression levels are different between the ALL and AML groups. We will learn how to detect statistically significant differentially expressed genes in the next lecture.
 
 
 ### Adjusting p-values
@@ -458,9 +472,9 @@ Export as png:
 > boxplot(log10(mydata))
 > graphics.off()
 ```
-## Week 5 Homework: :house: 
+## Week 5 Homework: :house: (graded)
 
-Create an script that used CRI's HPC to perform the following task:
+Create a script that used CRI's HPC to perform the following task:
 
 Using the data file: NeuralStemCellData.tab
 
@@ -468,7 +482,7 @@ Using the data file: NeuralStemCellData.tab
   -  A Histogram of sample G166
   -  A density plot of sample G166
   -  The expression of gene TP53 across all samples 
-  -  The Pearson correlation of Tecnical Replicates for neural stem (NS) cells 
+  -  The Pearson correlation of Technical Replicates for neural stem (NS) cells 
  
 * Send your script and plot via e-mail
 
