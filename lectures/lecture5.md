@@ -472,7 +472,7 @@ Export as png:
 > boxplot(log10(mydata))
 > graphics.off()
 ```
-## Week 5 Homework: :house: (graded)
+## Week 5 Homework: :house: (Graded!)
 
 Create a script that used CRI's HPC to perform the following task:
 
