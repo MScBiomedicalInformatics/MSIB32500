@@ -10,11 +10,11 @@ Saturdays 10/14/17; 9:00 AM - 12:00 PM
 
 ## Learning Objectives
 
-- Learn how develop HPC batch scripts using the Linux shell to execute code and develop analysis pipelines to perform computationally expensive bioinformatics tasks
+- Learn how to develop HPC batch scripts using the Linux shell to execute code and develop analysis pipelines to perform computationally expensive bioinformatics tasks
 
 ## 1. Introduction
 
-In this hand-on tutorial, you will learn how to use CRI's High Performance Computing (HPC) cluster GARDNER to perfom basic Bioinformatics analysis. GARDNER is a cluster with 3360 cores running **Scientific Linux 6** Update 4 with 2.6.32-358.18.1.el6.x86_64 kernel.  CRI also provides 1.83 petabytes of storage space to be provisioned as **lab-shares** for BSD researchers. 
+In this hand-on tutorial, you will learn how to use CRI's High Performance Computing (HPC) cluster GARDNER to perform basic Bioinformatics analysis. GARDNER is a cluster with 3360 cores running **Scientific Linux 6** Update 4 with 2.6.32-358.18.1.el6.x86_64 kernel.  CRI also provides 1.83 petabytes of storage space to be provisioned as **lab-shares** for BSD researchers. 
 
 In this tutorial you will learn how to **access GARDNER cluster**, **transfer files**, create simple **PBS** job submission scripts and submit jobs in four hand-on exercises. Upon finishing the hand-on practices you will be able to use GARDNER cluster to perform simple quality control and sequence alignment analysis on Next Generation Sequencing (NGS) data.
 
