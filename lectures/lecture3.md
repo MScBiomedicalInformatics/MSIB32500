@@ -212,7 +212,7 @@ To unload a package use: module unload <package>
 ```
 module unload gcc java-jdk
 ```
-If you now try: module load fastqc it will fail, because you unloaded the java-jdk compiler mode. Let's load the compilers and packages again:
+If you now try: *module load fastqc* it will fail because you unloaded the *java-jdk* compiler mode. Let's load the compilers and packages again:
 
 ```
 module load gcc java-jdk
@@ -222,34 +222,48 @@ module load fastqc
 
 Other usefull **module** commands:
 
-- module avail: List all 'modules' (tools) available to the current user. 
-  Try: 
-  $ module av R
-  $ module load R/3.2.0
-  $ which R
-  $ module load R/3.3.1  
-   $ which R
-- module switch: Switch to a different version of the module 
-  Try:
-  $ which R
-  $ module switch R/3.2.0 R/3.1.0
-  $ which R
+- Swap compilers
+```
+module swap gcc/5.4.0 gcc/6.1.0
+```
+- Find a module by keyword
 
-- module unload: Unloada module
-  Try:
-  $ which R
-  $ module unload R
-  which R
+```
+module keyword alignment
+```
+- List all possible versions of a module
+
+```
+module spider bwa
+```
+
+Save your loaded modules as the 'default'
+
+```
+module save
+```
+
+- Restore your default modules – module restore
+
+```
+module restore 
+```
+
+- Clean up environment
+
+```
+module purge
+```
 
 
 -----------------
-Let's now use the **scp** command, to copy the result files from your working directory in TARBELL to your local computer, so that we can vizualize the results. 
+Let's now use the **scp** command, to copy the result files from your working directory on GARDNER to your local computer, so that we can vizualize the results. 
 
 Open a **new command line on your local** computer and then run the following commands (you will need to use your own username and password):
 
 ```bash
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqGood_fastqc.html ./
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqGood_fastqc.zip ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex2/seqGood_fastqc.html ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex2/seqGood_fastqc.zip ./
 ```
 
 Now, in your local computer, go to the folder were you just copied the files (in my case is ./ or my home) and open the **seqGood_fastqc.html** file to explore the FastQC results. You can also unzip the **seqGood_fastqc.zip** file and review the **summary.txt** file for a summary of **PASS** and **FAIL** tests.
@@ -269,10 +283,10 @@ exit
 Open a new command line on your local computer and then run the following commands (you will need to use your own username and password):
 
 ```bash
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.zip ./
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.html ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.html ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.zip ./
 ```
-Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, we will take a look at the Per base quality test:
+Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, we will take a look at the per base quality test:
 
 **seqGood.fastq**
 
@@ -281,6 +295,9 @@ Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, 
 **seqBad.fastg**
 
 ![bad](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/perBaseBad.png)
+
+
+----------------
 
 **Exercise 3: Running jobs in batch mode**
 
