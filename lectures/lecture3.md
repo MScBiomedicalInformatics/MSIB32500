@@ -355,7 +355,7 @@ As described before, a job submittion script will look like the following:
 
 In the following exercise, you are going to perform the quality control of two RNA-seq dataset from Illumina’s Human [BodyMap 2.0 project](http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-513/). The sequence data, generated on HiSeq 2000 instruments in 2010, consist of 16 different human tissue types. We will use a subset of the data that contains 50bp paired-end reads (PE) from 2 tissues.
 
-First you need to download the compressed sequence read files (*.fastq.gz) to your working directory on TARBELL cluster using the command **wget or curl**. Note that FastQC program accepts both .fastq and fastq.gz file formats.
+First you need to download the compressed sequence read files (*.fastq.gz) to your working directory on GARDNER cluster using the command **wget or curl**. Note that FastQC program accepts both .fastq and fastq.gz file formats.
 
 ```bash
 cd ~/mscbmi/Ex3
@@ -399,12 +399,15 @@ Copy & paste the following script to the **nano** text editor:
 #################
 # Job Execution #
 #################
-# load the fastqc tool
+# load needed modules
+module load gcc java-jdk
 module load fastqc
+
 # set the paths
 seqPath=~/mscbmi/Ex3
 seqfile1=$seqPath/heart_ERR030886.sample.1.fastq.gz
 seqfile2=$seqPath/heart_ERR030886.sample.2.fastq.gz
+
 # run fastqc
 fastqc -o $seqPath $seqfile1 &> $seqPath\/heart.fastqc.log
 fastqc -o $seqPath $seqfile2 &>> $seqPath\/heart.fastqc.log
@@ -419,7 +422,44 @@ qsub run_fastqc_heart.pbs
 To check the status of your job use:
 
 ```bash
-qstat
+$ qstat
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01        0 Q express        
+[t.cri.biowksp01@cri16in001 Ex3]$ 
+[t.cri.biowksp01@cri16in001 Ex3]$ 
+[t.cri.biowksp01@cri16in001 Ex3]$ 
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01        0 Q express        
+
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01        0 R express        
+[t.cri.biowksp01@cri16in001 Ex3]$ 
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01        0 R express        
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01        0 R express        
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01        0 R express        
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01 00:00:11 C express        
+[t.cri.biowksp01@cri16in001 Ex3]$ qstat
+Job ID                    Name             User            Time Use S Queue
+------------------------- ---------------- --------------- -------- - -----
+2639131.cri16sc001         run_fastqc_heart t.cri.biowksp01 00:00:11 C express 
 ```
 To watch the status of your job and keep a window to do so, use:
 
@@ -429,6 +469,8 @@ watch qstat
 Use **Ctrl-c** to exit the watch window.
 
 To delete a batch job, simply type **qdel**, followed by the Job id and return.
+
+When the job is completed you should see the results (.html and .zip files) and the log files for your run_fastqc_heart script.
 
 Now, repeat the above procedure for the kidney pair-end sequence files. You will neet to create a script named **run_fastqc_kidney.pbs** using nano.
 
@@ -452,15 +494,17 @@ Copy & paste the following script to the **nano** text editor:
 #PBS -l nodes=1:ppn=1
 ### Inform the scheduler of the amount of memory you expect
 #PBS -l mem=512mb
-### Set the destination for your program’s output and error
+### Set the destination for your program's output and error
 #PBS -o $HOME/${PBS_JOBNAME}.e${PBS_JOBID}
 #PBS -e $HOME/${PBS_JOBNAME}.o${PBS_JOBID}
 
 #################
 # Job Execution #
 #################
-# load the fastqc tool
+# load needed modules
+module load gcc java-jdk
 module load fastqc
+
 # set the paths
 seqPath=~/mscbmi/Ex3
 seqfile1=$seqPath/kidney_ERR030885.sample.1.fastq.gz
@@ -476,9 +520,9 @@ Save and close nano. Then submit the job and check the status:
 qsub run_fastqc_kidney.pbs
 qstat
 ```
-You can review the QC results in the corresponding directories as you did in Exercise 2.
+You can review the QC results in the corresponding directories as you did for Exercise 2.
 
-Note: If you need to submit many jobs to the computation nodes, you don't have to type the above commands multiple times. Instead, you can simply create a new shell script named say **submit_jobs.sh** containing a script like the following:
+Note: If you need to submit many jobs to the computation nodes, you don't have to type the above commands multiple times. Instead, you can simply create a new shell script (named say **submit_jobs.sh**) containing a script like the following:
 
 ```bash
 #!/bin/bash
@@ -498,11 +542,11 @@ chmod u+x submit_jobs.sh
 $ ./submit_jobs.sh
 ```
 
-Next up we are going to align the sequence reads to the reference human genome (hg19) using two alignment tools - BWA (http://bio-bwa.sourceforge.net) and Bowtie2 (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). Both tools use the Burrows--Wheeler transformation to reduce the memory requirement for the sequence alignment. Each has its own set of limitations, for example, the lengths of reads it accepts, how it outputs read alignments, how many mismatches there can be, whether it produces gapped alignments, etc.). Please note for RNA-Seq data, people use splicing-aware alignment tools such as TopHat and STAR aligners.
+Next up we are going to align the sequence reads to the reference human genome (hg19) using two alignment tools - BWA (http://bio-bwa.sourceforge.net) and Bowtie2 (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). Both tools use the Burrows--Wheeler transformation method to reduce the memory requirement for the sequence alignment. Each has its own set of limitations, for example, the lengths of reads it accepts, how it outputs read alignments, how many mismatches there can be, whether it produces gapped alignments, etc.). Please note for RNA-Seq data, people use splicing-aware alignment tools such as TopHat and STAR aligners.
 
 ** Exercise 4: Sequence alignment on HPC cluster**
 
-First, copy the pair-end Illumina sequence files for heart from Exercise 3
+First, copy the pair-end Illumina sequencing files for heart from Exercise 3
 
 ```bash
 cp ~/mscbmi/Ex3/*.fastq.gz ~/mscbmi/Ex4
@@ -533,9 +577,11 @@ To run the alignment using **bwa** on the cluster, you need to create a new job 
 #################
 # Job Execution #
 #################
-# load the programs to be executed
+# load needed modules
+module load gcc java-jdk
 module load bwa
 module load samtools
+
 # set the input files and program paths
 seqPath=~/mscbmi/Ex4
 outPath=~/mscbmi/Ex4/bwa
@@ -564,7 +610,7 @@ qstat
 ```
 Note:
 - The program takes just a few minutes to complete because the input sequence files used in this exercise are a stripped-down version of the original compressed fastQ files, The tipical size of a complete RNA-Seq fastq file is about 6.1GB. Running the BWA aligner on a real file would take much longer time, thus the utility of HPC enviroments to reduce the time to manageable.
-- BWA and Bowtie2 both support multi-threading. To enable it, turn on the option -t in BWA and -p in Bowtie2. In above script, 4 threads are used for the mapper, you also need to inform the scheduler of the number of CPU cores for your job by setting ppn=4. While multi-threading can speed up the mapping, specifying too many threads could cause your job to be waiting in the queue for sufficient resources to become available. Set the number of threads to 4, 8, or 16 depending on the read file sizes and current job load on the cluster.
+- BWA and Bowtie2 both support multi-threading. To enable it, turn on the **option -t in BWA** and **-p in Bowtie2**. In above script, 4 threads are used for the mapper, you also need to inform the scheduler of the number of CPU cores for your job by setting ppn=4. While multi-threading can speed up the mapping, specifying too many threads could cause your job to be waiting in the queue for sufficient resources to become available. Set the number of threads to 4, 8, or 16 depending on the read file sizes and current job load on the cluster.
 
 We are now going to run the alignment using **bowtie2** on the cluster, you need to create a new job submission script named **run_bowtie2_heart.pbs** using nano editior:
 
@@ -591,6 +637,8 @@ We are now going to run the alignment using **bowtie2** on the cluster, you need
 #################
 # Job Execution #
 #################
+# load needed modules
+module load gcc java-jdk
 
 module load samtools bowtie2
 
@@ -647,30 +695,33 @@ Should list the follwoing files:
 - heart_ERR030886.sample.sorted.bam.bai
 
 
-You can now visualize the alignments on genome visualization tools such as the Integrative Genomics Viewer [IGV](http://www.broadinstitute.org/igv). Download and install the IGV to your local computer. 
+You can now visualize the alignments on genome visualization tools such as the Integrative Genomics Viewer [IGV](http://www.broadinstitute.org/igv). 
+
+Download and install the IGV to your local computer. 
 Trasfer the *bam* and *bai* files from TARBELL to your local computer. 
-To transfer a file from TARBELL to your local computer, open a new comand line in your local computer and use the **scp** command: 
+To transfer a file from GARDNER to your local computer, open a new comand line in your local computer and use the **scp** command: 
 
 ```bash
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam ./
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam.bai ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam ./
+scp t.cri.biowksp01@ardner.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam.bai ./
 ```
 Move the files you just downloaded to a folder in your Desktop (bwa_r)
 
 ```bash
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam ./
-scp t.cri.biowksp40@tarbell.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam.bai ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex4/bowtie2/heart_ERR030886.sample.sorted.bam.bai ./
 ```
 Move the files you just downloaded to a another folder in your Desktop (bowtie2_r)
 
 In your local computer, open the the Integrative Genomics Viewer and load the **bam** files *(File -> load from file)* from each result folder.
-Now search for the gene ** TOMM40L** on IGV. You should be able to see the mapping results for the two tools, as in the figure bellow:
+Now search for the gene **TOMM40L** on IGV. You should be able to see the mapping results for the two tools, as in the figure bellow:
 
 ![igv](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/IGV.png)
 
 ## Week 3 Homework: :house: 
 
-Create an analysis pipeline (one script) that performs the raw data QC for heart and kidney files, then perform the mapping of those files using both bwa and bowtie2 tools. Screen capture the vizualization of your mapping results using IGV. 
+- Create an analysis pipeline (**one script**) that performs the raw data QC for heart and kidney files, then perform the mapping of those files using both **bwa** and **bowtie2** tools. 
+- Screen capture the vizualization of your mapping results (both bwa and bowtie2) for the gene TOMM40L using IGV. 
 
 Please submit your code and vizualizations via e-mail.
 
