@@ -718,7 +718,7 @@ Now search for the gene **TOMM40L** on IGV. You should be able to see the mappin
 
 ![igv](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/IGV.png)
 
-## Week 3 Homework: :house: 
+## Week 3 Homework: :house: (Gradede!)
 
 - Create an analysis pipeline (**one script**) that performs the raw data QC for heart and kidney files, then perform the mapping of those files using both **bwa** and **bowtie2** tools. 
 - Screen capture the vizualization of your mapping results (both bwa and bowtie2) for the gene TOMM40L using IGV. 
