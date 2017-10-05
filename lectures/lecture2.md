@@ -10,7 +10,7 @@ Saturdays 10/07/17; 9:00 AM - 12:00 PM
 
 ## Learning Objectives
 
-- Learn the basics of developing useful shell scripts.
+- Learn to develop useful shell scripts.
 - Learn how to use important Linux command on routine tasks in bioinformatics.
 - Learn the basics of parallel and distributed computing environments.
 - Get familiar with basic models for parallel computation, and design of parallel and distributed algorithms. 
@@ -27,9 +27,9 @@ Saturdays 10/07/17; 9:00 AM - 12:00 PM
 3. Write some code
 4. Save the script file as filename.sh
 5. Set the executable permission for filename.sh for the target users
-6. To excute the script 
+6. To execute the script 
 
-Let's create a very simple first shell script, **on your comand line** open a **text editor** ($ nano simple.sh).
+Let's create a very simple first shell script, **on your command line** open a **text editor** ($ nano simple.sh).
 
 ```text
 #!/bin/bash
@@ -52,7 +52,7 @@ We can now execute our first shell script
 ./simple.sh                
 ```
 
-Let's see another example **on your comand line** open a **text editor** ($ nano hello.sh). On the editor type the following:
+Let's see another example **on your command line** open a **text editor** ($ nano hello.sh). On the editor type the following:
 
 ```text
 #!/bin/bash
@@ -87,7 +87,7 @@ Shell variables store data in the form of characters and numbers, the following 
 variable ="Hello"
 echo $variable
 ```
-Let's use the the concept of variables is a small script. Create the following script using a text editor (nano greetings.sh)
+Let's use the concept of variables is a small script. Create the following script using a text editor (nano greetings.sh)
 
 ```bash
 #!/bin/bash
@@ -99,7 +99,7 @@ echo "I am $remark too!"
 ```
 Now, execute your script.
 
-You can also access Linux environment variables ($HOME, $USER, etc.) from within your shell scripts. Try the follwoing script:
+You can also access Linux environment variables ($HOME, $USER, etc.) from within your shell scripts. Try the following script:
 
 environment.sh
 
@@ -165,7 +165,7 @@ do
 done
 ```
 
-Let's convine while loops with conditional statements:
+Let's combine *while* loops with conditional *if* statements:
 
 First, copy on your home directory the file greetings.txt form /group/mscbmi/lecture1/, this file contains several ways to say hello in different languages.
 
@@ -174,7 +174,7 @@ cd ~
 cp /group/mscbmi/lecture1/greetings.txt .
 ```
 
-Let's now create a script that will recognize the language for each each line in the file:
+Let's now create a script that will recognize the language for each line in the file:
 
 **while2.sh**
 ```bash
@@ -248,7 +248,7 @@ done
 
 **File comparisons**
 
-In Shell, you can test the status of filrs and directories on the Linux filesystem with the follwoing file comparisons
+In Shell, you can test the status of files and directories on the Linux filesystem with the following file comparisons
 
 | Comparison    | Description                              |
 | ------------- |:----------------------------------------:|
@@ -305,7 +305,7 @@ else #Directory does not exist
 fi
 ```
 
-## :mortar_board: Your turn,create a script or use a comand to remove (delete) the line that the previous schipt inserted on *file_name*
+## :mortar_board: Your turn, create a script or use a command to remove (delete) the line that the previous script inserted on *file_name*
 
 
 ### :book: Learn more:
@@ -322,7 +322,7 @@ ____________________________________________________________
 
 **a. Processing FASTQ files**
 
-Next Generation Sequencing platfoms generate sequence data in [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format)
+Next Generation Sequencing platforms generate sequence data in [FASTQ format](https://en.wikipedia.org/wiki/FASTQ_format)
 FASTQ format has 4 lines per read, e.g.:
 ```text
 @SRR001665.1 071112_SLXA-EAS1_s_4:1:1:672:654/1
@@ -365,7 +365,7 @@ tail -40000 SRR001655.fastq > bottom_10000.fastq
 ```
 **b. Using the 'paste' command to format your data**
 
-Showing fastq formated data as a table (i.e. in columns) can be very useful to explore the data, the 'paste' command writes lines in a file **as columns separated by a the tab character**. The command take character '-' as an option to represent the standard input, e.g.: the option '- - - -', will be trasalated as 'read four lines', and write them out as four columns:
+Showing fastq formated data as a table (i.e. in columns) can be very useful to explore the data, the 'paste' command writes lines in a file **as columns separated by the tab character**. The command takes character '-' as an option to represent the standard input, e.g.: the option '- - - -', will be translated as 'read four lines', and write them out as four columns:
 
 ```bash
 cat bottom_10000.fastq | paste - - - - | head -10
@@ -396,12 +396,12 @@ awk '$1!~/@/' SRR001655.fastq > readswithnoheader.txt
 
 **d. Text manipulation with sed**
 
-Explore the result of the following comand:
+Explore the result of the following command:
 
 ```bash
 sed 's/N/0/g' top_1000_tab.txt 
 ```
-Check that the orininal top_1000_tab.txt  file was not altered.
+Check that the original top_1000_tab.txt  file was not altered.
 
 Making sed work like grep
 
@@ -590,7 +590,7 @@ In order to use the HPC compute nodes, you must first log in to one of the head 
 
     A description of the GFF format is available [here](http://www.sequenceontology.org/gff3.shtml)
 
-2. Using the Linux command line, asnwer the following questions:
+2. Using the Linux command line, answer the following questions:
 ```
     a. How many genes are there in the data?
     
