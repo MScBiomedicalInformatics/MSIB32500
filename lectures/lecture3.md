@@ -123,8 +123,10 @@ First you will need to download two raw sequence files to your **home** director
 
 You can do so using the command **wget or curl**:
 
-- seqGood.fastq (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqGood.fastq) 
-- seqBad.fastq (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqBad.fastq) 
+- seqGood.fastq:
+ (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqGood.fastq) 
+- seqBad.fastq:
+ (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqBad.fastq) 
 
 Your command should look like: 
 ----------------------------
