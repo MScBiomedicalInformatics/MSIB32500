@@ -176,7 +176,7 @@ As you can see, before excuting the *fastqc* package, we used *module load* to s
 --------------------
 ## Software Environment set up on Gardner ##
 
-Gardner uses **Lmod** as Environment Module System, Lmod handels the environment configuration as a Hierarchical structure. 
+Gardner uses **Lmod** as Environment Module System, Lmod handels the environment configuration as a hierarchical structure. 
 
 User must:
 
@@ -196,9 +196,9 @@ $ module avail
 
 ```
 
-*fastqc* is a *java* application, so we will need to load the module: *java-jdk*. We will be also using the lates version of the *gcc* (default) compilers to load other tools like NGS mapping tools.
+*fastqc* is a *java* application, so we will need to load the module: *java-jdk*. We will be also using the lates version of the *gcc* (default) compilers to load other packages like mapping tools for NGS. 
 
-To load the lates gcc and java-jdk compilers use:
+To load the lates gcc *and* java-jdk compilers use:
 
 ```
 module load gcc java-jdk
@@ -298,7 +298,7 @@ exit
 
 **Note** that after we run FastQC on the **seqBad.fastq** file, we used the command: **exit** to exit the **interactive** mode session.
 
-Open a new command line on your local computer and then run the following commands (you will need to use your own username and password):
+Open a new command line **on your local computer** and then run the following commands:
 
 ```bash
 scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.html ./
