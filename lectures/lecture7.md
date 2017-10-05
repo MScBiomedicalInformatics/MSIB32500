@@ -2,18 +2,18 @@
 # Analysis of gene expression data from RNA-seq experiemnts with edgeR
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+Saturdays 11/04/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
 
 ## Learning Objectives
 
-- Develop a working knowledge on how to use R and Bioconductor for analysis of RNA-seq data using **edgeR** package
+- Develop a working knowledge of how to use R and Bioconductor for analysis of RNA-seq data using **edgeR** package
 
 ## 1. Introduction
 
-* In this lecture you will learn how to use the [edgeR package in R](http://www.bioconductor.org/packages/release/bioc/html/edgeR.html) for detecting statistically significan differentially expressed genes using data from an RNA-Seq experiemnt. 
+* In this lecture you will learn how to use the [edgeR package in R](http://www.bioconductor.org/packages/release/bioc/html/edgeR.html) for detecting statistically significant differentially expressed genes using data from a RNA-Seq experiment. 
 * A user manual for the edgeR package is available [here](http://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf)
 
 
@@ -35,9 +35,9 @@ edgeR is an R package that performs differential tag/gene expression using count
 
 
 * For this tutorial we will use the RNA-Seq data set from the paper by Li et al. [2008] entitled: ”Determination of tag density required for digital transcriptome analysis: Application to an androgen-sensitive prostate cancer model.” The paper is available [here.](https://www.ncbi.nlm.nih.gov/pubmed/19088194) 
-* This study compared *hormone treated cancer cells* to *non-treated cancer cells.* For the non-treated, there are *4 biological replicates.* For the treated, there are *3 biological replicates.*
+* This study compared *hormone-treated cancer cells* to *non-treated cancer cells.* For the non-treated, there are *4 biological replicates.* For the treated, there are *3 biological replicates.*
 
-* Download to your local computer the raw version of the dataset: 'expression.txt', from the *data* folder on the github, and load that data to your R working enviroment:
+* Download to your local computer the raw version of the dataset: 'expression.txt', from the *data* folder on the GitHub, and load that data to your R working environment:
 
 ```{r}
 > raw.data <- read.table( file = "expression.txt" , header = TRUE )
@@ -127,7 +127,7 @@ T_R3     T   681743            1
 > cds$samples
 
 ```
-* We now need to filter out low count reads since otherwise it would be impossible to detect differential expression. 
+* We now need to filter out low count reads since otherwise, it would be impossible to detect differential expression. 
 * The method used in the edgeR vignette is to keep only those genes that have *at least 1 read per million in at least 3 samples.* 
 * Once this filtering is done, we can calculate the normalization factors which correct for the different compositions of the samples. * The effective library sizes are then the product of the actual library sizes and these factors.
 
@@ -181,7 +181,7 @@ T_R3     T   681743    0.9576010
 
 We will now proceed to estimate the common dispersion values across all genes by the Conditional Maximum Likelihood **(CML)** method *see Robinson MD and Smyth GK 2008* [paper](http://biostatistics.oxfordjournals.org/content/9/2/321).
 
-The **CML** method involves computing a matrix of quantile-quantile normalized counts, *called pseudo-counts.* The pseudo-counts are adjusted in such a way that the library sizes are equal for all samples, while preserving differences between groups and variability within each group. The pseudo-counts are included in the output of the function, but are intended mainly for internal use of edgeR.
+The **CML** method involves computing a matrix of quantile-quantile normalized counts, *called pseudo-counts.* The pseudo-counts are adjusted in such a way that the library sizes are equal for all samples, while preserving differences between groups and variability within each group. The pseudo-counts are included in the output of the function, but are intended mainly for the internal use of edgeR.
 
 ```{r}
 > cds <- estimateCommonDisp(cds)
@@ -227,8 +227,8 @@ $AveLogCPM
 ```
 * Once the common dispersion is estimated we will proceed to estimate **the tagwise dispersions.** 
 * In this scenario, each gene will get its own unique dispersion estimate, but the *common dispersion* is still used in the calculation.
-*  The **tagwise dispersions are squeezed toward the common value.** The amount of squeezing is governed by the paramter **prior.n.** The higher prior.n, the closer the estimates will be to the common dispersion. 
-* The recommended **prior.n.** value is the nearest integer to: 50/(#samples − #groups). For this data set that’s 50/(7 − 2) = **10.**
+*  The **tagwise dispersions are squeezed toward the common value.** The amount of squeezing is governed by the parameter **prior.n.** The higher prior.n, the closer the estimates will be to the common dispersion. 
+* The recommended **prior.n.** value is the nearest integer to: 50/(#samples − #groups). For this dataset that’s 50/(7 − 2) = **10.**
 
 ```{r}
 > cds <- estimateTagwiseDisp(cds, prior.n = 10)
@@ -243,7 +243,7 @@ $AveLogCPM
 * Now that we have estimated the dispersion parameters we can see how well they fit the data by plotting the **mean-variance relationship**
 
 * Four things are shown in the plot: 
-	- 	The raw variances of the counts (grey dots) 
+	-  The raw variances of the counts (grey dots) 
 	-  The variances using the tagwise dispersions (light blue dots)
 	-  The variances using the common dispersion (solid blue line) 
 	-  The variance = mean a.k.a. poisson variance (solid black line) 
@@ -363,7 +363,7 @@ Store full topTags results table
 * The next plot is an MA plot that shows the relationship between concentration and fold-change across the genes
 * The differentially expressed genes are colored in red and the non-differentially expressed are colored black. T
 * The orange dots represent genes in which the counts *were zero in all samples of one of the groups.* 
-* The blue line is added at a log-FC of 2 to represent a level for biological significance.
+* The blue line is added at a log-FC of 2 to represent a level of biological significance.
 
 ```{r}
 
@@ -414,10 +414,10 @@ Finally, we will save the complete results table on a file:
 ```
 
 
-## Week 7 Homework: :house: 
+## Week 7 Homework: :house: (Graded!)
 
-* For this tutorial, we used the **tagwise** dispersion to estimate the DEGs (see section 8. Detecting Differentially Expressed Genes). Using the other available methods *common*, and *auto*, repeat the detection of the **top 100** statistically significant genes (DEGs). One list ofr each method.
-* Create a list of the overlaping DEGs
+* For this tutorial, we used the **tagwise** dispersion to estimate the DEGs (see section 8. Detecting Differentially Expressed Genes). Using the other available methods *common*, and *auto*, repeat the detection of the **top 100** statistically significant genes (DEGs). One list for each method.
+* Create a list of the overlapping DEGs
 * Send your homework via e-mail  
 
 
