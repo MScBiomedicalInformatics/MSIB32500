@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+Saturdays 10/28/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -34,7 +34,7 @@ For any bioinformatics analysis, it is always advisable to start with an analysi
 ![workflow](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/workflow.png)
 
 
-## 3. Installing requiered packages:
+## 3. Installing required packages:
 The first thing we will need to start working with R and Bioconductor, is to download and install the packages we will need. For this analysis we will use the Bioconductor **lumi** package. The **lumi** package provides an integrated solution for Illumina microarray data analysis, it includes functions for Illumina BeadStudio (GenomeStudio) data input, quality control, BeadArray-specific variance stabilization, normalization and gene annotation at the probe level. Available functions include: **lumiR(), lumiB(), lumiT(), lumiN() and lumiQ()** designed for data input, preprocessing and quality control. 
 
 Downloading and installing **lumi** package:
@@ -59,7 +59,7 @@ We will also need the corresponding **annotation libraries** **lumiMouseAll.db**
 ```
 ## 4. Reading the data
 
-The function **lumiR()** supports directly reading of the Illumina Bead Studio toolkit output from version 1 to version 3. It can automatically detect the BeadStudio output version/format and create a new *LumiBatch* object for it. The **lumiR** function will automatically determine the starting line of the data; columns with header including AVG_Signal and BEAD_STD are required for the LumiBatch object. The sample IDs and sample labels are extracted from the column names of the data file. After reading the data, **lumiR** will *automatically* initialize the **QC slot** of the LumiBatch object by calling **lumiQ.**
+The function **lumiR()** supports directly reading of the Illumina Bead Studio toolkit output from version 1 to version 3. It can automatically detect the BeadStudio output version/format and create a new *LumiBatch* object for it. The **lumiR** function will automatically determine the starting line of the data; columns with the header including AVG_Signal and BEAD_STD are required for the LumiBatch object. The sample IDs and sample labels are extracted from the column names of the data file. After reading the data, **lumiR** will *automatically* initialize the **QC slot** of the LumiBatch object by calling **lumiQ.**
 
 To read the data, we will start by defining our working directory:
 
@@ -637,9 +637,9 @@ Finally, we are now going to create one **html** file and one **text** file with
 
 Browse the created out.html file on your working directory and try the links.
 
-## Week 6 Homework: :house: 
+## Week 6 Homework: :house: (Graded!)
 
-In this tutorial, we detected the DEGs between WT Control (3 samples) and WT RA Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipleine (script) to detect the DEGs between WT Control and WT RA Treatment at 8 hour. Create a list of **overlaping significant DEG** with the top 100 DEGs between WT RA Treatment at 24 hours and WT RA Treatment at 8 hour. Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
+In this tutorial, we detected the DEGs between WT Control (3 samples) and WT RA Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipeline (script) to detect the DEGs between WT Control and WT RA Treatment at 8 hours. Create a list of **overlapping significant DEG** with the top 100 DEGs between WT RA Treatment at 24 hours and WT RA Treatment at 8 hours. Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
 
 Submit your homework via e-mail.
 
