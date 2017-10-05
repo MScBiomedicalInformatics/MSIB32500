@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+Saturdays 10/21/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -11,10 +11,10 @@ April - June 2017; Saturdays 9:00AM - 12:00PM
 ## Learning Objectives
 
 - Develop R programming skills and learn how to use R for Bioinformatics analysis
-- Develop a working knowledge on how to use R and Bioconductor for the analysis of genomics data 
+- Develop a working knowledge of how to use R and Bioconductor for the analysis of genomics data 
 
 ## 1. Introduction
-R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS. To download R, please choose your preferred CRAN mirror.
+R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows, and MacOS. To download R, please choose your preferred CRAN mirror.
 
 ### Where to find R:
 
@@ -36,7 +36,8 @@ R is a free software environment for statistical computing and graphics. It comp
   * Is also a programming language 
   * Can handle large datasets (like NGS data)
   * Very powerful graphics
-  * State-of-the-art statistics and tool of choice for bioinformatics
+  * State-of-the-art statistics and tool of choice for bioinformatics 
+  * Lots of available bioinformatics analysis tools/packages (i.e. Bioconductor)
   * Free, and open source!
 
 
@@ -45,14 +46,14 @@ R is a free software environment for statistical computing and graphics. It comp
 * Hard to handle large dataset (>1000 data points)
 * Inflexible, few analyses available
 * Hard to repeat analyses systematically with new data
-* Not'reproducible reseach' friendly -  it is hard to docuemnt process and actions
+* Not'reproducible research' friendly -  it is hard to document process and actions
 
 
 #### Getting started:
 * Download and install the Open Source version of [Rstudio](https://www.rstudio.com). 
 
   * Start Rstudio, in a File/New File/R Script type:
-  * Review and get familiar with Rstudio user interfaze.
+  * Review and get familiar with Rstudio user interface.
 
   
   ```{r}
@@ -77,7 +78,7 @@ Most R functions have online documentation.
 #### Vectors
   The basic Object in R is **a vector**. In statistics, we are almost always operating with several "data points" that can be stored/organized in a vector.
   
- A vector is an collection of numbers and/or strings:
+ A vector is a collection of numbers and/or strings:
  
 - ("jorge", "wenjun", "ron") 
 - (10, 5.2, 1,  7,  2, 21) 
@@ -99,13 +100,13 @@ If we are making vectors of size 1, we can skip **c()**:
 ```{r}
 > 3
 ```
-When you start a session in R, it is a good idea to first clean all R abjects, see bellow:
+When you start a session in R, it is a good idea to first clean all R objects, see below:
 
 
 ```{r}
 > ls()     		# List the contents of the workspace. 
-> rm(list=ls()) 		# remove all objects in your workspace. 
-> ls()              #character(0) means "nothing to see here"
+> rm(list=ls())         # remove all objects in your workspace. 
+> ls()                  # character(0) means "nothing to see here"
 ```
 
 #### Task1:
@@ -121,7 +122,7 @@ A vector is a **data structure**, and the most fundamental in R. Almost everythi
 
 We can create a memory representation of a matrix in R with the **matrix** function (the data elements must be of the same basic type). 
 
-See bellow:
+See below:
 
 ```{r}
 > A = matrix(c(2, 4, 3, 1, 5, 7), nrow=2, ncol=3, byrow = TRUE)
@@ -155,7 +156,7 @@ In R the symbol **<-** and **=** have the effect of assigning **value** to a **v
 ```{r}
 my_vector <- c(1,5,10, 7, 2)
 ```
-The commands returns no value to the screen, a variable of type **vector** called "my_vector" is created. Variable names are totally arbitrary.
+The commands return no value to the screen, a variable of type **vector** called "my_vector" is created. Variable names are totally arbitrary.
 
 The anatomy of the vector:
 
@@ -209,7 +210,7 @@ Using the reference sheet, figure out at least three ways of making R print your
 
 #### Naming rules and the danger of over-writing 
 
-A good practice, in any programming language, is to assign meaninful names to variables/vector. In R, never start a vector name with a number
+A good practice, in any programming language, is to assign meaningful names to variables/vector. In R, never start a vector name with a number
 
 ```{r}
 > a<- c(1,5,4,2)    #OK
@@ -301,7 +302,7 @@ A+C is trickier - the C vector is just of length 2. It is re-used. This is what 
 
 ### Plotting vectors
 
-Lets make up some semi-random data:
+Let's make up some semi-random data:
 
 ```{r}
 > dat<-rnorm (100)   #draw 100 random, normal distributed data points 
@@ -357,7 +358,7 @@ These options are 'arguments' to the *plot()* function
 ```{r}
 > plot(dat, col='hotpink', type='h', main='Plot',)
 ```
-We will review in detail how to use R for basics graphics and plotting on the next lesson.
+We will review in detail how to use R for basic graphics and plot on the next lesson.
 
 #### More about functions
 
@@ -365,14 +366,14 @@ In most cases, a function needs some **input**, like in *plot(dat)* 'dat' here i
 
 We could also say: **plot(x=dat)**  - a *named argument.* If you have many arguments, most of them are named - such as in the following example:
 
-- plot (some_vector, col="blue", type="s"). The help pages will tell you what type of arguments you can use for a particualr command.
+- plot (some_vector, col="blue", type="s"). The help pages will tell you what type of arguments you can use for a particular command.
 
 
 #### The danger of unnamed arguments.
 
 The order of unnamed arguments, could make a big difference. 
 
-Try the follwoing commands. Observe the differences between the following two code blocks: 
+Try the followoing commands. Observe the differences between the following two code blocks: 
 
 ```{r}
 > a<-rnorm(100) 
@@ -560,7 +561,7 @@ The figure shows what fraction of the data has been covered at point X.
 #### Boxplots
 
   * As we have seen, an "easier" representation of ECDFs. Is based on making boxes that tell us about both center point and "spread" of the data
-  * First, we calculate the first quartile, the median and the third quartile
+  * First, we calculate the first quartile, the median, and the third quartile
   * Then we calculate the "inter-quartile range" (IQR): 3rd quartile -1st quartile
   * These will be used to draw a "box" 
   * R can do that with a simple command: **boxplot()**
@@ -597,7 +598,7 @@ Try the follwoing code:
 
 What is the difference between these distributions?
 
-  * Same mean and median, but different spread over the x axis
+  * Same mean and median, but different spread over the x-axis
   * This can be measured by the variance of the data: 
 
 ![variance](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/variance.png)
@@ -636,7 +637,7 @@ Observe the ooutput of the two code blocks bellow:
 
   * Variance inform us about the quality of the measurements. It measures how far a set of (random) numbers are spread out from their mean
   * The higher the variance, the harder it is to say with certainty that two measurements are different
-  * Standard Deviation (SD): is a measure that quantify the amount of variation or dispersion of a set of data values
+  * Standard Deviation (SD): is a measure that quantifies the amount of variation or dispersion of a set of data values
 
   * R functions for variance and standard deviation are: **var()** and **sd()**. 
    
@@ -647,7 +648,7 @@ Let us try them with some random data:
 > largeset<-rnorm(10000) 
 ```
   * What is the variance and standard deviation for these?
-  * Is the standard deviation really the square root of the variance (what is the function for square root?)    
+  * Is the standard deviation really the square root of the variance (what is the R function for square root?)    
 
 
 ```{r}
@@ -733,7 +734,7 @@ The above conditional can also be written in a single line as follows:
 
 #### Nested if...else statement
 
-We can nest as many if...else statement as we want as follows.
+We can nest as many if...else statement as we want as follows:
 
 #### The syntax of nested if...else statement is:
 
@@ -856,9 +857,9 @@ Output:
 
 #### Repeat loop
 
-A repeat loop is used to iterate over a block of code multiple number of times. There is no condition check in repeat loop **to exit** the loop.
+A repeat loop is used to iterate over a block of code multiple numbers of times. There is no condition check in repeat loop **to exit** the loop.
 
-We must ourselves **put a condition explicitly inside the body** of the loop and use the break statement to exit the loop. Failing to do so will result into an infinite loop.
+We must ourselves **put a condition explicitly inside the body** of the loop and use the break statement to exit the loop. Failing to do so will result in an infinite loop.
 
 #### Syntax of repeat loop
 
@@ -1151,7 +1152,7 @@ Generalized linear models are fit using the **glm()** function:
 ## Week 4 Homework: :house: 
 
 
-- Copy all .fasta available at: **/group/mscbmi/hw4/** into  a working directory under home:
+- Copy all .fasta available at: **/group/mscbmi/hw4/** into a working directory under home:
 
 ```
 $ mkdir hw4
@@ -1194,9 +1195,9 @@ time.taken
 sink()
 
 ```
-* A. Develop an analysis pipeline that uses CRI's TARBELL cluster to perform the alignment of the input **queary** sequence against the full  **reference** file: **reference.fasta**
+* A. Develop an analysis pipeline that uses CRI's GARDNER cluster to perform the alignment of the input **query** sequence against the full  **reference** file: **reference.fasta**
 * B. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt'. 
-* c. What is the maximun and minimum alignment score obtaine?
+* c. What is the maximun and minimum alignment score?
 * D. Record, report and explain the total runtime (execution time) for your script running with the following hardware configurations:
 	- 2 nodes; 4 cpus; 4gb of RAM
 	- 2 nodes; 8 cpus; 4gb 0f RAM
