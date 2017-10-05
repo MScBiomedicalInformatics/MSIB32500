@@ -1149,7 +1149,7 @@ Generalized linear models are fit using the **glm()** function:
 > print(summary(fit)$coef, digits=2)
 ```
 
-## Week 4 Homework: :house: 
+## Week 4 Homework: :house: (Graded!)
 
 
 - Copy all .fasta available at: **/group/mscbmi/hw4/** into a working directory under home:
