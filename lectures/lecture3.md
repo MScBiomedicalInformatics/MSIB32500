@@ -111,9 +111,9 @@ Torque provides user commands such as **qsub, qdel, qstat, etc.,** which are use
 
 GARDNER cluster supports two types of job submission: **Interactive**  and **batch** modes 
 
-- Interactive mode (qsub -I): You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
+- **Interactive mode (qsub -I):** You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
 
-- Batch mode: In a batch mode you first write a PBS script with all the instructions/code you want to execute, and then you submit that script to the scheduler. The batch job script contains all the information needed, such as the location of the input and output files, as well as run parameters. Once the batch job starts, you can log off and the job will remain running. 
+- **Batch mode:** In a batch mode you first write a PBS script with all the instructions/code you want to execute, and then you submit that script to the scheduler. The batch job script contains all the information needed, such as the location of the input and output files, as well as run parameters. Once the batch job starts, you can log off and the job will remain running. 
 
 **Exercise 2: Running job in interactive mode**
 
@@ -123,10 +123,8 @@ First you will need to download two raw sequence files to your **home** director
 
 You can do so using the command **wget or curl**:
 
-- seqGood.fastq:
- (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqGood.fastq) 
-- seqBad.fastq:
- (https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqBad.fastq) 
+- seqGood.fastq:(https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqGood.fastq) 
+- seqBad.fastq:(https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/seqBad.fastq) 
 
 Your command should look like: 
 ----------------------------
