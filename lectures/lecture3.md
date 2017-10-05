@@ -94,12 +94,13 @@ Windows users can also use GUI tools like WinSCP (http://winscp.net/download/win
 
 ## 4. Executing jobs on GARDNER HPC cluster
 
+In this section, you will learn how to execute jobs on CRI's GARDNER cluster. GARDNER cluster supports two types of job submission: **Interactive**  and **batch** modes 
+
+- **Interactive mode (qsub -I):** You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
+
+- **Batch mode:** In a batch mode you first write a PBS script with all the instructions/code you want to execute, and then you submit that script to the scheduler. The batch job script contains all the information needed, such as the location of the input and output files, as well as run parameters. Once the batch job starts, you can log off and the job will remain running. 
+
 **Note: DO NOT RUN JOBS on the login nodes of the cluster. Always submit jobs to the compute nodes (qsub), or use the interactive mode (qsub -I)**
-
-In this section, you will learn how to execute jobs on CRI's GARDNER cluster. We will use a tool for raw data quality control of NGS data as an example. 
-
-The tool we will be using is a Java based program called [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) 
-This tool provides a modular set of QC analyses that can help you to evaluate the quality of your sequences, this is in general the first step on any NGS analysis pipeline.  
 
 GARDNER cluster uses **Torque** as a *resource manager* (Provides low-level functionality to start, hold, cancel and monitor jobs) and **Moab** as *Work-load Manager (job scheduler)* to manage the cluster resources. Torque/Moab is based on the **Portable Batch System (PBS)** originally developed by NASA in the early 1990s. As such, **Torque/Moab uses PBS directives (commands)** to receive job requests from users.
 
@@ -109,13 +110,12 @@ GARDNER cluster uses **Torque** as a *resource manager* (Provides low-level func
 
 Torque provides user commands such as **qsub, qdel, qstat, etc.,** which are used to submit, delete and check the status of jobs on the cluster. 
 
-GARDNER cluster supports two types of job submission: **Interactive**  and **batch** modes 
+## Executing jobs on GARDNER using the interactive mode
 
-- **Interactive mode (qsub -I):** You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
+We will use a tool for raw data quality control of NGS data as an example. 
 
-- **Batch mode:** In a batch mode you first write a PBS script with all the instructions/code you want to execute, and then you submit that script to the scheduler. The batch job script contains all the information needed, such as the location of the input and output files, as well as run parameters. Once the batch job starts, you can log off and the job will remain running. 
-
-**Exercise 2: Running job in interactive mode**
+The tool we will be using is a Java based program called [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) 
+This tool provides a modular set of QC analyses that can help you to evaluate the quality of your sequences, this is in general the first step on any NGS analysis pipeline.  
 
 In this exercise, you will conduct the quality control analysis on a "good" quality sequence file and on a "bad" quality sequence file using FastQC program. 
 
@@ -150,7 +150,8 @@ wc -l seqGood.fastq
 And divide the result by 4.
 
 ------------------
-## Executing jobs on GARDNER using the interactive mode
+
+**Exercise 2: Running job in interactive mode**
 
 To launch an **interactive session** using one core, use the **qsub -I** command:
 
@@ -315,6 +316,7 @@ Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, 
 
 
 ----------------
+## Executing jobs on GARDNER in batch mode
 
 **Exercise 3: Running jobs in batch mode**
 
@@ -350,9 +352,6 @@ As described before, a job submittion script will look like the following:
 ./command &> output
 
 ```
-
-
-
 
 In the following exercise, you are going to perform the quality control of two RNA-seq dataset from Illumina’s Human [BodyMap 2.0 project](http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-513/). The sequence data, generated on HiSeq 2000 instruments in 2010, consist of 16 different human tissue types. We will use a subset of the data that contains 50bp paired-end reads (PE) from 2 tissues.
 
