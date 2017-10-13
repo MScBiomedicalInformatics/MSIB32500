@@ -94,7 +94,7 @@ Windows users can also use GUI tools like WinSCP (http://winscp.net/download/win
 
 ## 4. Executing jobs on GARDNER HPC cluster
 
-In this section, you will learn how to execute jobs on CRI's GARDNER cluster. GARDNER cluster supports two types of job submission: **Interactive**  and **batch** modes 
+In this section, you will learn how to execute jobs on CRI's [GARDNER](https://en.wikipedia.org/wiki/Martin_Gardner) cluster. GARDNER cluster supports two types of job submission: **Interactive**  and **batch** modes 
 
 - **Interactive mode (qsub -I):** You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
 
