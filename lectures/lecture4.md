@@ -1201,7 +1201,7 @@ sink()
 * D. What is the maximun and minimum alignment score?
 * E. Record, report and explain the total runtime (execution time) for your script running with the following hardware configurations:
 	- 1 nodes; 4 cpus; 4gb of RAM
-	- 1 nodes; 8 cpus; 4gb 0f RAM
+	- 1 nodes; 8 cpus; 4gb of RAM
 	- 1 nodes; 16 cpus; 8gb of RAM
 * Submit all developed scripts and results files via e-mail.
 
