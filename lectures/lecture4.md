@@ -1160,7 +1160,7 @@ $ cd hw4
 $ cp /group/mscbmi/hw4/*.fasta ./
 ```
 
-- The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package to perform pairwise sequences alignment. It will align the input **queary** sequence in .fasta format (*query1.fasta*), against all sequences in the **reference** file (*shor_reference.fasta*). The *shor_reference.fasta* contains 200 lines corresponding to 100 sequences. The R code will generate an output file named **alignment.txt** containing the sequence alaignmets and alignment scores.
+- The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package to perform pairwise sequences alignment. It will align the input **query** sequence in .fasta format (*query1.fasta*), against all sequences in the **reference** file (*shor_reference.fasta*). The *shor_reference.fasta* contains 200 lines corresponding to 100 sequences. The R code will generate an output file named **alignment.txt** containing the sequence alaignmets and alignment scores.
 
 ```{r}
 setwd('/Users/jorgeandrade/Desktop/hw4')
@@ -1195,14 +1195,15 @@ time.taken
 sink()
 
 ```
-* A. Develop an analysis pipeline that uses CRI's GARDNER cluster to perform the alignment of the input **query** sequence against the full  **reference** file: **reference.fasta**
-* B. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt'. 
-* c. What is the maximun and minimum alignment score?
-* D. Record, report and explain the total runtime (execution time) for your script running with the following hardware configurations:
+* A. Study and understand the code
+* B. Develop an analysis pipeline that uses CRI's GARDNER cluster to perform the alignment of the input **query** sequence against the full  **reference** file: **reference.fasta**
+* C. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt'. 
+* D. What is the maximun and minimum alignment score?
+* E. Record, report and explain the total runtime (execution time) for your script running with the following hardware configurations:
 	- 1 nodes; 4 cpus; 4gb of RAM
 	- 1 nodes; 8 cpus; 4gb 0f RAM
 	- 1 nodes; 16 cpus; 8gb of RAM
-* E. Submit all developed scripts and results files via e-mail.
+* Submit all developed scripts and results files via e-mail.
 
 
 
