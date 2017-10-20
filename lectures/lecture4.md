@@ -262,7 +262,7 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 #### Task4: 
 
 <details> 
-  <summary> T4: Explore at the help for the command sample(), sort() and plot(), then use them on big_vector
+  <summary> T4: Explore at the help for the command sample(), sort(), plot(), and hist(). Then use them on big_vector
 </summary>
    A4: 
 
@@ -281,6 +281,7 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 ------------------------------
 
 #### Adding and multiplying a number to a vector
+
 Sometimes we want to add a constant (like a number), to each element in the vector, test the following code: 
 
 ```{r}
@@ -344,11 +345,11 @@ Now observe the effect o using the command: par( mfrow=c(2,2) )
 > plot(dat,type="l")
 > barplot(dat)
 > hist(dat)
+> dev.off()
 ```
 
 - Why are your three first plots different from mine? 
 - Why is your last plot more similar to mine?
-- Try the command: *> par(mfrow=c(3,1))* on the same data
 - What is the effect of the command: *> dev.off()*
 
 #### Graph options
