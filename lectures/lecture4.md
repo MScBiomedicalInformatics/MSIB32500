@@ -500,55 +500,50 @@ Sort the data, pick the number in the center. If the number of data points is ev
 
 #### Task:
  
-  * Create a vector of 10 elemnts:
-
-```{r}
-> dat2<-rnorm(10)
-```
-
-  * Add a few extra points:
-
-```{r}
-> dat2<-c(dat2, 10, 10.5, 30 ) 
-```
-
-  * Test: **mean()** and **median()** on *dat2*. 
+  * Create a vector of 10 elemnts
+  * Add a few extra points
+  * Test: **mean()** and **median()** 
   * Are they the same? 
   * Explain the differences by plotting a histogram 
   * What is the advantage/disadvantage of each measure?
 
 
 ```{r}
-> dat<-rnorm(10)
-> dat2<-c(dat, 10, 10.5, 30 )
+> dat<-rnorm(100)
+> dat2<-c(dat, 102, 105, 130 )
 > median(dat2)
 > mean(dat2)
+> par(mfrow=c(1,2))
+> hist(dat)
 > hist(dat2)
 ```
 
-Means are sensitive to outliers! Very common situation in genomics. 
+```{r}
+> dev.off()
+```
+**Means are sensitive to outliers! Very common situation in genomics.** 
+
+### Boxplots are a better way to visualize outliers
 
 ```{r}
 > dev.off()
-> boxplot(dat2)  # is a better way to visualize outliers
+> par(mfrow=c(1,2))
+> boxplot(dat) 
+> boxplot(dat2) 
 ```
+### Setting margins
 
-#### Task: Boxplot 2 vector with and without outliers and compare
+**mar** – A numeric vector of length 4, which sets the margin sizes in the following order: bottom, left, top, and right. The default is: c(5.1, 4.1, 4.1, 2.1).
 
 ```{r}
-> dat <- rnorm(10)
-> dat2<-c(dat, 10, 10.5, 30 )
-> par( mfrow=c(1,2) )
-> boxplot(dat); boxplot(dat2)
-```
-```{r}
+> dev.off()
 > par(mar=c(4, 4, .5, .1))
 > dat <- rnorm(10)
 > dat2<-c(dat, 10, 10.5, 30 )
 > par( mfrow=c(1,2) )
 > boxplot(dat); boxplot(dat2)
 ```
-**mar** – A numeric vector of length 4, which sets the margin sizes in the following order: bottom, left, top, and right. The default is: c(5.1, 4.1, 4.1, 2.1).
+
 
 #### Percentiles
 
@@ -570,6 +565,7 @@ The command **ecdf()** (empirical cumulative distribution)  calculates "all" per
 #### Try: 
 
 ```{r}
+> dev.off()
 > plot (ecdf(dat2))
 ```
 
