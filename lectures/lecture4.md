@@ -262,7 +262,7 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 #### Task4: 
 
 <details> 
-  <summary> T4: Explore at the help for the command **sample()** and **sort()** and then try them out on big_vector
+  <summary> T4: Explore at the help for the command sample(), sort() and plot(), then use them on big_vector
 </summary>
    A4: 
 
@@ -276,7 +276,8 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 > sort(x, decreasing = FALSE)[1:20]
 > hist(x)
 ```
-
+</details>
+------------------------------
 #### Adding and multiplying a number to a vector
 Sometimes we want to add a constant (like a number), to each element in the vector, test the following code: 
 
