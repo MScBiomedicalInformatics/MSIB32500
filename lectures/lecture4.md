@@ -393,15 +393,7 @@ The help pages will tell you what type of arguments you can use for a particular
 
 The order of unnamed arguments, could make a big difference. 
 
-Try the followoing commands. Observe the differences between the following two code blocks: 
-
-```{r}
-> a<-rnorm(100) 
-> b<-rnorm(100)*2 
-> plot(a,b) 
-> plot(b,a) 
-> plot(x=b, y=a) 
-```
+Try the followoing commands. Observe the differences 
 
 ```{r}
 > par(mfrow=c(1,3))
@@ -424,29 +416,31 @@ Try the followoing commands. Observe the differences between the following two c
 
 
 #### A:
-```{r}
-> par( mfrow=c(3,1) )
-> plot(a,b); plot(b,a); plot(x=b, y=a)
-```
 
-#### B:
+To print in 4 windows in the same page:
 ```{r}
 > par( mfrow=c(2,2) )
 > plot(a,b); plot(b,a); plot(x=b, y=a)
 ```
+```{r}
+> dev.off()
+```
 
-Now, print the three plots in one row using mfrow: 
+#### B:
 
-#### C:
+To print the three plots in one row:
+
 ```{r}
 > par( mfrow=c(1,3) )
 > plot(a,b); plot(b,a); plot(x=b, y=a)
 ```
+```{r}
+> dev.off()
+```
 
 #### Overlaying plots
 
-  * Sometimes we want to put many data sets within one graph, on top of each other
-  * This is often made by the **lines()** or **points()** commands:
+  * Sometimes we need to add additional information to a plot. This is often made by the **lines()** or **points()** commands:
 
 
 ```{r}
@@ -474,7 +468,6 @@ Let's try the code bellow:
 
 #### Saving graphs
 
-  * Different on different systems!
   * All systems can use the **device()** function - see: **?device**
 
 ``` {r}
