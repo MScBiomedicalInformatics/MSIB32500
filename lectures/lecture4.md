@@ -245,12 +245,11 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 #### Task3: 
 
 <details> 
-  <summary> T3: Create a vector called **big_vector** with values 1 to 10000, then find: 
-  * Length of the vector
-  * Sum of all items in vector
-  * Mean(average) of all items in the vector
+  <summary> T3: Create a vector called big_vector with values 1 to 10000, then find: Length of the vector; Sum of all items in vector;
+  Mean(average) of all items in the vector
 </summary>
    A3: 
+	
 ```{r}
 > big_vector<-(1:10000); length(big_vector)
 > sum(big_vector)
