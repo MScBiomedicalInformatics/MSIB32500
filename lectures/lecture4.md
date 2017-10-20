@@ -404,7 +404,7 @@ Try the followoing commands. Observe the differences between the following two c
 ```
 
 ```{r}
-> par(mfrow=c(2,2))
+> par(mfrow=c(1,3))
 > a<-rnorm(100)
 > b<-rnorm(100)*2
 > plot(a,b, main="plot(a,b)")
