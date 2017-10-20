@@ -202,8 +202,8 @@ Given the following vector:
 > my_vector<- c(1,5,10, 7, 2)   # define the vector
 ```
 <details> 
-  <summary> Q1: Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction </summary>
-   A1: 
+  <summary> T2: Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction </summary>
+   A2: 
 
 ```{r}
 > my_vector[5:1]
@@ -243,19 +243,24 @@ What does my_vector contain now?
 There are many prebuild R functions to work with vectors. Most have logical/meaninfull names. For instance, **length(my_vector)** gives the number of items in the vector (= 5).
 
 #### Task3: 
-Create a vector called **big_vector** with values 1 to 10000, then find:
-  
+
+<details> 
+  <summary> T3: Create a vector called **big_vector** with values 1 to 10000, then find: 
   * Length of the vector
   * Sum of all items in vector
   * Mean(average) of all items in the vector
-
+</summary>
+   A3: 
 ```{r}
 > big_vector<-(1:10000); length(big_vector)
 > sum(big_vector)
 > mean(big_vector)
 ```
-
+</details>
+	
+	
 #### Task4: 
+
 Explore at the help for the command **sample()** and **sort()** and then try them out on big_vector
 
 
