@@ -1134,7 +1134,7 @@ list.files(path=getwd(), pattern="test.txt",
 
 ## 8.  Statistical hypothesis testing
 
-The **t.test()** function produces a variety of t-tests. Unlike most statistical packages, the default assumes unequal variance and applies the (Welsh df modification){https://en.wikipedia.org/wiki/Welch%27s_t-test} 
+The **t.test()** function produces a variety of t-tests. Unlike most statistical packages, the default assumes unequal variance and applies the [Welsh df modification](https://en.wikipedia.org/wiki/Welch%27s_t-test) 
 
 #### T-test for gre scores for admit=0 vs admit=1
 
