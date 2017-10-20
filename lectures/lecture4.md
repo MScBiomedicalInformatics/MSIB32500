@@ -375,9 +375,9 @@ These options are 'arguments' to the *plot()* function
 > plot(dat, col='blue', type='l')
 ```
 ```{r}
-> plot(dat, col='hotpink', type='h', main='Plot',)
+> plot(dat, col='hotpink', type='h', main='Plot')
 ```
-We will review in detail how to use R for basic graphics and plot on the next lesson.
+We will learn more on how to use R to create data vizualizations on the next lesson.
 
 #### More about functions
 
@@ -385,8 +385,9 @@ In most cases, a function needs some **input**, like in *plot(dat)* 'dat' here i
 
 We could also say: **plot(x=dat)**  - a *named argument.* If you have many arguments, most of them are named - such as in the following example:
 
-- plot (some_vector, col="blue", type="s"). The help pages will tell you what type of arguments you can use for a particular command.
+- plot (some_vector, col="blue", type="s"). 
 
+The help pages will tell you what type of arguments you can use for a particular command.
 
 #### The danger of unnamed arguments.
 
@@ -409,6 +410,10 @@ Try the followoing commands. Observe the differences between the following two c
 > plot(a,b, main="plot(a,b)")
 > plot(b,a, main="plot(b,a)")
 > plot(x=b, y=a, main="plot(x=b,y=a)")
+```
+
+```{r}
+> dev.off()
 ```
 
 #### Some generic R arguments to plots - the par() function
