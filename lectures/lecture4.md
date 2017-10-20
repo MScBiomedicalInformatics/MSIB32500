@@ -202,10 +202,11 @@ Given the following vector:
 ```
 <details> 
   <summary> Q1: Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction <summary>
-   A1: my_vector[5:1]; > my_vector[c(5,4,3,2,1)]; c<- c(my_vector[5],my_vector[4],my_vector[3],my_vector[2], my_vector[1]); rev(my_vector)
+   A1: my_vector[5:1]
 </details>
 
 
+my_vector[5:1]; > my_vector[c(5,4,3,2,1)]; c<- c(my_vector[5],my_vector[4],my_vector[3],my_vector[2], my_vector[1]); rev(my_vector)
 
 #### Naming rules and the danger of over-writing 
 
