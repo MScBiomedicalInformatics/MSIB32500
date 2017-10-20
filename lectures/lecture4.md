@@ -196,18 +196,13 @@ The entire *m* row of matrix A can be extracted as A[m, ]:
 
 #### Task2
 
->! Spoiler text
-
-Text
-
+Given the following vector:
 ```{r}
 > my_vector<- c(1,5,10, 7, 2)   # define the vector
 ```
 <details> 
   <summary> Q1:Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction <summary
-																	 <p>   
-   
-   A1: > my_vector[5:1]; > my_vector[c(5,4,3,2,1)]; c<- c(my_vector[5],my_vector[4],my_vector[3],my_vector[2], my_vector[1]); rev(my_vector)
+   A1: my_vector[5:1]; > my_vector[c(5,4,3,2,1)]; c<- c(my_vector[5],my_vector[4],my_vector[3],my_vector[2], my_vector[1]); rev(my_vector)
 </details>
 
 
