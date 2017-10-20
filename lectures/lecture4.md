@@ -277,7 +277,9 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 > hist(x)
 ```
 </details>
+
 ------------------------------
+
 #### Adding and multiplying a number to a vector
 Sometimes we want to add a constant (like a number), to each element in the vector, test the following code: 
 
