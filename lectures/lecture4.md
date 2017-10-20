@@ -246,7 +246,7 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 
 <details> 
   <summary> T3: Create a vector called big_vector with values 1 to 10000, then find: Length of the vector; Sum of all items in vector;
-  Mean(average) of all items in the vector
+  Mean(average) of all items in the vector; Median value of the vector.
 </summary>
    A3: 
 	
@@ -254,14 +254,17 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 > big_vector<-(1:10000); length(big_vector)
 > sum(big_vector)
 > mean(big_vector)
+> median(big_vector)
 ```
 </details>
 	
 	
 #### Task4: 
 
-Explore at the help for the command **sample()** and **sort()** and then try them out on big_vector
-
+<details> 
+  <summary> T4: Explore at the help for the command **sample()** and **sort()** and then try them out on big_vector
+</summary>
+   A4: 
 
 ```{r}
 > x <-sample(big_vector,100)
