@@ -984,7 +984,7 @@ R can process input data sets can be in various formats (.XLS, .TXT, .CSV, JSON 
 
 
 ```{r}
-> mydata <- read.csv(file="http://www.ats.ucla.edu/stat/data/binary.csv", header=T) 
+> mydata <- read.csv(file="https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/binary.csv", header=T) 
 > head(mydata, 4)
 > summary(mydata[,2:3])
 ```
@@ -992,14 +992,21 @@ R can process input data sets can be in various formats (.XLS, .TXT, .CSV, JSON 
 * Reading a comma delimitted text file (csv) from your compueter: (files are available in the 'data' folder on the GitHub)
 
 ```{r}
-> data1<-read.csv("NeuralStemCellData.csv", row.names=1, header=T)
+# To read a file from your working directory use:
+# > data1<-read.csv("NeuralStemCellData.csv", row.names=1, header=T)
+# To read a file from a web link:
+> data1<-read.csv("https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/NeuralStemCellData.csv", row.names=1, header=T)
 > head(data1, n=7)
 ```
 
 * Loading data from a tab delimited text file 
   
 ```{r}
-> data2<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
+# To read a file from your working directory use:
+# > data2<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
+# To read a file from a web link:
+data2<- read.delim("https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/NeuralStemCellData.tab",row.names=1, header=T)
+> head(data2, n=7)
 ```
 
 * One way to read several formats: **read.table()**
@@ -1020,7 +1027,7 @@ R can process input data sets can be in various formats (.XLS, .TXT, .CSV, JSON 
 ### Loading data with missing values:
 
 ```{r}
-> mydata.missing <- read.csv( "NeuralStemCellDataMissing.csv", row.names=1, na.strings = c(" ", "NA", "NaN"))
+> mydata.missing <- read.csv( "https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/NeuralStemCellDataMissing.csv", row.names=1, na.strings = c(" ", "NA", "NaN"))
 > head(mydata.missing , n=15)
 ```
 
