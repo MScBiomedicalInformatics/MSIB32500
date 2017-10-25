@@ -1195,11 +1195,6 @@ start.time <- Sys.time() ## record start time
 seq1<- read.fasta(file = 'query1.fasta')
 seq2<- read.fasta(file = 'shor_reference.fasta')
 
-length(seq2)
-
-n1 <- toupper(c2s(seq1[[1]]))
-n2 <- toupper(c2s(seq2[[2]]))
-
 sink("alignment.txt") ## direct R output to a file
 n<-length(seq2)
 for (i in 2:n-1){
