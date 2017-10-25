@@ -1183,7 +1183,7 @@ $ cp /group/mscbmi/hw4/*.fasta ./
 - The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package to perform pairwise sequences alignment. It will align the input **query** sequence in .fasta format (*query1.fasta*), against all sequences in the **reference** file (*shor_reference.fasta*). The *shor_reference.fasta* contains 200 lines corresponding to 100 sequences. The R code will generate an output file named **alignment.txt** containing the sequence alaignmets and alignment scores.
 
 ```{r}
-setwd('/Users/jorgeandrade/Desktop/hw4')
+#setwd('/Users/jorgeandrade/Desktop/hw4')
 #install.packages('seqinr')
 #install.packages('Biostrings')
 
@@ -1197,12 +1197,13 @@ seq2<- read.fasta(file = 'shor_reference.fasta')
 
 sink("alignment.txt") ## direct R output to a file
 n<-length(seq2)
-for (i in 2:n-1){
+for (i in 2:n-1)
+ {
   n1 <- toupper(c2s(seq2[[i]]))
   n2 <- toupper(c2s(seq2[[i+1]]))
   globalAlign<- pairwiseAlignment(n1, n2)
   print(globalAlign)
-}
+  }
 
 end.time <- Sys.time() ## record start time
 time.taken <- end.time - start.time
