@@ -58,7 +58,7 @@ First, let us take a look what is available on the **golub** dataset:
 ```{r}
 ?golub
 ```    
-As we can see, it contains gene expression data from the leukemia micro-array study of Golub et. al. (1999). There are 3051 genes and 38 tumor mRNA samples. 3 datasets are available:
+As we can see, it contains gene expression data from the leukemia micro-array study of Golub et al. There are 3051 genes and 38 tumor mRNA samples. 3 datasets are available:
 
 - **golub:** matrix of gene expression levels for the 38 tumor mRNA samples, rows correspond to genes (3051 genes) and columns to mRNA samples.
 - **golub.cl:** numeric vector classifying the tumors, 27 acute lymphoblastic leukemia (ALL) cases (code 0) and 11 acute myeloid leukemia (AML) cases (code 1).
