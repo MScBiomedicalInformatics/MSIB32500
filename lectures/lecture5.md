@@ -70,6 +70,8 @@ As we can see, it contains gene expression data from the leukemia micro-array st
 Let's start by looking into the golub data (3051 gene expression values for 38 tummor mRNA samples):
 
 ```{r}
+> dim(golub)
+[1] 3051   38
 > golub[1:4, 1:7]
 [,1]     [,2]     [,3]     [,4]     [,5]     [,6]     [,7]
 [1,] -1.45769 -1.39420 -1.42779 -1.40715 -1.42668 -1.21719 -1.37386
@@ -78,6 +80,10 @@ Let's start by looking into the golub data (3051 gene expression values for 38 t
 [4,]  3.13533  0.21415  2.08754  2.23467  0.93811  2.24089  3.36576
 ```
 
+```{r}
+> golub.cl
+[1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+```
 The gene names for golub are stored in **golub.gnames**, let's list the first 10 rows:
 
 ```{r}
