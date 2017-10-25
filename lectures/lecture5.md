@@ -24,8 +24,6 @@ For this tutorial, we will use the  Gene expression dataset from **Golub et. al.
 * When probing hypotheses with t-statistics, users may also select a potentially faster null-distribution which is multivariate normal with mean zero and variance-covariance matrix derived from the vector influence function. 
 * Results are reported in terms of adjusted p-values, confidence regions, and test statistic cutoffs. 
 * The procedures are directly applicable to identifying differentially expressed genes in DNA microarray experiments.
-- Develop a working knowledge on how to use R and Bioconductor for basic data visualizations of genomics data
-- Develop a working knowledge on how to use R and Bioconductor for basic multiple testing for gene expression data
 
 ## 1. Introduction
 
