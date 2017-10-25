@@ -130,7 +130,7 @@ The mRNA expression for the 38 samples for gene **CCND3** is in line 1042
 Let's try them:
     
 ```{r}
-> par(mar=c(6,4,2,1)) #margin in line 
+> par(mar=c(6,4,2,1)) # Set margins
 > plot(mygene, pch=15, col="red")
 > mtext("Gene Expression values of Gene CCND3")
 ``` 
