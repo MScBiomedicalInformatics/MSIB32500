@@ -18,7 +18,7 @@ R Programming offers a set of builtin function and libraries (i.e. base, ggplot2
 
 ## 2. Data download
 
-For this tutorial, we will use the  Gene expression dataset from **Golub et. al. (1999)** and the R Bioconductor package for **Resampling-based multiple hypothesis testing: multtest**. 
+For this tutorial, we will use the  Gene expression dataset from **Golub et al.** and the R Bioconductor package for **Resampling-based multiple hypothesis testing: multtest**. 
 
 * The **multtest** package includes non-parametric bootstrap and permutation resampling-based multiple testing procedures (including empirical Bayes methods) for controlling the family-wise error rate (FWER), generalized family-wise error rate (gFWER), the tail probability of the proportion of false positives (TPPFP), and false discovery rate (FDR). Several choices of bootstrap-based null distribution are implemented (centered, centered and scaled, quantile-transformed). Single-step and step-wise methods are available. Tests based on a variety of t- and F-statistics (including t-statistics based on regression parameters from linear and survival models as well as those based on correlation parameters) are included. 
 * When probing hypotheses with t-statistics, users may also select a potentially faster null-distribution which is multivariate normal with mean zero and variance-covariance matrix derived from the vector influence function. 
@@ -31,7 +31,7 @@ R Programming offers a set of builtin function and libraries (i.e. base, ggplot2
 
 ## 2. Data download
 
-For this tutorial we will use the  Gene expression dataset from **Golub et. al. (1999)** and the R Bioconductor package for **Resampling-based multiple hypothesis testing: multtest**. 
+For this tutorial we will use the  Gene expression dataset from **Golub et al.** and the R Bioconductor package for **Resampling-based multiple hypothesis testing: multtest**. 
 
 * The **multtest** package includes non-parametric bootstrap and permutation resampling-based multiple testing procedures (including empirical Bayes methods) for controlling the family-wise error rate (FWER), generalized family-wise error rate (gFWER), tail probability of the proportion of false positives (TPPFP), and false discovery rate (FDR). Several choices of bootstrap-based null distribution are implemented (centered, centered and scaled, quantile-transformed). Single-step and step-wise methods are available. Tests based on a variety of t- and F-statistics (including t-statistics based on regression parameters from linear and survival models as well as those based on correlation parameters) are included. 
 * When probing hypotheses with t-statistics, users may also select a potentially faster null distribution which is multivariate normal with mean zero and variance covariance matrix derived from the vector influence function. 
