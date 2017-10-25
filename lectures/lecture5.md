@@ -46,7 +46,7 @@ For this tutorial we will use the  Gene expression dataset from **Golub et. al. 
 > library(multtest)
 > data(golub)
 ```
-We will also need the R package **knitr**, it is a general-purpose literate programming engine, designed to give users full control of the output without heavy coding work:
+We will also use the R package [knitr](https://yihui.name/knitr/), it is a transparent engine for dynamic report generation with R.
 
 ```{r}
 > install.packages('knitr', dependencies = TRUE)
