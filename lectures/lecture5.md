@@ -290,7 +290,9 @@ For example, to add a **density curve line** to a histogram we can use:
 
 ![boxcolor](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/boxplotcolor.png)
 
-We will now use the **ape** (Analyses of Phylogenetics and Evolution) library in Bioconductor to explore the composition of the DNA sequences. The ape library provides functions for reading and manipulating phylogenetic trees and DNA sequences.
+______________________________
+
+In this new section, we will now use the **ape** (Analyses of Phylogenetics and Evolution) library in Bioconductor to explore the composition of the DNA sequences. The ape library provides functions for reading and manipulating phylogenetic trees and DNA sequences.
 
 * We start by reading the sequence of mRNA X94991.1 using the **read.GeneBank** function of **ape** 
 (see: https://www.ncbi.nlm.nih.gov/nuccore/X94991)
