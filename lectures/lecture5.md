@@ -143,6 +143,8 @@ Try altering the values of 'pch' and 'col'
 > plot(mygene, pch=22, col="green")
 ```
 
+R colors palete can be found [here](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/Rcolor.pdf)
+
 ### Bar plot 
 
 To compare and contrast the gene expression of several samples, we can us the **barplot()** command in R. For example, to plot the expression of 4 Cyclin genes expression values in 3 ALL and 3 AML samples:
