@@ -379,17 +379,18 @@ We can adjust these p-values using the specified procedure as follows:
 [10,] 1.043285e-10 8.972885e-10
 ```
 
-
+------------------------------
 ### Basic plots practice:
 
 * Read the file: "NeuralStemCellData.tab" (the file is available at the *data* folder on the GitHub repository.
 
 ```{r}
-> mydata<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T)
+> mydata<-read.delim( "https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/NeuralStemCellData.tab", row.names=1, header=T) 
+> # mydata<-read.delim( "NeuralStemCellData.tab", row.names=1, header=T) #if you downloaded the file to your working directory
 > head(mydata, n=7)
 ```
-* The first four columns from glioblastoma-derived (GD) neural stem-cells (column name start with 'G').
-* The last two columns from non-cancerous neural stem (NS) cells (column name start with 'CB').
+* The first four columns are corresponding to glioblastoma-derived (GD) neural stem-cells (column name start with 'G').
+* The last two columns are from non-cancerous neural stem (NS) cells (column name start with 'CB').
  
 ### Tasks: 
 
@@ -448,9 +449,9 @@ We can adjust these p-values using the specified procedure as follows:
 ```
 ![task4](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/task4.png)
 
+---------------
 
-
-##4. Exportting polts as image
+##4. Exportting polts as an image
 
 * R function: **pdf()** and **png()**:
 
@@ -480,9 +481,7 @@ Export as png:
 > boxplot(log10(mydata))
 > graphics.off()
 ```
-## Week 5 Homework: :house: (Graded!)
-
-Create a script that used CRI's HPC to perform the following task:
+## Week 5 Challange: :house: (extra point)
 
 Using the data file: NeuralStemCellData.tab
 
@@ -492,6 +491,6 @@ Using the data file: NeuralStemCellData.tab
   -  The expression of gene TP53 across all samples 
   -  The Pearson correlation of Technical Replicates for neural stem (NS) cells 
  
-* Send your script and plot via e-mail
+* Send your R script and plot via e-mail
 
 
