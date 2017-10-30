@@ -1235,7 +1235,7 @@ seqsim <- function(seq)
   {
   sink("alignment.txt") ## direct R output to a file
   n<-length(seq)
-  for (i in 2:n-1) 
+  for (i in 1:n-1) 
     {
       n1 <- toupper(c2s(seq[[i]]))
       n2 <- toupper(c2s(seq[[i+1]]))
