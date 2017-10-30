@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 10/28/17; 9:00 AM - 12:00 PM
+Saturdays 11/04/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
