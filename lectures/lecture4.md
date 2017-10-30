@@ -1199,7 +1199,7 @@ seq<- read.fasta(file = 'shor_reference.fasta')
 sink("alignment.txt") ## direct R output to a file
   n<-length(seq)
   
-  for (i in 2:n-1)
+  for (i in 1:n-1)
     {
     n1 <- toupper(c2s(seq[[i]]))
     n2 <- toupper(c2s(seq[[i+1]]))
@@ -1222,8 +1222,45 @@ sink()
 	- 1 nodes; 8 cpus; 4gb of RAM
 	- 1 nodes; 16 cpus; 8gb of RAM
 * Submit all developed scripts and results files via e-mail.
+-------------
+### As a function
 
+```r
+rm(list=ls()) 
 
+library("seqinr")
+library(Biostrings)
+
+seqsim <- function(seq)
+  {
+  sink("alignment.txt") ## direct R output to a file
+  n<-length(seq)
+  for (i in 2:n-1) 
+    {
+      n1 <- toupper(c2s(seq[[i]]))
+      n2 <- toupper(c2s(seq[[i+1]]))
+      globalAlign <- pairwiseAlignment(n1, n2)
+      print(globalAlign)
+    }
+  sink()
+  }
+
+seq <- read.fasta(file = 'reference.fasta')
+
+start.time <- Sys.time() ## record start time
+
+seqsim(seq)
+
+end.time <- Sys.time() ## record start time
+time.taken <- end.time - start.time
+write.table(time.taken, "timestamp.txt")
+
+# $ grep 'score' alignment.txt | sort -k1n > scores.txt
+
+# Parallelization?
+# awk 'BEGIN {n_seq=0;} /^>/ {if(n_seq%500==0){file=sprintf("myseq%d.fa",n_seq);} print >> file; n_seq++; next;} { print >> file; }' < reference.fasta
+
+```
 
 
 
