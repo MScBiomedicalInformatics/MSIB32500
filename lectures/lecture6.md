@@ -35,7 +35,7 @@ For any bioinformatics analysis, it is always advisable to start with an analysi
 
 
 ## 3. Installing required packages:
-The first thing we will need to start working with R and Bioconductor, is to download and install the packages we will need. For this analysis we will use the Bioconductor **lumi** package. The **lumi** package provides an integrated solution for Illumina microarray data analysis, it includes functions for Illumina BeadStudio (GenomeStudio) data input, quality control, BeadArray-specific variance stabilization, normalization and gene annotation at the probe level. Available functions include: **lumiR(), lumiB(), lumiT(), lumiN() and lumiQ()** designed for data input, preprocessing and quality control. 
+For this analysis we will use the Bioconductor **lumi** package. The **lumi** package provides an integrated solution for Illumina microarray data analysis, it includes functions for Illumina BeadStudio (GenomeStudio) data input, quality control, BeadArray-specific variance stabilization, normalization and gene annotation at the probe level. Available functions include: **lumiR(), lumiB(), lumiT(), lumiN() and lumiQ()** designed for data input, preprocessing and quality control. 
 
 Downloading and installing **lumi** package:
 
@@ -78,12 +78,13 @@ Next we will need to create a **.txt** file with the *phenotype information*, pl
 
 ![pheno](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/pheno.png)
 
-For your convenience, I have already created that file and it is available [here](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/Phenod.txt) Download this file to your working directory.
+For your convenience, I have already created that file and it is available [here](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/Phenod.txt) Download this file to your working directory or read it from the web address. 
 
 ###Importing the phenotype data: 
 
 ```{r}
-> phenod <- read.table("Phenod.txt", header=TRUE, row.names=1, sep="\t")
+> phenod <- read.table("https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/Phenod.txt", header=TRUE, row.names=1, sep="\t")
+> # phenod <- read.table("Phenod.txt", header=TRUE, row.names=1, sep="\t")
 > phenod
 ```
 
@@ -176,6 +177,7 @@ We will now start an exploratory analysis of the data using different methods; t
 We will start by producing a density/intensity histogram, and a boxplot of the distribution of intensities:
 
 ```{r}
+> par(mar=c(6,4,2,1))
 > hist(x.lumi)
 ```
 ![hist](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/hist.png)
@@ -192,7 +194,7 @@ We will start by producing a density/intensity histogram, and a boxplot of the d
 
 We will now explore the correlation of samples before normalization:
 
-Pairwise correlation of TR control group: 
+Pairwise correlation of Technical Replicates (TR) control group: 
 
 ```{r}
 > pairs(x.lumi[,c(1,2,3)], smoothScatter=TRUE)
@@ -202,13 +204,14 @@ Pairwise correlation of TR control group:
 
 You can continue exploring the correlation of technical replicates (TR) for other groups by changing the values at: *pairs(x.lumi[,c(1,2,3)]*
 
-Next we will create the [MA plot](https://en.wikipedia.org/wiki/MA_plot) for some samples of the LumiBatch object by using plot or **MAplot** functions. MA plots are used to determine if the data needs normalization and to test if the normalization worked. **M** is defined as the log intensity ratio (or difference between log intensities) and **A** is the average log intensity for a dot in the plot.
-	
+Next we will create the [MA plot](https://en.wikipedia.org/wiki/MA_plot) for some samples of the LumiBatch object by using plot or **MAplot** functions. The MA-plot is a plot of the distribution of the red/green intensity ratio ('M') plotted by the average intensity ('A'). MA plots are used to determine if the data needs normalization and to test if the normalization worked. 
+
 MA plots for samples in the control group before normalization:
 
 ```{r}
-> MAplot(x.lumi[,c(1,2,3)])
-> ## with smoothing > MAplot(x.lumi[,c(1,2,3)], smoothScatter=TRUE)
+> MAplot(x.lumi[,c(1,2,3)], smoothScatter=TRUE)
+> # MAplot(x.lumi[,c(1,2,3)])
+
 ```
 ![MAplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MAplot.png)
 
@@ -252,18 +255,22 @@ Perform vst transformation ...
 2013-03-21 14:39:16 , processing array  23 
 2013-03-21 14:39:16 , processing array  24
 ```
+We will now plot plot the VST (Variance Stabilizing Transform) using the **plotVST** function
+
 ```{r}
 trans <- plotVST(lumi.T)
 ```
 ![trans](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/trans.png)
 
-Now we will compare the VST and log2 transformations
+We will now compare the **VST** vs. **log2** transformations
 
 ```{r}
-> matplot(log2(trans$untransformed), trans$transformed, type='l', main='compare VST and log2 transform', xlab='log2 transformed', ylab='VST transformed')
+> matplot(log2(trans$untransformed), trans$transformed, type='l', main='compare VST vs. log2 transformations', xlab='log2 transformed', ylab='VST transformed')
 > abline(a=0, b=1, col=2)
 ```
 ![VST](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/VST.png)
+
+Although a simple log2 transformation and the VST transformation preaty much agree for this particular dataset. We will recomend the use of the VST transformation for Illumina expression arrays.
 
 
 ## 7. Data Normalization
@@ -276,7 +283,7 @@ Now we will compare the VST and log2 transformations
 > summary(lumi.N.Q, 'QC') ## QC summary
 ```
 
-We can now plot the density and box plot of our samples, after **RSN** normalization.
+We can now plot the density and box plot of our samples, after the **RSN** normalization.
 
 ```{r}
 > plot(lumi.N.Q, what='density')
@@ -294,7 +301,11 @@ Next we will plot the **MAplots** of samples in the control group after normaliz
 ```
 ![MAplotAN](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MAplotAN.png)
 
+
+## :mortar_board: Your turn, create a 6 pages .pdf report docuemnt containing the before and after density plot, box plot and MA plots. 
+
 ##8. Principal Component Analysis
+
 Principal components analysis [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) is a statistical technique for determining the key variables in a multidimensional data set that explain the differences in the observations, and can be used to simplify the analysis and visualization of multidimensional data sets. R has several  built-in functions for PCA analysis: **prcomp()** and **princomp()**.
 
 ```{r}
