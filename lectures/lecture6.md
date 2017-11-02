@@ -304,7 +304,7 @@ Next we will plot the **MAplots** of samples in the control group after normaliz
 
 ## :mortar_board: Your turn, create a 6 pages .pdf report docuemnt containing the before and after density plot, box plot and MA plots. 
 
-##8. Principal Component Analysis
+## 8. Principal Component Analysis
 
 Principal components analysis [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) is a statistical technique for determining the key variables in a multidimensional data set that explain the differences in the observations, and can be used to simplify the analysis and visualization of multidimensional data sets. R has several  built-in functions for PCA analysis: **prcomp()** and **princomp()**.
 
@@ -346,14 +346,14 @@ For this tutorial, we will use the library **rgl**, a 3D Visualization library t
 Now we will create an array of different colors to distinguish samples that belong to the same group:
 
 ```{r}
-> timeseries.colors <- c(rep("Green", 3), 
+> timeseries.colors <- c(rep("Green", 3), # WT control
 rep("DimGrey", 3), 
 rep("IndianRed",3), 
-rep("Red", 3), #WT samples
+rep("Red", 3),  # 24h, RA treatment WT
 rep("BurlyWood", 3), 
 rep("grey", 3), 
 rep("pink", 3), 
-rep("SkyBlue", 3))#KO samples
+rep("SkyBlue", 3)) 
 
 ```
 
@@ -366,7 +366,7 @@ You should be able to see and interactive 3D PCA plot as bellow:
 
 ![PCA](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/PCA.png)
 
-The PCA plot shows samples that belong to the same group in similar color. Note WT samples are represented in Red and KO samples in SkyBlue.
+The PCA plot shows samples that belong to the same group in similar color. 
 
 
 ##9. Encapsulating the processing steps
@@ -388,7 +388,7 @@ At this point we can save the **“expression matrix”** into a tab delimited t
 > write.table(dataMatrix, file="Data-Matrix-NQ.txt", quote=F, sep = "\t")
 ```
 
-##10.Data filtering
+## 10.Data filtering
 
 * We will now filter our LumiBatch object for probes with only **“good”** detectable signal (detection p-value smaller that 0.01). 
 * Our filtering criteria will be to require detectable signal in at least 80% of our 24 samples:
@@ -399,12 +399,12 @@ At this point we can save the **“expression matrix”** into a tab delimited t
 > dim(selDataMatrix)
 [1] 10243    24
 ```
-Note we are filtering for signal present (presentCount) in at least 19 samples (80% of the total 24 samples). This filter reduced the number of rows from **25697**  before filtering to **10243** after filtering.
+Note we are filtering for signal present (presentCount) in at least 19 samples (80% of the total 24 samples). This filter reduced the number of rows from **25,697**  before filtering to **10,243** after filtering.
 
-Let's now save the Expression Matrix after filtering
+Let's now save the Expression Matrix *after filtering*, we will now format the *write.table* to be compatible with MS. Excel.
 
 ```{r}
-> write.table(selDataMatrix,file="Data-Matrix-NQ-filtered.txt", quote=FALSE, sep = "\t")
+> write.table(selDataMatrix,file="Data-Matrix-NQ-filtered.xls", sep = "\t",col.names = NA, row.names = TRUE)
 ```
 We will then create a list of probeIDs:
 
@@ -414,7 +414,7 @@ We will then create a list of probeIDs:
 
 ## 11. Identifying Differentially Expressed Genes (DEGs)
 
-For this tutorial, we will proceed to identify differentially expresed genes (DEG) only between control (WT, 3 samples) and 24 hr. of treatment (WT 24hr, 3 samples); subsequent pairwise DEG analysis can be repeated for different groups:
+For this tutorial, we will proceed to identify differentially expresed genes (DEG)  between control (WT, 3 samples) and 24 hr. of treatment (WT 24hr, 3 samples); subsequent pairwise DEG analysis can be repeated for different groups:
 
 ```{r}
 > M6data <- selDataMatrix[, c(1,2,3,10,11,12)]
@@ -479,7 +479,7 @@ RARE_KO_RA_24hr_1    RARE   KO        RA 24hr         1
 RARE_KO_RA_24hr_2    RARE   KO        RA 24hr         2
 RARE_KO_RA_24hr_3    RARE   KO        RA 24hr         3
 ```
-We will now create a subset of phenod with only the phenotype for our 6 selected samples: 
+We will now create a subset of *phenod* with only the phenotype for our 6 selected samples: 
 
 ```{r}
 > M6pheno <- phenod[c(1,2,3,10,11,12), 4]
@@ -518,9 +518,9 @@ Now, we will create (and save) a table with the calculated statistics for the se
 
 ```{r}
 > tab <- topTable(fit, coef = 2, adjust = "fdr", n = dim(M6data)[1])  
-> write.table(tab ,file="Allprobes-pq.xls",row.names=T, quote=FALSE, sep="\t")
+> write.table(tab ,file="Allprobes-pq.xls",sep = "\t", col.names = NA, row.names = TRUE)
 ```
-Next, we are going to filter genes that have adjusted **p-values** less that 0.001, to create a smaller list of significant genes:
+Next, we are going to **filter** genes that have adjusted **p-values** less than 0.001 (a typical approach used to select a highly significant set of genes for validation processes), to create a smaller list of significant genes:  
 
 ```{r}
 > tab.sig <- tab[tab$adj.P.Val < 0.001,]
@@ -530,10 +530,10 @@ Next, we are going to filter genes that have adjusted **p-values** less that 0.0
 And save those highly significant DEGs in a Excel like format:
 
 ```{r}
-> write.table(tab.sig,file="DEG-FDR0.001.xls", quote=FALSE, row.names=T, sep="\t")
+> write.table(tab.sig,file="DEG-FDR0.001.xls", sep = "\t", col.names = NA, row.names = TRUE)
 ```
 
-We are now going to sort the table of significant genes by **FDR adjusted p-value** and **fold change**
+We are now going to sort the table of significant genes by both **FDR adjusted p-value** and **fold change**
 
 ```{r}
 attach(tab.sig)
@@ -552,9 +552,6 @@ write.table(top20DEGs,file="top20DEGs.xls", quote=FALSE, row.names=T, sep="\t")
 Next we are going to create a **heatmap** of the expression of highly significant genes:
 
 ```{r}
-> top20DEGs<-head(sortedDEG,20)
-> write.table(top20DEGs,file="top20DEGs.xls", quote=FALSE, row.names=T, sep="\t")
-
 > selected  <- rownames(tab.sig) ## select the IDs of significant genes 
 > M6dataSel <- M6data[rownames(M6data) %in% selected, ] ## subsetting
 > heatmap(M6dataSel, labRow=c(""), col=topo.colors(16), cexCol=0.6,  xlab = "Samples", ylab = "Features", main = "DEGs")
@@ -564,7 +561,7 @@ Next we are going to create a **heatmap** of the expression of highly significan
 
 ## 13. Annotation 
 
-The final step in this analysis will be the annotation of the DEGs. First we are going to download and install the libraries we need for the annoation:
+The next step in this analysis will be the annotation of the DEGs, usig the available annotations. We will also use the package **R2HTML** to create a HTML based report of the annotated genes. 
 
 ```{r}
 > ##biocLite("lumiMouseAll.db")
@@ -572,7 +569,7 @@ The final step in this analysis will be the annotation of the DEGs. First we are
 > ##biocLite("AnnotationDbi")
 > ##library(AnnotationDbi)
 
-> install.packages("R2HTML")
+> #install.packages("R2HTML")
 > library(R2HTML)
 ```
 To list the objects available in this annotation package we can use:
@@ -650,7 +647,7 @@ Browse the created out.html file on your working directory and try the links.
 
 ## Week 6 Homework: :house: (Graded!)
 
-In this tutorial, we detected the DEGs between WT Control (3 samples) and WT RA Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipeline (script) to detect the DEGs between WT Control and WT RA Treatment at 8 hours. Create a list of **overlapping significant DEG** with the top 100 DEGs between WT RA Treatment at 24 hours and WT RA Treatment at 8 hours. Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
+In this tutorial, we detected the DEGs between WT Control (3 samples) and WT RA Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipeline (script) to detect the DEGs between WT Control and WT RA Treatment at 8 hours. Create a list of **overlapping significant DEG** with the top 100 DEGs between WT RA Treatment at 24 hours (vs. control) and WT RA Treatment at 8 hours (vs. control). Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
 
 Submit your homework via e-mail.
 
