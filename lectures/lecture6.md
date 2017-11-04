@@ -647,7 +647,10 @@ Browse the created out.html file on your working directory and try the links.
 
 ## Week 6 Homework: :house: (Graded!)
 
-In this tutorial, we detected the DEGs between WT Control (3 samples) and WT RA Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipeline (script) to detect the DEGs between WT Control and WT RA Treatment at 8 hours. Create a list of **overlapping significant DEG** with the top 100 DEGs between WT RA Treatment at 24 hours (vs. control) and WT RA Treatment at 8 hours (vs. control). Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
+In this tutorial, we detected the DEGs between WT Control (3 samples) and WT RA Treatment at 24 hours (3 samples). Using similar analysis workflow, develop an R analysis pipeline (script) to:
+- Detect the DEGs between **WT Control** vs. **WT RA Treatment at 24 hours**; and **RARE KO Control** vs. **RARE KO AR Treatment at 24 hours.**
+- Create a list of **overlapping significant DEG** with the top **100 DEGs** between the DEGs list detected on above. Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
+- Using the set of overlaping genes (if any) try to understand and explain the observation. 
 
 Submit your homework via e-mail.
 
