@@ -369,7 +369,7 @@ You should be able to see and interactive 3D PCA plot as bellow:
 The PCA plot shows samples that belong to the same group in similar color. 
 
 
-##9. Encapsulating the processing steps
+## 9. Encapsulating the processing steps
 
 * The function **lumiExpresso()** is designed to encapsulate the major functions of Illumina preprocessing. It is organized in a similar way as the function **expresso()** in the affy package. 
 
