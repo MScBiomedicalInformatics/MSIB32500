@@ -422,8 +422,9 @@ Finally, we will save the complete results table on a file:
 
 ## Week 7 Homework: :house: (Graded!)
 
-* For this tutorial, we used the **tagwise** dispersion to estimate the DEGs (see section 8. Detecting Differentially Expressed Genes). Using the other available methods *common*, and *auto*, repeat the detection of the **top 100** statistically significant genes (DEGs). One list for each method.
+* For this tutorial, we used the **tagwise** dispersion to estimate the DEGs (see section 8. Detecting Differentially Expressed Genes). Using the other available methods **common**, and *auto*, repeat the detection of the **top 100** statistically significant genes (DEGs). One list for each method.
 * Create a list of the overlapping DEGs
+* Write one paraghaph describing and explainning the differences (if any) between common and tagwise dispersions
 * Send your homework via e-mail  
 
 
