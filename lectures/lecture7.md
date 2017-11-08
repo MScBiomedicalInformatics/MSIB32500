@@ -39,6 +39,7 @@ Saturdays 11/04/17; 9:00 AM - 12:00 PM
 ```{r}
 > #raw.data <- read.table( file = "expression.txt" , header = TRUE )
 > raw.data <- read.table( file = "https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/expression.txt",  header = TRUE)
+> dim(raw.data)
 > head(raw.data)
 		ensembl_ID lane1 lane2 lane3 lane4 lane5 lane6 lane8  len
 1 ENSG00000215696     0     0     0     0     0     0     0  330
@@ -54,7 +55,9 @@ Saturdays 11/04/17; 9:00 AM - 12:00 PM
 - edgeR requires the the dataset to contain only the **counts with the row names as the gene ids** and the **column names as the sample IDs,** so we will reformat the data:
 
 ```{r}
-> counts <- raw.data[,2:8]
+> counts <- raw.data[,2:8] # Only counts
+> dim(counts)
+> 
 > rownames(counts) <- raw.data[ , 1 ] # gene names
 > colnames(counts) <- paste(c(rep("C_R",4),rep("T_R",3)),c(1:4,1:3),sep="") # Adding sample names
 > head(counts)
@@ -90,7 +93,7 @@ C_R1     C_R2     C_R3     C_R4     T_R1     T_R2     T_R3
 
 ## 4. Building the edgeR Object
 
-* **DGEList()** is the function that coverts the count matrix into an edgeR object. First, we create a group variable that tells edgeR which samples belong to which group and supply that to DGEList in addition to the count matrix. We can then see the elements that the object contains by using the **names()** function. These elements can be accessed using the $ symbol.
+* **DGEList()** is the function that coverts the count matrix **(counts)** into an edgeR object. First, we create a group variable that tells edgeR which samples belong to which group and supply that to DGEList in addition to the count matrix. We can then see the elements that the object contains by using the **names()** function. These elements can be accessed using the $ symbol.
 
 
 ```{r}
@@ -127,9 +130,12 @@ T_R3     T   681743            1
 > cds$samples
 
 ```
-* We now need to filter out low count reads since otherwise, it would be impossible to detect differential expression. 
-* The method used in the edgeR vignette is to keep only those genes that have *at least 1 read per million in at least 3 samples.* 
-* Once this filtering is done, we can calculate the normalization factors which correct for the different compositions of the samples. * The effective library sizes are then the product of the actual library sizes and these factors.
+## Filtering and normalization factor correction
+
+* We now need to filter out **low count reads** since otherwise, it would be impossible to detect differential expression. 
+* The method used in the edgeR vignette is to keep only those genes that have **at least 1 read per million in at least 3 samples**
+* Once this filtering is done, we can calculate the normalization factors which correct for the different compositions of the samples.
+* The effective library sizes are then the product of the actual library sizes and these factors.
 
 ```{r}
 > cds <- cds[rowSums(1e+06 * cds$counts/expandAsMatrix(cds$samples$lib.size, dim(cds)) > 1) >= 3, ]
@@ -361,7 +367,7 @@ Store full topTags results table
 ![tagwise100](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/tagwisetop100.png)
 
 * The next plot is an MA plot that shows the relationship between concentration and fold-change across the genes
-* The differentially expressed genes are colored in red and the non-differentially expressed are colored black. T
+* The differentially expressed genes are colored in red and the non-differentially expressed are colored black
 * The orange dots represent genes in which the counts *were zero in all samples of one of the groups.* 
 * The blue line is added at a log-FC of 2 to represent a level of biological significance.
 
