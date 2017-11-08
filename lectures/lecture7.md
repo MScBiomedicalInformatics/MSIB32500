@@ -14,12 +14,9 @@ Saturdays 11/04/17; 9:00 AM - 12:00 PM
 ## 1. Introduction
 
 * In this lecture you will learn how to use the [edgeR package in R](http://www.bioconductor.org/packages/release/bioc/html/edgeR.html) for detecting statistically significant differentially expressed genes using data from a RNA-Seq experiment. 
+* The edgeR package, implements a range of statistical tests based on the **negative binomial distributions** expected on data from RNA-seq, including empirical Bayes estimation, exact tests, generalized linear models and quasi-likelihood tests. The edgeR package can be also used to estimate differential **signal analysis** of other types of genomic data that produce **counts**, including ChIP-seq, Bisulfite-seq, SAGE and CAGE.
+* The methods used in edgeR **do NOT support FPKM, RPKM normalizations**. 
 * A user manual for the edgeR package is available [here](http://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf)
-
-
-### What is edgeR?
-
-edgeR is an R package that performs differential tag/gene expression using count data under a negative binomial model. The methods used in edgeR *do NOT support FPKM, RPKM* or other types of data that are not reads counts.
 
 
 ## 2. Installing the package
@@ -37,10 +34,11 @@ edgeR is an R package that performs differential tag/gene expression using count
 * For this tutorial we will use the RNA-Seq data set from the paper by Li et al. [2008] entitled: ”Determination of tag density required for digital transcriptome analysis: Application to an androgen-sensitive prostate cancer model.” The paper is available [here.](https://www.ncbi.nlm.nih.gov/pubmed/19088194) 
 * This study compared *hormone-treated cancer cells* to *non-treated cancer cells.* For the non-treated, there are *4 biological replicates.* For the treated, there are *3 biological replicates.*
 
-* Download to your local computer the raw version of the dataset: 'expression.txt', from the *data* folder on the GitHub, and load that data to your R working environment:
+* First, you will need to download to your local computer the raw version of the dataset: 'expression.txt', available at the *data* folder on the GitHub, and load that data to your R working environment, or download the file directly from the weblink.
 
 ```{r}
-> raw.data <- read.table( file = "expression.txt" , header = TRUE )
+> #raw.data <- read.table( file = "expression.txt" , header = TRUE )
+> raw.data <- read.table( file = "https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/expression.txt",  header = TRUE)
 > head(raw.data)
 		ensembl_ID lane1 lane2 lane3 lane4 lane5 lane6 lane8  len
 1 ENSG00000215696     0     0     0     0     0     0     0  330
@@ -50,8 +48,10 @@ edgeR is an R package that performs differential tag/gene expression using count
 5 ENSG00000212914     0     0     0     0     0     0     0  384
 6 ENSG00000212042     0     0     0     0     0     0     0   92
 ```
-
-* edgeR requires the the dataset to contain only the counts with the row names as the gene ids and the column names as the sample IDs, so we will reformat the data:
+- The edgeR package, works on a *table of integer read counts*, with rows corresponding to genes and columns to independent libraries. 
+- The counts represent the *total number of reads aligning to each gene (or other genomic locus).*
+- Such counts can be produced from aligned reads by a variety of short read software tools like TopHat, STAR, htseq, etc.
+- edgeR requires the the dataset to contain only the **counts with the row names as the gene ids** and the **column names as the sample IDs,** so we will reformat the data:
 
 ```{r}
 > counts <- raw.data[,2:8]
