@@ -1,9 +1,9 @@
-## MSIB32500 Advanced Bioinformatics Spring 2017
+## MSIB32500 Advanced Bioinformatics Fall 2017
 ## Class 08: RNAseq Data Analysis and Clinical Applications, Part I
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+September - December 2017; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -18,7 +18,7 @@ The workshop materials are available on [Github](https://github.com/MScBiomedica
 * Use a series of command line tools to execute a RNAseq workflow
 * Becoming familiar with data formats encountered during analysis
 
-![objective]('https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure24.png')
+[objective](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure24.png)
 
 ***
 
@@ -39,13 +39,13 @@ The workshop materials are available on [Github](https://github.com/MScBiomedica
 
 ## 1 Getting ready for the analysis 
 
-## 1.1 Log onto tarbell HPC
+## 1.1 Log onto gardner HPC
 
 <blockquote>
-For instructions on how to open a terminal and log onto Tarbell, please refer to Lecture3.
+For instructions on how to open a terminal and log onto Gardner, please refer to Lecture3.
 </blockquote>
 
-All analysis jobs will be conducted on CRI's tarbell HPC servers. 
+All analysis jobs will be conducted on CRI's gardner HPC servers. 
 
 *** 
 
@@ -55,7 +55,7 @@ All analysis jobs will be conducted on CRI's tarbell HPC servers.
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-ssh t.cri.biowksp36@tarbell.cri.uchicago.edu
+ssh t.cri.biowksp36@gardner.cri.uchicago.edu
 ```
 
 *** 
@@ -85,11 +85,11 @@ After a few seconds, you will notice a job has started and your node name has ch
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-# [t.cri.biowksp36@cri12in01 class08]$ qsub -I -l nodes=1:ppn=8 -l mem=10G -l walltime=12:00:00
-# qsub: waiting for job 3860037.cri12sc01 to start
-# qsub: job 3860037.cri12sc01 ready
+# [t.cri.biowksp36@cri16in002 ~]$ qsub -I -l nodes=1:ppn=8 -l mem=10G -l walltime=12:00:00
+# qsub: waiting for job 3615001.cri16sc001 to start -->
+# qsub: job 3615001.cri16sc001 ready
 
-# [t.cri.biowksp36@cri12cn52 ~]$ pwd
+# [t.cri.biowksp36@cri16cn226 ~]$ pwd
 # /home/t.cri.biowksp36
 ```
 
@@ -105,14 +105,19 @@ ls -al
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-# drwx------.   4 t.cri.biowksp36 root              165 May 26 19:19 .
-# drwxr-xr-x. 709 root            root            18831 May 24 13:32 ..
-# -rw-------.   1 t.cri.biowksp36 t.cri.biowksp36 12638 May 26 17:39 .bash_history
-# -rw-r-----.   1 root            t.cri.biowksp36    38 Apr 22  2015 .bash_profile
-# drwx------.   2 t.cri.biowksp36 root                0 May 26 19:19 class08
-# drwx------.   3 t.cri.biowksp36 t.cri.biowksp36    23 Dec  4  2014 .java
-# -rw-------.   1 t.cri.biowksp36 t.cri.biowksp36    35 Dec  1  2014 .k5login
-# -rw-------.   1 t.cri.biowksp36 root              200 May 26 19:12 .Xauthority
+# drwxr-xr-x   6 t.cri.biowksp36 t.cri.biowksp36   295 Nov 18 02:32 .
+# drwxr-xr-x 755 root            root            19985 Nov 18 01:12 ..
+# -rw-------   1 t.cri.biowksp36 t.cri.biowksp36    56 Nov 18 02:30 .Xauthority
+# -rw-------   1 t.cri.biowksp36 t.cri.biowksp36  1606 Nov 18 02:32 .bash_history
+# -rw-r--r--   1 t.cri.biowksp36 t.cri.biowksp36    18 Nov 18 01:12 .bash_logout
+# -rw-r--r--   1 t.cri.biowksp36 t.cri.biowksp36   176 Nov 18 01:12 .bash_profile
+# -rw-r--r--   1 t.cri.biowksp36 t.cri.biowksp36   124 Nov 18 01:12 .bashrc
+# -rw-r--r--   1 t.cri.biowksp36 t.cri.biowksp36   500 Nov 18 01:12 .emacs
+# drwxr-xr-x   2 t.cri.biowksp36 t.cri.biowksp36     0 Nov 18 01:12 .gnome2
+# -rw-r--r--   1 t.cri.biowksp36 t.cri.biowksp36   171 Nov 18 01:12 .kshrc
+# drwxr-x---   3 t.cri.biowksp36 t.cri.biowksp36    24 Nov 18 02:09 .lmod.d
+# drwxr-xr-x   4 t.cri.biowksp36 t.cri.biowksp36    53 Nov 18 01:12 .mozilla
+# drwxr-x---   2 t.cri.biowksp36 t.cri.biowksp36     0 Nov 18 02:32 class08
 ```
 
 *** 
@@ -147,17 +152,17 @@ We will use raw sequencing data files of 6 samples to run the RNAseq analysis. E
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-mkdir data scripts  results 
+mkdir data scripts results 
 ls -al
 ```
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-# drwx------. 7 t.cri.biowksp36 root 122 May 26 19:33 .
-# drwx------. 4 t.cri.biowksp36 root 165 May 26 19:19 ..
-# drwx------. 2 t.cri.biowksp36 root   0 May 26 19:33 data
-# drwx------. 2 t.cri.biowksp36 root   0 May 26 19:33 results
-# drwx------. 2 t.cri.biowksp36 root   0 May 26 19:33 scripts
+# drwxr-x--- 5 t.cri.biowksp36 t.cri.biowksp36  72 Nov 18 02:34 .
+# drwxr-xr-x 6 t.cri.biowksp36 t.cri.biowksp36 295 Nov 18 02:32 ..
+# drwxr-x--- 2 t.cri.biowksp36 t.cri.biowksp36   0 Nov 18 02:34 data
+# drwxr-x--- 2 t.cri.biowksp36 t.cri.biowksp36   0 Nov 18 02:34 results
+# drwxr-x--- 2 t.cri.biowksp36 t.cri.biowksp36   0 Nov 18 02:34 scripts
 ```
 
 *** 
@@ -176,16 +181,20 @@ tree
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
 .
-├── data
-│   ├── KO01.test.fastq.gz
-│   ├── KO02.test.fastq.gz
-│   ├── KO03.test.fastq.gz
-│   ├── WT01.test.fastq.gz
-│   ├── WT02.test.fastq.gz
-│   └── WT03.test.fastq.gz
-├── results
-└── scripts
-    └── run_rnaseq.KO01.sh
+|-- data
+|   |-- KO01.test.fastq.gz
+|   |-- KO02.test.fastq.gz
+|   |-- KO03.test.fastq.gz
+|   |-- WT01.test.fastq.gz
+|   |-- WT02.test.fastq.gz
+|   `-- WT03.test.fastq.gz
+|-- results
+`-- scripts
+    |-- run_rnaseq.KO01.sh
+    `-- tools
+        |-- bedGraphToBigWig
+        |-- sambamba_v0.6.6
+        `-- source
 ```
 
 *** 
@@ -243,9 +252,14 @@ refgtf=gencode.v24.primary_assembly.annotation.chr11.gtf
 head -8 $refdir/$refgtf
 ```
 
-* **STAR aligner's index files for the genome (format is aligner-specific**
+* **STAR aligner's index files for the genome (format is aligner-specific)**
+**Commands**
+```{bash, echo=TRUE, eval=FALSE}
+cat $refdir/genomeParameters.txt
+```
+
 <blockquote>
-Different aligners require different index files, and should be version-controled. 
+Different aligners require different index files, and should be version-controlled. 
 </blockquote>
 
 How to make index files?
@@ -256,7 +270,7 @@ How to make index files?
 [t.cri.biowksp36@cri12cn52 class08]$ more $refdir/runGenomeGenerate.sh
 #!/bin/bash
 
-star=/apps/software/STAR/2.5.3a/bin/Linux_x86_64_static/STAR
+star=/apps/software/gcc-6.2.0/STAR/2.5.2b/bin/STAR
 genome=GRCh38.primary_assembly.genome.chr11.fa
 annotation=gencode.v24.primary_assembly.annotation.chr11.gtf
 overhang=49 ## read length minus 1
@@ -280,7 +294,9 @@ We have prepared a shell script consisting of all RNAseq data analysis steps cov
 * Transcript quantification `featureCounts`
 * RNAseq metrics and coverage collection `picardtools` `RSeQC` `bedtools`
 
-2.1 Run the shell script. Monitor progress through logs printed on the screen.
+## 2.1 Run the shell script. Monitor progress through logs printed on the screen.
+
+The entire workflow from raw data to transcript quantification takes about 5 minutes.
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
@@ -290,7 +306,7 @@ $script
 
 *** 
 
-2.2 List the result files from project directory using `tree`.
+## 2.2 List the result files from project directory using `tree`.
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
@@ -301,82 +317,84 @@ tree results/
 ```{bash, echo=TRUE, eval=FALSE}
 ##-- DO NOT run
 results/
-└── rnaseq
-    └── DLBC_samples_grch38
-        └── KO01
-            ├── alignment
-            │   ├── KO01.star.Aligned.sortedByCoord.out.bam
-            │   ├── KO01.star.Log.final.out
-            │   ├── KO01.star.Log.out
-            │   ├── KO01.star.Log.progress.out
-            │   ├── KO01.star.merged.bam -> KO01.star.Aligned.sortedByCoord.out.bam
-            │   ├── KO01.star.merged.bam.bai
-            │   ├── KO01.star.merged.bam.mapq_hist
-            │   ├── KO01.star.SJ.out.tab
-            │   └── KO01.star._STARtmp
-            │       └── BAMsort
-            │           ├── 0
-            │           ├── 1
-            │           ├── 2
-            │           ├── 3
-            │           ├── 4
-            │           ├── 5
-            │           ├── 6
-            │           └── 7
-            ├── alignment_stats
-            │   ├── bedtools
-            │   │   ├── KO01.star.merged.bam.cov.bdg
-            │   │   └── KO01.star.merged.bam.cov.bw
-            │   ├── picard
-            │   │   ├── KO01.star.merged.bam.alignment_summary_metrics
-            │   │   ├── KO01.star.merged.bam.base_distribution_by_cycle_metrics
-            │   │   ├── KO01.star.merged.bam.base_distribution_by_cycle.pdf
-            │   │   ├── KO01.star.merged.bam.lib_complex_metrics
-            │   │   ├── KO01.star.merged.bam.quality_by_cycle_metrics
-            │   │   ├── KO01.star.merged.bam.quality_by_cycle.pdf
-            │   │   ├── KO01.star.merged.bam.quality_distribution_metrics
-            │   │   ├── KO01.star.merged.bam.quality_distribution.pdf
-            │   │   ├── KO01.star.merged.bam.rnaseq_metrics
-            │   │   └── KO01.star.merged.bam.rnaseq.pdf
-            │   └── rseqc
-            │       ├── KO01.star.merged.bam.clipping_profile.pdf
-            │       ├── KO01.star.merged.bam.clipping_profile.r
-            │       ├── KO01.star.merged.bam.clipping_profile.xls
-            │       └── KO01.star.merged.bam.infer_experiment
-            ├── qc_reports
-            │   ├── KO01.test_fastqc
-            │   │   ├── fastqc_data.txt
-            │   │   ├── fastqc.fo
-            │   │   ├── fastqc_report.html
-            │   │   ├── Icons
-            │   │   │   ├── error.png
-            │   │   │   ├── fastqc_icon.png
-            │   │   │   ├── tick.png
-            │   │   │   └── warning.png
-            │   │   ├── Images
-            │   │   │   ├── adapter_content.png
-            │   │   │   ├── duplication_levels.png
-            │   │   │   ├── kmer_profiles.png
-            │   │   │   ├── per_base_n_content.png
-            │   │   │   ├── per_base_quality.png
-            │   │   │   ├── per_base_sequence_content.png
-            │   │   │   ├── per_sequence_gc_content.png
-            │   │   │   ├── per_sequence_quality.png
-            │   │   │   └── sequence_length_distribution.png
-            │   │   └── summary.txt
-            │   ├── KO01.test_fastqc.html
-            │   └── KO01.test_fastqc.zip
-            ├── read_counts
-            │   └── raw
-            │       ├── KO01.star.merged.bam.primary_uniq.raw_counts.txt
-            │       ├── KO01.star.merged.bam.primary_uniq.raw_counts.txt.jcounts
-            │       └── KO01.star.merged.bam.primary_uniq.raw_counts.txt.summary
-            └── tmp
+`-- rnaseq
+    `-- DLBC_samples_grch38
+        `-- KO01
+            |-- alignment
+            |   |-- KO01.star.Aligned.sortedByCoord.out.bam
+            |   |-- KO01.star.Log.final.out
+            |   |-- KO01.star.Log.out
+            |   |-- KO01.star.Log.progress.out
+            |   |-- KO01.star.SJ.out.tab
+            |   |-- KO01.star._STARtmp
+            |   |   `-- BAMsort
+            |   |       |-- 0
+            |   |       |-- 1
+            |   |       |-- 2
+            |   |       |-- 3
+            |   |       |-- 4
+            |   |       |-- 5
+            |   |       |-- 6
+            |   |       `-- 7
+            |   |-- KO01.star.merged.bam -> KO01.star.Aligned.sortedByCoord.out.bam
+            |   |-- KO01.star.merged.bam.bai
+            |   `-- KO01.star.merged.bam.mapq_hist
+            |-- alignment_stats
+            |   |-- bedtools
+            |   |   |-- KO01.star.merged.bam.cov.bdg
+            |   |   `-- KO01.star.merged.bam.cov.bw
+            |   |-- picard
+            |   |   |-- KO01.star.merged.bam.alignment_summary_metrics
+            |   |   |-- KO01.star.merged.bam.base_distribution_by_cycle.pdf
+            |   |   |-- KO01.star.merged.bam.base_distribution_by_cycle_metrics
+            |   |   |-- KO01.star.merged.bam.quality_by_cycle.pdf
+            |   |   |-- KO01.star.merged.bam.quality_by_cycle_metrics
+            |   |   |-- KO01.star.merged.bam.quality_distribution.pdf
+            |   |   |-- KO01.star.merged.bam.quality_distribution_metrics
+            |   |   |-- KO01.star.merged.bam.rnaseq.pdf
+            |   |   `-- KO01.star.merged.bam.rnaseq_metrics
+            |   `-- rseqc
+            |       |-- KO01.star.merged.bam.clipping_profile.pdf
+            |       |-- KO01.star.merged.bam.clipping_profile.r
+            |       |-- KO01.star.merged.bam.clipping_profile.xls
+            |       `-- KO01.star.merged.bam.infer_experiment
+            |-- qc_reports
+            |   |-- KO01.test_fastqc
+            |   |   |-- Icons
+            |   |   |   |-- error.png
+            |   |   |   |-- fastqc_icon.png
+            |   |   |   |-- tick.png
+            |   |   |   `-- warning.png
+            |   |   |-- Images
+            |   |   |   |-- adapter_content.png
+            |   |   |   |-- duplication_levels.png
+            |   |   |   |-- kmer_profiles.png
+            |   |   |   |-- per_base_n_content.png
+            |   |   |   |-- per_base_quality.png
+            |   |   |   |-- per_base_sequence_content.png
+            |   |   |   |-- per_sequence_gc_content.png
+            |   |   |   |-- per_sequence_quality.png
+            |   |   |   `-- sequence_length_distribution.png
+            |   |   |-- fastqc.fo
+            |   |   |-- fastqc_data.txt
+            |   |   |-- fastqc_report.html
+            |   |   `-- summary.txt
+            |   |-- KO01.test_fastqc.html
+            |   `-- KO01.test_fastqc.zip
+            |-- read_counts
+            |   `-- raw
+            |       |-- KO01.star.merged.bam.primary_uniq.raw_counts.txt
+            |       |-- KO01.star.merged.bam.primary_uniq.raw_counts.txt.jcounts
+            |       `-- KO01.star.merged.bam.primary_uniq.raw_counts.txt.summary
+            `-- tmp
+                `-- script8680683321497149044.R
+
+25 directories, 46 files
 ```
 
 *** 
 
-2.3 View the content of the script using Linux text editor, e.g. `nano` or `vim` ([vim cheatsheet](https://vim.rtorr.com/). 
+## 2.3 View the content of the script using Linux text editor, e.g. `nano` or `vim` ([vim cheatsheet](https://vim.rtorr.com/). 
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
@@ -384,11 +402,11 @@ script=./scripts/run_rnaseq.KO01.sh
 vim $script
 ```
 
-After viewing the content, press `Ctrl` + `:`, and then type in `q` and `!` to exit the file.
+After viewing the content, press `Shift` + `:`, and then type in `q` and `!` to exit the file.
 
 *** 
 
-2.4 Now we have ran the complete workflow, and want to clean up the `results` directory for step by step analysis.
+## 2.4 Now we have ran the complete workflow, and want to go through each part of analysis step by step. First we want to clean up the `results` directory.
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
@@ -399,18 +417,16 @@ rm -r results/*
 
 ## 3 RNAseq analysis, from raw reads to transcript quantification: Step by step
 
-In this section, we will cover the different steps of RNAseq analysis, Part I (Part II will be covered next class). Along the way, we will become more familiar with the standard file formats such as BAM.
-
-The entire workflow from raw data to transcript quantification takes about 5 minutes.
+In this section, we will cover the different steps of RNAseq analysis, Part I (Part II will be covered next class). Along the way, we will become more familiar with the standard file formats such as BAM as well as the commands and parameters.
 
 *** 
 
-3.1 Prepare the working environment, e.g. set up paths of tools in the system.
+## 3.1 Prepare the working environment, e.g. set up paths of tools in the system.
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-modules=' bedGraphToBigWig bedtools/2.26.0 fastqc/0.11.5 java/jdk1.8.0_45 picard-tools/2.9.0 pigz/2.3.1 python/2.7.9 R/3.3.1 sambamba/0.6.6 STAR/2.5.3a subread/1.5.2 trimmomatic/0.36 '
-export ADAPTERS=/apps/software/trimmomatic/0.36/adapters
+modules=' java-jdk/1.8.0_92 gcc/6.2.0 bedtools/2.26.0 fastqc/0.11.5 picard/2.8.1 pigz/2.3.4 R/3.4.1 python/2.7.13 STAR/2.5.2b subread/1.5.3 trimmomatic/0.36 '
+export ADAPTERS=/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters
 
 module load $modules
 module list
@@ -419,17 +435,16 @@ module list
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
 ##-- DO NOT run
-Currently Loaded Modulefiles:
-  1) bedGraphToBigWig     6) picard-tools/2.9.0  11) xz/5.2.2            16) STAR/2.5.3a
-  2) gcc/4.8.3            7) pigz/2.3.1          12) pcre/8.39           17) subread/1.5.2
-  3) bedtools/2.26.0      8) python/2.7.9        13) curl/7.50.3         18) trimmomatic/0.36
-  4) fastqc/0.11.5        9) zlib/1.2.8          14) R/3.3.1
-  5) java/jdk1.8.0_45    10) bzip/1.0.6          15) sambamba/0.6.6
+Currently Loaded Modules:
+  1) gcc/6.2.0         5) pigz/2.3.4          9) pcre/8.39      13) STAR/2.5.2b
+  2) bedtools/2.26.0   6) java-jdk/1.8.0_92  10) R/3.4.1        14) zlib/1.2.8
+  3) fastqc/0.11.5     7) xz/5.2.2           11) bzip2/1.0.6    15) subread/1.5.3
+  4) picard/2.8.1      8) curl/7.51.0        12) python/2.7.13  16) trimmomatic/0.36
 ```
 
 *** 
 
-3.2 Create project-specific sub-directories under `results`.
+## 3.2 Create project-specific sub-directories under `results`.
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
@@ -462,13 +477,17 @@ results/
             ├── read_counts
             │   └── raw
             └── tmp
+
+12 directories, 0 files
 ```
 
 *** 
 
-3.3 Start the analysis: from raw reads to transcript quantification
+## 3.3 Start the analysis: from raw reads to transcript quantification
 
 3.3.1 Quality assessment of raw sequencing reads: `FastQC`
+
+**Replace [t.cri.biowksp36] with your own user account.**
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
@@ -507,12 +526,13 @@ Analysis complete for KO01.test.fastq.gz
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-ls -alt results/rnaseq/DLBC_samples_grch38/KO01/qc_reports/
-# drwx------. 4 t.cri.biowksp36 root    172 May 27 02:34 KO01.test_fastqc
-# -rw-------. 1 t.cri.biowksp36 root 313820 May 27 02:34 KO01.test_fastqc.html
-# -rw-------. 1 t.cri.biowksp36 root 361347 May 27 02:34 KO01.test_fastqc.zip
-*** 
+ls -lt results/rnaseq/DLBC_samples_grch38/KO01/qc_reports/
+# drwxr-x--- 4 t.cri.biowksp36 t.cri.biowksp36    172 Nov 18 03:04 KO01.test_fastqc
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 313820 Nov 18 03:04 KO01.test_fastqc.html
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 361347 Nov 18 03:04 KO01.test_fastqc.zip
 ```
+
+***
 
 3.3.2 Read preprocessing: `Trimmomatic` *Skipped*
 
@@ -520,10 +540,11 @@ ls -alt results/rnaseq/DLBC_samples_grch38/KO01/qc_reports/
 ```{bash, echo=TRUE, eval=FALSE}
 infile=/home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz
 outfile=results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz
-adaptors=/apps/software/trimmomatic/0.36/adapters/TruSeq3-PE.fa
+adaptors=/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters/TruSeq3-SE.fa
 
 mkdir results/rnaseq/DLBC_samples_grch38/KO01/clean_reads
-java -Xmx6G -jar /apps/software/trimmomatic/0.36/trimmomatic-0.36.jar \
+java -Xmx6G -jar \
+  /apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/trimmomatic-0.36.jar \
   SE \
   -threads 4 -phred33 \
   $infile $outfile \
@@ -533,17 +554,22 @@ java -Xmx6G -jar /apps/software/trimmomatic/0.36/trimmomatic-0.36.jar \
 **Progress**
 ```{bash, echo=TRUE, eval=FALSE}
 TrimmomaticSE: Started with arguments:
- -threads 4 -phred33 /home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz ILLUMINACLIP:/apps/software/trimmomatic/0.36/adapters/TruSeq3-PE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:36
-Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
-ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+ -threads 4 -phred33 /home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz ILLUMINACLIP:/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters/TruSeq3-SE.fa:2:30:10 LEADING:5 TRAILING:5 SLIDINGWINDOW:4:15 MINLEN:36
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+ILLUMINACLIP: Using 0 prefix pairs, 2 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
 Input Reads: 239866 Surviving: 236474 (98.59%) Dropped: 3392 (1.41%)
 TrimmomaticSE: Completed successfully
 ```
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-ls -alt results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/
-# -rw-------. 1 t.cri.biowksp36 root 6530644 May 27 06:00 KO01.R1.trim.fq.gz
+ls -lt results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 6530644 Nov 18 03:07 KO01.R1.trim.fq.gz
+
+##-- peek into the trimmed fastq file
+infile=results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz
+zcat $infile | head -16
 ```
 
 *** 
@@ -567,31 +593,32 @@ STAR \
   
 ln -s KO01.star.Aligned.sortedByCoord.out.bam \
   results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-  
-sambamba index -t 8 results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
+
+sambamba=/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6
+$sambamba index -t 8 results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 ```
 
 **Progress**
 ```{bash, echo=TRUE, eval=FALSE}
 ##-- DO NOT run
-May 27 02:36:46 ..... started STAR run
-May 27 02:36:46 ..... loading genome
-May 27 02:36:49 ..... started mapping
-May 27 02:36:54 ..... finished successfully
+Nov 18 03:11:09 ..... started STAR run
+Nov 18 03:11:09 ..... loading genome
+Nov 18 03:11:34 ..... started mapping
+Nov 18 03:11:38 ..... started sorting BAM
+Nov 18 03:11:39 ..... finished successfully
 ```
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-ls -alt results/rnaseq/DLBC_samples_grch38/KO01/alignment
-# -rw-------. 1 t.cri.biowksp36 root    88648 May 27 02:43 KO01.star.merged.bam.bai
-# lrwxrwxrwx. 1 t.cri.biowksp36 root       39 May 27 02:43 KO01.star.merged.bam -> KO01.star.Aligned.sortedByCoord.out.bam
-# -rw-------. 1 t.cri.biowksp36 root     1836 May 27 02:39 KO01.star.Log.final.out
-# -rw-------. 1 t.cri.biowksp36 root    18618 May 27 02:39 KO01.star.Log.out
-# drwx------. 3 t.cri.biowksp36 root       25 May 27 02:39 KO01.star._STARtmp
-# -rw-------. 1 t.cri.biowksp36 root      246 May 27 02:39 KO01.star.Log.progress.out
-# -rw-------. 1 t.cri.biowksp36 root    33877 May 27 02:39 KO01.star.SJ.out.tab
-# -rw-------. 1 t.cri.biowksp36 root  9673567 May 27 02:39 KO01.star.Aligned.sortedByCoord.out.bam
-# -rw-------. 1 t.cri.biowksp36 root 43996728 May 27 02:36 KO01.star.Aligned.out.sam
+ls -lt results/rnaseq/DLBC_samples_grch38/KO01/alignment
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36   88648 Nov 18 03:12 KO01.star.merged.bam.bai
+# lrwxrwxrwx 1 t.cri.biowksp36 t.cri.biowksp36      39 Nov 18 03:12 KO01.star.merged.bam -> KO01.star.Aligned.sortedByCoord.out.bam
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36    1836 Nov 18 03:11 KO01.star.Log.final.out
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36   18381 Nov 18 03:11 KO01.star.Log.out
+# drwx------ 3 t.cri.biowksp36 t.cri.biowksp36      25 Nov 18 03:11 KO01.star._STARtmp
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36     246 Nov 18 03:11 KO01.star.Log.progress.out
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36   33877 Nov 18 03:11 KO01.star.SJ.out.tab
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 9673567 Nov 18 03:11 KO01.star.Aligned.sortedByCoord.out.bam
 ```
 
 Let's take a look into the alignment BAM file `KO01.star.merged.bam`.
@@ -599,7 +626,7 @@ Let's take a look into the alignment BAM file `KO01.star.merged.bam`.
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
 infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-sambamba view -t 8 $infile | head -8
+$sambamba view -t 8 $infile | head -8
 ```
 
 To calculate a distribution of mapping quality field `MAPQ` from BAM files, and to view the results:
@@ -608,7 +635,7 @@ To calculate a distribution of mapping quality field `MAPQ` from BAM files, and 
 ```{bash, echo=TRUE, eval=FALSE}
 infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 outfile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam.mapq_hist
-sambamba view -t 8 $infile | cut -f 5 | sort | uniq -c > $outfile
+$sambamba view -t 8 $infile | cut -f 5 | sort | uniq -c > $outfile
 more $outfile
 ```
 
@@ -701,8 +728,8 @@ featureCounts -s 0 -a $refgtf -o $outfile -p -t exon -g gene_id -Q 255 -T 8 -J -
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-ls -alt results/rnaseq/DLBC_samples_grch38/KO01/read_counts/raw/
-#  KO01.star.merged.bam.primary_uniq.raw_counts.txt.summary
+ls -lt results/rnaseq/DLBC_samples_grch38/KO01/read_counts/raw/
+# KO01.star.merged.bam.primary_uniq.raw_counts.txt.summary
 # KO01.star.merged.bam.primary_uniq.raw_counts.txt.jcounts
 # KO01.star.merged.bam.primary_uniq.raw_counts.txt
 ```
@@ -730,8 +757,9 @@ Loading SAM/BAM file ...  Total 200000 usable reads were sampled
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-ls -alt results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/
-# -rw-------. 1 t.cri.biowksp36 root 165 May 27 05:42 KO01.star.merged.bam.infer_experiment
+ls -lt results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/
+# -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 165 Nov 18 03:15 KO01.star.merged.bam.infer_experiment
+
 more results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/KO01.star.merged.bam.infer_experiment
 # This is SingleEnd Data
 # Fraction of reads failed to determine: 0.1204
@@ -755,7 +783,7 @@ Fraction of reads explained by "+-,-+": 0.0161
 
 ## 4 RNAseq Data visualization: [IGV](http://software.broadinstitute.org/software/igv/)
 
-To visualize the read alignment BAM files, we need to transfer the file from Tarbell to your local laptop using `scp`. Type in password if promoted. Alternatively, you may download the files using file transfer clients (e.g. [WinSCP](https://winscp.net/eng/download.php) if on windows, [Cyberduck](https://cyberduck.io/?l=en) if on Mac.)
+To visualize the read alignment BAM files, we need to transfer the file from Gardner to your local laptop using `scp`. Type in password if promoted. Alternatively, you may download the files using file transfer clients (e.g. [WinSCP](https://winscp.net/eng/download.php) if on windows, [Cyberduck](https://cyberduck.io/?l=en) if on Mac.)
 
 Open a new window in your terminal on your laptop. `cd` into your local directory or stay at the default place.
 
@@ -769,10 +797,10 @@ cd Desktop
 
 ##-- transfer files to local directory
 file=/home/t.cri.biowksp36/class08/results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-scp -p t.cri.biowksp36@tarbell.cri.uchicago.edu:$file .
-scp -p t.cri.biowksp36@tarbell.cri.uchicago.edu:$file.bai .
+scp -p t.cri.biowksp36@gardner.cri.uchicago.edu:$file .
+scp -p t.cri.biowksp36@gardner.cri.uchicago.edu:$file.bai .
 
-ls -alt KO01.star.merged.bam KO01.star.merged.bam.bai
+ls -lt KO01.star.merged.bam KO01.star.merged.bam.bai
 pwd
 ```
 
@@ -780,19 +808,19 @@ Open IGV, and import both the BAM and the index files. In the search window, typ
 
 **Make sure to select hg38 or GRCh38 in the reference genome window**.
 
-![igv]('https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure30.png')
+[igv](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/ipynb_data/assets/Figure30.png)
 
 ***
 
 ## 5 Further readings
 
 * Fog. et al. 2015. [Loss of PRDM11 promotes MYC-driven lymphomagenesis](http://www.bloodjournal.org/content/125/8/1272.long?sso-checked=true). Blood 125(8):1272-81 
-* The Cancer Genome Atlas Research Network. 2011. [Integrated genomic analyses of ovarian carcinoma](http://www.nature.com/nature/journal/v474/n7353/full/nature10166.html). Nature 474, 609–615
-* Sims et al. 2014. [Sequencing depth and coverage: key considerations in genomic analyses](http://www.nature.com/nrg/journal/v15/n2/abs/nrg3642.html). Nature Reviews Genetics 15, 121–132
+* The Cancer Genome Atlas Research Network. 2011. [Integrated genomic analyses of ovarian carcinoma](http://www.nature.com/nature/journal/v474/n7353/full/nature10166.html). Nature 474, 609:615
+* Sims et al. 2014. [Sequencing depth and coverage: key considerations in genomic analyses](http://www.nature.com/nrg/journal/v15/n2/abs/nrg3642.html). Nature Reviews Genetics 15, 121:132
 
 *** 
 
-## 6 Class 08 challenge
+## 6 Class 08 challenge (Optional)
 
 * Complete the analysis for the other 5 samples using the test fastq files (KO02-03, WT01-03).
 * Try to run the analysis using the original sequencing data files that consist of all reads (of much larger size!). The data can be accessed at `/group/mscbmi/MSBI32500/class08/handson_fullset/data`.
