@@ -282,31 +282,34 @@ ls -al</code></pre>
 <hr />
 <p>1.2.2 Copy files to sub-directories. We will use these files for analysis. Use <code>tree</code> to print the current file structure. Check if all files are properly copied over.</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>from=/group/mscbmi/MSBI32500/class08/handson
+<pre class="bash"><code>from='/group/mscbmi/MSBI32500/class08/handson'
 to=~/class08
 cp -p -r $from/data/* $to/data
 cp -p -r $from/scripts/* $to/scripts
 tree</code></pre>
 <p><strong>Results</strong></p>
-<pre class="bash"><code>.
-|-- data
-|   |-- KO01.test.fastq.gz
-|   |-- KO02.test.fastq.gz
-|   |-- KO03.test.fastq.gz
-|   |-- WT01.test.fastq.gz
-|   |-- WT02.test.fastq.gz
-|   `-- WT03.test.fastq.gz
-|-- results
-`-- scripts
-    |-- run_rnaseq.KO01.sh
-    `-- tools
-        |-- bedGraphToBigWig
-        |-- sambamba_v0.6.6
-        `-- source</code></pre>
+<pre class="bash"><code># .
+# |-- data
+# |   |-- KO01.test.fastq.gz
+# |   |-- KO02.test.fastq.gz
+# |   |-- KO03.test.fastq.gz
+# |   |-- WT01.test.fastq.gz
+# |   |-- WT02.test.fastq.gz
+# |   `-- WT03.test.fastq.gz
+# |-- results
+# `-- scripts
+#     |-- run_rnaseq.KO01.sh
+#     `-- tools
+#         |-- bedGraphToBigWig
+#         |-- sambamba_v0.6.6
+#         `-- source
+# 
+# 4 directories, 10 files
+        </code></pre>
 <hr />
 <p>1.2.3 Your sequencing files have extension <code>.fastq.gz</code>. It means reads are stored in <code>FastQ</code> format, and compressed in <code>gz</code> format. View the conent in those files using <code>zcat</code> to decompress files on the fly and pipe the data stream into <code>head -8</code> to peek into only the first 8 lines.</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>infile=data/KO01.test.fastq.gz
+<pre class="bash"><code>infile='data/KO01.test.fastq.gz'
 zcat $infile | head -8</code></pre>
 <p>The first 8 lines are shown, which consist of two read sequence sections, each displayed in 4 lines. This is the standard <code>FastQ</code> format to store all sequencing reads.</p>
 <p><strong>Results</strong></p>
@@ -322,21 +325,21 @@ GGCCTGTGCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGAAAAA
 <p>1.2.4. Reference files: we did not copy the ref files over due to large size. They can be accessed at a shared place (shown below). The directories contain reference genome <code>Fasta</code> files, STAR aligner’s index files, gene anotation <code>GTF</code> files, and other miscellaneous files required for QC metrics collection (described below).</p>
 <p>Please stay at your current working directory. If you <code>cd</code> into the reference directory, make sure to use <code>cd -</code> to come back to the current working directory for subsequent analysis.</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>refdir=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11
+<pre class="bash"><code>refdir='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
 ls -al $refdir</code></pre>
 <p>A lot of files are present in the reference directory. We are particuarly interested in three sets of reference files:</p>
 <ul>
 <li><strong>Genome sequence file (<code>Fasta</code> format)</strong></li>
 </ul>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>refgenome=GRCh38.primary_assembly.genome.chr11.fa
+<pre class="bash"><code>refgenome='GRCh38.primary_assembly.genome.chr11.fa'
 head -8 $refdir/$refgenome
 head -10000 $refdir/$refgenome | tail -8</code></pre>
 <ul>
 <li><strong>Gene annotation files (<code>GTF</code> format)</strong></li>
 </ul>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>refgtf=gencode.v24.primary_assembly.annotation.chr11.gtf
+<pre class="bash"><code>refgtf='gencode.v24.primary_assembly.annotation.chr11.gtf'
 head -8 $refdir/$refgtf</code></pre>
 <ul>
 <li><strong>STAR aligner’s index files for the genome (format is aligner-specific)</strong> <strong>Commands</strong></li>
@@ -351,9 +354,11 @@ Different aligners require different index files, and should be version-controll
 [t.cri.biowksp36@cri12cn52 class08]$ more $refdir/runGenomeGenerate.sh
 #!/bin/bash
 
-star=/apps/software/gcc-6.2.0/STAR/2.5.2b/bin/STAR
-genome=GRCh38.primary_assembly.genome.chr11.fa
-annotation=gencode.v24.primary_assembly.annotation.chr11.gtf
+module load 'gcc/6.2.0'
+ 
+star='/apps/software/gcc-6.2.0/STAR/2.5.2b/bin/STAR'
+genome='GRCh38.primary_assembly.genome.chr11.fa'
+annotation='gencode.v24.primary_assembly.annotation.chr11.gtf'
 overhang=49 ## read length minus 1
 
 $star   \
@@ -378,7 +383,7 @@ $star   \
 <h2>2.1 Run the shell script. Monitor progress through logs printed on the screen.</h2>
 <p>The entire workflow from raw data to transcript quantification takes about 5 minutes.</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>script=./scripts/run_rnaseq.KO01.sh
+<pre class="bash"><code>script='./scripts/run_rnaseq.KO01.sh'
 $script</code></pre>
 <hr />
 </div>
@@ -465,9 +470,9 @@ results/
 <hr />
 </div>
 <div id="view-the-content-of-the-script-using-linux-text-editor-e.g.-nano-or-vim-vim-cheatsheet." class="section level2">
-<h2>2.3 View the content of the script using Linux text editor, e.g. <code>nano</code> or <code>vim</code> (<a href="https://vim.rtorr.com/">vim cheatsheet</a>.</h2>
+<h2>2.3 View the content of the script using Linux text editor, e.g. <code>nano</code> or <code>vim</code> (<a href="https://vim.rtorr.com/">vim cheatsheet</a>).</h2>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>script=./scripts/run_rnaseq.KO01.sh
+<pre class="bash"><code>script='./scripts/run_rnaseq.KO01.sh'
 vim $script</code></pre>
 <p>After viewing the content, press <code>Shift</code> + <code>:</code>, and then type in <code>q</code> and <code>!</code> to exit the file.</p>
 <hr />
@@ -487,7 +492,6 @@ vim $script</code></pre>
 <h2>3.1 Prepare the working environment, e.g. set up paths of tools in the system.</h2>
 <p><strong>Commands</strong></p>
 <pre class="bash"><code>modules=' java-jdk/1.8.0_92 gcc/6.2.0 bedtools/2.26.0 fastqc/0.11.5 picard/2.8.1 pigz/2.3.4 R/3.4.1 python/2.7.13 STAR/2.5.2b subread/1.5.3 trimmomatic/0.36 '
-export ADAPTERS=/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters
 
 module load $modules
 module list</code></pre>
@@ -503,12 +507,12 @@ Currently Loaded Modules:
 <div id="create-project-specific-sub-directories-under-results." class="section level2">
 <h2>3.2 Create project-specific sub-directories under <code>results</code>.</h2>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>project=DLBC
-sample=KO01 
-genome=grch38 
+<pre class="bash"><code>project='DLBC'
+sample='KO01'
+genome='grch38' 
 
 projPath=~/class08
-outputPath=results/rnaseq/${project}_samples_$genome/$sample
+outputPath=&quot;results/rnaseq/${project}_samples_$genome/$sample&quot;
 dirlist=' qc_reports alignment alignment_stats alignment_stats/picard alignment_stats/rseqc alignment_stats/bedtools read_counts read_counts/raw tmp '
 
 cd $projPath
@@ -574,13 +578,13 @@ Analysis complete for KO01.test.fastq.gz</code></pre>
 <hr />
 <p>3.3.2 Read preprocessing: <code>Trimmomatic</code> <em>Skipped</em></p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>infile=/home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz
-adaptors=/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters/TruSeq3-SE.fa
+<pre class="bash"><code>infile='/home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz'
+adaptors='/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters/TruSeq3-SE.fa'
+trimmomatic='/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/trimmomatic-0.36.jar'
 
 mkdir results/rnaseq/DLBC_samples_grch38/KO01/clean_reads
-java -Xmx6G -jar \
-  /apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/trimmomatic-0.36.jar \
+java -Xmx6G -jar $trimmomatic \
   SE \
   -threads 4 -phred33 \
   $infile $outfile \
@@ -598,12 +602,28 @@ TrimmomaticSE: Completed successfully</code></pre>
 # -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 6530644 Nov 18 03:07 KO01.R1.trim.fq.gz
 
 ##-- peek into the trimmed fastq file
-infile=results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz
+infile='results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz'
 zcat $infile | head -16</code></pre>
+<pre class="@srr1205282.43583628"><code>GACTATCTTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAATACAAA
++
+CCCFFFFFHHHHHIIIIIIIHHIIIIIIIIIIIIIIIIIIIIIIIIIII
+@SRR1205282.36038656
+GGCCTGTGCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGAAAAA
++
+;@+ADDBDHHGHDIIIIIIIIIIHF&lt;3;=@BB-'69@@BBB658&lt;CC?0
+@SRR1205282.41495907
+GCCCTGTGCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGAAA
++
+CCCFFFDFHGHHHIIIIIIIIIIH&gt;(9?BBD6'69BDDDDD05-&lt;CC
+@SRR1205282.43241821
+TAAAAATAAAATAGTATTTTTAAAAATAAAAAAAAAAAAAAAAAAAAAA
++
+CCCFFFFFHHHHHIFGIIIIIIIIIIIIIIIIIIIIIIIHFDDDDDDDD```</code></pre>
+<p>From the peek into the trimemd <code>FastQ</code> file above, four reads are shown. While the other three reads kept the same length as original, for read <code>@SRR1205282.41495907</code>, 2 bases at the 3’ end were trimmed, resulting in a shorter sequence compared to the rest of the reads.</p>
 <hr />
 <p>3.3.3 Map reads to reference genome (GRCh38): <code>STAR</code></p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>starIndex=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11
+<pre class="bash"><code>starIndex='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
 STAR \
   --runMode alignReads \
   --genomeLoad NoSharedMemory \
@@ -619,7 +639,7 @@ STAR \
 ln -s KO01.star.Aligned.sortedByCoord.out.bam \
   results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 
-sambamba=/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6
+sambamba='/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6'
 $sambamba index -t 8 results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam</code></pre>
 <p><strong>Progress</strong></p>
 <pre class="bash"><code>##-- DO NOT run
@@ -640,12 +660,12 @@ Nov 18 03:11:39 ..... finished successfully</code></pre>
 # -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 9673567 Nov 18 03:11 KO01.star.Aligned.sortedByCoord.out.bam</code></pre>
 <p>Let’s take a look into the alignment BAM file <code>KO01.star.merged.bam</code>.</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
+<pre class="bash"><code>infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
 $sambamba view -t 8 $infile | head -8</code></pre>
 <p>To calculate a distribution of mapping quality field <code>MAPQ</code> from BAM files, and to view the results:</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam.mapq_hist
+<pre class="bash"><code>infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam.mapq_hist'
 $sambamba view -t 8 $infile | cut -f 5 | sort | uniq -c &gt; $outfile
 more $outfile</code></pre>
 <p><strong>Results</strong></p>
@@ -657,10 +677,10 @@ more $outfile</code></pre>
 <p>3.3.4 Quantify transcript abundance: <code>featureCounts</code></p>
 <p>There are many different flags to count reads that mapped to a gene or transcript. For this demonstration we focus on counting primary alignments and uniquely mapped reads only.</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>refgenome=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.fa
-refgtf=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.gtf
-infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/read_counts/raw/KO01.star.merged.bam.primary_uniq.raw_counts.txt
+<pre class="bash"><code>refgenome='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.fa'
+refgtf='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.gtf'
+infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/read_counts/raw/KO01.star.merged.bam.primary_uniq.raw_counts.txt'
 
 featureCounts -s 0 -a $refgtf -o $outfile -p -t exon -g gene_id -Q 255 -T 8 -J -G $refgenome --primary -C $infile</code></pre>
 <p><strong>Progress</strong></p>
@@ -732,9 +752,9 @@ featureCounts -s 0 -a $refgtf -o $outfile -p -t exon -g gene_id -Q 255 -T 8 -J -
 <p>3.3.5 RNAseq quality metrics &amp; coverage: <code>Picardtools</code>, <code>bedtools</code>, <code>RSeQC</code></p>
 <p>We will take a few example metrics for demonstration. The full commands are provided in the shell script <code>scripts/run_rnaseq.KO01.sh</code>.</p>
 <p><strong>Commands</strong></p>
-<pre class="bash"><code>infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/KO01.star.merged.bam.infer_experiment
-refbed12=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12
+<pre class="bash"><code>infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/KO01.star.merged.bam.infer_experiment'
+refbed12='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12'
 
 infer_experiment.py  -i $infile  -r $refbed12  -s 200000 &gt; $outfile</code></pre>
 <p><strong>Progress</strong></p>
@@ -768,7 +788,7 @@ Fraction of reads explained by &quot;+-,-+&quot;: 0.0161</code></pre>
 cd Desktop
 
 ##-- transfer files to local directory
-file=/home/t.cri.biowksp36/class08/results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
+file='/home/t.cri.biowksp36/class08/results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
 scp -p t.cri.biowksp36@gardner.cri.uchicago.edu:$file .
 scp -p t.cri.biowksp36@gardner.cri.uchicago.edu:$file.bai .
 

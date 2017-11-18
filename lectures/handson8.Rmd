@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 ## MSIB32500 Advanced Bioinformatics Fall 2017
 ## Class 08: RNAseq Data Analysis and Clinical Applications, Part I
 
@@ -171,7 +176,7 @@ ls -al
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-from=/group/mscbmi/MSBI32500/class08/handson
+from='/group/mscbmi/MSBI32500/class08/handson'
 to=~/class08
 cp -p -r $from/data/* $to/data
 cp -p -r $from/scripts/* $to/scripts
@@ -180,21 +185,24 @@ tree
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-.
-|-- data
-|   |-- KO01.test.fastq.gz
-|   |-- KO02.test.fastq.gz
-|   |-- KO03.test.fastq.gz
-|   |-- WT01.test.fastq.gz
-|   |-- WT02.test.fastq.gz
-|   `-- WT03.test.fastq.gz
-|-- results
-`-- scripts
-    |-- run_rnaseq.KO01.sh
-    `-- tools
-        |-- bedGraphToBigWig
-        |-- sambamba_v0.6.6
-        `-- source
+# .
+# |-- data
+# |   |-- KO01.test.fastq.gz
+# |   |-- KO02.test.fastq.gz
+# |   |-- KO03.test.fastq.gz
+# |   |-- WT01.test.fastq.gz
+# |   |-- WT02.test.fastq.gz
+# |   `-- WT03.test.fastq.gz
+# |-- results
+# `-- scripts
+#     |-- run_rnaseq.KO01.sh
+#     `-- tools
+#         |-- bedGraphToBigWig
+#         |-- sambamba_v0.6.6
+#         `-- source
+# 
+# 4 directories, 10 files
+        
 ```
 
 *** 
@@ -203,7 +211,7 @@ tree
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-infile=data/KO01.test.fastq.gz
+infile='data/KO01.test.fastq.gz'
 zcat $infile | head -8
 ```
 
@@ -229,7 +237,7 @@ Please stay at your current working directory. If you `cd` into the reference di
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-refdir=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11
+refdir='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
 ls -al $refdir
 ```
 
@@ -239,7 +247,7 @@ A lot of files are present in the reference directory. We are particuarly intere
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-refgenome=GRCh38.primary_assembly.genome.chr11.fa
+refgenome='GRCh38.primary_assembly.genome.chr11.fa'
 head -8 $refdir/$refgenome
 head -10000 $refdir/$refgenome | tail -8
 ```
@@ -248,7 +256,7 @@ head -10000 $refdir/$refgenome | tail -8
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-refgtf=gencode.v24.primary_assembly.annotation.chr11.gtf
+refgtf='gencode.v24.primary_assembly.annotation.chr11.gtf'
 head -8 $refdir/$refgtf
 ```
 
@@ -270,9 +278,11 @@ How to make index files?
 [t.cri.biowksp36@cri12cn52 class08]$ more $refdir/runGenomeGenerate.sh
 #!/bin/bash
 
-star=/apps/software/gcc-6.2.0/STAR/2.5.2b/bin/STAR
-genome=GRCh38.primary_assembly.genome.chr11.fa
-annotation=gencode.v24.primary_assembly.annotation.chr11.gtf
+module load 'gcc/6.2.0'
+ 
+star='/apps/software/gcc-6.2.0/STAR/2.5.2b/bin/STAR'
+genome='GRCh38.primary_assembly.genome.chr11.fa'
+annotation='gencode.v24.primary_assembly.annotation.chr11.gtf'
 overhang=49 ## read length minus 1
 
 $star   \
@@ -300,7 +310,7 @@ The entire workflow from raw data to transcript quantification takes about 5 min
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-script=./scripts/run_rnaseq.KO01.sh
+script='./scripts/run_rnaseq.KO01.sh'
 $script
 ```
 
@@ -394,11 +404,11 @@ results/
 
 *** 
 
-## 2.3 View the content of the script using Linux text editor, e.g. `nano` or `vim` ([vim cheatsheet](https://vim.rtorr.com/). 
+## 2.3 View the content of the script using Linux text editor, e.g. `nano` or `vim` ([vim cheatsheet](https://vim.rtorr.com/)). 
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-script=./scripts/run_rnaseq.KO01.sh
+script='./scripts/run_rnaseq.KO01.sh'
 vim $script
 ```
 
@@ -426,7 +436,6 @@ In this section, we will cover the different steps of RNAseq analysis, Part I (P
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
 modules=' java-jdk/1.8.0_92 gcc/6.2.0 bedtools/2.26.0 fastqc/0.11.5 picard/2.8.1 pigz/2.3.4 R/3.4.1 python/2.7.13 STAR/2.5.2b subread/1.5.3 trimmomatic/0.36 '
-export ADAPTERS=/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters
 
 module load $modules
 module list
@@ -448,12 +457,12 @@ Currently Loaded Modules:
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-project=DLBC
-sample=KO01 
-genome=grch38 
+project='DLBC'
+sample='KO01'
+genome='grch38' 
 
 projPath=~/class08
-outputPath=results/rnaseq/${project}_samples_$genome/$sample
+outputPath="results/rnaseq/${project}_samples_$genome/$sample"
 dirlist=' qc_reports alignment alignment_stats alignment_stats/picard alignment_stats/rseqc alignment_stats/bedtools read_counts read_counts/raw tmp '
 
 cd $projPath
@@ -538,13 +547,13 @@ ls -lt results/rnaseq/DLBC_samples_grch38/KO01/qc_reports/
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-infile=/home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz
-adaptors=/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters/TruSeq3-SE.fa
+infile='/home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz'
+adaptors='/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters/TruSeq3-SE.fa'
+trimmomatic='/apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/trimmomatic-0.36.jar'
 
 mkdir results/rnaseq/DLBC_samples_grch38/KO01/clean_reads
-java -Xmx6G -jar \
-  /apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/trimmomatic-0.36.jar \
+java -Xmx6G -jar $trimmomatic \
   SE \
   -threads 4 -phred33 \
   $infile $outfile \
@@ -568,9 +577,29 @@ ls -lt results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/
 # -rw-r----- 1 t.cri.biowksp36 t.cri.biowksp36 6530644 Nov 18 03:07 KO01.R1.trim.fq.gz
 
 ##-- peek into the trimmed fastq file
-infile=results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz
+infile='results/rnaseq/DLBC_samples_grch38/KO01/clean_reads/KO01.R1.trim.fq.gz'
 zcat $infile | head -16
 ```
+
+```@SRR1205282.43583628
+GACTATCTTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAATACAAA
++
+CCCFFFFFHHHHHIIIIIIIHHIIIIIIIIIIIIIIIIIIIIIIIIIII
+@SRR1205282.36038656
+GGCCTGTGCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGAAAAA
++
+;@+ADDBDHHGHDIIIIIIIIIIHF<3;=@BB-'69@@BBB658<CC?0
+@SRR1205282.41495907
+GCCCTGTGCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGAAA
++
+CCCFFFDFHGHHHIIIIIIIIIIH>(9?BBD6'69BDDDDD05-<CC
+@SRR1205282.43241821
+TAAAAATAAAATAGTATTTTTAAAAATAAAAAAAAAAAAAAAAAAAAAA
++
+CCCFFFFFHHHHHIFGIIIIIIIIIIIIIIIIIIIIIIIHFDDDDDDDD```
+```
+
+From the peek into the trimemd `FastQ` file above, four reads are shown. While the other three reads kept the same length as original, for read `@SRR1205282.41495907`, 2 bases at the 3' end were trimmed, resulting in a shorter sequence compared to the rest of the reads.
 
 *** 
 
@@ -578,7 +607,7 @@ zcat $infile | head -16
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-starIndex=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11
+starIndex='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
 STAR \
   --runMode alignReads \
   --genomeLoad NoSharedMemory \
@@ -594,7 +623,7 @@ STAR \
 ln -s KO01.star.Aligned.sortedByCoord.out.bam \
   results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 
-sambamba=/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6
+sambamba='/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6'
 $sambamba index -t 8 results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 ```
 
@@ -625,7 +654,7 @@ Let's take a look into the alignment BAM file `KO01.star.merged.bam`.
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
+infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
 $sambamba view -t 8 $infile | head -8
 ```
 
@@ -633,8 +662,8 @@ To calculate a distribution of mapping quality field `MAPQ` from BAM files, and 
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam.mapq_hist
+infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam.mapq_hist'
 $sambamba view -t 8 $infile | cut -f 5 | sort | uniq -c > $outfile
 more $outfile
 ```
@@ -655,10 +684,10 @@ There are many different flags to count reads that mapped to a gene or transcrip
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-refgenome=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.fa
-refgtf=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.gtf
-infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/read_counts/raw/KO01.star.merged.bam.primary_uniq.raw_counts.txt
+refgenome='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.fa'
+refgtf='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.gtf'
+infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/read_counts/raw/KO01.star.merged.bam.primary_uniq.raw_counts.txt'
 
 featureCounts -s 0 -a $refgtf -o $outfile -p -t exon -g gene_id -Q 255 -T 8 -J -G $refgenome --primary -C $infile
 ```
@@ -742,9 +771,9 @@ We will take a few example metrics for demonstration. The full commands are prov
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-infile=results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-outfile=results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/KO01.star.merged.bam.infer_experiment
-refbed12=/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12
+infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
+outfile='results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/KO01.star.merged.bam.infer_experiment'
+refbed12='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12'
 
 infer_experiment.py  -i $infile  -r $refbed12  -s 200000 > $outfile
 ```
@@ -796,7 +825,7 @@ Open a new window in your terminal on your laptop. `cd` into your local director
 cd Desktop
 
 ##-- transfer files to local directory
-file=/home/t.cri.biowksp36/class08/results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
+file='/home/t.cri.biowksp36/class08/results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
 scp -p t.cri.biowksp36@gardner.cri.uchicago.edu:$file .
 scp -p t.cri.biowksp36@gardner.cri.uchicago.edu:$file.bai .
 
