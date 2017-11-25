@@ -232,14 +232,10 @@ getwd()</code></pre>
 <pre><code>## [1] &quot;C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2017/MSIB32500/lectures&quot;</code></pre>
 <pre class="r"><code>## list files in current directory
 list.files(path = '.')</code></pre>
-<pre><code>##  [1] &quot;handson10.html&quot;                 &quot;handson10.Rmd&quot;                 
-##  [3] &quot;handson8.html&quot;                  &quot;handson8.Rmd&quot;                  
-##  [5] &quot;handson9.Rmd&quot;                   &quot;hsa04010.gene_all.pathview.png&quot;
-##  [7] &quot;lecture1.md&quot;                    &quot;Lecture10.pdf&quot;                 
-##  [9] &quot;lecture2.md&quot;                    &quot;lecture3.md&quot;                   
-## [11] &quot;lecture4.md&quot;                    &quot;lecture5.md&quot;                   
-## [13] &quot;lecture6.md&quot;                    &quot;lecture7.md&quot;                   
-## [15] &quot;Lecture8.pdf&quot;                   &quot;Lecture9.pdf&quot;</code></pre>
+<pre><code>##  [1] &quot;handson10.html&quot; &quot;handson10.Rmd&quot;  &quot;handson8.html&quot;  &quot;handson8.Rmd&quot;  
+##  [5] &quot;handson9.html&quot;  &quot;handson9.Rmd&quot;   &quot;lecture1.md&quot;    &quot;Lecture10.pdf&quot; 
+##  [9] &quot;lecture2.md&quot;    &quot;lecture3.md&quot;    &quot;lecture4.md&quot;    &quot;lecture5.md&quot;   
+## [13] &quot;lecture6.md&quot;    &quot;lecture7.md&quot;    &quot;Lecture8.pdf&quot;   &quot;Lecture9.pdf&quot;</code></pre>
 <p>1.5 Start the clock</p>
 <pre class="r"><code>ptm &lt;- proc.time()</code></pre>
 <hr />
@@ -1149,7 +1145,7 @@ p4 &lt;- pathview(gene.data  = gene.list,
 <p>Stop the clock!</p>
 <pre class="r"><code>proc.time() - ptm</code></pre>
 <pre><code>##    user  system elapsed 
-##   77.01    4.29   85.30</code></pre>
+##   77.58    4.18   86.69</code></pre>
 <hr />
 <p>Always save sessionInfo from R for reproducible analysis.</p>
 <pre class="r"><code>print('Program run finished!')</code></pre>
