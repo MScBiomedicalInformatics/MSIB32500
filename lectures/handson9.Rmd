@@ -1,9 +1,9 @@
-## MSIB32500 Advanced Bioinformatics Spring 2017
+## MSIB32500 Advanced Bioinformatics Fall 2017
 ## Class 09: RNAseq Data Analysis and Clinical Applications, Part II
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+September - December 2017; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -69,7 +69,8 @@ rm(list=ls())
 ```{R, echo=TRUE, eval=TRUE}
 ## replace [path]C:/Users/rbaoc/Desktop] with your own project directory path
 ## on windows machines, replace [\] with [/]
-path <- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
+path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2017/MSIB32500/lectures'
+# path <- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
 setwd(path)
 
 ## check if the working directory has been successfully set
@@ -818,11 +819,15 @@ sessionInfo()
 
 ***
 
-## 4 Homework
+## 4 Homework (due next Sunday 12/03/2017 at 11:59 PM)
 
-1. Try to filter the DEGs with a more stringent cutoff: fdr < 0.01, fold change (fc) >= 1.5 or <= -1.5. How many DEGs are left after filtering?
-2. Generate a new gene expression heatmap using significant DEGs from step 1 after applying the new filters. 
-3. (bonus point!) For the heatmap from step 2, instead of using the default blue-red color theme, try to change it to green-red instead and re-generate the heatmap.
+1. Try to filter the DEGs with a more stringent cutoff: 'fdr < 0.01', AND 'fold change (fc) >= 1.5 or <= -1.5'. Note that we want to apply both fdr (<0.01) and fold change filters, and for fold change we filter for genes upregulated (fc>=1.5) or downregulated (fc<=-1.5), then we count all genes that pass these thresholds. How many DEGs are left after filtering?
+2. Generate a new gene expression heatmap using significant DEGs from step 1 after applying the new filters. It could be in any format that you choose (e.g. pdf, png, tiff, etc.)
+3. (bonus point!) For the heatmap from step 2, instead of using the default blue-red color theme, try to change it to green-red (or other color theme as you like!) and re-generate the heatmap.
+
+The homework will be graded at 0-100 scale and the bonus point will be additional 10.
+
+Please send via Email your R script (preferrable as knitted R markdown HTML or PDF file) and answers to each question as well as plots.
 
 ***
 
