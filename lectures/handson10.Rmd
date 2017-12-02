@@ -1,9 +1,9 @@
-## MSIB32500 Advanced Bioinformatics Spring 2017
+## MSIB32500 Advanced Bioinformatics Fall 2017
 ## Class 09: RNAseq Data Analysis and Clinical Applications, Part III
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2017; Saturdays 9:00AM - 12:00PM
+September - December 2017; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -91,7 +91,7 @@ rm(list=ls())
 ## replace [path]C:/Users/rbaoc/Desktop] with your own project directory path
 ## on windows machines, replace [\] with [/]
 # path <- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
-path <- 'C:/Users/rbaoc/Desktop/Bioinfo_teaching/MSIB32500/lectures'
+path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2017/MSIB32500/lectures'
 setwd(path)
 
 ## check if the working directory has been successfully set
@@ -281,7 +281,7 @@ print(separator)
 
 ##-- run NMF to cluster samples & genes 
 ##-- (use 4 core 'p4', and print more info 'v')
-##-- takes 15 minutes to run... skip in workshop
+##-- takes 15 minutes to run... skip in class
 print('NMF clustering start...')
 # expr.sub.nmf <- nmf(expr.sub,
 #                    rank = 3,
@@ -359,7 +359,7 @@ my.breaks <- sort(unique(c(seq(-1, -0.5, length.out=20),
                           seq(-0.5, 0.5, length.out=140),
                           seq(0.5, 1, length.out=20))))
 centered <- t(scale(t(expr.sub.cor), scale=FALSE))
-##-- skip in workshop!!
+##-- skip in class!!
 # png(file=paste0(out.dir,'/',expr.file,'.nmf.cor_heatmap.png'), width=800, height=800)
 # heatmap <- heatmap.2(centered, 
 #                     dendrogram='none', 
@@ -379,7 +379,7 @@ centered <- t(scale(t(expr.sub.cor), scale=FALSE))
 ##-- plot gene expression heatmap
 my.heatcol <- bluered(177) 
 centered <- t(scale(t(expr.sub.srt), scale=FALSE)) 
-##-- skip in workshop!!
+##-- skip in class!!
 # png(file=paste0(out.dir,'/',expr.file,'.nmf.gene_heatmap.png'), width=800, height=800)
 # heatmap <- heatmap.2(centered, 
 #                     dendrogram='none', 
