@@ -130,16 +130,16 @@ Recommended:
 ## 11. Weekly Class Schedule
 
 Week	Date	Session Leader/ Guest Lecturer	Topic	In-class activity	Assignment due
-1.  9/30/17	Jorge Andrade
-2.  10/7/17	Jorge Andrade
-3.  10/14/17	Jorge Andrade
-4.  10/21/17	Jorge Andrade
-5.  10/28/17	Jorge Andrade
-6.  11/4/17	Jorge Andrade
-7.  11/11/17	Jorge Andrade
-8.  11/18/17	Riyue Bao
-9.  11/25/17	Riyue Bao
-10. 12/2/17	Riyue Bao
+1.  3/31/18	Jorge Andrade
+2.  4/7/18	Jorge Andrade
+3.  4/14/18	Jorge Andrade
+4.  4/21/18	Jorge Andrade
+5.  4/28/18	Jorge Andrade
+6.  5/5/18	Jorge Andrade
+7.  5/12/18	Jorge Andrade
+8.  5/19/18	Riyue Bao
+9.  5/26/18	Riyue Bao
+10. 6/2/18	Riyue Bao
 
 
 ## 12.	COURSE EVALUATION
