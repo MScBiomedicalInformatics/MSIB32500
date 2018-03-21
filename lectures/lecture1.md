@@ -2,7 +2,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 9/30/17; 9:00AM - 12:00PM
+Saturdays 3/31/18; 9:00AM - 12:00PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -29,7 +29,7 @@ For MacOS or Unix/Linux users:
 2. Connect to the login node of TARBELL cluster:
 
 ```bash
-ssh t.cri.biowksp01@gardner.cri.uchicago.edu
+ls 
 ```
 Enter your **_password_** when prompted. Type yes if you are prompted to accept a key.
 
@@ -53,7 +53,7 @@ apropos secure copy
 a. List files in your home directory
 ```bash
 ls            ### List the files in your current directory
-ls -a         ### List the files in your current directory; do not ignore entries starting with .
+ls -a         ### List all the files in your current directory (do not ignore entries starting with .)
 ```
 b. Change current directory to the root directory of the file system and explore the directory structure
 ```bash
@@ -62,7 +62,7 @@ ls -l         ### List files in long format
 pwd           ### Show the current directory
 cd /tmp       ### Change current directory to /tmp
 pwd
-ls -l
+ls -l         
 ```
 c. Change to parent directory; one 'step' UP on the file tree
 ```bash
