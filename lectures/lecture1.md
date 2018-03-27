@@ -179,6 +179,7 @@ unzip SRR.zip
 ## File transfer between computers
 
 a. Windows user download and install [WinSCP](http://winscp.net/eng/index.php). MacOS users open the Terminal
+
 The *scp* (secure copy command) allows you to copy/move files between compters on the command line
 ```bash
 scp example1.txt username@gardner.cri.uchicago.edu:.
