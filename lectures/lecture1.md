@@ -87,7 +87,7 @@ ls -l
 b. Create a new file in a directory
 ```bash
 cd mydir
-nano file1.txt          ### Use nano editor to create a new file, write some text and use Control-O to save and Control-X to exit.
+nano file1.txt        ### Use nano editor to create a new file, write some text and use Control-O to save and Control-X to exit.
 pwd
 ls -l
 ```
