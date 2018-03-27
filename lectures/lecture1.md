@@ -29,7 +29,7 @@ For MacOS or Unix/Linux users:
 2. Connect to the login node of TARBELL cluster:
 
 ```bash
-ls 
+ssh t.cri.biowksp01@gardner.cri.uchicago.edu
 ```
 Enter your **_password_** when prompted. Type yes if you are prompted to accept a key.
 
