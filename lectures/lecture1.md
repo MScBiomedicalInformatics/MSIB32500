@@ -515,7 +515,7 @@ Replacing or substituting string
 
 ```bash
 cat mappingtools.txt | column -t
-sed 's/Fast/Ultra_Fast/' mappingtools.txt
+sed 's/Fast/Ultra_Fast/' mappingtools.txt | column -t
 cat mappingtools.txt | column -t
 ```
 The **sed** command also works on plain text files:
