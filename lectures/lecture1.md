@@ -598,7 +598,7 @@ The Permission Types that are used are:
 - w - Write
 - x - Execute
 
-To make this modification you would use the command: **chmod** Let's see some examples:
+To make this modification you would use the command: **chmod**. Let's see some examples:
 
 Enable Read, Write and Execute for all users on file list1.txt
 
