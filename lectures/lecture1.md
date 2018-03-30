@@ -533,7 +533,7 @@ sed 's/BWA-/Burrows-Wheeler-Aligner/2' bwa.txt
 Replacing all occurrences of the pattern in a line
 
 ```bash
-sed 'p/BWA-/Burrows-Wheeler-Aligner/g' bwa.txt
+sed 's/BWA-/Burrows-Wheeler-Aligner/g' bwa.txt
 ```
 
 Using **sed** to delete a especific line
