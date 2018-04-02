@@ -26,7 +26,7 @@ Open a PuTTY session, on 'Host Name (or IP address)' type: **gardner.cri.uchicag
 
 For MacOS or Unix/Linux users:
 1. Open a terminal session.
-2. Connect to the login node of TARBELL cluster:
+2. Connect to the login node of GARDNER cluster:
 
 ```bash
 ssh t.cri.biowksp01@gardner.cri.uchicago.edu
