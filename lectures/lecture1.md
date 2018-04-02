@@ -444,9 +444,13 @@ The general syntax of awk is:
 awk '/search pattern/{Actions}' filename
 ```
 
-'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed
+'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed. For example, to solve the problem of the headers on a table (table.txt) being sorted whe we used the 'sort' command in the previous section, one can use the follwoing command:
 
-Let's see awk in action. First copy the file *mappingtools.txt* from /group/mscbmi/lecture2.txt. This is a tab delimited file containing a list of common mapping tools for NGS data.
+```
+awk 'NR==1; NR>1 {print $0 | "sort -k2"}' table.txt
+```
+
+Let's see more awk examples. Copy the file *mappingtools.txt* from /group/mscbmi/lecture2.txt. This is a tab delimited file containing a list of common mapping tools for NGS data.
 
 ```bash
 cd ~
@@ -462,6 +466,45 @@ We can use awk to select and print one column on the tab delimited file:
 
 ```bash
 awk '{print $2}' mappingtools.txt
+```
+
+To select and print one row (line):
+
+```bash
+awk 'FNR == 2 {print}' mappingtools.txt
+```
+
+Find "BWA" in the first column:
+
+```bash
+$ awk '$1 ~ /BWA/' mappingtools.txt
+BWA	Free_software	Illumina	Command_line	Output_adhere_to_SAM_format
+BWA-SW	Free_software	454_IonTorrent_Illumina	Command_line	For_long_sequences_ranged_from_70bp_to_1Mbp
+BWA-MEM	Free_software	454_IonTorrent_Illumina	Command_line	For_long_sequences_ranged_from_70bp_to_1Mbp
+```
+
+Find the exact string matches (use " "):
+
+```bash
+$ awk '$1== "BWA"' mappingtools.txt
+BWA	Free_software	Illumina	Command_line	Output_adhere_to_SAM_format
+```
+
+Find "BWA" in the complete file:
+
+```bash
+$ awk '/BWA/' mappingtools.txt
+BWA	Free_software	Illumina	Command_line	Output_adhere_to_SAM_format
+SHRiMP2	Free_software	Illumina	Command_line	Higher_sensitivity_than_BWA
+BWA-SW	Free_software	454_IonTorrent_Illumina	Command_line	For_long_sequences_ranged_from_70bp_to_1Mbp
+BWA-MEM	Free_software	454_IonTorrent_Illumina	Command_line	For_long_sequences_ranged_from_70bp_to_1Mbp
+```
+
+If an exact match to the string "BWA" is found on the first collumn; then print the 3rd collumn
+
+```bash
+$ awk '$1== "BWA" {print $3}' mappingtools.txt
+Illumina
 ```
 
 How to omit the header for the column and get only the names printed?
@@ -492,6 +535,7 @@ awk $5 '/Fast/{print $1,"\t",$2, "\t",$3}' mappingtools.txt
 ```
 Observe and explain the result.
 
+
 --------------
  
 **sed** stands for **s**tream **ed**itor and is a stream oriented editor which was created exclusively for executing scripts. Thus all the input you feed into 'sed' passes through and goes to the screen (STDOUT). In other words,'sed' does not change the input file.
@@ -521,15 +565,40 @@ cat mappingtools.txt | column -t
 The **sed** command also works on plain text files:
 
 ```bash
-cd ~
-cp /group/mscbmi/lecture2/bwa.txt . 
-cat bwa.txt
+$ cd ~
+$ cp /group/mscbmi/lecture2/bwa.txt . 
+$ cat bwa.txt
+Burrows-Wheeler Aligner
+
+
+BWA is a software package for mapping low-divergent sequences against a large
+reference genome, such as the human genome. It consists of three algorithms: 
+BWA-backtrack, BWA-SW and BWA-MEM. The first algorithm is designed for 
+Illumina sequence reads up to 100bp, while the rest two for longer sequences 
+ranged from 70bp to 1Mbp. BWA-MEM and BWA-SW share similar features such as 
+long-read support and split alignment, but BWA-MEM, which is the latest, is 
+generally recommended for high-quality queries as it is faster and more accurate. 
+BWA-MEM also has better performance than BWA-backtrack for 70-100bp Illumina 
+reads.
 ```
 Replacing the *n*th occurrence of a pattern in a line
 
 ```bash
-sed 's/BWA-/Burrows-Wheeler-Aligner/2' bwa.txt
+$ sed 's/BWA-/Burrows-Wheeler-Aligner/2' bwa.txt
+Burrows-Wheeler Aligner
+
+
+BWA is a software package for mapping low-divergent sequences against a large
+reference genome, such as the human genome. It consists of three algorithms: 
+BWA-backtrack, Burrows-Wheeler-AlignerSW and BWA-MEM. The first algorithm is designed for 
+Illumina sequence reads up to 100bp, while the rest two for longer sequences 
+ranged from 70bp to 1Mbp. BWA-MEM and Burrows-Wheeler-AlignerSW share similar features such as 
+long-read support and split alignment, but BWA-MEM, which is the latest, is 
+generally recommended for high-quality queries as it is faster and more accurate. 
+BWA-MEM also has better performance than Burrows-Wheeler-Alignerbacktrack for 70-100bp Illumina 
+reads.
 ```
+
 Replacing all occurrences of the pattern in a line
 
 ```bash
@@ -603,17 +672,20 @@ To make this modification you would use the command: **chmod**. Let's see some e
 Enable Read, Write and Execute for all users on file list1.txt
 
 ```bash
-ls -l
-chmod a+rwx list1.txt
-ls -l
+$ ls -l list1.txt
+-rwxr-x--- 1 t.cri.biowksp01 t.cri.biowksp01 29 Mar 31 11:16 list1.txt
+
+$ chmod a+rwx list1.txt
+ls -l list1.txt
+-rwxrwxrwx 1 t.cri.biowksp01 t.cri.biowksp01 29 Mar 31 11:16 list1.txt
 ```
 
 Remove Read and Write permission for Others on file list1.txt
 
 ```bash
-ls -l
 chmod o-rw list1.txt
-ls -l
+ls -l list1.txt
+-rwxrwx--x 1 t.cri.biowksp01 t.cri.biowksp01 29 Mar 31 11:16 list1.txt
 ```
 
 Enable Execute permission for Group on list1.txt  
@@ -635,9 +707,11 @@ You add the numbers to get the integer/number representing the permissions you w
 Let's see some examples:
 
 ```bash
-ls -l
-chmod 740 list2.txt
-ls -l
+$ ls -l list2.txt
+-rwxr-x--- 1 t.cri.biowksp01 t.cri.biowksp01 58 Mar 31 11:16 list2.txt
+$ chmod 740 list2.txt
+$ ls -l list2.txt
+-rwxr----- 1 t.cri.biowksp01 t.cri.biowksp01 58 Mar 31 11:16 list2.txt
 ```
 This command enable **rwx** (7) to the user/owner, only **r** (4) to the group and no right to **rwx** for all other user.
 
