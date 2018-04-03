@@ -534,7 +534,7 @@ Now explore the result of the following command:
 awk $5 '/Fast/{print $1,"\t",$2, "\t",$3}' mappingtools.txt
 ```
 
-**More awk examples for bioinformatics:
+## More awk examples for bioinformatics:
 
 Copy the file expression.txt from our repository to your home directory; explore the contents fo this file.
 
