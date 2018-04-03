@@ -535,6 +535,46 @@ awk $5 '/Fast/{print $1,"\t",$2, "\t",$3}' mappingtools.txt
 ```
 Observe and explain the result.
 
+** More awk examples for bioinformatics:
+
+Copy the file expression.txt from our repository to your home directory; explore the contents fo this file.
+
+```bash
+cp /group/mscbmi/lecture1/expression.txt .
+head -20 expression.txt 
+wc -l expression.txt
+
+```
+1. Choose rows where the gene expression of tumor replicate 1 is larger than the expression of normal replicate 1. Save the results on a file called expoutput.txt
+
+```bash
+
+awk '$2>$5' expression.txt > expoutput.txt
+head -20 expoutput.txt 
+wc -l expoutput.txt
+
+```
+
+2. Extract the expression value for the 3 normal replicates, columns 5,6,7. Save it on a text file
+
+```bash
+
+awk '{print $5,$6,$7}' expression.txt > tumor.txt
+head -20 tumor.txt 
+
+```
+
+3. Extract the expression values for gene Rock2 on all samples
+
+```bash
+awk '/Rock2/{print}' expression.txt
+```
+
+4. Calculate the average expression value for all genes of normal replicate 3 (column 7)
+
+```bash
+awk '{x+=$7}END{print x/NR}' expression.txt
+```
 
 --------------
  
