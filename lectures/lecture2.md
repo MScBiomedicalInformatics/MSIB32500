@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 10/07/17; 9:00 AM - 12:00 PM
+Saturdays 04/07/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -22,7 +22,7 @@ Saturdays 10/07/17; 9:00 AM - 12:00 PM
 
 **Steps to create a Shell Script**
 
-1. Create a file using a nano editor (or any other editor you like i.e. vi).  Name script file **with extension .sh**
+1. Create a file using an editor (nano or any other editor you like i.e. vi).  Name script file **with extension .sh**
 2. Start the script with #! /bin/bash (or #! /bin/sh depending of your operative system and preference)
 3. Write some code
 4. Save the script file as filename.sh
