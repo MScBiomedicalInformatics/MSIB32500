@@ -156,7 +156,7 @@ While loops will execute the instruction(s) *while* the evaluation condition is 
 
 **while1.sh**
 ```bash
-#!/bin/bash
+#!/bin/sh
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
@@ -166,20 +166,21 @@ do
 done
 ```
 
-Let's combine *while* loops with conditional *if* statements:
+Let's combine *while* loops with conditional *case* and *if* statements:
 
 First, copy on your home directory the file greetings.txt form /group/mscbmi/lecture1/, this file contains several ways to say hello in different languages.
 
 ```bash
 cd ~
 cp /group/mscbmi/lecture1/greetings.txt .
+cat greetings.txt
 ```
 
 Let's now create a script that will recognize the language for each line in the file:
 
 **while2.sh**
 ```bash
-#!/bin/bash
+#!/bin/sh
 while read f
 do
   case $f in
@@ -213,11 +214,11 @@ fi
 Note that **fi** is **if** backwards. This concept was already used in the previous example with **case** and **esac**
 
 
-Let's try to create a script to evaluate if a number is a prime. As you know, prime numbers are numbers that are bigger than 1 and **cannot** be divided evenly by any other number except 1 and itself
+Let's try to create a script to evaluate *if* a number is a prime. As you know, prime numbers are numbers that are bigger than 1 and **cannot** be divided evenly by any other number except 1 and itself
 
 **isprime.sh**
 ```bash
-#!/bin/bash
+#!/bin/sh
 while [ "$num" != "bye" ]
 do
   echo -n "Enter a number, type 'bye' to quit "
@@ -262,7 +263,7 @@ Let's see some examples
 
 **checkdir.sh**
 ```bash
-#!/bin/bash
+#!/bin/sh
 
 goto_directory=/group/mscbmi
 
@@ -278,7 +279,7 @@ fi
 
 **checkdirorfile.sh**
 ```bash
-#!/bin/bash
+#!/bin/sh
 # Check if either a directory or file exists #
 
 location=$HOME
