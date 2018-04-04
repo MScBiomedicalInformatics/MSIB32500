@@ -147,8 +147,8 @@ done
 
 Explore the files you just created and confirm that you have a copy of SRR001655.fastq on each file
 
-## :mortar_board: Your turn, create a shell script to remove (delete) the 100 files you just created.
-(do not use: rm -rf folder*)
+## :mortar_board: Your turn, create a shell script to remove (delete) the 100 files you just created. (do not use: rm -rf folder*)
+
 
 **While Loops**
 
