@@ -452,7 +452,7 @@ Floating-point operations per second:
 - TFLOPS: A TeraFlops is a trillion FLOPS, one trillion floating-point operations per second
 - PFLOPS: A Peta (10^5) floating-point operations per second
 
-Obviously, **there is a limit to the speed of a single processor*** (the speed-of-light), however the need for **FLOPS** in science and engineering **continue to grow exponentially** (weather forecast, astrophysics, Monte Carlo simulation of nuclear reactors, etc.)
+Obviously, **there is a limit to the speed of a single processor** (the speed-of-light), however the need for **FLOPS** in science and engineering **continue to grow exponentially** (weather forecast, astrophysics, Monte Carlo simulation of nuclear reactors, etc.)
 
 The only alternative for **efficient** analysis of BIG DATA is parallel and/or distributed computing.
 
