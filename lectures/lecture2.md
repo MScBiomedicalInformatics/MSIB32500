@@ -380,8 +380,7 @@ cat top_1000_tab.txt
 
 Here is an example on how to identify reads with fail sequences:
 ```bash
-###awk '{print $3}' top_1000_tab.txt 
-awk '$3 ~ /N/ {print $1,"\t",$3}' top_1000_tab.txt 
+awk '$1 ~/N/{print $1,"\t",$3}' top_1000_tab.txt 
 ```
 The follwong command will convert FASTQ to [FASTA](https://en.wikipedia.org/wiki/FASTA_format) file format:
 ```bash
