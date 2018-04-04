@@ -83,8 +83,8 @@ ls file*                   ### List the files you just created
 
 Shell variables store data in the form of characters and numbers, the following creates a shell variable and then prints it:
 
-```text
-variable ="Hello"
+```
+variable="Hello"
 echo $variable
 ```
 Let's use the concept of variables is a small script. Create the following script using a text editor (nano greetings.sh)
