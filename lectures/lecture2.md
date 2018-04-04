@@ -320,7 +320,7 @@ fi
 ____________________________________________________________
 
 
-## 2. Linux commands for routine Bioinformatics tasks
+## 2. Some practical Linux commands for routine tasks
 
 **a. Processing FASTQ files**
 
