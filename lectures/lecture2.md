@@ -23,7 +23,7 @@ Saturdays 04/07/17; 9:00 AM - 12:00 PM
 **Steps to create a Shell Script**
 
 1. Create a file using an editor (nano or any other editor you like i.e. vi).  Name script file **with extension .sh**
-2. Start the script with #! /bin/bash (or #! /bin/sh depending of your operative system and preference)
+2. Start the script with #!/bin/bash (or #!/bin/sh depending of your operative system and preference)
 3. Write some code
 4. Save the script file as filename.sh
 5. Set the executable permission for filename.sh for the target users
@@ -32,7 +32,7 @@ Saturdays 04/07/17; 9:00 AM - 12:00 PM
 Let's create a very simple first shell script, **on your command line** open a **text editor** ($ nano simple.sh).
 
 ```text
-#!/bin/bash
+#!/bin/sh
 #This script display the date, who is logged on, and your working directory
 echo "Today's date is:"
 date
@@ -55,7 +55,7 @@ We can now execute our first shell script
 Let's see another example **on your command line** open a **text editor** ($ nano hello.sh). On the editor type the following:
 
 ```text
-#!/bin/bash
+#!/bin/sh
 echo "Hello World!."
 echo "I am going to generate 10 files: file1.txt, file2.txt, ..., file10.txt"
 for i in {1..10}
@@ -90,7 +90,7 @@ echo $variable
 Let's use the concept of variables is a small script. Create the following script using a text editor (nano greetings.sh)
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 echo "what is your name?"
 read name
 echo "How are you, $name?"
@@ -104,11 +104,11 @@ You can also access Linux environment variables ($HOME, $USER, etc.) from within
 environment.sh
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 #Display user information from the system
 echo "User info for user: $USER"
 echo "User's HOME: $HOME"
-echo "Your UID is: $UID" 
+echo "Your UID is: $UID" nano 
 ```
 
 **Shell Loops**
@@ -117,7 +117,7 @@ echo "Your UID is: $UID"
 
 **for1.sh**
 ```bash
-#!/bin/bash
+#!/bin/sh
 for i in 1 2 3 4 5
 do
   echo "Looping ... number $i"
@@ -128,7 +128,7 @@ Let's try something a bit more useful:
 
 **for2.sh**
 ```bash
-#!/bin/bash
+#!/bin/sh
 for i in {1..100}
 do
   echo "I will create folder # $i"
@@ -148,6 +148,7 @@ done
 Explore the files you just created and confirm that you have a copy of SRR001655.fastq on each file
 
 ## :mortar_board: Your turn, create a shell script to remove (delete) the 100 files you just created.
+(do not use: rm -rf folder*)
 
 **While Loops**
 
