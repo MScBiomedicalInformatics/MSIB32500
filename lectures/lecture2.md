@@ -458,7 +458,7 @@ The only alternative for **efficient** analysis of BIG DATA is parallel and/or d
 
 **Biologist are now joining the bid data club**
 
-Due to available high-throughput genomics technologies (NGS), in January this year, Illumina was the first company to announce that their technology will be capable of sequencing a human genome for $1000 (with their HiSeq X 10 technology, a lab would be capable of sequencing 18,000 human genomes per year. Breaking down the price of an individual genome). 
+Due to available high-throughput genomics technologies (NGS), in January 2017, Illumina was the first company to announce that their technology will be capable of sequencing a human genome for $1000 (with their HiSeq X 10 technology, a lab would be capable of sequencing 18,000 human genomes per year. Breaking down the price of an individual genome). 
 
 How much data is produced? take a look at the throughput of the latest Illumina sequencing platforms: 
 
