@@ -429,7 +429,7 @@ The figure below shows the number of transistors on integrated circuits chips fr
 ![Moore's law](https://ourworldindata.org/wp-content/uploads/2013/05/Transistor-Count-over-time.png)
 
 
-Note: Exponential growth, it is unlikely to continue indefinitely, some new studies are showing that physical limitations could be reached this year - **2017**
+Note: Exponential growth, it is unlikely to continue indefinitely, some new studies are showing that physical limitations could be reached soon.
 
 **Factors contributing to validate Moore's law:**
 
