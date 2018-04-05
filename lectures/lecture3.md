@@ -3,14 +3,14 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 10/14/17; 9:00 AM - 12:00 PM
+Saturdays 04/14/17; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
 
 ## Learning Objectives
 
-- Learn how to develop HPC batch scripts using the Linux shell to execute code and develop analysis pipelines to perform computationally expensive bioinformatics tasks
+- Learn how to develop HPC batch scripts using the Linux shell to execute code, and develop analysis pipelines to perform computationally expensive bioinformatics tasks.
 
 ## 1. Introduction
 
