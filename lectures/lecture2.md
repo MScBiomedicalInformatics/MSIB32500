@@ -298,7 +298,7 @@ fi
 location=$HOME
 file_name="SRR001655.fastq"
 
-if [ -e $location ]
+if [ -d $location ]
   then #Folder exist
     echo "OK on the $location directory."
     echo "Now checking on the file, $file_name." 
