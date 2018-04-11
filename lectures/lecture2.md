@@ -219,10 +219,11 @@ Let's try to create a script to evaluate *if* a number is a prime. As you know, 
 **isprime.sh**
 
 ```bash
+
 #!/bin/sh
 while [ "$num" != "bye" ]
 do
-  echo -n "Enter a number equal or bigger that 2, type 'bye' to quit "
+  echo "Enter a number equal or bigger that 2, type 'bye' to quit "
   read num
   
   if [ $num  -eq 2 ]
@@ -246,6 +247,7 @@ do
        done
   fi  
 done
+
 ```
 
 **Numeric comparisons**
