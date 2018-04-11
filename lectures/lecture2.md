@@ -316,7 +316,7 @@ if [ -d $location ]
 #
 else #Directory does not exist
   echo "The $location directory does not exist."
- echo "Nothing to update" 
+  echo "Nothing to update" 
 fi
 ```
 
