@@ -10,7 +10,7 @@
 * Important Note: Changes may occur to the syllabus at the instructor's discretion. When changes are made, students will be notified via Canvas and in-class announcement. More details for assignments will be provided at least one week prior to their due date.
 
 ## 2.	COURSE DESCRIPTION 
-This course will follow on from the Introduction to Bioinformatics and include advanced bioinformatics analysis topics such as: Linux and high performance computing; R programming for bioinformatics; genomic data visualization; and RNA sequencing data analysis. The course will emphasize hands-on tutorials on how to perform analysis of gene expression microarrays, RNA-Seq data and integration of genomics and clinical data in lab sessions designed to reinforce lecture material.  
+This course will follow on from the Introduction to Bioinformatics and include advanced bioinformatics analysis topics such as: Linux and high-performance computing; R programming for bioinformatics; genomic data visualization; and RNA sequencing data analysis. The course will emphasize hands-on tutorials on how to perform analysis of gene expression microarrays, RNA-Seq data and integration of genomics and clinical data in lab sessions designed to reinforce lecture material.  
 
 ## 3.	COURSE OBJECTIVES
 By taking this course, students will learn how to perform advanced bioinformatics data analysis of high throughput genomics data using High Performance Computing Infrastructures.
@@ -57,7 +57,7 @@ ISBN-13: 978-1439809754, ISBN-10: 1439809755.
 **Week 1: – Introduction to Linux for Bioinformatics** 
 
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
-Objectives:  Learn how the Linux file system is organized and how to navigate it; Learn to perform basic operations with directories and files in Linux; Learn how to transfer files between computers; Learn useful text searching, text extraction and text manipulation techniques; Learn how to set permissions in a Linux enviroment.
+Objectives:  Learn how the Linux file system is organized and how to navigate it; Learn to perform basic operations with directories and files in Linux; Learn how to transfer files between computers; Learn useful text searching, text extraction and text manipulation techniques; Learn how to set permissions in a Linux environment.
 
 Required Reading: Developing Bioinformatics Computer Skills. Chapter 3, 4 and 5. 
 Recommended: Bioinformatics Data Skills, Chapter 3, 4.
@@ -65,14 +65,14 @@ Recommended: Bioinformatics Data Skills, Chapter 3, 4.
 **Week 2 – Introduction to Shell scripting; Linux commands for routine Bioinformatics tasks; and Introduction to Parallel and distributed computing**
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD
-Objectives: Learn how to develop linux Shell scripts.
-Learn how to use Linux commands to solve commun bioinformatics taks.
+Objectives: Learn how to develop Linux Shell scripts.
+Learn how to use Linux commands to solve common bioinformatics tasks.
 Learn the basics of parallel and distributed computing environments, basic models for parallel computation, and design of parallel and distributed algorithms. 
 Required Reading:  
 Recommended: Introduction to Parallel Computing, chapters 1, 3 and 4; Applied Parallel Computing Springer series Lecture Notes in Computer Science. (LNCS). Volume 4699. pp 791-798 2007
 
 
-**Week 3 - Using a High Performance Computing cluster for bioinformatics analysis**     
+**Week 3 - Using a High-Performance Computing cluster for bioinformatics analysis**     
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD 
 Objectives: Learn how develop HPC batch scripts using the Linux shell to execute code and develop analysis pipelines to perform computationally expensive bioinformatics tasks. 
@@ -144,7 +144,7 @@ Week	Date	Session Leader/ Guest Lecturer	Topic	In-class activity	Assignment due
 
 ## 12.	COURSE EVALUATION
 
-The Graham School administers web-based course evaluations to students for each course near the end of the quarter.  Your completion of both the Unit (course) and Faculty evaluations is required.  You will be sent the web-link and instructions via e-mail later in the quarter.  Your evaluation of the course and faculty is anonymous; your identity can not be linked with your responses.
+The Graham School administers web-based course evaluations to students for each course near the end of the quarter.  Your completion of both the Unit (course) and Faculty evaluations is required.  You will be sent the web-link and instructions via e-mail later in the quarter.  Your evaluation of the course and faculty is anonymous; your identity cannot be linked with your responses.
 
 ## 13.	STUDENTS WITH DISABILITIES
 
