@@ -292,13 +292,17 @@ Repeat the steps to run FastQC on the **seqBad.fastq** file and compare the QC r
 ```bash
 cd ~/mscbmi/Ex2
 fastqc seqBad.fastq
-exit
+```
+To exit the **interactive** mode sessionwe used the command: **exit**:
+
+```bash
+$ exit
+logout
+
+qsub: job 6715942.cri16sc001 completed
 ```
 
-
-**Note** that after we run FastQC on the **seqBad.fastq** file, we used the command: **exit** to exit the **interactive** mode session.
-
-Open a new command line **on your local computer** and then run the following commands:
+Open a new command line **on your local computer** and move the results of this analysis to your laptop.
 
 ```bash
 scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex2/seqBad_fastqc.html ./
