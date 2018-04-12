@@ -242,7 +242,7 @@ Other usefull **module** commands:
 
 - Swap compilers
 ```
-module swap gcc/5.4.0 gcc/6.1.0
+module swap gcc/5.4.0 gcc/6.2.0
 ```
 - Find a module by keyword
 
