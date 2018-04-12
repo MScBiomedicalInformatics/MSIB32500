@@ -196,7 +196,7 @@ $ module avail
 
 ```
 
-*fastqc* is a *java* application, so we will need to load the module: *java-jdk*. We will be also using the lates version of the *gcc* (default) compilers to load other packages like mapping tools for NGS. 
+*fastqc* is a *java* application, so we will need to load the module: *java-jdk*. We will be also using the lates version of the *gcc* https://gcc.gnu.org (default) compilers to load other packages like mapping tools for NGS. 
 
 To load the lates gcc *and* java-jdk compilers use:
 
