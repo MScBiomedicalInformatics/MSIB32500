@@ -169,14 +169,14 @@ ls
 ```
 This will generate a self-contained directory called **"seqGood_fastqc.html"** which contains an HTML formatted report that can be loaded into a browser, and a compressed file with all the results named **"seqGood_fastqc.zip**
 
-Move the results of *fastqc* to your local computer and explore the files created by *fastqc seqGood.fastq*
+Move the results of *fastqc* to your local computer (using scp) and explore the files created by *fastqc seqGood.fastq* 
 
 As you can see, before excuting the *fastqc* package, we used *module load* to set the enviroment on CRI's GARDNER cluster.
 
 --------------------
 ## Software Environment set up on Gardner ##
 
-Gardner uses **Lmod** as Environment Module System, Lmod handels the environment configuration as a hierarchical structure. 
+Gardner uses **Lmod** (https://lmod.readthedocs.io/en/latest/) as Environment Module System, Lmod handels the environment configuration as a hierarchical structure. 
 
 User must:
 
