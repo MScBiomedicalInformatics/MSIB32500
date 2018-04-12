@@ -48,7 +48,7 @@ As we learned on week1, you can transfer files from your local computer to your 
 
 To download data from a website directly to your **working directory** on GARDNER cluster, you can use either the command **wget** or **curl** 
 
-**Exercise 1.1:** Let's recall how to download a microarray expression raw data file from NCBI's Gene Expression Omnibus (GEO) (http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE31736) to your home directory on GARDNER cluster.
+**Exercise 1.1:** Let's recall how to download a file from the internet - a microarray expression raw data file from NCBI's Gene Expression Omnibus (GEO) (http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE31736), to your home directory on GARDNER cluster.
 
 ```bash
 $ cd Ex1
