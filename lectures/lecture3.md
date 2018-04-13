@@ -324,7 +324,7 @@ Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, 
 
 **Exercise 3: Running jobs in batch mode**
 
-In practice, you would likely want to evaluate more than one or two sequence files at the time. Instead of running FastQC sequentially on each file, you can take advantage of the power of batch job submission. In order to do so, you need to create a job submission script a [PBS](https://www.nas.nasa.gov/hecc/support/kb/121/)script. 
+In practice, you would likely want to evaluate more than one or two sequence files at the time. Instead of running FastQC sequentially on each file, you can take advantage of the power of batch job submission. In order to do so, you need to create a job submission script a [PBS](https://www.nas.nasa.gov/hecc/support/kb/121/) script. 
 
 As described before, a job submittion script will look like the following:
 
@@ -373,7 +373,7 @@ zless heart_ERR030886.sample.1.fastq.gz
 ```
 Type **q** to exit 
 
-Next we will create a script that performs the QC for each tissue (four files) based on the above template. You can use any text editor to write your script. Here we will use **nano** tool that is installed on TARBELL.
+Next we will create a script that performs the QC for each tissue (four files) based on the above template. You can use any text editor to write your script. Here we will use **nano** tool that is installed on GARDNER.
 
 ```bash
 nano run_fastqc_heart.pbs
