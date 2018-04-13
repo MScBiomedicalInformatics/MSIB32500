@@ -707,7 +707,7 @@ To transfer a file from GARDNER to your local computer, open a new comand line i
 
 ```bash
 scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam ./
-scp t.cri.biowksp01@ardner.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam.bai ./
+scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/mscbmi/Ex4/bwa/heart_ERR030886.sample.sorted.bam.bai ./
 ```
 Move the files you just downloaded to a folder in your Desktop (bwa_r)
 
