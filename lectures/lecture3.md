@@ -324,7 +324,7 @@ Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, 
 
 **Exercise 3: Running jobs in batch mode**
 
-In practice, you would likely want to evaluate more than one or two sequence files at the time. Instead of running FastQC sequentially on each file, you can take advantage of the power of batch job submission. In order to do so, you need to create a job submission script (a **PBS** script). 
+In practice, you would likely want to evaluate more than one or two sequence files at the time. Instead of running FastQC sequentially on each file, you can take advantage of the power of batch job submission. In order to do so, you need to create a job submission script (a ![PBS](https://www.nas.nasa.gov/hecc/support/kb/121/) script). 
 
 As described before, a job submittion script will look like the following:
 
@@ -702,7 +702,7 @@ Should list the follwoing files:
 You can now visualize the alignments on genome visualization tools such as the Integrative Genomics Viewer [IGV](http://www.broadinstitute.org/igv). 
 
 Download and install the IGV to your local computer. 
-Trasfer the *bam* and *bai* files from TARBELL to your local computer. 
+Trasfer the *bam* and *bai* files from GARDNER to your local computer. 
 To transfer a file from GARDNER to your local computer, open a new comand line in your local computer and use the **scp** command: 
 
 ```bash
