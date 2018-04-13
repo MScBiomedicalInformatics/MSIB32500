@@ -724,7 +724,7 @@ Now search for the gene **TOMM40L** on IGV. You should be able to see the mappin
 
 ## Week 3 Homework: :house: (Graded!)
 
-- Create an analysis pipeline (**one script**) that performs the raw data QC for heart and kidney files, then perform the mapping of those files using both **bwa** and **bowtie2** tools. 
+- Create an analysis pipeline that performs the raw data QC for heart and kidney files, then perform the mapping of those files using both **bwa** and **bowtie2** tools. 
 - Screen capture the vizualization of your mapping results (both bwa and bowtie2) for the gene TOMM40L using IGV. 
 
 Please submit your code and vizualizations via e-mail.
