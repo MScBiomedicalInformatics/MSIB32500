@@ -324,7 +324,7 @@ Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, 
 
 **Exercise 3: Running jobs in batch mode**
 
-In practice, you would likely want to evaluate more than one or two sequence files at the time. Instead of running FastQC sequentially on each file, you can take advantage of the power of batch job submission. In order to do so, you need to create a job submission script (a ![PBS](https://www.nas.nasa.gov/hecc/support/kb/121/) script). 
+In practice, you would likely want to evaluate more than one or two sequence files at the time. Instead of running FastQC sequentially on each file, you can take advantage of the power of batch job submission. In order to do so, you need to create a job submission script a [PBS](https://www.nas.nasa.gov/hecc/support/kb/121/)script. 
 
 As described before, a job submittion script will look like the following:
 
