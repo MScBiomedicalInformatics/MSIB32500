@@ -614,9 +614,9 @@ qstat
 ```
 Notes:
 ----------------
-- bwa manual reference is available at http://bio-bwa.sourceforge.net/bwa.shtml
-- bowtie2  manual reference is available at http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
-- samtools manual is available at http://www.htslib.org/doc/samtools.html
+- **bwa** manual reference is available at http://bio-bwa.sourceforge.net/bwa.shtml
+- **bowtie2**  manual reference is available at http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
+- **samtools** manual is available at http://www.htslib.org/doc/samtools.html
 -----------------
 - The program takes just a few minutes to complete because the input sequence files used in this exercise are a stripped-down version of the original compressed fastQ files, The tipical size of a complete RNA-Seq fastq file is about 6.1GB. Running the BWA aligner on a real file would take much longer time, thus the utility of HPC enviroments to reduce the time to manageable.
 - BWA and Bowtie2 both support multi-threading. To enable it, turn on the **option -t in BWA** and **-p in Bowtie2**. In above script, 4 threads are used for the mapper, you also need to inform the scheduler of the number of CPU cores for your job by setting ppn=4. While multi-threading can speed up the mapping, specifying too many threads could cause your job to be waiting in the queue for sufficient resources to become available. Set the number of threads to 4, 8, or 16 depending on the read file sizes and current job load on the cluster.
