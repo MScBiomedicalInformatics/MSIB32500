@@ -3,15 +3,15 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 10/21/17; 9:00 AM - 12:00 PM
+Saturdays 04/21/2018; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
 
 ## Learning Objectives
 
-- Develop R programming skills and learn how to use R for Bioinformatics analysis
-- Develop a working knowledge of how to use R and Bioconductor for the analysis of genomics data 
+- Develop R programming skills and learn how to use some basic R functions for Bioinformatics analysis
+- Develop a working knowledge of how to use R and Bioconductor packages for the analysis of genomics data 
 
 ## 1. Introduction
 R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows, and MacOS. To download R, please choose your preferred CRAN mirror.
