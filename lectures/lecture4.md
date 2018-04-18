@@ -178,13 +178,13 @@ We can access part of the vector using the corresponding index:
 Explore the effect of the following commands:
   
 ```{r}
-> my_vector<- c(1,5,10, 7, 2)  # define the vector 
+> my_vector<- c(1,5,10,7,2) 
 > my_vector [c(1,3,5)] 
 > my_vector[1:4] 
 > my_vector[4:1]
 ```
 
-In a matrix, an element at the *m* row and *n* column, can be accessed by the expression A[m, n]:
+In a matrix, an element at the *m* row and *n* column, can be accessed by the expression A[m,n]:
 
 ```{r}
 > A[2, 3]      # element at 2nd row, 3rd column 
@@ -202,7 +202,7 @@ The entire *m* row of matrix A can be extracted as A[m, ]:
 
 Given the following vector:
 ```{r}
-> my_vector<- c(1,5,10, 7, 2)   # define the vector
+> my_vector<- c(1,5,10, 7, 2)   
 ```
 <details> 
   <summary> T2: Using the reference sheet, figure out at least three ways of making R print your vector in the reverse direction </summary>
