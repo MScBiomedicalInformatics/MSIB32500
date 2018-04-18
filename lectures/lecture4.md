@@ -581,7 +581,7 @@ Note the parameters of **rnorm(n, mean = , sd = )**
 > summary(dat2)
 ```
 
-The command **ecdf()** (empirical cumulative distribution)  calculates "all" percentiles in your data - and also understands the **plot()** function. 
+The command **ecdf()** (Empirical Cumulative Distribution Function) calculates "all" percentiles in your data - and also understands the **plot()** function. 
 
 #### Try: 
 
@@ -595,7 +595,11 @@ The figure shows what fraction of the data has been covered at point X.
 
 #### Boxplots
 
-  * As we have seen, an "easier" representation of ECDFs. Is based on making boxes that tell us about both center point and "spread" of the data.
+An "easier" way to represent data distributions is a Boxplot, they tell us about both the center point and the "spread" of the data:
+
+![BOXPLOT](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
+Boxplot (with an interquartile range) and a probability density function of a Normal N(0,σ2) Population
+
 
  	 - The first quartile (Q1) is defined as the middle number between the smallest number and the median of the data set (splits off the lowest 25% of data from the highest 75%).
 	 - The second quartile (Q2) is the median of the data (cuts data set in half)
@@ -603,10 +607,7 @@ The figure shows what fraction of the data has been covered at point X.
 	 - The interquartile range (IQR), also called the midspread or middle 50%, is a measure of statistical dispersion, being equal to the difference between 75th and 25th percentiles, or between upper and lower quartiles. In other words, the IQR = 3rd quartile - 1st quartile.
 	-  Outliers here are defined as observations that fall below Q1 − 1.5 IQR, or above Q3 + 1.5 IQR
  
- Boxplot (with an interquartile range) and a probability density function of a Normal N(0,σ2) Population
-![BOXPLOT](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
  
-
  * R can calculate all these values and plot them with a simple command: **boxplot()**
 
 ```{r}
