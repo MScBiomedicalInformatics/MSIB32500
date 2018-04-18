@@ -646,10 +646,7 @@ What is the difference between these distributions?
 
 ![variance](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/variance.png)
   
-  * It is basically the difference between each point and the mean, squared. 
-  
-
-### Variance, and standard deviation and data spread
+  * It is basically the difference between each point and the mean, squared.  
 
   * The Standard Deviation is simply the variance squared:
 
