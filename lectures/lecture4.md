@@ -595,22 +595,27 @@ The figure shows what fraction of the data has been covered at point X.
 
 #### Boxplots
 
-  * As we have seen, an "easier" representation of ECDFs. Is based on making boxes that tell us about both center point and "spread" of the data
-  * First, we calculate the first quartile, the median, and the third quartile
-  * Then we calculate the "inter-quartile range" (IQR): 3rd quartile -1st quartile
-  * These will be used to draw a "box" 
-  * R can do that with a simple command: **boxplot()**
+  * As we have seen, an "easier" representation of ECDFs. Is based on making boxes that tell us about both center point and "spread" of the data.
+
+ 	 - The first quartile (Q1) is defined as the middle number between the smallest number and the median of the data set (splits off the lowest 25% of data from the highest 75%).
+	 - The second quartile (Q2) is the median of the data (cuts data set in half)
+	 - The third quartile (Q3) is the middle value between the median and the highest value of the data set (splits off the highest 25% of data from the lowest 75%)
+	 - The interquartile range (IQR), also called the midspread or middle 50%, is a measure of statistical dispersion, being equal to the difference between 75th and 25th percentiles, or between upper and lower quartiles. In other words, the IQR = 3rd quartile - 1st quartile.
+	-  Outliers here are defined as observations that fall below Q1 − 1.5 IQR, or above Q3 + 1.5 IQR
+ 
+ 
+ * R can calculate all these values and plot them with a simple command: **boxplot()**
 
 ```{r}
 > boxplot(dat) 
 > rug(dat, side=2)
 ```
 
-![IQR](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/IQR.png)
+![BOXPLOT](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
 
 Any data observation which lies more than 1.5*IQR lower than the first quartile is considered an outlier. 
   
-	Indicate where the smallest value that is not an outlier is by a vertical tic mark or "whisker", and connect the whisker to the box via a horizontal line. Do the same for higher values
+
 
 ![outliers](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/outliers.png)
 
