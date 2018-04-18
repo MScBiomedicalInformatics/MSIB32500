@@ -288,7 +288,7 @@ There are many prebuild R functions to work with vectors. Most have logical/mean
 Sometimes we want to add a constant (like a number), to each element in the vector, test the following code: 
 
 ```{r}
-> big_vector2<-big_vector +10 
+> big_vector2 <- big_vector+10 
 > min(big_vector) 
 > max(big_vector) 
 > min(big_vector2) 
@@ -299,9 +299,9 @@ Sometimes we want to add a constant (like a number), to each element in the vect
 We can also add one vector to another vector, create the following vectors: 
   
 ```{r}
-> A<-c(10, 20, 30, 50) 
-> B<-c(1,4,2,3) 
-> C<-c(2.5, 3.5) 
+> A <- c(10, 20, 30, 50) 
+> B <- c(1,4,2,3) 
+> C <- c(2.5, 3.5) 
 ```
 Test what happens and explain the outcome: 
 
@@ -327,7 +327,7 @@ A+C is trickier - the C vector is just of length 2. It is re-used. This is what 
 Let's make up some semi-random data:
 
 ```{r}
-> dat<-rnorm (100)   #draw 100 random, normal distributed data points 
+> dat <- rnorm(100)   ### Draw 100 random normal distributed data points 
 ```
 Test the following:
 
@@ -413,7 +413,7 @@ Try the followoing commands. Observe the differences
 
 #### Some generic R arguments to plots - the par() function
 
-  * The **par()** function is used to set general plot properties. It has hundreds of possible arguments - see: **?par**
+  * The **par()** function (we have usedit before), is used to set general plot properties. It has hundreds of possible arguments - see: **?par**
   * Two very handy **par()** arguments are **mfrow()** and **mfcol()** - these will allow many plots in one page
   * You give these functions a vector of length 2 - this gives the number of cells in the page, see examples bellow:
 
@@ -474,15 +474,21 @@ Let's try the code bellow:
   * All systems can use the **device()** function - see: **?device**
 
 ``` {r}
-> # Saving a chart on a .pdf file 
+> # Saving to a .pdf file 
+> setwd('/Users/jandrade/Desktop')
 > pdf('plot.pdf') 
 > plot(a,b) 
-> dev.off()  
+> dev.off() 
+> getwd()
+```
 
-> # Saving a chart on a .jpg file 
+``` {r}
+> # Saving to a .jpg file 
+> setwd('/Users/jandrade/Desktop')
 > jpeg('rplot.jpg') 
 > plot(a,b) 
 > dev.off()
+> getwd()
 ```
 
 ## 2. Some Basic Statistics with R
