@@ -588,6 +588,7 @@ The command **ecdf()** (empirical cumulative distribution)  calculates "all" per
 ```{r}
 > dev.off()
 > plot (ecdf(dat2))
+> plot (ecdf(dat1))
 ```
 
 The figure shows what fraction of the data has been covered at point X. 
