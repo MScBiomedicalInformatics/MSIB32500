@@ -220,7 +220,7 @@ Given the following vector:
 
 #### Naming rules and the danger of over-writing 
 
-A good practice, in any programming language, is to assign meaningful names to variables/vector. In R, never start a vector name with a number
+A good practice, in any programming language, is to assign meaningful names to variables/vectors. In R, never start a vector name with a number:
 
 ```{r}
 > a<- c(1,5,4,2)    #OK
