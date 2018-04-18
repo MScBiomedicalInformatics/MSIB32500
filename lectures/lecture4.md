@@ -498,7 +498,7 @@ Let's try the code bellow:
 
 #### Summary statistics
 
-  - **hist()** (= Histogram) is a graphical way of summarizing distributions - it creates a number of "bins" and calculates how many of the data points fall into each bin. 
+  - **hist()** (= Histogram) We used the hist() function before, as showed, hist() is a graphical way of summarizing distributions - it creates a number of "bins" and calculates how many of the data points fall into each bin. 
   - We can also summarize by the center point in the data:
   - **mean():**
 
