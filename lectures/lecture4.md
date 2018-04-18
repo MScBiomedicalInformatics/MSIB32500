@@ -595,7 +595,7 @@ The figure shows what fraction of the data has been covered at point X.
 
 #### Boxplots
 
-An "easier" way to represent the distribution of your data is a Boxplot. A Boxplot show you both the center point and the "spread" of the data:
+An "easier" way to represent the distribution of data is a Boxplot. A Boxplot show you both the center point and the "spread" of the data:
 
 ![BOXPLOT](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
 
