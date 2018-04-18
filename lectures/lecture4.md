@@ -110,11 +110,13 @@ When you start a session in R, it is a good idea to first clean all R objects, s
 ```
 
 #### Task1:
-
+-------------------------
 * Make the following vector: 45,5,12,10
 * What happens with the following commands?
   - c(1:100)   
   - c(50:2) 
+* Generate a vector containing the 50 first odd numbers 
+------------------------
 
 A vector is a **data structure**, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors (matrix). 
 
@@ -125,12 +127,13 @@ We can create a memory representation of a matrix in R with the **matrix** funct
 See below:
 
 ```{r}
-> A = matrix(c(2, 4, 3, 1, 5, 7), nrow=2, ncol=3, byrow = TRUE)
+> A <- matrix(c(2, 4, 3, 1, 5, 7), nrow=2, ncol=3, byrow = TRUE)
 > A                     
      [,1] [,2] [,3] 
 [1,]    2    4    3 
 [2,]    1    5    7
 
+### Try replacing byrow = FALSE and removing byrow = TRUE all together
 ```
 
 #### Use a Reference sheet:
