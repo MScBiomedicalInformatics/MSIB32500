@@ -641,11 +641,12 @@ Try the follwoing code:
 What is the difference between these distributions?
 
   * Same mean and median, but different spread over the x-axis
-  * This can be measured by the variance of the data: 
+  * This can be measured by the variance of the data. The variance (σ2) is a measure of how far each value in the data set is from the mean.
 
 ![variance](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/variance.png)
   
   * It is basically the difference between each point and the mean, squared. 
+  
 
 ### Variance, and standard deviation and data spread
 
