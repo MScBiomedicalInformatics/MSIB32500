@@ -603,7 +603,10 @@ The figure shows what fraction of the data has been covered at point X.
 	 - The interquartile range (IQR), also called the midspread or middle 50%, is a measure of statistical dispersion, being equal to the difference between 75th and 25th percentiles, or between upper and lower quartiles. In other words, the IQR = 3rd quartile - 1st quartile.
 	-  Outliers here are defined as observations that fall below Q1 − 1.5 IQR, or above Q3 + 1.5 IQR
  
+ Boxplot (with an interquartile range) and a probability density function of a Normal N(0,σ2) Population
+![BOXPLOT](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
  
+
  * R can calculate all these values and plot them with a simple command: **boxplot()**
 
 ```{r}
@@ -611,15 +614,12 @@ The figure shows what fraction of the data has been covered at point X.
 > rug(dat, side=2)
 ```
 
-![BOXPLOT](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
-
-Any data observation which lies more than 1.5*IQR lower than the first quartile is considered an outlier. 
+Outliers are common observations in Genomics data.
   
-
 
 ![outliers](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/outliers.png)
 
-
+______________________________
 
 #### Variance, standard deviation and  data spread
 
