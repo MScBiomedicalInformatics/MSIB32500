@@ -10,7 +10,7 @@ Saturdays 04/21/2018; 9:00 AM - 12:00 PM
 
 ## Learning Objectives
 
-- Develop R programming skills and learn how to use some basic R functions for Bioinformatics analysis
+- Develop basic R programming skills and learn how to use R for baisc statistics
 - Develop a working knowledge of how to use R and Bioconductor packages for the analysis of genomics data 
 
 ## 1. Introduction
@@ -535,24 +535,36 @@ Sort the data, pick the number in the center. If the number of data points is ev
 ### Boxplots are a better way to visualize outliers
 
 ```{r}
-> dev.off()
 > par(mfrow=c(1,2))
-> boxplot(dat) 
-> boxplot(dat2) 
+> boxplot(dat, main='dat') 
+> boxplot(dat2, main='dat2') 
 ```
-### Setting margins
-
-**mar** – A numeric vector of length 4, which sets the margin sizes in the following order: bottom, left, top, and right. The default is: c(5.1, 4.1, 4.1, 2.1).
 
 ```{r}
 > dev.off()
-> par(mar=c(4, 4, .5, .1))
-> dat <- rnorm(10)
-> dat2<-c(dat, 10, 10.5, 30 )
-> par( mfrow=c(1,2) )
-> boxplot(dat); boxplot(dat2)
 ```
 
+### Setting margins
+
+As we can see, it is important to be able to set the margins for plots, we can do that with the **mar** function.
+**mar** – A numeric vector of length 4, which sets the margin sizes in the following order: bottom, left, top, and right. 
+
+The default is: c(5.1, 4.1, 4.1, 2.1).
+
+```{r}
+> par(mar=c(4, 4, 4, .1))
+> dat <- rnorm(100, mean = 50, sd = 2)
+> dat2<-c(dat, 105, 110, 200 )
+> par( mfrow=c(1,2) )
+> boxplot(dat, main='dat'); boxplot(dat2, main='dat2')
+```
+
+Note the parameters of **rnorm(n, mean = , sd = )**
+
+
+```{r}
+> dev.off()
+```
 
 #### Percentiles
 
