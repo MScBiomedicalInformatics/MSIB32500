@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 10/27/17; 9:00 AM - 12:00 PM
+Saturdays 04/28/2018; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -475,7 +475,7 @@ Export as png:
 > boxplot(log10(mydata))
 > graphics.off()
 ```
-## Week 5 Challange: :house: (extra point)
+## Practice at home
 
 Using the data file: NeuralStemCellData.tab
 
@@ -485,6 +485,6 @@ Using the data file: NeuralStemCellData.tab
   -  The expression of gene TP53 across all samples 
   -  The Pearson correlation of Biological Replicates for neural stem (NS) cells 
  
-* Send your R script and plot via e-mail
+
 
 
