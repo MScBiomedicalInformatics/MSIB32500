@@ -1270,11 +1270,14 @@ write.table(time.taken, "timestamp.txt")
 	- 1 nodes; 16 cpus; 8gb of RAM
 	
 * F. Are there opportunities for reducing the runtime using Parallelization?  If so, what could be the strategy? Algorithm?
-* Submit all developed scripts and results files via e-mail.
+
+Submit all developed scripts and results files via e-mail.
+
 -------------
 
 ## Week 4 Challange (10 Extra points)
 
 * Develop and implement an algorithm/strategy for reducing the best runtime you reported previously.
-* Submit all developed scripts and results files via e-mail.
+
+Submit all developed scripts and results files via e-mail.
 
