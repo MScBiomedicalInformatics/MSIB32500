@@ -709,6 +709,7 @@ Why do we get about the same variance?
 
 
 ### Control Flow
+
 The flow control in R is defined by the **if** reserved word, The syntax of if statement is:
 
 ```
@@ -749,7 +750,6 @@ if (test_expression) {
 
 The else part is optional and is only evaluated if test_expression is FALSE.
 
-It is important to note that else must be in the same line as the closing braces of the if statement.
 
 
 #### Example of if...else statement
@@ -826,7 +826,7 @@ for (i in 1:10) {
 ####  Example of a for loop
 
 ```{r}
-for (year in c(2012,2013,2014,2015,2016,2017))
+for (year in c(2012,2013,2014,2015,2016,2017,2018))
 {
   print(paste("The year is", year))
 }
@@ -840,6 +840,7 @@ Output:
 [1] "The year is 2015"
 [1] "The year is 2016"
 [1] "The year is 2017"
+[1] "The year is 2018"
 ```
 Another example to count the number of **even** numbers in a vector.
 
@@ -943,7 +944,7 @@ Output
 
 #### User defined functions
 
-In programming, we use functions to incorporate sets of instructions that we want to use repeatedly or that, because of their complexity, are better self-contained in a sub program and called when needed. A function is a piece of code written to carry out a specified task.
+In programming, we use functions to incorporate sets of instructions that we want to use repeatedly, or that because of their complexity are better self-contained in a sub program and called when needed. A function is a piece of code written to carry out a specified task.
 
 In R you define a function with the construct:
 ```
@@ -951,7 +952,7 @@ function ( arglist )  {body}
 ```
 Where the code in between the curly braces is the body of the function.
 
-Once the definition of the function is done, somewhere else in the code, we call the function (aka we use it). The following code defines a function that computes the square of the argument and then calls it after assigning a value for its argument
+Once the definition of the function is done, somewhere else in the code, we call the function (we use it). The following code defines a function that computes the square of the argument and then calls it after assigning a value for its argument.
 
 ```{r}
 # define a simple function
@@ -1007,7 +1008,7 @@ return (fibvals)
 
 ### How to load data files
 
-R can process input data sets can be in various formats (.XLS, .TXT, .CSV, JSON ). In R, it is easy to load data from any source, due to its simple syntax and availability of predefined libraries. Here, we will take examples of reading a CSV file and a tab separated file. read.table is also an alternative, however, read.csv is my preference given the simplicity.
+R can process input data sets can be in various formats (.XLS, .TXT, .CSV, JSON ). In R, it is easy to load data from any source, due to its simple syntax and availability of predefined libraries. Here, we will take examples of reading a CSV file and a tab separated file.
 
 
 
@@ -1065,7 +1066,9 @@ data2<- read.delim("https://raw.githubusercontent.com/MScBiomedicalInformatics/M
 
 ```{r}
 > head(mydata)
+> head(mydata, n = 10)
 > tail(mydata)
+> tail(mydata, n = 10)
 ```
 ### Names of the variable in the dataset
 ```{r}
@@ -1086,6 +1089,14 @@ We will learn more on data exploration on the following lesson.
 > mydata$id=1:400
 > head(mydata, 5)
 ```
+
+
+#### Selecting a column: gre, rank
+```{r}
+> mydata$gre
+> mydata$rank
+```
+
 
 #### Subset the dataset
  
@@ -1110,12 +1121,12 @@ Output
 10 700 3.92
 ```
 
-
-
 2. By conditions
 
 ```{r}
+> mydata[mydata$rank <= 1,]  
 > mydata[mydata$id>=10 & mydata$id<=20,]   
+
 ``` 
 
 Output
@@ -1147,24 +1158,28 @@ admit gre  gpa rank id
 
 ```{r}
 > head(sort(rownames(mydata), decreasing=F))
-> head(order(rownames(mydata), decreasing=F))
+> head(order(rownames(mydata), decreasing=T))
 ```    
 
 #### Data management - sorting 
 
 ```{r}
-> mydata.sort <- mydata[order(rownames(mydata), decreasing=F) ,]
-> head(mydata.sort)
-> head(mydata)
+# sort by gpa
+> head(sortdata <- mydata[order(mydata$gpa),])
+
+# sort by gre and gpa
+> head(sortdata <- mydata[order(mydata$gre, mydata$gpa),])
+
 ```
+
 
 ## 7. Writing datasets to a text file
 
 ```{r}
-> write.table(mydata, file="test.txt", sep="\t", 
-              row.names=FALSE, quote=FALSE)
-list.files(path=getwd(), pattern="test.txt",
-           full.names=T)
+> write.table(mydata, file="test.txt", sep="\t", row.names=FALSE, quote=FALSE)
+
+> list.files(path=getwd(), pattern="test.txt", full.names=T) ## Check file exixt; return name
+
 ```
 
 ## 8.  Statistical hypothesis testing
@@ -1192,101 +1207,77 @@ The **t.test()** function produces a variety of t-tests. Unlike most statistical
 Generalized linear models are fit using the **glm()** function:
 
 ```{r}
-> fit <- glm(admit~gpa+gre+factor(rank), data=mydata, 
-           family=binomial)
+> fit <- glm(admit~gpa+gre+factor(rank), data=mydata, family=binomial)
 > print(summary(fit)$coef, digits=2)
 ```
 
 ## Week 4 Homework: :house: (Graded!)
 
 
-- Copy all .fasta available at: **/group/mscbmi/hw4/** into a working directory under home:
+- Copy all .fasta available at: **/group/mscbmi/hw4/** into your R working directory:
 
-```
-$ mkdir hw4
-$ cd hw4
-$ cp /group/mscbmi/hw4/*.fasta ./
-```
-
-- The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package to perform pairwise alignment of all the sequences in the input file (*shor_reference.fasta*). The R code will generate an output file named **alignment.txt** containing the sequence alaignmets and alignment scores.
+- The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package to perform pairwise alignment of all the sequences in the input file (*shor_reference.fasta*). 
+The R code will generate an output file named **alignment.txt** containing the sequence alaignmets and alignment scores.
 
 ```{r}
-#setwd('/Users/jorgeandrade/Desktop/hw4')
-#install.packages('seqinr')
-#install.packages('Biostrings')
+#### - On your laptop - ####
+# setwd('/Users/jandrade/Desktop/hw4')
+# source("https://bioconductor.org/biocLite.R")
+# biocLite("seqinr")
+# biocLite("Biostrings")
+####
 
-rm(list=ls()) 
+#### - On Gardner Interactive node - ####
+# qsub -I
+# module load gcc
+# module load R
+# R
+####
 
 library(seqinr)
 library(Biostrings)
 
-start.time <- Sys.time() ## record start time
+rm(list=ls()) 
 
-seq<- read.fasta(file = 'shor_reference.fasta')
-
-sink("alignment.txt") ## direct R output to a file
-  n<-length(seq)
-  
-  for (i in 1:n-1)
-    {
+seqsim <- function(seq)
+{
+  sink("alignment.txt") ## direct R output to a file
+  for(i in 1:(length(seq)-1))
+  {
     n1 <- toupper(c2s(seq[[i]]))
     n2 <- toupper(c2s(seq[[i+1]]))
     globalAlign<- pairwiseAlignment(n1, n2)
     print(globalAlign)
-    }
-  
-  end.time <- Sys.time() ## record start time
-  time.taken <- end.time - start.time
-  time.taken
-sink()
+  }
+  sink()
+}
+
+seq <- read.fasta(file = 'shor_reference.fasta')
+start.time <- Sys.time()
+seqsim(seq)
+end.time <- Sys.time()
+time.taken <- end.time - start.time
+write.table(time.taken, "timestamp.txt")
+
 
 ```
-* A. Study and understand the code
+* A. Study and understand the code and all the R functions used
 * B. Develop an analysis pipeline that uses CRI's GARDNER cluster to perform the pairwise alignment of the bigger **reference** file: **reference.fasta**
-* C. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt'. 
-* D. What is the maximun and minimum alignment score?
+* C. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt' 
+* D. What is the maximun and minimum alignment scores for reference.fasta?
 * E. Record, report and explain the total runtime (execution time) for your script running with the following hardware configurations:
 	- 1 nodes; 4 cpus; 4gb of RAM
 	- 1 nodes; 8 cpus; 4gb of RAM
 	- 1 nodes; 16 cpus; 8gb of RAM
+	
+* F. Are there opportunities for reducing the runtime using Parallelization?  If so, what could be the strategy? Algorithm?
 * Submit all developed scripts and results files via e-mail.
 -------------
-### As a function
 
-```r
-rm(list=ls()) 
+## Week 4 Challange (10 Extra points)
 
-library("seqinr")
-library(Biostrings)
-
-seqsim <- function(seq)
-  {
-  sink("alignment.txt") ## direct R output to a file
-  n<-length(seq)
-  for (i in 1:n-1) 
-    {
-      n1 <- toupper(c2s(seq[[i]]))
-      n2 <- toupper(c2s(seq[[i+1]]))
-      globalAlign <- pairwiseAlignment(n1, n2)
-      print(globalAlign)
-    }
-  sink()
-  }
-
-seq <- read.fasta(file = 'reference.fasta')
-
-start.time <- Sys.time() ## record start time
-
-seqsim(seq)
-
-end.time <- Sys.time() ## record start time
-time.taken <- end.time - start.time
-write.table(time.taken, "timestamp.txt")
-
-# $ grep 'score' alignment.txt | sort -k1n > scores.txt
-
-# Parallelization?
-# awk 'BEGIN {n_seq=0;} /^>/ {if(n_seq%500==0){file=sprintf("myseq%d.fa",n_seq);} print >> file; n_seq++; next;} { print >> file; }' < reference.fasta
+* Develop and implement an algorithm/strategy for reducing the best runtime you reported previously.
+* Submit all developed scripts and results files via e-mail.
 
 ```
 
