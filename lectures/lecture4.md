@@ -1258,9 +1258,8 @@ seqsim(seq)
 end.time <- Sys.time()
 time.taken <- end.time - start.time
 write.table(time.taken, "timestamp.txt")
-
-
 ```
+
 * A. Study and understand the code and all the R functions used
 * B. Develop an analysis pipeline that uses CRI's GARDNER cluster to perform the pairwise alignment of the bigger **reference** file: **reference.fasta**
 * C. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt' 
@@ -1278,15 +1277,4 @@ write.table(time.taken, "timestamp.txt")
 
 * Develop and implement an algorithm/strategy for reducing the best runtime you reported previously.
 * Submit all developed scripts and results files via e-mail.
-
-```
-
-
-
-
-
-
-
-
-
 
