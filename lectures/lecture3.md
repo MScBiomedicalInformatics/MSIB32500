@@ -347,6 +347,15 @@ As described before, a job submittion script will look like the following:
 ### Set the destination for your program’s standard output (stdout) and error (stderr)
 #PBS -o $HOME/${PBS_JOBNAME}.e${PBS_JOBID}
 #PBS -e $HOME/${PBS_JOBNAME}.o${PBS_JOBID}
+#### Other important PBS directives
+
+### Mail alert at (b)eginning, (e)nd and (a)bortion of execution
+#PBS -m bea
+### Send email to the following address
+#PBS -M jandrade@uchicago.edu
+### Start job from the directory it was submitted
+cd $PBS_O_WORKDIR
+
 
 #################
 # Job Execution #
