@@ -476,6 +476,10 @@ Using the data file: NeuralStemCellData.tab
   -  The expression of gene TP53 across all samples 
   -  The Pearson correlation of Biological Replicates for neural stem (NS) cells 
  
+## Week 5 Homework: :house: (Graded!)
+
+- bam_stat.py is a utility from the [RSeQC](http://rseqc.sourceforge.net/#)package, used to summarize mapping statistics of a BAM or SAM file.
+
 
 
 
