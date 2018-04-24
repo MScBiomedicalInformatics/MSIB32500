@@ -25,18 +25,6 @@ For this tutorial, we will use the  Gene expression dataset from **Golub et al.*
 * Results are reported in terms of adjusted p-values, confidence regions, and test statistic cutoffs. 
 * The procedures are directly applicable to identifying differentially expressed genes in DNA microarray experiments.
 
-## 1. Introduction
-
-R Programming offers a set of builtin function and libraries (i.e. base, ggplot2, leaflet, lattice) to build data visualizations and present data analysis results. In this tutorial, you will learn the steps to create common as well as advanced visualizations in R using the base and some ggplot2 functions.
-
-## 2. Data download
-
-For this tutorial we will use the  Gene expression dataset from **Golub et al.** and the R Bioconductor package for **Resampling-based multiple hypothesis testing: multtest**. 
-
-* The **multtest** package includes non-parametric bootstrap and permutation resampling-based multiple testing procedures (including empirical Bayes methods) for controlling the family-wise error rate (FWER), generalized family-wise error rate (gFWER), tail probability of the proportion of false positives (TPPFP), and false discovery rate (FDR). Several choices of bootstrap-based null distribution are implemented (centered, centered and scaled, quantile-transformed). Single-step and step-wise methods are available. Tests based on a variety of t- and F-statistics (including t-statistics based on regression parameters from linear and survival models as well as those based on correlation parameters) are included. 
-* When probing hypotheses with t-statistics, users may also select a potentially faster null distribution which is multivariate normal with mean zero and variance covariance matrix derived from the vector influence function. 
-* Results are reported in terms of adjusted p-values, confidence regions and test statistic cutoffs. 
-* The procedures are directly applicable to identifying differentially expressed genes in DNA microarray experiments.
 
 #### Installing multtest Bioconductor package:
 
