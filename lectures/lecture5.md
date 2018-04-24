@@ -157,10 +157,12 @@ Now let's try:
 > par(mar=c(6,6,1,1)) #Define margins 
 > barplot(mygenelist, beside=T, horiz=F, col=c(4:7), ylim=c(-2,2))
 > mtext("Expression of 4 'Cyclin' genes for 3 ALL and 3 AML samples", side=1, at=12.5, line=1)
-> legend(14,2.1, golub.gnames[c(85,1042,1212,2240),2] ,cex=1.2, col=c(4:7), pch=15, bty="n")
+> legend(16,2.1, golub.gnames[c(85,1042,1212,2240),2] ,cex=1.2, col=c(4:7), pch=15, bty="n")
 ```
 ![barplotB](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/newbox4c.png)
 
+
+## Task: Fing a way to add a red vertical line separating the expression of the ALL from the AML samples
 
 ### Histograms and Density Plots  
 
