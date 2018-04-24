@@ -134,6 +134,7 @@ To compare and contrast the gene expression of several samples, we can us the **
 ```{r}
 > grep("CCN", golub.gnames[,2])
 [1]   85 1042 1212 2240
+> golub.gnames[c(85,1042,1212,2240),2]
 > mygenelist <- golub[c(85,1042,1212,2240),c(1:3, 36:38)]
 > barplot(mygenelist, beside=FALSE)
 ```
