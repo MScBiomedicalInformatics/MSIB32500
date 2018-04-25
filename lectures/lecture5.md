@@ -275,36 +275,13 @@ For example, to add a **density curve line** to a histogram we can use:
 
 ![boxcolor](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/boxplotcolor.png)
 
-______________________________
 
-In this new section, we will now use the **ape** (Analyses of Phylogenetics and Evolution) library in Bioconductor to explore the composition of the DNA sequences. The ape library provides functions for reading and manipulating phylogenetic trees and DNA sequences.
-
-* We start by reading the sequence of mRNA X94991.1 using the **read.GeneBank** function of **ape** 
-(see: https://www.ncbi.nlm.nih.gov/nuccore/X94991)
-
-```{r}
-> library(ape)
-> dnaseq <- read.GenBank("X94991.1", as.character=T)
-```
-* Check the structure **(str)** of the R object "danseq":
-
-```{r}
-> str(dnaseq)
-```
-
-* Make a pie plot of the sequences for that gene: 
-
-```{r}
-> pie(table(dnaseq), radius=0.7)
-> mtext("Base Composition of gene: Zyxin ", side=1, line=-1)
-```
-![piebase](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/piebase.png)
 
 ### Computing simple test statistics
 
 The **mt.teststat** and **mt.teststat.num.denum** functions of the **multtest** package provide a convenient way to compute test statistics for each row of a data frame, e.g., **two-sample Welch t-statistics, Wilcoxon statistics, F-statistics, paired t-statistics, and block F-statistics.**.
 
-Let's compute two-sample t-statistics that compare the gene expressions for each gene in the ALL and AML cases. This can be done with the mt.teststat function. The default test is the two-sample [Welch t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test), it is more reliable when the two samples have unequal variances and unequal sample sizes.
+Let's compute the two-sample t-statistics that compare the gene expressions for each gene in the ALL and AML cases. This can be done with the mt.teststat function. The default test is the two-sample [Welch t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test), it is more reliable when the two samples have unequal variances and unequal sample sizes.
 
 ```{r}
 > teststat = mt.teststat(golub, golub.cl)
@@ -313,7 +290,8 @@ Let's compute two-sample t-statistics that compare the gene expressions for each
 Now let's plot the t-test statistics:
 
 ```{r}
-> require(ggplot2) ## ggplot2 is a plotting system for R, based on the grammar of graphics
+> install.packages('ggplot2') ## Another way to install a package
+> library(ggplot2) ## ggplot2 is a plotting system for R, based on the grammar of graphics
 > plt = ggplot(data.frame(teststat), aes(sample = teststat)) + stat_qq() + theme_grey()
 > plt
 
@@ -365,7 +343,7 @@ We can adjust these p-values using the specified procedure as follows:
 ```
 
 ------------------------------
-### Basic plots practice:
+### Basic plots practice at home
 
 * Read the file: "NeuralStemCellData.tab" (the file is available at the *data* folder on the GitHub repository.
 
@@ -466,7 +444,6 @@ Export as png:
 > boxplot(log10(mydata))
 > graphics.off()
 ```
-## Practice at home
 
 Using the data file: NeuralStemCellData.tab
 
