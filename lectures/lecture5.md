@@ -478,7 +478,19 @@ Using the data file: NeuralStemCellData.tab
  
 ## Week 5 Homework: :house: (Graded!)
 
-- bam_stat.py is a utility from the [RSeQC](http://rseqc.sourceforge.net/#)package, used to summarize mapping statistics of a BAM or SAM file.
+- bam_stat.py is a utility from the [RSeQC] (http://rseqc.sourceforge.net/#) package, used to summarize the mapping statistics of a BAM or SAM file.
+- To download large files from the web to CRI's HPC, connect to CRI's **cri-syncmon** server:
+
+```
+ssh t.cri.biowksp01@cri-syncmon.cri.uchicago.edu
+```
+
+1. Download the sequencing files from run ERR030885 from the Illumina bodyMap2 project, available at https://www.ebi.ac.uk/ena/data/view/ERR030885 (Note this is a PE library)
+2. Develop an analysis pipeline to perform the QC, mapping using Bowtie2 and the summary of mapping statistics using bam_stat.py for this sample.
+3. Using a Genome Browser, visualize the reads mapping for gene TP53
+
+* Submit all your scripts and screenshot via email
+
 
 
 
