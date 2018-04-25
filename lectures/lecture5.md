@@ -162,7 +162,7 @@ Now let's try:
 ![barplotB](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/newbox4c.png)
 
 
-## Task: Fing a way to add a red vertical line separating the expression of the ALL from the AML samples
+#### Task: Fing a way to add a red vertical line separating the expression of the ALL from the AML samples
 
 ### Histograms and Density Plots  
 
