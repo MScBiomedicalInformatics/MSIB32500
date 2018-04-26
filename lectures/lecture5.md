@@ -466,9 +466,9 @@ ssh t.cri.biowksp01@cri-syncmon.cri.uchicago.edu
 2. Develop an analysis pipeline to perform the QC, mapping using Bowtie2 and the summary of mapping statistics using bam_stat.py for this sample.
 
 * Report following metrics:
-        - Total records:
-        - Reads map to '+':
-        - Reads mapped in proper pairs:
+  - Total records:
+  - Reads map to '+':
+  - Reads mapped in proper pairs:
         
 3. Using a Genome Browser, visualize and screen capture the reads mapping for the following genes: TP53, TNF and APOE.
 
