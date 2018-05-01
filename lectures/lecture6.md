@@ -22,14 +22,14 @@ This hands-on tutorial is focused on the analysis of Illumina microarray data us
 ### Getting the data 
 
 
-Please download and unzip the dataset: **“GSE43221_non-normalized_data.txt.gz”** from the following [link](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43221)
+Please download and unzip the dataset: **“GSE43221_non-normalized_data.txt.gz”** from the following link:(http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43221)
 
 * Open the file **GSE43221_non-normalized_data.txt** file using Excel or a text editor and explore Illumina BeadStudio version 3.1.7 format.
 * Observe that the first 6 lines are meatadata, the expression profile of the samples starts in line 7 with the header. Illumina Probe_ids are on rows, and samples on the columns.
 
 ## 2. Data analysis workflow:
 
-For any bioinformatics analysis, it is always advisable to start with an analysis plan, this can be represented in the analysis workflow. For this tutorial, we will follow the analysis workflow bellow:
+For any bioinformatics analysis, it is always recomended that you start with an analysis plan, this can be represented in the analysis workflow. For this tutorial, we will follow the analysis workflow bellow:
 
 ![workflow](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/workflow.png)
 
