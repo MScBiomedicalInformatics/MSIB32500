@@ -308,7 +308,7 @@ Next we will plot the **MAplots** of samples in the control group after normaliz
 
 ## 8. Principal Component Analysis
 
-Principal components analysis [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) is a statistical technique for determining the key variables in a multidimensional data set that explain the differences in the observations, and can be used to simplify the analysis and visualization of multidimensional data sets. R has several  built-in functions for PCA analysis: **prcomp()** and **princomp()**.
+Principal components analysis [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) is a statistical technique for determining the key variables in a multidimensional dataset that explain the differences in the observations, and can be used to simplify the analysis and visualization of multidimensional data sets. R has several  built-in functions for PCA analysis: **prcomp()** and **princomp()**.
 
 ```{r}
 > ## note: the expression matrix needs to be transposed
