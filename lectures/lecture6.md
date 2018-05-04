@@ -368,7 +368,7 @@ You should be able to see and interactive 3D PCA plot as bellow:
 
 ![PCA](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/PCA.png)
 
-The PCA plot shows samples that belong to the same group in similar color. 
+The PCA plot shows samples that belong to the same group in similar color, and illustrate the effect of RA treatment over time in WT and KO groups.
 
 
 ## 9. Encapsulating the processing steps
