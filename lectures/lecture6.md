@@ -313,6 +313,7 @@ Principal components analysis [PCA](https://en.wikipedia.org/wiki/Principal_comp
 ```{r}
 > ## note: the expression matrix needs to be transposed
 > pca <- prcomp(t(exprs(x.lumi)), scale=TRUE)
+lumi.N.Q
 > summary(pca)
 ```
 
@@ -339,7 +340,7 @@ Cumulative Proportion  0.99688 0.99880 1.0000 1.000e+00
 
 For this tutorial, we will use the library **rgl**, a 3D Visualization library that uses OpenGL.
 
-* Note: MacOS user will need to download and install: [www.xquartz.org](https://www.xquartz.org)
+* Note: **MacOS user will need to download and install: [www.xquartz.org](https://www.xquartz.org)**
 
 ```{r}
 > install.packages("rgl")
