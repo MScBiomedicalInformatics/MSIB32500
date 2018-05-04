@@ -366,7 +366,7 @@ And finally we plot the PCA:
 ```
 You should be able to see and interactive 3D PCA plot as bellow:
 
-![PCA](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/PCA1.png)
+![PCA](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/PCA.png)
 
 The PCA plot shows samples that belong to the same group in similar color. 
 
