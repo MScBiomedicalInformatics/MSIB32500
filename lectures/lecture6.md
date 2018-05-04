@@ -313,12 +313,11 @@ Principal components analysis [PCA](https://en.wikipedia.org/wiki/Principal_comp
 ```{r}
 > ## note: the expression matrix needs to be transposed
 > pca <- prcomp(t(exprs(x.lumi)), scale=TRUE)
-lumi.N.Q
 > summary(pca)
 ```
 
 Output:
-
+#
 ```
 Importance of components:
                             PC1      PC2      PC3     PC4      PC5     PC6      PC7      PC8     PC9     PC10
@@ -350,13 +349,13 @@ Now we will create an array of different colors to distinguish samples that belo
 
 ```{r}
 > timeseries.colors <- c(rep("Green", 3), # WT control
-rep("DimGrey", 3), 
-rep("IndianRed",3), 
-rep("Red", 3),  # 24h, RA treatment WT
-rep("BurlyWood", 3), 
-rep("grey", 3), 
-rep("pink", 3), 
-rep("SkyBlue", 3)) 
+                       rep("DimGrey", 3), # WT RA 1hr
+                       rep("IndianRed",3), # WT RA 8hr
+                       rep("Red", 3),  # WT RA 8hr 
+                       rep("BurlyWood", 3), # KO control
+                       rep("grey", 3), # KO RA 1hr
+                       rep("pink", 3), # KO RA 8hr
+                       rep("SkyBlue", 3)) # KO RA 24hr 
 
 ```
 
