@@ -351,7 +351,7 @@ Now we will create an array of different colors to distinguish samples that belo
 > timeseries.colors <- c(rep("Green", 3), # WT control
                        rep("DimGrey", 3), # WT RA 1hr
                        rep("IndianRed",3), # WT RA 8hr
-                       rep("Red", 3),  # WT RA 8hr 
+                       rep("Red", 3),  # WT RA 24hr 
                        rep("BurlyWood", 3), # KO control
                        rep("grey", 3), # KO RA 1hr
                        rep("pink", 3), # KO RA 8hr
