@@ -31,10 +31,10 @@ Saturdays 05/12/2018; 9:00 AM - 12:00 PM
 ## 3. The dataset
 
 
-* For this tutorial we will use the RNA-Seq data set from the paper by Li et al. [2008] entitled: ”Determination of tag density required for digital transcriptome analysis: Application to an androgen-sensitive prostate cancer model.” The paper is available [here.](https://www.ncbi.nlm.nih.gov/pubmed/19088194) 
+* For this tutorial we will use the RNA-Seq dataset from the paper by Li et al. [2008] entitled: ”Determination of tag density required for digital transcriptome analysis: Application to an androgen-sensitive prostate cancer model.” The paper is available [here.](https://www.ncbi.nlm.nih.gov/pubmed/19088194) 
 * This study compared *hormone-treated cancer cells* to *non-treated cancer cells.* For the non-treated, there are *4 biological replicates.* For the treated, there are *3 biological replicates.*
 
-* First, you will need to download to your local computer the raw version of the dataset: 'expression.txt', available at the *data* folder on the GitHub, and load that data to your R working environment, or download the file directly from the weblink.
+* First, you will need to download the raw version of the dataset: 'expression.txt', available at the *data* folder on the GitHub, and load it to your R working environment.
 
 ```{r}
 > #raw.data <- read.table( file = "expression.txt" , header = TRUE )
