@@ -13,7 +13,7 @@ Saturdays 05/12/2018; 9:00 AM - 12:00 PM
 
 ## 1. Introduction
 
-* In this lecture you will learn how to use the [edgeR package in R](http://www.bioconductor.org/packages/release/bioc/html/edgeR.html) for detecting statistically significant differentially expressed genes using data from a RNA-Seq experiment. 
+* In this lecture you will learn how to use the [edgeR](http://www.bioconductor.org/packages/release/bioc/html/edgeR.html) package for detecting statistically significant differentially expressed genes using data from a RNA-Seq experiment. 
 * The edgeR package, implements a range of statistical tests based on the **negative binomial distributions** expected on data from RNA-seq, including empirical Bayes estimation, exact tests, generalized linear models and quasi-likelihood tests. The edgeR package can be also used to estimate differential **signal analysis** of other types of genomic data that produce **counts**, including ChIP-seq, Bisulfite-seq, SAGE and CAGE.
 * The methods used in edgeR **do NOT support FPKM, RPKM normalizations**. 
 * A user manual for the edgeR package is available [here](http://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf)
