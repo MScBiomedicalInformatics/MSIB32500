@@ -62,7 +62,7 @@ Saturdays 05/12/2018; 9:00 AM - 12:00 PM
 > rownames(counts) <- raw.data[ , 1 ] # gene names
 > colnames(counts) <- paste(c(rep("C_R",4),rep("T_R",3)),c(1:4,1:3),sep="") # Adding sample names
 > head(counts)
-				 C_R1 C_R2 C_R3 C_R4 T_R1 T_R2 T_R3
+		C_R1 C_R2 C_R3 C_R4 T_R1 T_R2 T_R3
 ENSG00000215696    0    0    0    0    0    0    0
 ENSG00000215700    0    0    0    0    0    0    0
 ENSG00000215699    0    0    0    0    0    0    0
