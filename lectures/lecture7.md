@@ -41,13 +41,14 @@ Saturdays 05/12/2018; 9:00 AM - 12:00 PM
 > raw.data <- read.table( file = "https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/expression.txt",  header = TRUE)
 > dim(raw.data)
 > head(raw.data)
-		ensembl_ID lane1 lane2 lane3 lane4 lane5 lane6 lane8  len
+       ensembl_ID lane1 lane2 lane3 lane4 lane5 lane6 lane8  len
 1 ENSG00000215696     0     0     0     0     0     0     0  330
 2 ENSG00000215700     0     0     0     0     0     0     0 2370
 3 ENSG00000215699     0     0     0     0     0     0     0 1842
 4 ENSG00000215784     0     0     0     0     0     0     0 2393
 5 ENSG00000212914     0     0     0     0     0     0     0  384
 6 ENSG00000212042     0     0     0     0     0     0     0   92
+
 ```
 - The edgeR package, works on a *table of integer read counts*, with rows corresponding to genes and columns to independent libraries. 
 - The counts represent the *total number of reads aligning to each gene (or other genomic locus).*
