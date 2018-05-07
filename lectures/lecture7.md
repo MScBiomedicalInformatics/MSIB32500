@@ -2,7 +2,7 @@
 # Analysis of gene expression data from RNA-seq experiemnts with edgeR
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 11/04/17; 9:00 AM - 12:00 PM
+Saturdays 05/12/2018; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
