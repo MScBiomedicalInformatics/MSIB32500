@@ -183,6 +183,25 @@ T_R3     T   681743    0.9576010
 ```
 ![mdsplot](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MDSplotC.png)
 
+-------------
+### PCA
+library(FactoMineR)
+library(factoextra)
+
+#expmatrix <- t(cds$counts)
+#res.pca <- PCA(expmatrix, graph = FALSE)
+#print(res.pca)
+
+pca <- prcomp(t(cds$counts), scale=TRUE)
+summary(pca)
+
+
+fviz_pca_ind(pca, col.ind = "cos2",
+             gradient.cols = c(rep("green",4), rep("red",3)),
+             repel = TRUE # Avoid text overlapping (slow if many points)
+)
+
+-------------
 
 ## 6. Estimating Dispersions
 
