@@ -185,6 +185,8 @@ T_R3     T   681743    0.9576010
 
 -------------
 ### PCA
+
+```{r}
 library(FactoMineR)
 library(factoextra)
 
@@ -200,6 +202,9 @@ fviz_pca_ind(pca, col.ind = "cos2",
              gradient.cols = c(rep("green",4), rep("red",3)),
              repel = TRUE # Avoid text overlapping (slow if many points)
 )
+```
+
+![edgeR_PCA](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/edgeR_PCA.png)
 
 -------------
 
