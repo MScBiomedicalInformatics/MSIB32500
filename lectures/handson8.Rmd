@@ -3,12 +3,12 @@ output:
   html_document: default
   pdf_document: default
 ---
-## MSIB32500 Advanced Bioinformatics Fall 2017
+## MSIB32500 Advanced Bioinformatics Spring 2018
 ## Class 08: RNAseq Data Analysis and Clinical Applications, Part I
 
 **Center for Research Informatics, University of Chicago**
 
-September - December 2017; Saturdays 9:00AM - 12:00PM
+April - June 2018; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
