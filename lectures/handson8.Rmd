@@ -83,14 +83,14 @@ pwd
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-qsub -I -l nodes=1:ppn=8 -l mem=10G -l walltime=12:00:00
+qsub -I -l nodes=1:ppn=8 -l mem=10g -l walltime=12:00:00
 ```
 
 After a few seconds, you will notice a job has started and your node name has changed from `cri12in` to `cri12cn`. Again, you will be placed at home directory by default.
 
 **Results**
 ```{bash, echo=TRUE, eval=FALSE}
-# [t.cri.biowksp36@cri16in002 ~]$ qsub -I -l nodes=1:ppn=8 -l mem=10G -l walltime=12:00:00
+# [t.cri.biowksp36@cri16in002 ~]$ qsub -I -l nodes=1:ppn=8 -l mem=10g -l walltime=12:00:00
 # qsub: waiting for job 3615001.cri16sc001 to start -->
 # qsub: job 3615001.cri16sc001 ready
 
@@ -545,6 +545,8 @@ ls -lt results/rnaseq/DLBC_samples_grch38/KO01/qc_reports/
 
 3.3.2 Read preprocessing: `Trimmomatic` *Skipped*
 
+**Replace [t.cri.biowksp36] with your own user account.**
+
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
 infile='/home/t.cri.biowksp36/class08/data/KO01.test.fastq.gz'
@@ -605,6 +607,8 @@ From the peek into the trimemd `FastQ` file above, four reads are shown. While t
 
 3.3.3 Map reads to reference genome (GRCh38): `STAR`
 
+**Replace [t.cri.biowksp36] with your own user account.**
+
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
 starIndex='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
@@ -619,12 +623,6 @@ STAR \
   --outSAMstrandField intronMotif \
   --outFilterIntronMotifs RemoveNoncanonicalUnannotated \
   --outSAMtype BAM SortedByCoordinate
-  
-ln -s KO01.star.Aligned.sortedByCoord.out.bam \
-  results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
-
-sambamba='/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6'
-$sambamba index -t 8 results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 ```
 
 **Progress**
@@ -635,6 +633,17 @@ Nov 18 03:11:09 ..... loading genome
 Nov 18 03:11:34 ..... started mapping
 Nov 18 03:11:38 ..... started sorting BAM
 Nov 18 03:11:39 ..... finished successfully
+```
+
+Now we create index for the `bam` files.
+
+**Commands**
+```{bash, echo=TRUE, eval=FALSE}
+ln -s KO01.star.Aligned.sortedByCoord.out.bam \
+  results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
+
+sambamba='/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6'
+$sambamba index -t 8 results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 ```
 
 **Results**
