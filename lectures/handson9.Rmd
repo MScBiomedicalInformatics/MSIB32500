@@ -1,10 +1,10 @@
 
-## MSIB32500 Advanced Bioinformatics Fall 2017
+## MSIB32500 Advanced Bioinformatics Spring 2018
 ## Class 09: RNAseq Data Analysis and Clinical Applications, Part II
 
 **Center for Research Informatics, University of Chicago**
 
-September - December 2017; Saturdays 9:00AM - 12:00PM
+April - June 2018; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -820,7 +820,7 @@ sessionInfo()
 
 ***
 
-## 4 Homework (due next Sunday 12/03/2017 at 11:59 PM)
+## 4 Homework (due next Sunday 06/03/2018 at 11:59 PM)
 
 1. Try to filter the DEGs with a more stringent cutoff: 'fdr < 0.01', AND 'fold change (fc) >= 1.5 or <= -1.5'. Note that we want to apply both fdr (<0.01) and fold change filters, and for fold change we filter for genes upregulated (fc>=1.5) or downregulated (fc<=-1.5), then we count all genes that pass these thresholds. How many DEGs are left after filtering?
 2. Generate a new gene expression heatmap using significant DEGs from step 1 after applying the new filters. It could be in any format that you choose (e.g. pdf, png, tiff, etc.)
