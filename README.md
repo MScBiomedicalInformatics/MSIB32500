@@ -57,9 +57,11 @@ ISBN-13: 978-1439809754, ISBN-10: 1439809755.
 **Week 1: – Introduction to Linux for Bioinformatics** 
 
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
 Objectives:  Learn how the Linux file system is organized and how to navigate it; Learn to perform basic operations with directories and files in Linux; Learn how to transfer files between computers; Learn useful text searching, text extraction, and text manipulation techniques; Learn how to set permissions in a Linux environment.
 
 Required Reading: Developing Bioinformatics Computer Skills. Chapter 3, 4 and 5. 
+
 Recommended: Bioinformatics Data Skills, Chapter 3, 4.
 
 **Week 2 – Introduction to Shell scripting; Linux commands for routine Bioinformatics tasks; and Introduction to Parallel and distributed computing**
