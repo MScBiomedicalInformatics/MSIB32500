@@ -1,5 +1,5 @@
 
-# Introduction to R programming  
+# Developing R programming skills for Bioinformatics  
 
 **Center for Research Informatics, University of Chicago**
 
