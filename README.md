@@ -98,7 +98,7 @@ Session Leader or Guest Lecturer: Jorge Andrade, PhD
 Objectives:  Learn how to perform the analysis of DNA Microarray data using R and Bioconductor. 
 Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 3, 14, 16, 19, 20 and 21.
 
-**Week 7 – Differential Expression Analysis of  RNA-seq Experiments Using edgeR **
+**Week 7 – Differential Expression Analysis of  RNA-seq Experiments Using edgeR**
  
 Session Leader or Guest Lecturer: Jorge Andrade, PhD
 Objectives:  Develop a working knowledge of how to use R and Bioconductor for analysis of RNA-seq data using the **edgeR** package. 
