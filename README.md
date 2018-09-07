@@ -66,67 +66,95 @@ Recommended: Bioinformatics Data Skills, Chapter 3, 4.
 
 **Week 2 – Introduction to Shell scripting; Linux commands for routine Bioinformatics tasks; and Introduction to Parallel and distributed computing**
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD
-Objectives: Learn how to develop Linux Shell scripts.
-Learn how to use Linux commands to solve common bioinformatics tasks.
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
+Objectives: Learn how to develop Linux Shell scripts; Learn how to use Linux commands to solve common bioinformatics tasks.
 Learn the basics of parallel and distributed computing environments, basic models for parallel computation, and design of parallel and distributed algorithms. 
+
 Required Reading:  
+
 Recommended: Introduction to Parallel Computing, chapters 1, 3 and 4; Applied Parallel Computing Springer series Lecture Notes in Computer Science. (LNCS). Volume 4699. pp 791-798 2007
 
 
 **Week 3 - Using a High-Performance Computing cluster for bioinformatics analysis**     
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD 
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
 Objectives: Learn how to develop HPC batch scripts using the Linux shell to execute code and develop analysis pipelines to perform computationally expensive bioinformatics tasks. 
+
 Required Reading: 
+
 Recommended:
 
 **Week 4 – Developing R programming skills for Bioinformatics**
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD 
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
 Objectives:  Develop R programming skills and learn how to use R for Bioinformatics analysis
+
 Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 6 
+
 Recommended:
 
 **Week 5 – Genomics Data Visualization in  R** 
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD 
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
 Objectives: To master common data visualization techniques used to present and display analysis results using basic R visualization packages.
+
 Required Reading:  
+
+Recommended:
 
 **Week 6 - Analysis of Illumina Microarrays Using R and Bioconductor** 
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
 Objectives:  Learn how to perform the analysis of DNA Microarray data using R and Bioconductor. 
+
 Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 3, 14, 16, 19, 20 and 21.
+
+Recommended:
 
 **Week 7 – Differential Expression Analysis of  RNA-seq Experiments Using edgeR**
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD
-Objectives:  Develop a working knowledge of how to use R and Bioconductor for analysis of RNA-seq data using the **edgeR** package. 
-Understand the statistical theory underlying the edgeR software package for differential expression of RNA-seq data. 
-Required Reading: Differential Expression Analysis of Complex RNA-seq Experiments Using edgeR, Yunshun Chen, Aaron T. L. Lun, Gordon K. Smyth
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D. 
+
+Objectives:  Develop a working knowledge of how to use R and Bioconductor for analysis of RNA-seq data using the **edgeR** package; Understand the statistical theory underlying the edgeR software package for differential expression of RNA-seq data. 
+
+Required Reading: Differential Expression Analysis of Complex RNA-seq Experiments Using edgeR, Yunshun Chen, Aaron T. L. Lun, Gordon K. Smyth (http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.432.1863) 
+
+Recommended:
 
 **Week 8 - Introduction to RNA-Seq**  
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
 Objectives: Understand how the RNA-Seq technology works; Learn analysis ‘best-practices’ and build an RNA-Seq analysis pipeline for raw data quality control and trimming, mapping reads to a reference genome, collect RNA-seq quality metrics and coverage statistics and quantification of transcript abundance.
+
 Required Reading: TBD
+
 Recommended: Review of “High-Throughput Sequencing Technologies “ from Mike Snyder’s group (http://www.sciencedirect.com.proxy.uchicago.edu/science/article/pii/S1097276515003408)
 
 
 **Week 9 –  Differentially Gene Expression Identification using RNA-Seq**
  
-Session Leader or Guest Lecturer: Jorge Andrade, PhD
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D. 
+
 Objectives: Learn how to perform the downstream analysis of RNA-seq data; Detect genes differentially expressed between conditions; Identity pathways/network enriched in genes of interest.
+
 Required Reading:  TBA
+
 Recommended: 
 
 **Week 10 –  Associating Gene Expression with Clinical Data**
 
-Session Leader or Guest Lecturer: Jorge Andrade, PhD
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+
 Objectives: Learn the background and application of The Cancer Genome Atlas (TCGA) project; Learn the structure and access of Genomics Data Commons (GDC); Explore datasets hosted on GDC and Learn how to associate gene expression with clinical data.
+
 Required Reading: TBA
+
 Recommended:
 
 
