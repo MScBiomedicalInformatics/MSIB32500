@@ -168,9 +168,9 @@ Week    Date    Session Leader/ Guest Lecturer    Topic    In-class activity    
 5.  11/03/18    Jorge Andrade
 6.  11/10/18    Jorge Andrade
 7.  11/17/18    Jorge Andrade
-8.  11/24/18    Jorge Andrade
-9.  12/01/18    Jorge Andrade
-10. 12/08/18    Jorge Andrade
+8.  11/24/18    Riyue Bao
+9.  12/01/18    Riyue Bao
+10. 12/08/18    Riyue Bao
 
 
 ## 12.    COURSE EVALUATION
