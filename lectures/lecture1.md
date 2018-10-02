@@ -2,14 +2,14 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 3/31/18; 9:00AM - 12:00PM
+Saturdays 10/06/18; 9:00AM - 12:00PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
 ## Learning Objectives
 
 - This training will teach you the basics on how to start using Linux, be it on the CRI’s High-Performance Infrastructure (HPC), or on your own computer.
-- After this training you will: 
+  - After this training you will: 
   - Feel comfortable using Linux
   - Know how software works on Linux and how to use it
   - Use bash to execute commands in Linux and know your way around the file system
