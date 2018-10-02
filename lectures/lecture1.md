@@ -207,13 +207,14 @@ Now use the **scp** command with your username and password, to securely copy th
 scp ./GSE31736_RAW.tar t.cri.biowksp01@gardner.cri.uchicago.edu:~/
 ```
 
-:bulb: The [hypexr.org](http://www.hypexr.org/linux_scp_help.php) website has a list of examples on how to use secure copy. 
+:bulb: The [hypexr.org](http://www.hypexr.org/linux_scp_help.php) website has a list of examples on how to use the secure copy command in different settings, take a minute to review and practice.
 
 b. You can use *wget* command to get a file from the internet directly to your working directory in Linux
 
 ```bash
 cd ~
 wget http://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff
+ls
 ```
 ## Input/Output redirect and pipe
 
@@ -252,7 +253,7 @@ A standard Unix/Linux installation will have available several text editors (lik
 a. Use the symbol '>' to redirect the output of a command to a file
 
 ```bash
-cd /group/mscbmi/lecture1/              
+cd /gpfs/data/mscbmi/lecture1/              
 less SRR001655.fastq                 ### View a fastq file: use q to exit, space or f to the next page,
                                      ### b to the previous page, and / to search a word
 head -20 SRR001655.fastq             ### Show the first 20 line of the file
@@ -262,9 +263,10 @@ tail -20 SRR001655.fastq             ### Show the last 20 lines of the file
 b. Pattern Search with 'grep'. The grep command searches specified files or other input (stdin) for patterns matching a given expression(s).
 
 ```bash
-cp /group/mscbmi/lecture1/list1.txt ~/
-cp /group/mscbmi/lecture1/list2.txt ~/
+cp /gpfs/data/mscbmi/lecture1/list1.txt ~/
+cp /gpfs/data/mscbmi/lecture1/list2.txt ~/
 cd ~
+pwd
 ls -l
 
 $ cat list1.txt                      ### See the contents of file list1.txt
@@ -312,8 +314,6 @@ dry apples
 $ cat list2.txt  ### why there is no changes in list2.txt?
 
 $ cat list2.txt | tr /a-z/ /A-Z/              ### Change lower case to upper case (tr: translate)
-thegeekstuff
-THEGEEKSTUFF
 APPLE SAUCE
 WILD RICE
 BLACK BEANS
@@ -329,7 +329,7 @@ atcgagcaat
 e. Table manipulation: sort, uniq, cut, and paste
 
 ```bash
-cp /group/mscbmi/lecture1/table.txt ~/
+cp /gpfs/data/mscbmi/lecture1/table.txt ~/
 cd ~
 ls -l
 $ cat table.txt                                      ### show the contents of file table.txt
@@ -394,7 +394,7 @@ CHR  SNP         BP         A1  C_A  C_U   A2  CHISQ    P       OR      apples
 15   rs10401369  19268718   C   232  890   T   0.03232  0.2524  0.1157
 11   rs10873487  767334548  G   964  3811  A   0.5525   0.2356  0.2391
  
-cp /group/mscbmi/lecture1/p1.txt ~/
+cp /gpfs/data/mscbmi/lecture1/p1.txt ~/
 $ cat p1.txt           ### See the contents of file p1.txt
 IBM
 MSFT
@@ -402,7 +402,7 @@ Apple
 SAP
 Yahoo
 
-cp /group/mscbmi/lecture1/p2.txt ~/
+cp /gpfs/data/mscbmi/lecture1/p2.txt ~/
 $ cat p2.txt          ### See the contents of file p2.txt
 25.23
 234.02
