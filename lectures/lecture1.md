@@ -33,6 +33,13 @@ ssh t.cri.biowksp01@gardner.cri.uchicago.edu
 ```
 Enter your **_password_** when prompted. Type yes if you are prompted to accept a key.
 
+
+## Accessing CRI's HPC system from off campus locations
+
+In order to securely access CRI's HPC system from off campus locations, you need to setup a [virtual private network (VPN)](https://en.wikipedia.org/wiki/Virtual_private_network), to do this, go to https://vpn.uchicago.edu and download the University's CISCO AnyConnect Secure Mobility Client (avaialable for all operative systems), after downloading nd installing the client, use **cvpn.uchicago.edu** as the server's name.
+
+![cvpn]()
+
 ## How to get help
 
 - Use the manual ($ man) command; to exit the manual type 'q'
