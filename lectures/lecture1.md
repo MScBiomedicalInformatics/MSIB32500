@@ -146,10 +146,11 @@ mv newfolder2/file1.txt newnamefolder
 g. Compress files
 
 ```bash
-cd /group/mscbmi/lecture1/
+cd /gpfs/data/mscbmi/lecture1/
 ls -l SRR*                     ### List all files that start with SRR
 cp SRR001655.fastq ~/
-cd ~/
+cd
+ls
 gzip SRR001655.fastq           ### Compress a file, this command should create a compressed file named SRR001655.fastq.gz
 ls -l                        
 gunzip SRR001655.fastq.gz      ### Decompress a file
@@ -161,6 +162,7 @@ h. Compress files protected by a password
 zip -er SRR.zip SRR001655.fastq 
 ```
 This will prompt you for a password. 
+
 -e enables encryption for your zip file. This is what makes it ask for the password.
 -r makes the command recursive, meaning that all the files inside a folder will be added to the zip file.
 
@@ -176,7 +178,7 @@ unzip SRR.zip
 
 ![filestructure](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/files.jpg)
 
-2. Copy the file *SRR001655.fastq* from */group/mscbmi/lecture1/* to the *folder4*
+2. Copy the file *SRR001655.fastq* from */gpfs/data/mscbmi/lecture1/* to the *folder4*
 3. Move a password protected encrypted copy of SRR001655.fastq from *folder4* to *folder1* 
 4. Remove recursively the contents of the folder *ex1*
 
