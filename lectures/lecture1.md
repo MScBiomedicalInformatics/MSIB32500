@@ -38,7 +38,7 @@ Enter your **_password_** when prompted. Type yes if you are prompted to accept 
 
 In order to securely access CRI's HPC system from off campus locations, you need to setup a [virtual private network (VPN)](https://en.wikipedia.org/wiki/Virtual_private_network), to do this, go to https://vpn.uchicago.edu and download the University's CISCO AnyConnect Secure Mobility Client (avaialable for all operative systems), after downloading nd installing the client, use **cvpn.uchicago.edu** as the server's name.
 
-![cvpn]()
+![cvpn](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/cvpn.uchicago.edu.png)
 
 ## How to get help
 
