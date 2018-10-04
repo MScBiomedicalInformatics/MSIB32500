@@ -771,17 +771,15 @@ ls -l
 ```
 
 
-## Week 1 Challange: :white_check_mark: 
+## Week 1 Suguested reading: :white_check_mark:
 
 :bulb: Download the [LinuxReference.pdf](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/LinuxReference.pdf) file, review and practice at home.
 
-- Follow the tutorial: [CloudEnviromentSetup.pdf] (https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/CloudEnviromentSetup.pdf) to learn how to confirure your owm Elastic Cloud Computing instance (EC2) using  Amazon Web Services (AWS). 
-- Send me an e-mal with and screenshot of your EC2 instance running. 
+## Week 1 Challenge (One extra point) :white_check_mark:
 
-## Week 1 Suguested reading: :white_check_mark:
 Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html 
 
-Some [computer comics and cartoons](http://www.hypexr.org/comics.php)
+Write a short (one page) review/comment, send your work via email.
 
     
 
