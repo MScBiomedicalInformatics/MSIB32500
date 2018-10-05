@@ -501,7 +501,7 @@ awk 'FNR == 2 {print}' mappingtools.txt
 ```
 
 
-### Diference between FNR and NR in awk
+#### Diference between FNR and NR in awk
 
 ```bash
 $ awk '{print FNR, $1}' list1.txt
@@ -601,12 +601,12 @@ Now explore the result of the following command:
 awk $5 '/Fast/{print $1,"\t",$2, "\t",$3}' mappingtools.txt
 ```
 
-### More awk examples for bioinformatics:
+### More awk examples for Bioinformatics:
 
 Copy the file expression.txt from our repository to your home directory; explore the contents fo this file.
 
 ```bash
-cp /group/mscbmi/lecture1/expression.txt .
+cp /gpfs/data/mscbmi/lecture1/expression.txt .
 head -20 expression.txt 
 wc -l expression.txt
 
@@ -833,11 +833,11 @@ ls -l
 
 :bulb: Download the [LinuxReference.pdf](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/LinuxReference.pdf) file, review and practice at home.
 
-## Week 1 Challenge (One extra point) :white_check_mark:
+:bulb: Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html 
 
-Read the Nature technology feature article **'Biology: The big challenges of big data'** available at: http://www.nature.com/nature/journal/v498/n7453/full/498255a.html 
+## Week 1 Challenge (one extra point) :white_check_mark:
 
-Write a short (one page) review/comment, send your work via email.
+Using AWK calculate mean and variance of columns for file: expression.txt send your code via email.
 
     
 
