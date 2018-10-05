@@ -363,10 +363,12 @@ $ sort -k1 table.txt
 19	rs10401969	19268718	C	222	890	T	0.03462	0.8524	0.9857
 CHR	SNP	BP	A1	C_A	C_U	A2	CHISQ	P	OR
 
+### Sort a table by the first column in numerical order and write the results to a new file
 
-$ sort -k1n table.txt  > table_sorted1.txt         ### sort the table by the first column in numerical order
-                                                   ### and write the results to a new file
- ls -l
+$ sort -k1n table.txt  > table_sorted1.txt         
+                                                  
+$ ls -l
+
 $ cat table_sorted1.txt | column -t
 CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            P           OR
    1   rs10873883   76734548    G      934     3811    A       0.5325       0.4656       0.9691
@@ -378,7 +380,7 @@ CHR          SNP         BP   A1      C_A      C_U   A2        CHISQ            
  
 $ sort -k8n table.txt  > table_sorted2.txt        ### sort by CHISQ value 
  
-$ sort -k2 table.txt                               ### sort the table by the second column
+$ sort -k2n table.txt                               ### sort the table by the second column
  
   15   rs10401369   19268718    C      232      890    T      0.03232       0.2524       0.1157
   19   rs10401969   19268718    C      222      890    T      0.03462       0.8524       0.9857
@@ -398,6 +400,7 @@ CHR     SNP             BP              C_A
 11      rs10873487      767334548       964
  
 ### The paste command is used to align files side-by-side, merging records from each file respectively.
+
 $ paste table.txt list1.txt | column -t
 CHR  SNP         BP         A1  C_A  C_U   A2  CHISQ    P       OR      apples
 19   rs10401969  19268718   C   222  890   T   0.03462  0.8524  0.9857  bananas
@@ -407,6 +410,7 @@ CHR  SNP         BP         A1  C_A  C_U   A2  CHISQ    P       OR      apples
 11   rs10873487  767334548  G   964  3811  A   0.5525   0.2356  0.2391
  
 cp /gpfs/data/mscbmi/lecture1/p1.txt ~/
+
 $ cat p1.txt           ### See the contents of file p1.txt
 IBM
 MSFT
@@ -415,6 +419,7 @@ SAP
 Yahoo
 
 cp /gpfs/data/mscbmi/lecture1/p2.txt ~/
+
 $ cat p2.txt          ### See the contents of file p2.txt
 25.23
 234.02
@@ -474,8 +479,8 @@ awk 'NR==1; NR>1 {print $0 | "sort -k2"}' table.txt
 Let's see more awk examples. Copy the file *mappingtools.txt* from /group/mscbmi/lecture2.txt. This is a tab delimited file containing a list of common mapping tools for NGS data.
 
 ```bash
-cd ~
-cp /group/mscbmi/lecture2/mappingtools.txt . 
+cd 
+cp /gpfs/data/mscbmi/lecture2/mappingtools.txt . 
 ```
 To explore the contents of mappingtools.txt we can use:
 
@@ -494,6 +499,47 @@ To select and print one row (line):
 ```bash
 awk 'FNR == 2 {print}' mappingtools.txt
 ```
+
+
+## Diference between FNR and NR in awk
+
+```bash
+$ awk '{print FNR, $1}' list1.txt
+1 apples
+2 bananas
+3 plums
+4 carrots
+
+$ awk '{print NR, $1}' list1.txt
+1 apples
+2 bananas
+3 plums
+4 carrots
+
+$ awk '{print FNR, $1}' list1.txt list2.txt
+1 apples
+2 bananas
+3 plums
+4 carrots
+1 Apple
+2 wild
+3 black
+4 kidney
+5 dry
+
+$ awk '{print NR, $1}' list1.txt list2.txt
+1 apples
+2 bananas
+3 plums
+4 carrots
+5 Apple
+6 wild
+7 black
+8 kidney
+9 dry
+```
+#################
+
 
 Find "BWA" in the first column:
 
