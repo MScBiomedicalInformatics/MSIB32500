@@ -352,6 +352,18 @@ CHR  SNP         BP         A1  C_A  C_U   A2  CHISQ    P       OR
 11   rs10873487  767334548  G   964  3811  A   0.5525   0.2356  0.2391
  
  
+### Sort a table by the first column
+
+$ sort -k1 table.txt 
+
+1	rs10873883	76734548	G	934	3811	A	0.5325	0.4656	0.9691
+1	rs11589256	214196749	C	271	1084	T	0.01928	0.8896	0.9902
+11	rs10873487	767334548	G	964	3811	A	0.5525	0.2356	0.2391
+15	rs10401369	19268718	C	232	890	T	0.03232	0.2524	0.1157
+19	rs10401969	19268718	C	222	890	T	0.03462	0.8524	0.9857
+CHR	SNP	BP	A1	C_A	C_U	A2	CHISQ	P	OR
+
+
 $ sort -k1n table.txt  > table_sorted1.txt         ### sort the table by the first column in numerical order
                                                    ### and write the results to a new file
  ls -l
@@ -453,7 +465,7 @@ The general syntax of awk is:
 awk '/search pattern/{Actions}' filename
 ```
 
-'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is performed. For example, to solve the problem of the headers on a table (table.txt) being sorted whe we used the 'sort' command in the previous section, one can use the follwoing command:
+'awk' goes through each line in *filename* and if the line matches the *search pattern*, then action(s) is/are performed. For example, to solve the problem of the headers on a table (table.txt) being sorted whe we used the 'sort' command in the previous section, one can use the follwoing command:
 
 ```
 awk 'NR==1; NR>1 {print $0 | "sort -k2"}' table.txt
