@@ -501,7 +501,7 @@ awk 'FNR == 2 {print}' mappingtools.txt
 ```
 
 
-## Diference between FNR and NR in awk
+### Diference between FNR and NR in awk
 
 ```bash
 $ awk '{print FNR, $1}' list1.txt
@@ -538,7 +538,7 @@ $ awk '{print NR, $1}' list1.txt list2.txt
 8 kidney
 9 dry
 ```
-#################
+--------------------------
 
 
 Find "BWA" in the first column:
