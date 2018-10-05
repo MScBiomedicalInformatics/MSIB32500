@@ -672,7 +672,7 @@ The **sed** command also works on plain text files:
 
 ```bash
 $ cd ~
-$ cp /group/mscbmi/lecture2/bwa.txt . 
+$ cp /gpfs/data/mscbmi/lecture2/bwa.txt . 
 $ cat bwa.txt
 Burrows-Wheeler Aligner
 
@@ -779,11 +779,11 @@ Enable Read, Write and Execute for all users on file list1.txt
 
 ```bash
 $ ls -l list1.txt
--rwxr-x--- 1 t.cri.biowksp01 t.cri.biowksp01 29 Mar 31 11:16 list1.txt
+-rw-r----- 1 t.cri.biowksp01 t.cri.biowksp01 29 Oct  2 14:26 list1.txt
 
 $ chmod a+rwx list1.txt
 ls -l list1.txt
--rwxrwxrwx 1 t.cri.biowksp01 t.cri.biowksp01 29 Mar 31 11:16 list1.txt
+-rwxrwxrwx 1 t.cri.biowksp01 t.cri.biowksp01 29 Oct  2 14:26 list1.txt
 ```
 
 Remove Read and Write permission for Others on file list1.txt
@@ -837,7 +837,7 @@ ls -l
 
 ## Week 1 Challenge (one extra point) :white_check_mark:
 
-Using AWK calculate mean and variance of columns for file: expression.txt send your code via email.
+Using AWK calculate mean of the columns of file: expression.txt send your code via email.
 
     
 
