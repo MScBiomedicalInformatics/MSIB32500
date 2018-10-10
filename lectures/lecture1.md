@@ -325,7 +325,7 @@ $ cat list2.txt
 $ echo 'attgctcgat' | tr /atgc/ /tacg/ | rev  ### Find a complement DNA sequence and then reverse it
 atcgagcaat
 ```
-
+-----------------------------------------------------------
 e. Table manipulation: sort, uniq, cut, and paste
 
 ```bash
