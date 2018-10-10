@@ -520,7 +520,7 @@ Although a single grid can be dedicated to a particular application, commonly a 
 
 Grid environments consist at least of 3 main components: the hardware, the middleware (like the Advanced Resource Connector ARC)  and the applications (like software).
 
-Recommended read on this topic: [The Grid: Blueprint for a New Computing Infrastructure](https://books.google.com/books?id=ONRQAAAAMAAJ) by the University of Chicago Professor [Ian Foster](https://cs.uchicago.edu/directory/ian-foster)
+Recommended read on this topic: [The Grid: Blueprint for a New Computing Infrastructure](https://books.google.com/books?id=ONRQAAAAMAAJ) by the University of Chicago Professor [Ian Foster](https://www.ci.uchicago.edu/profile/191)
 
 **CLOUD Computing**
 
