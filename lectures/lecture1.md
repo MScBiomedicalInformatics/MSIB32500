@@ -476,6 +476,12 @@ awk '/search pattern/{Actions}' filename
 awk 'NR==1; NR>1 {print $0 | "sort -k2"}' table.txt
 ```
 
+To format the output by collumn:
+
+```
+awk 'NR==1; NR>1 {print $0 | "sort -k2"}' table.txt | column -t
+```
+
 Let's see more awk examples. Copy the file *mappingtools.txt* from /group/mscbmi/lecture2.txt. This is a tab delimited file containing a list of common mapping tools for NGS data.
 
 ```bash
