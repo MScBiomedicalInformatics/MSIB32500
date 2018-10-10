@@ -322,7 +322,6 @@ fi
 
 ## :mortar_board: Your turn, create a script or use a command to remove (delete) the line that the previous script inserted on *file_name*
 
-[task: delete the last line of a file](head -n -1 SRR001655.fastq > temp.txt ; mv temp.txt SRR001655.fastq) 
 
 ### :book: Learn more:
 
