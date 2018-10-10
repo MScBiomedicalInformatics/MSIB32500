@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 04/14/18; 9:00 AM - 12:00 PM
+Saturdays 10/20/18; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -372,7 +372,7 @@ First you need to download the compressed sequence read files (*.fastq.gz) to yo
 
 ```bash
 cd ~/mscbmi/Ex3
-cp /group/mscbmi/lecture1/*.gz ./
+cp /gpfs/data/mscbmi/lecture1/*.gz ./
 ls
 ```
 You can check the compressed fastq.gz file using the command zcat or zless:
