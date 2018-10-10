@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 04/07/18; 9:00 AM - 12:00 PM
+Saturdays 10/13/18; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -108,7 +108,7 @@ environment.sh
 #Display user information from the system
 echo "User info for user: $USER"
 echo "User's HOME: $HOME"
-echo "Your UID is: $UID" nano 
+echo "Your UID is: $UID"
 ```
 
 **Shell Loops**
@@ -141,7 +141,7 @@ cd ~
 for i in {1..100}
 do
   echo "Copying sequence on folder # $i"
-  cp /group/mscbmi/lecture1/SRR001655.fastq "folder$i"
+  cp /gpfs/data/mscbmi/lecture1/SRR001655.fastq "folder$i"
 done
 ```
 
@@ -168,11 +168,11 @@ done
 
 Let's combine *while* loops with conditional *case* and *if* statements:
 
-First, copy on your home directory the file greetings.txt form /group/mscbmi/lecture1/, this file contains several ways to say hello in different languages.
+First, copy on your home directory the file greetings.txt form /gpfs/data/mscbmi/lecture1/, this file contains several ways to say hello in different languages.
 
 ```bash
 cd ~
-cp /group/mscbmi/lecture1/greetings.txt .
+cp /gpfs/data/mscbmi/lecture1/greetings.txt .
 cat greetings.txt
 ```
 
@@ -278,7 +278,7 @@ Let's see some examples
 ```bash
 #!/bin/sh
 
-goto_directory=/group/mscbmi
+goto_directory=/gpfs/data/mscbmi
 
 if [ -d $goto_directory ] 
 then
@@ -322,6 +322,7 @@ fi
 
 ## :mortar_board: Your turn, create a script or use a command to remove (delete) the line that the previous script inserted on *file_name*
 
+[task: delete the last line of a file](head -n -1 SRR001655.fastq > temp.txt ; mv temp.txt SRR001655.fastq) 
 
 ### :book: Learn more:
 
