@@ -221,31 +221,28 @@ Let's try to create a script to evaluate *if* a number is a prime. As you know, 
 ```bash
 
 #!/bin/sh
-while [ "$num" != "bye" ]
+while true
 do
   echo "Enter a number equal or bigger that 2, type 'bye' to quit "
   read num
-  
-  if [ $num  -eq 2 ]
-   then
-     echo "$num is a prime number"
+  if [ "$num" == "bye" ]
+  then
+   exit
+  else
+   i=2
+   while [ $i -lt $num ]
+   do
+    if [ `expr $num % $i` -eq 0 ]
+    then
+      echo "$num is not a prime number "
+      echo "Since it is divisible by $i"
+      exec "$0" "$@"
+    else
+      i=`expr $i + 1`
+    fi
+   done
   fi
-
-  i=2
-  if [ `expr $num % $i` -ne 0 ]
-   then
-     echo "$num is a prime number "
-   else 
-     while [ $i -lt $num ]
-       do
-        if [ `expr $num % $i` -eq 0 ]
-         then
-          echo "$num is not a prime number"
-          echo "Since it is divisible by $i"
-        fi
-        i=`expr $i + 1`
-       done
-  fi  
+echo "$num is a prime number "
 done
 
 ```
