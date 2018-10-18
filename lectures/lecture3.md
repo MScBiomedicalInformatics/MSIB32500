@@ -640,11 +640,12 @@ Notes:
 - **samtools** manual is available at http://www.htslib.org/doc/samtools.html
 - **samtolls tutorial** http://quinlanlab.org/tutorials/samtools/samtools.html#synopsis
 -----------------
-- The program takes just a few minutes to complete because the input sequence files used in this exercise are a stripped-down version of the original compressed fastQ files, The tipical size of a complete RNA-Seq fastq file is about 6.1GB. Running the BWA aligner on a real file would take much longer time, thus the utility of HPC enviroments to reduce the time to manageable.
-- BWA and Bowtie2 both support multi-threading. To enable it, turn on the **option -t in BWA** and **-p in Bowtie2**. In above script, 4 threads are used for the mapper, you also need to inform the scheduler of the number of CPU cores for your job by setting ppn=4. While multi-threading can speed up the mapping, specifying too many threads could cause your job to be waiting in the queue for sufficient resources to become available. Set the number of threads to 4, 8, or 16 depending on the read file sizes and current job load on the cluster.
+- The program takes just a few minutes to complete because the input sequence files used in this exercise are a stripped-down version of the original compressed fastq files, The tipical size of a complete RNA-Seq fastq file is about 6.1GB. Running the BWA aligner on a real file would take much longer time, thus the utility of HPC enviroments to reduce the time to manageable.
+
+- BWA and Bowtie2 both support multi-threading. To enable it, turn on the **option -t in BWA** and **-p in Bowtie2**. In above script, 4 threads are used for the mapper, you also need to inform the scheduler of the number of CPU cores for your job by setting ppn=4. While multi-threading can speed up the mapping, specifying **too many threads could cause your job to be waiting in the queue** for sufficient resources to become available. Set the number of threads to 4, 8, or 16 depending on the read file sizes and current job load on the cluster.
 ------------------
 
-We are now going to run the alignment using **bowtie2** on the cluster, you need to create a new job submission script named **run_bowtie2_heart.pbs** using nano editior:
+We are now going to run the alignment using **bowtie2**. Create a new job submission script named **run_bowtie2_heart.pbs** using nano editior:
 
 
 ```bash
@@ -663,8 +664,8 @@ We are now going to run the alignment using **bowtie2** on the cluster, you need
 ### Inform the scheduler of the amount of memory you expect
 #PBS -l mem=2gb
 ### Set the destination for your program’s output and error
-#PBS -o $HOME/mscbmi/Ex4/${PBS_JOBNAME}.e${PBS_JOBID}
-#PBS -e $HOME/mscbmi/Ex4/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -o $HOME/mscbmi/Ex4/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -e $HOME/mscbmi/Ex4/${PBS_JOBNAME}.e${PBS_JOBID}
 
 #################
 # Job Execution #
@@ -767,8 +768,8 @@ checkjob jobid    #will list job details
 
 ## Week 3 Homework: :house: (Graded!)
 
-- Create an analysis pipeline that performs the raw data QC for heart and kidney files, then perform the mapping of those files using both **bwa** and **bowtie2** tools. 
-- Screen capture the visualization of your mapping results (both bwa and bowtie2) for the gene TOMM40L using IGV. 
+- Create an analysis pipeline that efficiently performs the raw data QC for heart and kidney files, then perform the mapping of those files using both **bwa** and **bowtie2** tools. 
+- Screen capture the visualization of your mapping results (**both bwa and bowtie2 results**) for the gene TOMM40L using IGV. 
 
 Please submit your code and visualizations via e-mail.
 
