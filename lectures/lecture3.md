@@ -31,7 +31,17 @@ $ssh username@gardner.cri.uchicago.edu
 
 ![gardner](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/tarbell.jpeg)
 
-- HPC is a multi-user environment. In order to ensure an effective usage of the available resources some sort of management of the workload is necessary. This task is accomplished by a Resource Manager (RM), a program (or set of programs that work together) that assigns the resources to the users according to the system current and expected load, the user needs, and a predefined assignment policy. This means that the user does not run their application directly, but instead *“asks”* the system to run the application, by means of a job script. **The Resource Manager parses the script, and tries to optimize the usage of the available resources, scheduling the execution of the applications (jobs) at different times, and on different nodes/cores in the cluster.** There are many Resource Manager software available. On the CRI's HPC, a combination of the **MOAB (scheduler)** and **Torque (resource manager)** is used. 
+- A High Performing Computing (HPC), is a **multi-user environment**. 
+
+- A Resource Manager (RM) program (or set of programs) is needed to ensure an effective usage of the available resources. 
+
+- The **RM** program assigns the resources to the users according to the system's **current and expected load, the user needs, and a predefined assignment policy.** 
+
+- The user does *not run their application directly*, but instead **“asks”** the RM system to run the application, by means of a **job script.**
+
+- The RM parses **the script**, and tries to optimize the usage of the available resources, scheduling the execution of the applications (jobs) at different times, and on different nodes/cores in the cluster.
+
+- There are many Resource Manager software available. On the CRI's HPC, a combination of the **MOAB (scheduler)** and **Torque (resource manager)** is used. 
 
 - By default, you will be logged into to the 'log-in' nodes **(in001 or in002)**, from there you will have access to the **storage/labshares** and **scratch** spaces (1Gb and 56 Gb speeds respectively). 
 
