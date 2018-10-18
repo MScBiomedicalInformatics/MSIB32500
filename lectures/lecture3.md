@@ -357,8 +357,8 @@ As described before, a job submittion script will look like the following:
 ### Inform the scheduler of the amount of memory you expect to use. Use units of ‘b’, ‘kb’, ‘mb’, or ‘gb’
 #PBS -l mem=512mb
 ### Set the destination for your program’s standard output (stdout) and error (stderr)
-#PBS -o $HOME/${PBS_JOBNAME}.e${PBS_JOBID}
-#PBS -e $HOME/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -o $HOME/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -e $HOME/${PBS_JOBNAME}.e${PBS_JOBID}
 #### Other important PBS directives
 
 ### Mail alert at (b)eginning, (e)nd and (a)bortion of execution
@@ -418,8 +418,8 @@ Copy & paste the following script to the **nano** text editor:
 ### Inform the scheduler of the amount of memory you expect
 #PBS -l mem=512mb
 ### Set the destination for your program’s output and error
-#PBS -o $HOME/${PBS_JOBNAME}.e${PBS_JOBID}
-#PBS -e $HOME/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -o $HOME/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -e $HOME/${PBS_JOBNAME}.e${PBS_JOBID}
 
 #################
 # Job Execution #
