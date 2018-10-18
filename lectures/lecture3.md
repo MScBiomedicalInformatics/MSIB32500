@@ -114,7 +114,7 @@ In this section, you will learn how to execute jobs on CRI's [GARDNER](https://e
 
 :red_circle: **Note: DO NOT RUN JOBS on the login nodes of the cluster. Always submit jobs to the compute nodes (qsub), or use the interactive mode (qsub -I)**
 
-GARDNER cluster uses **Torque** as a *resource manager* (Provides low-level functionality to start, hold, cancel and monitor jobs) and **Moab** as *Work-load Manager (job scheduler)* to manage the cluster resources. Torque/Moab is based on the **Portable Batch System (PBS)** originally developed by NASA in the early 1990s. As such, **Torque/Moab uses PBS directives (commands)** to receive job requests from users.
+As explained before, GARDNER cluster uses **Torque** as a *resource manager* (Provides low-level functionality to start, hold, cancel and monitor jobs) and **Moab** as *Work-load Manager (job scheduler)* to manage the cluster resources. Torque/Moab is based on the **Portable Batch System (PBS)** originally developed by NASA in the early 1990s. As such, **Torque/Moab uses PBS directives (commands)** to receive job requests from users.
 
  **What does a PBS script look like?**
  
