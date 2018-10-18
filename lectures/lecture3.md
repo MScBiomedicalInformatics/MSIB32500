@@ -596,8 +596,8 @@ To run the alignment using **bwa** on the cluster, you need to create a new job 
 ### Inform the scheduler of the amount of memory you expect
 #PBS -l mem=2gb
 ### Set the destination for your program’s output and error
-#PBS -o $HOME/mscbmi/Ex4/${PBS_JOBNAME}.e${PBS_JOBID}
-#PBS -e $HOME/mscbmi/Ex4/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -o $HOME/mscbmi/Ex4/${PBS_JOBNAME}.o${PBS_JOBID}
+#PBS -e $HOME/mscbmi/Ex4/${PBS_JOBNAME}.e${PBS_JOBID}
 
 #################
 # Job Execution #
