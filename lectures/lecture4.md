@@ -120,6 +120,23 @@ When you start a session in R, it is a good idea to first clean all R objects, s
 * Generate a vector containing the 50 first odd numbers 
 ------------------------
 
+<details> 
+  <summary> T1: Generate a vector containing the 50 first odd numbers</summary>
+   A1: 
+
+```{r}
+> (1:50)*2 - 1
+
+> seq(1, 99, 2)
+
+> seq(1, by = 2, len = 50)
+```
+</details>
+
+
+
+
+
 A vector is a **data structure**, and the most fundamental in R. Almost everything in R is some kind of vector, although sometimes in several dimensions - vectors within vectors (matrix). 
 
 #### A matrix:
