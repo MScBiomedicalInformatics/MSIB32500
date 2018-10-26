@@ -50,6 +50,8 @@ R is a free software environment for statistical computing and graphics. It comp
 
 
 #### Getting started:
+
+* Download and install the latest version of R: https://www.r-project.org 
 * Download and install the Open Source version of [Rstudio](https://www.rstudio.com). 
 
   * Start Rstudio, in a File/New File/R Script type:
