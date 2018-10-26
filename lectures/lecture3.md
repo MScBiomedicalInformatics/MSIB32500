@@ -569,6 +569,8 @@ $ ./submit_jobs.sh
 
 Next up we are going to align the sequence reads to the reference human genome (hg19) using two alignment tools - BWA (http://bio-bwa.sourceforge.net) and Bowtie2 (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). Both tools use the Burrows--Wheeler transformation method to reduce the memory requirement for the sequence alignment. Each has its own set of limitations, for example, the lengths of reads it accepts, how it outputs read alignments, how many mismatches there can be, whether it produces gapped alignments, etc.). Please note for RNA-Seq data, people use splicing-aware alignment tools such as TopHat and STAR aligners.
 
+----------------------------------------------------
+
 **Exercise 4: Sequence alignment on HPC cluster**
 
 First, copy the pair-end Illumina sequencing files for heart from Exercise 3
