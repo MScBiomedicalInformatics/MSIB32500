@@ -119,9 +119,8 @@ When you start a session in R, it is a good idea to first clean all R objects, s
   - c(1:100)   
   - c(50:2) 
 <details> 
-  <summary> *: Generate a vector containing the 50 first odd numbers</summary>
-   A1: 
-
+  <summary>Generate a vector containing the 50 first odd numbers </summary>
+ 
 ```{r}
 > (1:50)*2 - 1
 
