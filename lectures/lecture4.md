@@ -1216,20 +1216,20 @@ Generalized linear models are fit using the **glm()** function:
 ## Week 4 Homework: :house: (Graded!)
 
 
-- Copy all .fasta available at: **/group/mscbmi/hw4/** into your R working directory:
+- Copy all .fasta available at: **/gpfs/data/mscbmi/hw4/** into your R working directory:
 
 - The follwoing R code uses the [seqinr](https://cran.r-project.org/web/packages/seqinr/index.html) package to perform pairwise alignment of all the sequences in the input file (*shor_reference.fasta*). 
 The R code will generate an output file named **alignment.txt** containing the sequence alaignmets and alignment scores.
 
 ```{r}
-#### - On your laptop - ####
+#### - To test on your laptop - Set you working directory appropriately ####
 # setwd('/Users/jandrade/Desktop/hw4')
 # source("https://bioconductor.org/biocLite.R")
 # biocLite("seqinr")
 # biocLite("Biostrings")
 ####
 
-#### - On Gardner Interactive node - ####
+#### - To test on Gardner Interactive node - ####
 # qsub -I
 # module load gcc
 # module load R
@@ -1263,7 +1263,7 @@ write.table(time.taken, "timestamp.txt")
 ```
 
 * A. Study and understand the code and all the R functions used
-* B. Develop an analysis pipeline that uses CRI's GARDNER cluster to perform the pairwise alignment of the bigger **reference** file: **reference.fasta**
+* B. Develop an analysis pipeline that uses CRI's GARDNER cluster (in batch mode) to perform the pairwise alignment of the bigger **reference** file: **reference.fasta**
 * C. Sort the **'score'** value for each aligned sequence and save the sorted scores in a file named: 'scores.txt' 
 * D. What is the maximun and minimum alignment scores for reference.fasta?
 * E. Record, report and explain the total runtime (execution time) for your script running with the following hardware configurations:
@@ -1277,7 +1277,7 @@ Submit all developed scripts and results files via e-mail.
 
 -------------
 
-## Week 4 Challange (10 Extra points)
+## Week 4 Challange (1 Extra point)
 
 * Develop and implement an algorithm/strategy for reducing the best runtime you reported previously.
 
