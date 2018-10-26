@@ -755,10 +755,10 @@ Now search for the gene **TOMM40L** on IGV. You should be able to see the mappin
 
 ## More PBS basic commands:
 
-showq             #calculated guess which job will run next
-qstat -q          #list all queues on system
-qstat -Q          #list queue limits for all queues
-qstat -a          #list all jobs on system
+- showq             #calculated guess which job will run next
+- qstat -q          #list all queues on system
+- qstat -Q          #list queue limits for all queues
+- qstat -a          #list all jobs on system
 qstat -s          #list all jobs with status comments
 qstat -r          #list all running jobs
 qstat -f jobid    #list full information known about jobid
