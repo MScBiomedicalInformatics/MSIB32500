@@ -113,13 +113,13 @@ When you start a session in R, it is a good idea to first clean all R objects, s
 
 #### Task1:
 -------------------------
-a. Make the following vector: 45,5,12,10
-b. What happens with the following commands?
+* Make the following vector: 45,5,12,10
+
+* What happens with the following commands?
   - c(1:100)   
   - c(50:2) 
-
 <details> 
-  <summary> T1: Generate a vector containing the 50 first odd numbers</summary>
+  <summary> *: Generate a vector containing the 50 first odd numbers</summary>
    A1: 
 
 ```{r}
