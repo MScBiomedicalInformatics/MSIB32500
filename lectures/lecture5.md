@@ -214,16 +214,14 @@ main = "Histogram of gene CCND3 expression values", ylab = "Density", xlab = "CC
 Let's use them:
 
 ```{r}
-> par(mar=c(6,4,2,1)) #margin in line
+> par(mar=c(6,4,2,1)) #Set the margins
 > plot(mygene,type="l", col="red", lwd=3, lty=2);
 > mtext("Gene expression values of CCND3", side=1, line=5)
 ``` 
 
 ![plotlinered](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/plotlinered.png)
 
-One can also add lines to an existing plot with the command **lines()** 
-
-For example, to add a **density curve line** to a histogram we can use:
+As we have learned, one can  add lines to an existing plot with the command **lines()**. To add a **density curve line** to a histogram we can use:
 
 ```{r}
 > hist(mygene, col="green", border=1, breaks=50, freq=F,  main = "Histogram of gene CCND3 expression values", ylab = "Density", xlab = "CCND3")
