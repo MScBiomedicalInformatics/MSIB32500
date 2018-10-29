@@ -203,7 +203,9 @@ main = "Histogram of gene CCND3 expression values", ylab = "Density", xlab = "CC
 ```
 ![linechart](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/linechart.png)
 
-* Import arguments for the plot function
+### Task: Overlay the expression of the gene TP53 over the previous plot.
+
+* Important arguments for the plot function
     + `type="l"`: plot line chart
     + `lty=`: type of lines
     + `col=`: color of lines
