@@ -3,7 +3,7 @@
 
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 04/28/2018; 9:00 AM - 12:00 PM
+Saturdays 11/03/2018; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -14,7 +14,7 @@ Saturdays 04/28/2018; 9:00 AM - 12:00 PM
 
 ## 1. Introduction
 
-R Programming offers a set of builtin function and libraries (i.e. base, ggplot2, leaflet, lattice) to build data visualizations and present data analysis results. In this tutorial, you will learn the steps to create common as well as advanced visualizations in R using the base and some ggplot2 functions.
+R Programming offers a set of built-in function and libraries (i.e. base, ggplot2, leaflet, lattice) to build data visualizations and present data analysis results. In this tutorial, you will learn the steps to create common as well as advanced visualizations in R using the base and some ggplot2 functions.
 
 ## 2. Data download
 
