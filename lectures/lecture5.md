@@ -243,8 +243,8 @@ As we have learned, one can  add lines to an existing plot with the command **li
 ![ABline](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/ABline.png)
 
 
-* Add the diagonal lines to the plot: `abline(a= , b= )` 
-* E.g.3: Add a diagonal line to the gene expression plot between patient 1 (ALL) and patient 38 (AML)
+* To add a diagonal line to a plot, use: `abline(a= , b= )` 
+* E.g.: Add a diagonal line to the gene expression plot between patient 1 (ALL) and patient 38 (AML)
 
 ```{r}
 > plot(golub[,1], golub[,38], ylab = "Expression of Sample 38", xlab = "Expression of Sample 1")
