@@ -215,7 +215,7 @@ Let's use them:
 
 ```{r}
 > par(mar=c(6,4,2,1)) #Set the margins
-> plot(mygene,type="l", col="red", lwd=3, lty=2);
+> plot(mygene,type="l", col="red", lwd=3, lty=2)
 > mtext("Gene expression values of CCND3", side=1, line=5)
 ``` 
 
@@ -343,7 +343,7 @@ We can adjust these p-values using the specified procedure as follows:
 ```
 
 ------------------------------
-### Basic plots practice at home
+### Basic plots practice
 
 * Read the file: "NeuralStemCellData.tab" (the file is available at the *data* folder on the GitHub repository.
 
