@@ -10,7 +10,7 @@ Saturdays 11/10/2018; 9:00 AM - 12:00 PM
 
 ## Learning Objectives
 
-This hands-on tutorial is focused on the analysis of Illumina [microarray ](https://www.nature.com/scitable/definition/microarray-202) data using R and Bioconductor, this tutorial assumes that you have previous experience using R for data analysis.
+This hands-on tutorial is focused on the analysis of Illumina [microarray ](https://www.nature.com/scitable/definition/microarray-202) data using R and Bioconductor, for this tutorial we will use the previous experience using R for a complete back-to-back data analysis, from raw data to DEGs.
 
 ## 1. The Data:
 
