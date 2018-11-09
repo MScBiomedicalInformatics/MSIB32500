@@ -567,14 +567,15 @@ Next we are going to create a **heatmap** of the expression of highly significan
 The next step in this analysis will be the annotation of the DEGs, usig the available annotations. We will also use the package **R2HTML** to create a HTML based report of the annotated genes. 
 
 ```{r}
-> ##biocLite("lumiMouseAll.db")
-> ##library(lumiMouseAll.db)
-> ##biocLite("AnnotationDbi")
-> ##library(AnnotationDbi)
-
+> #biocLite("lumiMouseAll.db")
+> #biocLite("AnnotationDbi")
 > #install.packages("R2HTML")
+
+> library(lumiMouseAll.db)
+> library(AnnotationDbi)
 > library(R2HTML)
 ```
+
 To list the objects available in this annotation package we can use:
 
 ```{r}
