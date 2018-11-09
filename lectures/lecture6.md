@@ -528,7 +528,7 @@ Next, we are going to **filter** genes that have adjusted **p-values** less than
 ```{r}
 > tab.sig <- tab[tab$adj.P.Val < 0.001,]
 > dim(tab.sig)
-[1] 367   7
+[1] 367   6
 ```
 And save those highly significant DEGs in a Excel like format:
 
