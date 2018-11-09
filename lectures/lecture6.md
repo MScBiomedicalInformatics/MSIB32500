@@ -80,7 +80,8 @@ Next we will need to create a **.txt** file with the *phenotype information*, pl
 
 ![pheno](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/pheno.png)
 
-For your convenience, I have already created that file and it is available [here](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/Phenod.txt) Download this file to your working directory or read it from the web address. 
+For your convenience, I have already created that file and it is available [here](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/data/Phenod.txt). 
+Download this file to your working directory or read it from the web address. 
 
 ###Importing the phenotype data: 
 
