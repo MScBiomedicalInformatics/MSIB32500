@@ -66,10 +66,10 @@ The function **lumiR()** supports directly reading of the Illumina Bead Studio t
 To read the data, we will start by defining our working directory:
 
 ```{r}
-> setwd("/Users/jorgeandrade/Desktop/GSE43221")
+> setwd("/Users/jandrade/Desktop/GSE43221")
 > getwd()
 
-[1] "/Users/jorgeandrade/Desktop/GSE43221"
+[1] "/Users/jandrade/Desktop/GSE43221"
 ```
 The folder **GSE43221** contains the **GSE43221_non-normalized_data.txt** file; we will now read/load the file into R using **lumiR**. The annotation file that we just installed **lumiMouseAll.db** is also loaded into the **featureData** of the *LumiBatch* object **x.lumi**
 
