@@ -542,7 +542,7 @@ We are now going to sort the table of significant genes by both **FDR adjusted p
 attach(tab.sig)
 sortedDEG <- tab.sig[order(adj.P.Val, logFC),]
 ```
-After sorting, we can select and save a list of the top 20 significant DGEs.
+After sorting, we can select and save a list of the say **top 20** significant DGEs, these are the genes that will be selected for further validation (i.e. qPCR)
 
 ```{r}
 top20DEGs<-head(sortedDEG,20)
