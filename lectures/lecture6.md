@@ -573,6 +573,7 @@ The next step in this analysis will be the annotation of the DEGs, usig the avai
 
 > library(lumiMouseAll.db)
 > library(AnnotationDbi)
+> library(annotate)
 > library(R2HTML)
 ```
 
