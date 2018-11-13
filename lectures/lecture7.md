@@ -2,14 +2,14 @@
 # Analysis of gene expression data from RNA-seq experiemnts with edgeR
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 05/12/2018; 9:00 AM - 12:00 PM
+Saturdays 11/17/2018; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
 
 ## Learning Objectives
 
-- Develop a working knowledge of how to use R and Bioconductor for analysis of RNA-seq data using **edgeR** package
+- Develop a working knowledge of how to use R and Bioconductor for DEGs analysis of RNA-seq data using **edgeR** package
 
 ## 1. Introduction
 
