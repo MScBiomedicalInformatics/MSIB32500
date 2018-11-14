@@ -656,7 +656,7 @@ Using similar analysis workflow, develop the R code to:
 
 - Detect the DEGs between **WT Control** vs. **WT RA Treatment at 24 hours**; and **RARE KO Control** vs. **RARE KO AR Treatment at 24 hours.**
 - Create a list of **overlapping significant DEG** with the top **100 DEGs** between the DEGs list detected on above. Define 'significant' as those genes with an **adjusted p-value smaller than 0.1.**
-- Using the set of overlaping genes (if any) explain the observation. 
+- Using the set of overlapping genes (if any) explain the observation. 
 
 
 
