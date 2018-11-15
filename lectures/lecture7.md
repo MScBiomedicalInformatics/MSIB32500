@@ -187,6 +187,9 @@ T_R3     T   681743    0.9576010
 ### PCA
 
 ```{r}
+install.packages("FactoMineR")
+install.packages("factoextra")
+
 library(FactoMineR)
 library(factoextra)
 
