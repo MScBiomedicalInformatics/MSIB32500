@@ -411,6 +411,9 @@ Store full topTags results table
 
 ![maPlottag](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MAplotTag.png)
 
+
+
+
 ## 10. Saving the results
 
 
