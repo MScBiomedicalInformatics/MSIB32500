@@ -517,6 +517,20 @@ ENSG00000127954    8.12  7.21 1.53e-229    6.32e-226  0.00911          1    0   
 ENSG00000162772    3.32  9.74 2.74e-204    9.02e-201  0.00744          1  172  204  250  304 2972 3269 1112
 ENSG00000115648    2.60 11.47 5.03e-180    1.38e-176  0.00623          1  940 1084 1317 1345 9730 9942 3272
 ```
+#### Task:
+<details> 
+  <summary> Insert the corresponding gene symbol in the table above </summary>
+ 
+```{r}
+> x <- rownames(combResults.tgw)
+> genesymbol <- mapIds(org.Hs.eg.db, x, keytype="ENSEMBL", column="SYMBOL")
+> combResults.tgw$Symbol <- genesymbol
+> head(combResults.tgw, n=30)
+> combResults.tgw <- combResults.tgw[c(14,1:13)]
+```
+</details>
+
+
 
 Finally, we will save the complete results table on a file:
 
@@ -525,10 +539,4 @@ Finally, we will save the complete results table on a file:
 ```
 
 
-## Week 7 challange: :house: 
-
-* For this tutorial, we have used the **tagwise** dispersion to estimate the DEGs. Using the other available methods **common**, and **auto**, detect the **top 100** statistically significant genes (DEGs), one list for each method.
-* Create a list of *consensus DEGs* (Genes that are detected in at least 2 our of the 3 methods)
-* Write one paragraph describing and explaining the differences (if any) between common and tagwise dispersions
-* Send your homework via e-mail
 
