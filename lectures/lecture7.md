@@ -383,8 +383,39 @@ Store full topTags results table
 0  12063
 1   2345
 ```
+## 9.Adding gene annotation
 
-## 9. Visualizing the DEG Results
+We will use the he **org.Hs.eg.db** package the contains a genome-wide annotation for Human, this database contains the mapping of Entrez Gene Ids, linked to the available gene information in the NCBI database. 
+
+```{r}
+
+> if (!requireNamespace("BiocManager", quietly = TRUE))
+   install.packages("BiocManager")
+> BiocManager::install("org.Hs.eg.db", version = "3.8")
+> library(org.Hs.eg.db)
+```
+
+To see a list of the avialble annotations use:
+
+```{r}
+> columns(org.Hs.eg.db)
+[1] "ACCNUM"       "ALIAS"        "ENSEMBL"      "ENSEMBLPROT"  "ENSEMBLTRANS" "ENTREZID"     "ENZYME"      
+ [8] "EVIDENCE"     "EVIDENCEALL"  "GENENAME"     "GO"           "GOALL"        "IPI"          "MAP"         
+[15] "OMIM"         "ONTOLOGY"     "ONTOLOGYALL"  "PATH"         "PFAM"         "PMID"         "PROSITE"     
+[22] "REFSEQ"       "SYMBOL"       "UCSCKG"       "UNIGENE"      "UNIPROT"
+```
+
+We will now annotate our dataset with the corresponding gene symbol for each ENSEMBL ID.
+
+```{r}
+> cds$genes$Symbol <- mapIds(org.Hs.eg.db, rownames(cds), keytype="ENSEMBL", column="SYMBOL")
+> head(cds$genes$Symbol)
+ENSG00000124208  ENSG00000182463  ENSG00000124201  ENSG00000124207  ENSG00000125835  ENSG00000125834 
+"TMEM189-UBE2V1"          "TSHZ2"          "ZNFX1"          "CSE1L"          "SNRPB"          "STK35" 
+```
+
+
+## 10. Visualizing the DEG Results
 
 * We will start by vizualing the spread of expression levels for the top DEGs. Below, we plot a histogram of log concentrations for the top 100 genes:
 
@@ -411,8 +442,51 @@ Store full topTags results table
 
 ![maPlottag](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MAplotTag.png)
 
+## Heat map clustering
 
+Heatmaps are a popular way to display differential expression results for publication purposes. To create a heatmap, we
+first convert the read counts into log2-counts-per-million (logCPM) values. This can be done with the cpm function:
 
+```{r}
+> logCPM <- cpm(cds, prior.count=2, log=TRUE)
+> rownames(logCPM) <- cds$genes$Symbol     
+> colnames(logCPM) <- paste(c(rep("C_R",4),rep("T_R",3)),c(1:4,1:3),sep="")
+```
+The introduction of *prior.count* is to avoid undefined values and to reduce the variability of the logCPM values for
+genes with low counts. Larger values for prior.count shrink the logFCs for low count genes towards zero.
+
+We will create a heatmap to visualize the top 40 DEGs. The advantage of a heatmap is that it can visualize the expression pattern of the gene expression across all the samples. 
+
+First we select the logCPM values for the 40 top genes:
+
+```{r}
+o <- order(de.tagwise$table$PValue)
+logCPM <- logCPM[o[1:40],]
+
+```
+Then we scale each row (each gene) to have mean zero and standard deviation one. This scaling is commonly done for heatmaps and ensures that the heatmap displays relative changes for each gene:
+
+```{r}
+logCPM <- t(scale(t(logCPM)))
+```
+
+A heat map can then be produced by the *heatmap.2* function in the gplots package:
+
+```{r}
+#install.packages("gplots")
+> library(gplots)
+> col.pan <- colorpanel(100, "blue", "white", "red")
+> heatmap.2(logCPM, col=col.pan, Rowv=TRUE, scale="none", trace="none", dendrogram="both", cexRow=1, cexCol=1.4, density.info="none", margin=c(10,9), lhei=c(2,10), lwid=c(2,6))
+
+```
+
+![heatmapDEGs](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/heatmapDEGs.png)
+
+By default, heatmap.2 clusters genes and samples based on the *Euclidean distance* between the expression
+values. Because we have pre-standardized the rows of the logCPM matrix, the Euclidean distance between each
+pair of genes is proportional to (1 − r)^2, where r is the *Pearson correlation coefficient* between the two genes. 
+This shows that the heatmap will cluster together genes that have positively correlated logCPM values, because large positive
+correlations correspond to small distances. As expected, the two replicate samples from each group are clustered together.
 
 ## 10. Saving the results
 
@@ -451,7 +525,7 @@ Finally, we will save the complete results table on a file:
 ```
 
 
-## Week 7 Homework: :house: (Graded!)
+## Week 7 challange: :house: 
 
 * For this tutorial, we have used the **tagwise** dispersion to estimate the DEGs. Using the other available methods **common**, and **auto**, detect the **top 100** statistically significant genes (DEGs), one list for each method.
 * Create a list of *consensus DEGs* (Genes that are detected in at least 2 our of the 3 methods)
