@@ -517,7 +517,7 @@ ENSG00000127954    8.12  7.21 1.53e-229    6.32e-226  0.00911          1    0   
 ENSG00000162772    3.32  9.74 2.74e-204    9.02e-201  0.00744          1  172  204  250  304 2972 3269 1112
 ENSG00000115648    2.60 11.47 5.03e-180    1.38e-176  0.00623          1  940 1084 1317 1345 9730 9942 3272
 ```
-#### Task:
+#### Task 1:
 <details> 
   <summary> Insert the corresponding gene symbol in the table above </summary>
  
@@ -531,12 +531,13 @@ ENSG00000115648    2.60 11.47 5.03e-180    1.38e-176  0.00623          1  940 10
 </details>
 
 
-
-Finally, we will save the complete results table on a file:
+#### Task 2:
+<details> 
+  <summary> Save the complete results table on a file </summary> 
 
 ```{r}
 > write.csv(combResults.tgw, file='DEG_list_edgeR.csv')
 ```
-
+</details>
 
 
