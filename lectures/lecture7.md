@@ -103,6 +103,7 @@ C_R1     C_R2     C_R3     C_R4     T_R1     T_R2     T_R3
 [1] "C" "C" "C" "C" "T" "T" "T"
 
 > cds <- DGEList(counts, group=group, remove.zeros=T)
+Removing 15558 rows with all zero counts
 > cds
 An object of class "DGEList"
 $counts
