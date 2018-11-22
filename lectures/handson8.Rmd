@@ -3,12 +3,12 @@ output:
   html_document: default
   pdf_document: default
 ---
-## MSIB32500 Advanced Bioinformatics Spring 2018
+## MSIB32500 Advanced Bioinformatics Fall 2018
 ## Class 08: RNAseq Data Analysis and Clinical Applications, Part I
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2018; Saturdays 9:00AM - 12:00PM
+October - December 2018; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -176,7 +176,7 @@ ls -al
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-from='/group/mscbmi/MSBI32500/class08/handson'
+from='/gpfs/data/mscbmi/MSIB32500/class08/handson'
 to=~/class08
 cp -p -r $from/data/* $to/data
 cp -p -r $from/scripts/* $to/scripts
@@ -237,7 +237,7 @@ Please stay at your current working directory. If you `cd` into the reference di
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-refdir='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
+refdir='/gpfs/data/mscbmi/MSIB32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
 ls -al $refdir
 ```
 
@@ -611,7 +611,7 @@ From the peek into the trimemd `FastQ` file above, four reads are shown. While t
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-starIndex='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
+starIndex='/gpfs/data/mscbmi/MSIB32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11'
 STAR \
   --runMode alignReads \
   --genomeLoad NoSharedMemory \
@@ -642,7 +642,7 @@ Now we create index for the `bam` files.
 ln -s KO01.star.Aligned.sortedByCoord.out.bam \
   results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 
-sambamba='/group/mscbmi/MSBI32500/class08/handson/scripts/tools/sambamba_v0.6.6'
+sambamba='/gpfs/data/mscbmi/MSIB32500/class08/handson/scripts/tools/sambamba_v0.6.6'
 $sambamba index -t 8 results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam
 ```
 
@@ -693,8 +693,8 @@ There are many different flags to count reads that mapped to a gene or transcrip
 
 **Commands**
 ```{bash, echo=TRUE, eval=FALSE}
-refgenome='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.fa'
-refgtf='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.gtf'
+refgenome='/gpfs/data/mscbmi/MSIB32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.fa'
+refgtf='/gpfs/data/mscbmi/MSIB32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.gtf'
 infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
 outfile='results/rnaseq/DLBC_samples_grch38/KO01/read_counts/raw/KO01.star.merged.bam.primary_uniq.raw_counts.txt'
 
@@ -719,7 +719,7 @@ featureCounts -s 0 -a $refgtf -o $outfile -p -t exon -g gene_id -Q 255 -T 8 -J -
 ||                                                                            ||
 ||             Output file : results/rnaseq/DLBC_samples_grch38/KO01/read ... ||
 ||                 Summary : results/rnaseq/DLBC_samples_grch38/KO01/read ... ||
-||              Annotation : /group/mscbmi/MSBI32500/class08/handson/refe ... ||
+||              Annotation : /gpfs/data/mscbmi/MSIB32500/class08/handson/ ... ||
 ||       Junction Counting : <output_file>.jcounts                            ||
 ||      Dir for temp files : results/rnaseq/DLBC_samples_grch38/KO01/read ... ||
 ||                                                                            ||
@@ -738,12 +738,12 @@ featureCounts -s 0 -a $refgtf -o $outfile -p -t exon -g gene_id -Q 255 -T 8 -J -
 
 //================================= Running ==================================\\
 ||                                                                            ||
-|| Load annotation file /group/mscbmi/MSBI32500/class08/handson/reference ... ||
+|| Load annotation file /gpfs/data/mscbmi/MSIB32500/class08/handson/refer ... ||
 ||    Features : 70065                                                        ||
 ||    Meta-features : 3381                                                    ||
 ||    Chromosomes/contigs : 1                                                 ||
 ||                                                                            ||
-|| Loading FASTA contigs : /group/mscbmi/MSBI32500/class08/handson/refere ... ||
+|| Loading FASTA contigs : /gpfs/data/mscbmi/MSIB32500/class08/handson/re ... ||
 ||    1 contigs were loaded                                                   ||
 ||                                                                            ||
 || Process BAM file results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO0 ... ||
@@ -782,14 +782,14 @@ We will take a few example metrics for demonstration. The full commands are prov
 ```{bash, echo=TRUE, eval=FALSE}
 infile='results/rnaseq/DLBC_samples_grch38/KO01/alignment/KO01.star.merged.bam'
 outfile='results/rnaseq/DLBC_samples_grch38/KO01/alignment_stats/rseqc/KO01.star.merged.bam.infer_experiment'
-refbed12='/group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12'
+refbed12='/gpfs/data/mscbmi/MSIB32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12'
 
 infer_experiment.py  -i $infile  -r $refbed12  -s 200000 > $outfile
 ```
 
 **Progress**
 ```{bash, echo=TRUE, eval=FALSE}
-Reading reference gene model /group/mscbmi/MSBI32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12 ... Done
+Reading reference gene model /gpfs/data/mscbmi/MSIB32500/class08/handson/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12 ... Done
 Loading SAM/BAM file ...  Total 200000 usable reads were sampled
 ```
 
@@ -861,7 +861,7 @@ Open IGV, and import both the BAM and the index files. In the search window, typ
 ## 6 Class 08 challenge (Optional)
 
 * Complete the analysis for the other 5 samples using the test fastq files (KO02-03, WT01-03).
-* Try to run the analysis using the original sequencing data files that consist of all reads (of much larger size!). The data can be accessed at `/group/mscbmi/MSBI32500/class08/handson_fullset/data`.
+* Try to run the analysis using the original sequencing data files that consist of all reads (of much larger size!). The data can be accessed at `/gpfs/data/mscbmi/MSIB32500/class08/handson_fullset/data`.
 
 ```{bash, echo=TRUE, eval=FALSE}
 -rw-r--r--. 1 rbao cri-mscbmi 3.2G Dec 14  2015 SRR1205282.fastq.gz
