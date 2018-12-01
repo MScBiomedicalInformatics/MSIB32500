@@ -1,10 +1,10 @@
 
-## MSIB32500 Advanced Bioinformatics Spring 2018
+## MSIB32500 Advanced Bioinformatics Fall 2018
 ## Class 09: RNAseq Data Analysis and Clinical Applications, Part II
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2018; Saturdays 9:00AM - 12:00PM
+October - December 2018; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -53,7 +53,9 @@ git clone https://github.com/MScBiomedicalInformatics/MSIB32500.git
 ls -al MSIB32500/
 ```
 
-1.2 Open `Rstudio` (or `R`) on your local computer. From here, All analysis steps will be conducted in R environment on local computers. 
+1.2 Open `Rstudio` (or `R`) on your local computer. If your `Rstudio` (or `R`) is already open, restart it to have a new work environment to start with with no packages / variables loaded.
+
+From here, All analysis steps will be conducted in R environment on local computers. 
 
 *** 
 
@@ -68,9 +70,9 @@ rm(list=ls())
 1.4 Nevigate to the class lecture directory. We will run analysis in this directory.
 
 ```{R, echo=TRUE, eval=TRUE}
-## replace [path]C:/Users/rbaoc/Desktop] with your own project directory path
+## replace [path] with your own project directory path
 ## on windows machines, replace [\] with [/]
-path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2017/MSIB32500/lectures'
+path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2018/MSIB32500/lectures'
 # path <- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
 setwd(path)
 
@@ -95,7 +97,8 @@ ptm <- proc.time()
 ##-- List packages required in this analysis
 cpan.pkg.list <- c('ggplot2', 'ape', 'scales', 'RColorBrewer', 
                   'reshape','VennDiagram')
-bioc.pkg.list <- c('ctc',  'limma', 'edgeR', 'DESeq2', 'vsn', 
+bioc.pkg.list <- c('ctc',  'limma', 'edgeR', 'DESeq2', 
+                   'vsn',
                   'genefilter', 'pheatmap', 
                   'clusterProfiler', 'pathview',
                   'AnnotationHub')
@@ -105,6 +108,8 @@ cpan.repos <- 'http://cran.us.r-project.org'
 ```
 
 It is recommended to intall each package one by one to properly diagnosis any error or warning messages.
+
+If promoted to answer `Update all/some/none? [a/s/n]:`, try `n` (none).
 
 ```{R, echo=TRUE, eval=FALSE}
 ##-- Install CPAN packages
