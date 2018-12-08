@@ -1,9 +1,9 @@
-## MSIB32500 Advanced Bioinformatics Spring 2018
+## MSIB32500 Advanced Bioinformatics Fall 2018
 ## Class 10: RNAseq Data Analysis and Clinical Applications, Part III
 
 **Center for Research Informatics, University of Chicago**
 
-April - June 2018; Saturdays 9:00AM - 12:00PM
+October - December 2018; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -49,7 +49,7 @@ The Cancer Genome Atlas, Ovrian Cancer (TCGA-OV), miRNA gene expression and Clin
 
 ### Workflow
 
-The analysis takes 3 major steps. Full-length description & R code is provided in `notebook_ext/03.Run_RNAseq.tutorial.ipynb`.
+The analysis takes 3 major steps. 
 
 <img src='../cheatsheets/ipynb_data/assets/Figure26.png', title = 'TCGA & Clinical workflow', width = 900, height = 900>
 
@@ -91,7 +91,7 @@ rm(list=ls())
 ## replace [path]C:/Users/rbaoc/Desktop] with your own project directory path
 ## on windows machines, replace [\] with [/]
 # path <- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
-path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/spring2018/MSIB32500/lectures'
+path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2018/MSIB32500/lectures'
 setwd(path)
 
 ## check if the working directory has been successfully set
@@ -507,8 +507,8 @@ tidy(m3)
 
 ```{R, echo=TRUE, eval=TRUE}
 ##-- Set up R plot display options in notebook
-options(jupyter.plot_mimetypes = "image/svg+xml") 
-options(repr.plot.width = 5, repr.plot.height = 8)
+options(jupyter.plot_mimetypes = "image/svg+xml")
+options(repr.plot.width = 10, repr.plot.height = 8)
 
 ##-- make forest plot to visualize cox PH model
 ##-- categorical variables: 2 levels only!
@@ -524,6 +524,7 @@ m4 <- coxph(surv~(clrmerged + age))
 tidy(m4)
 
 p2 <- ggforest(m4, data = clinical.sub, fontsize = 1.2)
+print(p2)
 
 ```
 
