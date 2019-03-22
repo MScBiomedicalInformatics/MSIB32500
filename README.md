@@ -2,7 +2,7 @@
 ## 1.    COURSE INFORMATION 
 
 **Time:**    Saturday from 9:00AM – 12:00PM            
-**Location:** Gleacher Center (room assignments are posted on the day; please check Graham screen in the lobby or outside Graham office on the lower level)        
+**Location:** NBC tower (room assignments are posted on the day; please check Graham screen in the lobby or outside Graham office on the lower level)        
 **Units:**     100 units 
 
 * This course is an elective for all students in the Masters of Science in Biomedical Informatics. Open to other graduate students with permission from the MSc BMI program and course director.
@@ -21,7 +21,7 @@ By taking this course, students will learn how to perform advanced bioinformatic
 - There are approximately 6 hours of outside class work assigned each week.
 
 ## 5.    GRADING POLICY
-•    To allow students to practice and develop the skills learned in class, grading will be based on 5 homework assignments spread out thru the duration of the course. Homework assignments given one week are due by the beginning of next week session. When deemed necessary, the beginning of the next class or lab may include a review of common mistakes found on the homework from the previous week. The final grade will be an average of grades over the 5 homework assignments.   
+•    To allow students to practice and develop the skills learned in class, grading will be based on at least 5 homework assignments spread out thru the duration of the course. Homework assignments given one week are due by the beginning of next week session. When deemed necessary, the beginning of the next class or lab may include a review of common mistakes found on the homework from the previous week. The final grade will be an average of grades over the homework assignments.   
 
 ## 6.    ATTENDANCE POLICY
 This course involves the regular hands-on use of bioinformatics tools in lab sessions in addition to more formal lectures.
@@ -37,7 +37,7 @@ MSc BMI is a program that focuses heavily on computer science and hands-on pract
 
 ## 9.    COURSE MATERIALS and SOFTWARE 
 
-Reading assignments will be available on the Course Management System (Canvas).  
+Reading assignments will be available in the Course Management System (Canvas).  
 
 **Required:** 
 - Linux Command Line and Shell Scripting Bible 3rd Edition by Richard Blum and Christine Bresnahan ISBN: 978-1-118-98384-3 
@@ -106,7 +106,7 @@ Required Reading:
 
 Recommended:
 
-**Week 6 - Analysis of Illumina Microarrays Using R and Bioconductor** 
+**Week 6 - Analysis of gene expression data Using R and Bioconductor** 
  
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
 
@@ -116,7 +116,7 @@ Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioco
 
 Recommended:
 
-**Week 7 – Differential Expression Analysis of  RNA-seq Experiments Using edgeR**
+**Week 7 – Differential Expression Analysis of RNA-seq Experiments Using edgeR**
  
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D. 
 
@@ -126,9 +126,9 @@ Required Reading: Differential Expression Analysis of Complex RNA-seq Experiment
 
 Recommended:
 
-**Week 8 - Introduction to RNA-Seq**  
+**Week 8 - Introduction to RNA-Seq technology**  
  
-Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+Session Leader or Guest Lecturer: Riyue Bao, Ph.D.
 
 Objectives: Understand how the RNA-Seq technology works; Learn analysis ‘best-practices’ and build an RNA-Seq analysis pipeline for raw data quality control and trimming, mapping reads to a reference genome, collect RNA-seq quality metrics and coverage statistics and quantification of transcript abundance.
 
@@ -139,7 +139,7 @@ Recommended: Review of “High-Throughput Sequencing Technologies “ from Mike 
 
 **Week 9 –  Differentially Gene Expression Identification using RNA-Seq**
  
-Session Leader or Guest Lecturer: Jorge Andrade, Ph.D. 
+Session Leader or Guest Lecturer: Riyue Bao, Ph.D. 
 
 Objectives: Learn how to perform the downstream analysis of RNA-seq data; Detect genes differentially expressed between conditions; Identity pathways/network enriched in genes of interest.
 
@@ -149,7 +149,7 @@ Recommended:
 
 **Week 10 –  Associating Gene Expression with Clinical Data**
 
-Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+Session Leader or Guest Lecturer: Riyue Bao, Ph.D.
 
 Objectives: Learn the background and application of The Cancer Genome Atlas (TCGA) project; Learn the structure and access of Genomics Data Commons (GDC); Explore datasets hosted on GDC and Learn how to associate gene expression with clinical data.
 
@@ -161,16 +161,16 @@ Recommended:
 ## 11. Weekly Class Schedule
 
 Week    Date    Session Leader/ Guest Lecturer    Topic    In-class activity    Assignment due
-1.  10/06/18    Jorge Andrade
-2.  10/13/18    Jorge Andrade
-3.  10/20/18    Jorge Andrade
-4.  10/27/18    Jorge Andrade
-5.  11/03/18    Jorge Andrade
-6.  11/10/18    Jorge Andrade
-7.  11/17/18    Jorge Andrade
-8.  11/24/18    Riyue Bao
-9.  12/01/18    Riyue Bao
-10. 12/08/18    Riyue Bao
+1.  04/06/19    Jorge Andrade
+2.  04/13/19    Jorge Andrade
+3.  04/20/19    Jorge Andrade
+4.  04/27/19    Jorge Andrade
+5.  05/04/19    Jorge Andrade
+6.  05/11/19    Jorge Andrade
+7.  05/18/19    Jorge Andrade
+8.  05/25/19    Riyue Bao
+9.  06/01/19    Riyue Bao
+10. 06/08/19    Riyue Bao
 
 
 ## 12.    COURSE EVALUATION
@@ -185,7 +185,7 @@ In compliance with University of Chicago policy and equal access laws, we are av
 
 Students are expected to comply with University regulations regarding academic integrity.  If you are in doubt about what constitutes academic dishonesty, please speak to us before the assignment is due and/or examine the University’s Academic and Plagiarism Policy at http://studentmanual.uchicago.edu/policies
 
-Academic dishonesty includes, but is not limited to cheating on an exam (e.g., copying others’ answers, providing information to others, using a crib sheet) or plagiarism of a paper (e.g., taking material from readings without citation, copying another student’s paper). Students are required to abide by University of Chicago’s academic integrity policy and failure to maintain academic integrity will likely result in a failing grade in the class and/or expulsion from the University.
+Academic dishonesty includes, but is not limited to cheating on an exam (e.g., copying others’ answers, providing information to others, using a crib sheet) or plagiarism of a paper (e.g., taking material from readings without citation, copying another student’s paper). Students are required to abide by the University of Chicago’s academic integrity policy and failure to maintain academic integrity will likely result in a failing grade in the class and/or expulsion from the University.
 
 
 ## 15.    SEXUAL HARASSMENT POLICY
