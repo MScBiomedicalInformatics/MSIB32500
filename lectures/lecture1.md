@@ -17,8 +17,10 @@ Saturdays 04/06/19; 9:00AM - 12:00PM
 
 ## Log on to CRI's High-Performance Computing (HPC) system
 
-:pushpin:**Microsoft Windows user** you will need to install a tool for remote computing: [MobaXterm](http://mobaxterm.mobatek.net) and/or
-[PuTTY](http://www.putty.org). PuTTY user go to http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html locate the appropriate binary file (executable putty.exe file) for your hardware (32bits or 64 bits laptop). Place this file on your desktop (or another folder that you can access easily). You will need to 'double-click' this file each time you need to access it.
+![login](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/log-in%20to%20gardner.png)
+
+
+:pushpin:**Microsoft Windows user** you will need to install [PuTTY](http://www.putty.org). PuTTY user go to http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html locate the appropriate binary file (executable putty.exe file) for your hardware (32bits or 64 bits laptop). Place this file on your desktop (or another folder that you can access easily). You will need to 'double-click' this file each time you need to access it.
 
 Open a PuTTY session, on 'Host Name (or IP address)' type: **gardner.cri.uchicago.edu**,  select SSH as the Connection Type, verify the port number in the 'Port' Box is **22**. Press the 'Open' button, then type in the provided **username and password** when prompted. Type **yes** if you are prompted to accept a key before entering a username.
 
