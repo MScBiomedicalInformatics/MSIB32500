@@ -236,7 +236,7 @@ do
     then
       echo "$num is not a prime number "
       echo "Since it is divisible by $i"
-      exec "$0" "$@" 
+      exec "$0"
     else
       i=`expr $i + 1`
     fi
