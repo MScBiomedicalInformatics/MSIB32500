@@ -586,7 +586,12 @@ Your program/pipeline will run on a 25,000 cores cluster or a single CPU laptop.
 
 ![BigDataScript](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/BigDataScript.jpeg)
 
+[The Workflow Description Language (WDL)](http://www.openwdl.org) 
+
+The Workflow Description Language (WDL) is a way to specify data processing workflows with a human-readable and -writeable syntax.
+
 It is of course also possible to develop scripts for running jobs on HPC and/or multi-core processors using other scripting languages such as SHELL, python, R, C++, and others.
+
 
 _____________________
 
