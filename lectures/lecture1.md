@@ -845,7 +845,7 @@ ls -l
 
 ## Week 1 Challenge (one extra point) :white_check_mark:
 
-Using AWK calculate mean of the columns of file: expression.txt send your code via email.
+Using AWK calculate the average for each column individually of file: expression.txt 
 
     
 
