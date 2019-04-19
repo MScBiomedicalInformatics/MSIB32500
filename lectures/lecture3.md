@@ -41,7 +41,7 @@ $ssh username@gardner.cri.uchicago.edu
 
 - The RM parses **the script**, and tries to optimize the usage of the available resources, scheduling the execution of the applications (jobs) at different times, and on different nodes/cores in the cluster.
 
-- There are many Resource Manager software available. On the CRI's HPC, a combination of the [MOAB (scheduler)](http://www.adaptivecomputing.com/moab-hpc-basic-edition/)and **Torque (resource manager)** is used. 
+- There are many Resource Manager software available. On the CRI's HPC, a combination of the [MOAB (scheduler)](http://www.adaptivecomputing.com/moab-hpc-basic-edition/) and [Torque (resource manager)](https://en.wikipedia.org/wiki/TORQUE) is used. 
 
 - By default, you will be logged into to the 'log-in' nodes **(in001 or in002)**, from there you will have access to the **storage/labshares** and **scratch** spaces (1Gb and 56 Gb speeds respectively). 
 
