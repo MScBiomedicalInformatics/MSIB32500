@@ -380,7 +380,7 @@ cd $PBS_O_WORKDIR
 #################
 ### define the program/s and/or command/s to be executed
 
-./command &> output
+./command &> output.txt
 
 ```
 
