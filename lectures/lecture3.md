@@ -29,7 +29,7 @@ $ssh username@gardner.cri.uchicago.edu
 ```
 **CRI's GARDNER HPC diagram**
 
-![gardner](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/tarbell.jpeg)
+![gardner](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/HPC_diagram.png)
 
 - A High Performing Computing (HPC), is a **multi-user environment**. 
 
