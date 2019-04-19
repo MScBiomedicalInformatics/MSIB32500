@@ -331,10 +331,11 @@ Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, 
 
 ![bad](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/perBaseBad.png)
 
-To execute a job in the interactive mode using a defined set of resources, you can use **qsub -I** with the *-l* option:
+To execute a job in the interactive mode using a defined set of resources, you can use **qsub -I** with the **-l** option:
 
+```
 qsub -I -l nodes=1:ppn=8 -l mem=10g -l walltime=12:00:00
-
+```
 
 ----------------
 ## Executing jobs on GARDNER in batch mode
