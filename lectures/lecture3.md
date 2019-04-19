@@ -108,7 +108,8 @@ Windows users can also use GUI tools like WinSCP (http://winscp.net/download/win
 
 In this section, you will learn how to execute jobs on CRI's [GARDNER](https://en.wikipedia.org/wiki/Martin_Gardner) cluster. GARDNER cluster supports two types of job submission: **Interactive**  and **batch** modes 
 
-- **Interactive mode (qsub -I):** You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code.
+- **Interactive mode (qsub -I):** You will execute your code/commands in an 'interactive' command line window, you will be able to see the result/output of each action interactively, this mode is useful for testing and 'debugging' code. 
+
 
 - **Batch mode:** In a batch mode you first write a PBS script with all the instructions/code you want to execute, and then you submit that script to the scheduler. The batch job script contains all the information needed, such as the location of the input and output files, as well as run parameters. Once the batch job starts, you can log off and the job will remain running. 
 
@@ -329,6 +330,10 @@ Let's compare the FastQC results from  **seqGood.fastq** with **seqBad.fastg**, 
 **seqBad.fastg**
 
 ![bad](https://github.com/MScBiomedicalInformatics/MSIB32500/blob/master/cheatsheets/perBaseBad.png)
+
+To execute a job in the interactive mode using a defined set of resources, you can use **qsub -I** with the *-l* option:
+
+qsub -I -l nodes=1:ppn=8 -l mem=10g -l walltime=12:00:00
 
 
 ----------------
