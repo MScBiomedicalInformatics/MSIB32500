@@ -86,7 +86,7 @@ Required Reading:
 
 Recommended:
 
-**Week 4 - Exploiting the power of a High Performance Computing cluster for Bioinformatics Analysis
+**Week 4 - Exploiting the power of a High Performance Computing cluster for Bioinformatics Analysis**
 
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
 Objectives: Apply your Linux, shell scripting and HPC skills, to develop an efficient ananlysis pipeline for NGS-based RNA-Seq data analysis.
