@@ -1,7 +1,7 @@
 # Differential expression ananlysis of RNA-seq data with edgeR
 **Center for Research Informatics, University of Chicago**
 
-Saturdays 11/17/2018; 9:00 AM - 12:00 PM
+Saturdays 05/18/2019; 9:00 AM - 12:00 PM
 
 **Instructor:** Jorge Andrade, Ph.D.
 
@@ -12,7 +12,8 @@ Saturdays 11/17/2018; 9:00 AM - 12:00 PM
 
 ## 1. Introduction
 
-* RNA sequencing (RNA-seq) technology has become a widely used technology for profiling transcriptional activity in biological systems. One of the most common aims of RNA-seq profiling is to identify genes or molecularpathways that are differentially expressed (DE) between two or more biological conditions. Changes in expression can then be associated with differences in biology.
+* RNA sequencing (RNA-seq) technology has become a widely used technology for profiling transcriptional activity in biological systems. One of the most common aims of RNA-seq profiling is to identify genes or molecular
+pathways that are differentially expressed (DE) between two or more biological conditions. Changes in expression can then be associated with differences in biology.
 * In this lecture you will learn how to use the [edgeR](http://www.bioconductor.org/packages/release/bioc/html/edgeR.html) package for detecting statistically significant differentially expressed genes using data from a RNA-Seq experiment. 
 * The edgeR package, implements a range of statistical tests based on the **negative binomial distributions** expected on data from RNA-seq, including empirical Bayes estimation, exact tests, generalized linear models and quasi-likelihood tests. The edgeR package can be also used to estimate differential **signal analysis** of other types of genomic data that produce **counts**, including ChIP-seq, Bisulfite-seq, Serial analysis of gene expression (SAGE) and Cap analysis gene expression (CAGE).
 * The methods used in edgeR **do NOT support FPKM, RPKM normalizations**. 
@@ -20,15 +21,18 @@ Saturdays 11/17/2018; 9:00 AM - 12:00 PM
 
 ## 2. The data
 
-* For this tutorial we will use the dataset available at the GEOrepository as series [GSE60450](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). 
-The goal of the experiemnt was to identify genes that are specifically expressed in lactating mammary glands, to that aim, the gene expression profiles of luminal and basal cells from different developmental stages (virgin, 18.5 day pregnant and 2 day lactating mice) were compared. Two biological replicates were collected foreach group.
+* For this tutorial we will use the dataset available at the GEO
+repository as series [GSE60450](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). 
+The goal of the experiemnt was to identify genes that are specifically expressed in lactating mammary glands, to that aim, the gene expression profiles of luminal and basal cells from different developmental stages (virgin, 18.5 day pregnant and 2 day lactating mice) were compared. Two biological replicates were collected for
+each group.
 
 * Sequencing was performed in a Illumina Hiseq sequencer, 30 million 100bp single-end reads for each sample.
 * **Subread** version 1.4.4 was used to align the reads to the mouse mm10 genome and **featureCounts** was used to assign reads to *Entrez Genes* using RefSeq gene annotation. The raw FASTQ files are available at the Sequence Read Archive (SRA) repository.
 
 ### Sample description table:
 
-The table below describes the experimental design, basal and luminal cell types are abbreviated withB and L respectively. The GEO and SRA IDs for each RNA sample is also shown.
+The table below describes the experimental design, basal and luminal cell types are abbreviated with
+B and L respectively. The GEO and SRA IDs for each RNA sample is also shown.
 
 For your convenience, you can read the *targets.txt* file directly from the GitHub repository:
 
@@ -54,12 +58,16 @@ MCL1.LF GSM1480296 SRR1552449        L lactating
 For later use, we combine the treatment factors into a single grouping factor:
 
 ```r
-> group <- paste(targets$CellType, targets$Status, sep=".")> group <- factor(group)> table(group)
+> group <- paste(targets$CellType, targets$Status, sep=".")
+> group <- factor(group)
+> table(group)
 group
 B.lactating  B.pregnant    B.virgin L.lactating  L.pregnant    L.virgin 
           2           2           2           2           2           2 
 ```
-## 3. Preliminary analysis* Download the genewise read counts for the GEO series GSE60450. 
+## 3. Preliminary analysis
+
+* Download the genewise read counts for the GEO series GSE60450. 
 * The file **GSE60450_Lactation-GenewiseCounts.txt.gz** will be downloaded to your working directory
 
 ```r
@@ -133,7 +141,8 @@ $genes
 We can access each commponent of the DGEList object by using the *$* as follow.
 
 ```{r}
-> options(digits=3)> y$samples
+> options(digits=3)
+> y$samples
               group lib.size norm.factors
 MCL1.DG    B.virgin 23227641            1
 MCL1.DH    B.virgin 21777891            1
@@ -182,11 +191,13 @@ We will now remove Genes that have very low counts across all the libraries, suc
 * For the current analysis, we keep genes that have count-per-million (CPM) values **above 0.5 in at least two libraries.** (the method used in the edgeR vignette is to keep only those genes that have at least 1 CPM in at least 3 samples).
 
 ```{r}
-> keep <- rowSums(cpm(y) > 0.5) >= 2> table(keep)
+> keep <- rowSums(cpm(y) > 0.5) >= 2
+> table(keep)
 FALSE  TRUE 
 11375 15804 
 ```
-* Other sensible filtering criteria are also possible. For example *keep <-rowSums(y$counts) > 50* is a very simple criterion that would keep genes with a total read count of more than 50. The exactvalue is not important because the downstream differential expression analysis is not sensitive to the small changes in this parameter.
+* Other sensible filtering criteria are also possible. For example *keep <-rowSums(y$counts) > 50* is a very simple criterion that would keep genes with a total read count of more than 50. The exact
+value is not important because the downstream differential expression analysis is not sensitive to the small changes in this parameter.
 
 We will now subsetted the *DGEList object* to retain only the non-filtered genes:
 
@@ -200,7 +211,8 @@ The option *keep.lib.sizes=FALSE* causes the library sizes to be *recomputed aft
 Normalization by **trimmed mean of M values (TMM)** is performed by using the calcNormFactors function, which returns the DGEList argument with only the norm.factors changed. It calculates a set of normalization factors, one for each sample, **to eliminate composition biases between libraries.** The product of these factors and the library sizes defines the *effective library size*, which replaces the original library size in all downstream analyses.
 
 ```{r}
-> y <- calcNormFactors(y)> y$samples
+> y <- calcNormFactors(y)
+> y$samples
               group lib.size norm.factors
 MCL1.DG    B.virgin 23218026        1.237
 MCL1.DH    B.virgin 21768136        1.214
@@ -222,10 +234,14 @@ MCL1.LF L.lactating 24652963        0.535
 
 ## 7. Multi-Dimensional Scaling (MDS) plots
 
-We will now explore the overall differences between the expression profiles of the differentsamples, and weather samples are grouping together as expected. 
+We will now explore the overall differences between the expression profiles of the different
+samples, and weather samples are grouping together as expected. 
 
 ```{r}
-> pch <- c(0,1,2,15,16,17)> colors <- rep(c("darkgreen", "red", "blue"), 2)> plotMDS(y, col=colors[group], pch=pch[group])> legend("topleft", legend=levels(group), pch=pch, col=colors, ncol=2)
+> pch <- c(0,1,2,15,16,17)
+> colors <- rep(c("darkgreen", "red", "blue"), 2)
+> plotMDS(y, col=colors[group], pch=pch[group])
+> legend("topleft", legend=levels(group), pch=pch, col=colors, ncol=2)
 ```
 ![MDSweek7](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MDSplotW7.png)
 
@@ -241,7 +257,8 @@ An MD plot visualizes the *library size-adjusted log-fold change* between two li
 *  To compares **sample 1** to an artificial reference library constructed from **the average of all the other samples** we can use:
 
 ```{r}
-> plotMD(y, column=1)> abline(h=0, col="red", lty=2, lwd=2)
+> plotMD(y, column=1)
+> abline(h=0, col="red", lty=2, lwd=2)
 ```
 
 ![MDplotS1](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MDplotS1.png)
@@ -251,7 +268,8 @@ The bulk of the genes are centered around the line of zero log-fold change. The 
 Let's now look at one of the **luminal lactating** samples that were observed have low normalization factors:
 
 ```{r}
-> plotMD(y, column=11)> abline(h=0, col="red", lty=2, lwd=2)
+> plotMD(y, column=11)
+> abline(h=0, col="red", lty=2, lwd=2)
 ```
 
 ![MDplotS11](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MDplotS11.png)
@@ -264,7 +282,9 @@ For this sample, the log-ratios show noticeable positive skew, with a number of 
 The differential expression analysis in **edgeR** requires a **design matrix** to be specified. The design matrix describes which samples belong to which groups, and it also defines how the experimental effects are parametrized in the linear models. 
 
 ```{r}
-> design <- model.matrix(~0+group)> colnames(design) <- levels(group)> design
+> design <- model.matrix(~0+group)
+> colnames(design) <- levels(group)
+> design
    B.lactating B.pregnant B.virgin L.lactating L.pregnant L.virgin
 1            0          0        1           0          0        0
 2            0          0        1           0          0        0
@@ -297,7 +317,8 @@ Dispersion estimates are easily obtained from the **estimateDisp** function:
 
 > y <- estimateDisp(y, design, robust=TRUE)
 ```
-This returns a DGEList object with additional components (common.dispersion, trended.dispersionand tagwise.dispersion) added to hold the estimated dispersions.
+This returns a DGEList object with additional components (common.dispersion, trended.dispersion
+and tagwise.dispersion) added to hold the estimated dispersions.
 
 We can now plot the dispersion estimates with the **plotBCV** function:
 
@@ -306,7 +327,9 @@ We can now plot the dispersion estimates with the **plotBCV** function:
 ```
 ![poltdisp](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/plotDisp.png)
 
-The NB dispersions tend to be higher for genes with very low counts. The *biological coefficientof variation (BCV)* tends to be in range from **0.05 to 0.2** for genetically identical mice orcell lines, whereas somewhat larger values (> 0.3) are observed for human subjects.
+The NB dispersions tend to be higher for genes with very low counts. The *biological coefficient
+of variation (BCV)* tends to be in range from **0.05 to 0.2** for genetically identical mice or
+cell lines, whereas somewhat larger values (> 0.3) are observed for human subjects.
 
 * The NB model can be extended with **quasi-likelihood (QL)** methods to account for **gene-specific variability** from both biological and technical sources. 
 * Under the QL framework, the NB dispersion trend is used to describe the overall biological variability across all genes, and gene-specific variability above and below the overall level is picked up by the QL dispersion. In the QL approach, the individual (tagwise) NB dispersions are not used.
@@ -314,7 +337,8 @@ The NB dispersions tend to be higher for genes with very low counts. The *biolog
 The estimation of QL dispersions is performed using the **glmQLFit** function:
 
 ```{r}
-> fit <- glmQLFit(y, design, robust=TRUE)> head(fit$coefficients)
+> fit <- glmQLFit(y, design, robust=TRUE)
+> head(fit$coefficients)
 ```
 The QL dispersions can be visualized by **plotQLDisp**
 
@@ -341,7 +365,10 @@ We will use QLF-tests instead of the more usual likelihood ratio tests (LRT) as 
 > res <- glmQLFTest(fit, contrast=B.LvsP)
 ```
 
-The top DE genes can be viewed with the **topTags** function, the (FDR), multiple testing correction is performed using the Benjamini-Hochberg method.```{r}> topTags(res)
+The top DE genes can be viewed with the **topTags** function, the (FDR), multiple testing correction is performed using the Benjamini-Hochberg method.
+
+```{r}
+> topTags(res)
 Coefficient:  1*B.lactating -1*B.pregnant 
        Length  Symbol logFC logCPM   F   PValue      FDR
 12992     765 Csn1s2b  6.09  10.18 421 4.86e-11 7.68e-07
@@ -361,7 +388,8 @@ Coefficient:  1*B.lactating -1*B.pregnant
 * The total number of DE genes identified at an **FDR of 5%** can be shown with **decideTestsDGE**. There are in fact more than **5000** DE genes in this comparison:
 
 ```{r}
-> is.de <- decideTestsDGE(res)> summary(is.de)
+> is.de <- decideTestsDGE(res)
+> summary(is.de)
        1*B.lactating -1*B.pregnant
 Down                          2770
 NotSig                       10529
@@ -380,7 +408,8 @@ The magnitude of the differential expression changes can be visualized with a fi
 To narrow down the list to genes that are more biologically meaningful, modify the statistical test so as to detect expression changes greater than a specified threshold, using the **glmTreat** function. 
 
 ```{r}
-> tr <- glmTreat(fit, contrast=B.LvsP, lfc=log2(1.5))> topTags(tr)
+> tr <- glmTreat(fit, contrast=B.LvsP, lfc=log2(1.5))
+> topTags(tr)
 Coefficient:  1*B.lactating -1*B.pregnant 
        Length  Symbol logFC unshrunk.logFC logCPM   PValue      FDR
 12992     765 Csn1s2b  6.09           6.09  10.18 6.36e-11 1.00e-06
@@ -397,7 +426,8 @@ Coefficient:  1*B.lactating -1*B.pregnant
 To see how many genes passed this threshold we can use:
 
 ```{r}
-> is.de <- decideTestsDGE(tr)> summary(is.de)
+> is.de <- decideTestsDGE(tr)
+> summary(is.de)
        1*B.lactating -1*B.pregnant
 Down                           677
 NotSig                       14761
@@ -417,13 +447,20 @@ We can now visualized these genes in an MD plot:
 
 ## 10. Heat map clustering
 
-Heatmaps are a popular way to display differential expression results for publication purposes. To create a heatmap, we first need to convert the read counts into **log2-counts-per-million (logCPM) values**. This can be done with the **cpm** function:```{r}> logCPM <- cpm(y, prior.count=2, log=TRUE)> rownames(logCPM) <- y$genes$Symbol> colnames(logCPM) <- paste(y$samples$group, 1:2, sep="-")
-```
-
-We will create a heatmap to visualize the top 30 DE genes between **B.lactating** and**B.pregnant**.  First we select the logCPM values for the 30 top genes:
+Heatmaps are a popular way to display differential expression results for publication purposes. To create a heatmap, we first need to convert the read counts into **log2-counts-per-million (logCPM) values**. This can be done with the **cpm** function:
 
 ```{r}
-> o <- order(tr$table$PValue)> logCPM <- logCPM[o[1:30],]
+> logCPM <- cpm(y, prior.count=2, log=TRUE)
+> rownames(logCPM) <- y$genes$Symbol
+> colnames(logCPM) <- paste(y$samples$group, 1:2, sep="-")
+```
+
+We will create a heatmap to visualize the top 30 DE genes between **B.lactating** and
+**B.pregnant**.  First we select the logCPM values for the 30 top genes:
+
+```{r}
+> o <- order(tr$table$PValue)
+> logCPM <- logCPM[o[1:30],]
 ```
 Then we scale each row (each gene) to have mean zero and standard deviation one. This scaling is commonly done for heatmaps and ensures that the heatmap displays relative changes for each gene:
 
@@ -450,7 +487,8 @@ By default, **heatmap.2** clusters genes and samples based on the *Euclidean dis
 * In edgeR, GO analyses can be conveniently conducted using the **goana** function:
 
 ```{r}
-> go <- goana(tr, species="Mm")> topGO(go, n=15)
+> go <- goana(tr, species="Mm")
+> topGO(go, n=15)
                                            Term Ont    N Up Down  P.Up   P.Down
 GO:0007059               chromosome segregation  BP  281  1   55 0.999 1.62e-21
 GO:0000070 mitotic sister chromatid segregation  BP  142  0   39 1.000 4.36e-21
@@ -482,7 +520,8 @@ The goana function uses the NCBI RefSeq annotation and requires the use of Entre
 Another popular annotation database is the **Kyoto Encyclopedia of Genes and Genomes (KEGG)**. Much smaller than GO, this is a curated database of molecular pathways and disease signatures. A KEGG analysis can be done exactly as for GO, but using the **kegga** function:
 
 ```{r}
-> keg <- kegga(tr, species="Mm")> topKEGG(keg, n=15, truncate=34)
+> keg <- kegga(tr, species="Mm")
+> topKEGG(keg, n=15, truncate=34)
                                          Pathway   N Up Down     P.Up   P.Down
 path:mmu03008 Ribosome biogenesis in eukaryot...  76  0   19 1.00e+00 3.04e-10
 path:mmu04110                         Cell cycle 118  0   20 1.00e+00 1.29e-07
