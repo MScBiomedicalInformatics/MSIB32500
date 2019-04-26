@@ -15,7 +15,7 @@ Saturdays 04/27/2019; 9:00 AM - 12:00 PM
 
 ## The Dataset
 
-For this tutorial, we will use the The RNA-seq data from the [paper](https://www.ncbi.nlm.nih.gov/pubmed/25499759), entitled: *Loss of PRDM11 promotes MYC-driven lymphomagenesis* The authors use a functional screening approach to identify novel tumor suppressors among the PR-domain (PRDM) family of genes that encodes transcriptional regulators, several of which are deregulated in cancer. They demonstrate oncogenic collaboration between depletion of the previously uncharacterized PR-domain family member Prdm11 and overexpression of MYC.
+For this tutorial, we will use the The RNA-seq data from the [paper](https://www.ncbi.nlm.nih.gov/pubmed/25499759), entitled: *Loss of PRDM11 promotes MYC-driven lymphomagenesis*. The authors use a functional screening approach to identify novel tumor suppressors among the PR-domain (PRDM) family of genes that encodes transcriptional regulators, several of which are deregulated in cancer. They demonstrate oncogenic collaboration between depletion of the previously uncharacterized PR-domain family member Prdm11 and overexpression of MYC.
 
 We will use the dataset from the PRDM11 knockdown and wildtype samples. The full dataset is available at the Gene Expression Omnibusrepository with ID [GSE56065](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56065).
 
