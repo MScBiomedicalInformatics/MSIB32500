@@ -57,7 +57,7 @@ Create pipeline.pbs with the code below:
 #PBS -o output-log-${PBS_JOBID}.txt
 
 #-------------------------------------------------------------
-# set working directory, resource directory, and load modules mkdir rnaseq on your home
+# set working directory, resource directory, and load modules 
 #-------------------------------------------------------------
 
 cd "$PBS_O_WORKDIR"
