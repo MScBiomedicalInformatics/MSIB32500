@@ -86,7 +86,20 @@ Required Reading:
 
 Recommended:
 
-**Week 4 – Developing R programming skills for Bioinformatics**
+**Week 4 - Exploiting the power of a High Performance Computing cluster for Bioinformatics Analysis
+
+Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
+Objectives: Apply your Linux, shell scripting and HPC skills, to develop an efficient ananlysis pipeline for NGS-based RNA-Seq data analysis.
+
+Required Reading: 
+
+Recommended:
+
+- https://www.ncbi.nlm.nih.gov/pubmed/25499759
+- http://www.nature.com/nbt/journal/v34/n5/full/nbt.3519.html
+
+
+**Week 5 – Developing R programming skills for Bioinformatics**
  
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
 
@@ -96,7 +109,7 @@ Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioco
 
 Recommended:
 
-**Week 5 – Genomics Data Visualization in  R** 
+**Week 6 – Genomics Data Visualization in  R** 
  
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
 
@@ -106,17 +119,7 @@ Required Reading:
 
 Recommended:
 
-**Week 6 - Analysis of gene expression data Using R and Bioconductor** 
- 
-Session Leader or Guest Lecturer: Jorge Andrade, Ph.D.
-
-Objectives:  Learn how to perform the analysis of DNA Microarray data using R and Bioconductor. 
-
-Required Reading: Statistics and Data Analysis for Microarrays Using R and Bioconductor. Chapter 3, 14, 16, 19, 20 and 21.
-
-Recommended:
-
-**Week 7 – Differential Expression Analysis of RNA-seq Experiments Using edgeR**
+**Week 6 – Differential Expression Analysis of RNA-seq Experiments Using edgeR**
  
 Session Leader or Guest Lecturer: Jorge Andrade, Ph.D. 
 
@@ -137,7 +140,7 @@ Required Reading: TBD
 Recommended: Review of “High-Throughput Sequencing Technologies “ from Mike Snyder’s group (http://www.sciencedirect.com.proxy.uchicago.edu/science/article/pii/S1097276515003408)
 
 
-**Week 9 –  Differentially Gene Expression Identification using RNA-Seq**
+**Week 9 –  Differentially Gene Expression Identification using RNA-Seq - a complet pipeline**
  
 Session Leader or Guest Lecturer: Riyue Bao, Ph.D. 
 
