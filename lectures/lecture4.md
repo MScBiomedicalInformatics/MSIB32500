@@ -236,9 +236,9 @@ scp t.cri.biowksp01@gardner.cri.uchicago.edu:~/rnaseq/Quant/tutorial.pca.pdf ./D
 
 ```
 
-## :mortar_board: Your turn: 
+## :mortar_board: Your turn: - Week 4 Homework: 🏠 (Graded!)
 
-Develop, implement and test a better parallelization strategy to optimize the inefficient bioinformatics analysis pipeline above.
+Develop, implement and test an **efficient** parallelization strategy to optimize the inefficient bioinformatics analysis pipeline above.
 
 Start by executing the following commands 
 
