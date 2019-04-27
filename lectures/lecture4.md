@@ -249,6 +249,25 @@ mkdir rnaseq
 cd rnaseq
 ```
 
+To control the order of submission we can make an additional master script that controls dependencies:
 
+```
+#!/bin/bash
+#submit job1 with no dependencies
+job1=$(qsub job1.pbs)
+echo $job1
+
+#submit job 2 only after job1 has finished
+job2=$(qsub -W depend=afterok:$job1 job2.pbs)
+echo $job2
+
+#submit job 3 only after jobs 1 and 2 have finished
+job3=$(qsub -W depend=afterok:$job1:$job2 job3.pbs)
+echo $job3
+```
+
+See:
+
+https://shearnrylan.wordpress.com/2016/02/23/torque-qsub-running-one-job-after-others-have-finished/
 
 
