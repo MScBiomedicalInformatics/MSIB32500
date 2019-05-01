@@ -453,7 +453,7 @@ Using the data file: NeuralStemCellData.tab
   -  The expression of gene TP53 across all samples 
   -  The Pearson correlation of Biological Replicates for neural stem (NS) cells 
  
-## Week 5 Homework: :house: (Graded!)
+## Week 6 Homework: :house: (Graded!)
 
 The following is the R code that was used on week 4 to perform the Principal Componnet Ananlysis (PCA) of the Transcript quantification result file after combining the output of all kallisto jobs.
 
