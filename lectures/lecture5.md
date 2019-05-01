@@ -525,7 +525,7 @@ Sort the data, pick the number in the center. If the number of data points is ev
 
 #### Task:
  
-  * Create a vector of 100 elemnts
+  * Create a vector of 100 elements
   * Add a few extra points
   * Test: **mean()** and **median()** 
   * Are they the same? 
