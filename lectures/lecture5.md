@@ -1275,9 +1275,4 @@ write.table(time.taken, "timestamp.txt")
 
 Submit all developed scripts and results files via e-mail.
 
--------------
-
-* Develop and implement an algorithm/strategy for reducing the best runtime you reported previously.
-
-Submit all developed scripts and results files via e-mail.
 
