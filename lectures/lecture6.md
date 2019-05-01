@@ -455,26 +455,88 @@ Using the data file: NeuralStemCellData.tab
  
 ## Week 5 Homework: :house: (Graded!)
 
-- bam_stat.py is a utility from the [RSeQC] (http://rseqc.sourceforge.net/#) package, used to summarize the mapping statistics of a BAM or SAM file.
-- To download large files from the web to CRI's HPC, connect to CRI's **cri-syncmon** server:
+The following is the R code that was used on week 4 to perform the Principal Componnet Ananlysis (PCA) of the Transcript quantification result file after combining the output of all kallisto jobs.
 
 ```
-ssh t.cri.biowksp01@cri-syncmon.cri.uchicago.edu
+setwd("~/rnaseq")
+library(ggplot2)
+library(ggfortify)
+
+data <- read.csv(
+  "Quant/tutorial.count.kallisto.txt",
+  comment.char = "#",
+  sep = "\t",
+  check.names = FALSE
+)
+rownames(data) <- data[, 1]
+data <- data[, tail(1:ncol(data), 6)]
+colnames(data) <- gsub(
+  "^.+((KO|WT)\\d{2}).+$",
+  "\\1",
+  colnames(data)
+)
+
+data.rmLow <- data[
+  apply(
+    data,
+    1,
+    function(x) {
+      all(x >= 10)
+    }
+  ),
+]
+
+data.trans <- apply(
+  data.rmLow,
+  2,
+  function(x) {
+    10^6 * x / sum(x)
+  }
+)
+
+mad <- apply(
+  log2(data.trans),
+  1,
+  mad
+)
+
+top <- head(
+  data.trans[order(-mad), ],
+  500
+)
+
+top.group <- cbind(
+  t(top),
+  data.frame(
+    group = gsub("\\d{2}", "", colnames(top))
+  )
+)
+
+
+pdf(
+  file = "Quant/tutorial1.pca.pdf",
+  width = 8,
+  height = 8
+)
+
+autoplot(
+  prcomp(t(top)),
+  data = top.group,
+  colour = 'group',
+  shape = FALSE,
+  label.size = 5
+) +
+  theme_minimal(base_size = 18)
+
+dev.off()
+
+
+print(sessionInfo())
+q(save = "no")
+
 ```
-
-1. Download the sequencing files from run ERR030885 from the Illumina bodyMap2 project, available at https://www.ebi.ac.uk/ena/data/view/ERR030885 (Note this is a PE library)
-2. Develop an analysis pipeline to perform the QC, mapping using Bowtie2 and the summary of mapping statistics using bam_stat.py for this sample.
-
-* Report following metrics:
-  - Total records:
-  - Reads map to '+':
-  - Reads mapped in proper pairs:
-        
-3. Using a Genome Browser, visualize and screen capture the reads mapping for the following genes: TP53, TNF and APOE.
-
-* Submit all your scripts and screenshots via email.
-
-
-
+1. Understand and explain the code line by line.
+2. Run the code on Gardner using a simple pipeline
+3. Send the result file in an email
 
 
