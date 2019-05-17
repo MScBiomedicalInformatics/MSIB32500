@@ -245,7 +245,7 @@ MCL1.LE L.lactating 24719697        0.529
 MCL1.LF L.lactating 24652963        0.535
 ```
 
-* A normalization factor *below one *indicates that *a small number of high count genes are monopolizing the sequencing*, causing the counts for other genes to be lower than would be usual given the library size. As a result, *the effective library size will be scaled down for that sample*, (see Robinson and Oshlack (2010) on the the weighted trimmed mean of M-values  from the delta method on Binomial data) 
+* A normalization factor *below one* indicates that *a small number of high count genes are monopolizing the sequencing*, causing the counts for other genes to be lower than would be usual given the library size. As a result, *the effective library size will be scaled down for that sample*, (see Robinson and Oshlack (2010) on the the weighted trimmed mean of M-values  from the delta method on Binomial data) 
 
 * Here we see that the luminal-lactating samples have low normalization factors. This is a sign that these samples contain a number of very highly upregulated genes.
 
