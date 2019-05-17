@@ -263,7 +263,7 @@ samples, and weather samples are grouping together as expected.
 ![MDSweek7](https://raw.githubusercontent.com/MScBiomedicalInformatics/MSIB32500/master/cheatsheets/MDSplotW7.png)
 
 * As we can see, replicate samples from the same group cluster together while samples from different groups are well separated. 
-* Samples are separated by the *cell type* in the first dimension, and by the *mouse status in the second dimension.
+* Samples are separated by the *cell type* in the first dimension, and by the *mouse status* in the second dimension.
 
 ## 8 Exploring the expression profiles of individual samples
 
