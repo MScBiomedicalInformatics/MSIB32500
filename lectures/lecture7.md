@@ -225,7 +225,7 @@ The option *keep.lib.sizes=FALSE* causes the library sizes to be *recomputed aft
 
 ## 6. Normalization for composition bias
 
-Normalization by **trimmed mean of M values (TMM)** is performed by using the calcNormFactors function, which returns the DGEList argument with only the norm.factors changed. It calculates a set of normalization factors, one for each sample, **to eliminate composition biases between libraries.** The product of these factors and the library sizes defines the *effective library size*, which replaces the original library size in all downstream analyses.
+Normalization by [trimmed mean of M values (TMM)](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25) is performed by using the calcNormFactors function, which returns the DGEList argument with only the norm.factors changed. It calculates a set of normalization factors, one for each sample, **to eliminate composition biases between libraries.** The product of these factors and the library sizes defines the *effective library size*, which replaces the original library size in all downstream analyses.
 
 ```{r}
 > y <- calcNormFactors(y)
