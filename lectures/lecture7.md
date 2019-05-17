@@ -416,11 +416,13 @@ Up                            2505
 One can implement any particular filtering criteria for significance based on both p-value (or FDR corrected p-value) and Fold Chance (or log fold change)
 
 ```
-is.de1 <- decideTests(res, adjust.method="BH", p.value=0.01, lfc=2)
-summary(is.de1)
+> is.de1 <- decideTests(res, adjust.method="BH", p.value=0.01, lfc=2)
+> summary(is.de1)
+1*B.lactating -1*B.pregnant
+Down                           233
+NotSig                       15493
+Up                              78
 ```
-
-
 
 The magnitude of the differential expression changes can be visualized with a fitted model MD plot:
 
