@@ -569,5 +569,8 @@ path:mmu00983    Drug metabolism - other enzymes  51  2    8 3.31e-01 1.36e-03
 ```
 * By default, the kegga function automatically reads the latest KEGG annotation from the Internet each time it is run.
 
+## Your turn
 
+- Perform the DEG ananlysis between the **luminal pregnant** and **luminal lactating** groups. Define significant direrentially expressed genes as genes showing a FDR corrected p-value <0.05 AND a FC > |1.5|
+- Produce a .pdf report file that document your ananlysis and present the results.
 
