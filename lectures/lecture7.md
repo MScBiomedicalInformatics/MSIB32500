@@ -324,7 +324,7 @@ attr(,"contrasts")$group
 
 ### Dispersion estimation
 
-As we know, **edgeR** uses the **negative binomial (NB) distribution** to model the read counts for each gene in each sample. The **dispersion** parameter of the NB distribution **accounts for variability between biological replicates** (see McCarthy DJ, et al, Nucleic Acids Res. 2012; 40(10): 4288–4297.) 
+As we know, **edgeR** uses the **negative binomial (NB) distribution** to model the read counts for each gene in each sample. The **dispersion** parameter of the NB distribution **accounts for variability between biological replicates** [see McCarthy DJ, et al, Nucleic Acids Res. 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378882/)
 
 Dispersion estimates are easily obtained from the **estimateDisp** function:
 
