@@ -34,6 +34,13 @@ each group.
 The table below describes the experimental design, basal and luminal cell types are abbreviated with
 B and L respectively. The GEO and SRA IDs for each RNA sample is also shown.
 
+Define a working directory:
+
+```
+setwd("/Users/jandrade/Desktop/w7")
+getwd()
+```
+
 For your convenience, you can read the *targets.txt* file directly from the GitHub repository:
 
 ```r
