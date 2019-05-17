@@ -402,7 +402,7 @@ Coefficient:  1*B.lactating -1*B.pregnant
 
 * The top DE gene **Csn1s2b** has a large positive logFC, showing that it is far more highly expressed in the **basal cells** of **lactating** than **pregnant** mice.
 
-* The total number of DE genes identified at an **FDR of 5%** can be shown with **decideTestsDGE**. There are in fact more than **5000** DE genes in this comparison:
+* The total number of DE genes identified at an **FDR of 5%** (default significance) can be shown with **decideTestsDGE**. There are in fact more than **5000** DE genes in this comparison:
 
 ```{r}
 > is.de <- decideTestsDGE(res)
@@ -412,6 +412,15 @@ Down                          2770
 NotSig                       10529
 Up                            2505
 ```
+
+One can implement any particular filtering criteria for significance based on both p-value (or FDR corrected p-value) and Fold Chance (or log fold change)
+
+```
+is.de1 <- decideTests(res, adjust.method="BH", p.value=0.01, lfc=2)
+summary(is.de1)
+```
+
+
 
 The magnitude of the differential expression changes can be visualized with a fitted model MD plot:
 
