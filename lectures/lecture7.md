@@ -206,6 +206,16 @@ FALSE  TRUE
 * Other sensible filtering criteria are also possible. For example *keep <-rowSums(y$counts) > 50* is a very simple criterion that would keep genes with a total read count of more than 50. The exact
 value is not important because the downstream differential expression analysis is not sensitive to the small changes in this parameter.
 
+Try:
+
+```{r}
+> keep1 <- <-rowSums(y$counts) > 50
+> table(keep1)
+keep1
+FALSE  TRUE 
+11090 16089 
+```
+
 We will now subsetted the *DGEList object* to retain only the non-filtered genes:
 
 ```{r}
