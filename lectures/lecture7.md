@@ -371,7 +371,7 @@ The QL functions moderate the genewise QL dispersion estimates in the same way t
 
 ### Testing for Differential Expression
 
-We will now test for Differential Expression between the experimental groups. For this tutorial we will detect the differences between the **basal pregnant** and **lactating groups**. Other contrast can be easily constructed with the **makeContrasts** function:
+We will now test for Differential Expression between the experimental groups. For this tutorial we will detect the differences between the **basal pregnant** and **basal lactating** groups. Other contrast can be easily constructed with the **makeContrasts** function:
 
 ```{r}
 > B.LvsP <- makeContrasts(B.lactating-B.pregnant, levels=design)
