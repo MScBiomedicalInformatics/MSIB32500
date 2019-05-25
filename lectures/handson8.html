@@ -96,6 +96,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -103,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -124,13 +187,13 @@ $(document).ready(function () {
 </div>
 
 
-<div id="msib32500-advanced-bioinformatics-fall-2018" class="section level2">
-<h2>MSIB32500 Advanced Bioinformatics Fall 2018</h2>
+<div id="msib32500-advanced-bioinformatics-spring-2019" class="section level2">
+<h2>MSIB32500 Advanced Bioinformatics Spring 2019</h2>
 </div>
 <div id="class-08-rnaseq-data-analysis-and-clinical-applications-part-i" class="section level2">
 <h2>Class 08: RNAseq Data Analysis and Clinical Applications, Part I</h2>
 <p><strong>Center for Research Informatics, University of Chicago</strong></p>
-<p>October - December 2018; Saturdays 9:00AM - 12:00PM</p>
+<p>April - June 2019; Saturdays 9:00AM - 12:00PM</p>
 <p><strong>Instructor:</strong> Riyue Bao, Ph.D.</p>
 <p>The workshop materials are available on <a href="https://github.com/MScBiomedicalInformatics/MSIB32500">Github</a> licensed via <a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPLv3</a>.</p>
 <hr />
@@ -809,7 +872,7 @@ pwd</code></pre>
 <div id="class-08-challenge-optional" class="section level2">
 <h2>6 Class 08 challenge (Optional)</h2>
 <ul>
-<li>Complete the analysis for the other 5 samples using the test fastq files (KO02-03, WT01-03).</li>
+<li>Complete the analysis for the other 5 samples using the test fastq files (KO02-03, WT01-03). <em>Bonus Points</em></li>
 <li>Try to run the analysis using the original sequencing data files that consist of all reads (of much larger size!). The data can be accessed at <code>/gpfs/data/mscbmi/MSIB32500/class08/handson_fullset/data</code>.</li>
 </ul>
 <pre class="bash"><code>-rw-r--r--. 1 rbao cri-mscbmi 3.2G Dec 14  2015 SRR1205282.fastq.gz

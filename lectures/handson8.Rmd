@@ -3,12 +3,12 @@ output:
   html_document: default
   pdf_document: default
 ---
-## MSIB32500 Advanced Bioinformatics Fall 2018
+## MSIB32500 Advanced Bioinformatics Spring 2019
 ## Class 08: RNAseq Data Analysis and Clinical Applications, Part I
 
 **Center for Research Informatics, University of Chicago**
 
-October - December 2018; Saturdays 9:00AM - 12:00PM
+April - June 2019; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -848,10 +848,10 @@ Open IGV, and import both the BAM and the index files. In the search window, typ
 
 *** 
 
-## 6 Class 08 challenge (Optional)
+## 6 Class 08 challenge (Optional) 
 
-* Complete the analysis for the other 5 samples using the test fastq files (KO02-03, WT01-03).
-* Try to run the analysis using the original sequencing data files that consist of all reads (of much larger size!). The data can be accessed at `/gpfs/data/mscbmi/MSIB32500/class08/handson_fullset/data`.
+* Complete the analysis for the other 5 samples using the test fastq files (KO02-03, WT01-03). *Bonus Points*
+* Try to run the analysis using the original sequencing data files that consist of all reads (of much larger size!). The data can be accessed at `/gpfs/data/mscbmi/MSIB32500/class08/handson_fullset/data`. 
 
 ```{bash, echo=TRUE, eval=FALSE}
 -rw-r--r--. 1 rbao cri-mscbmi 3.2G Dec 14  2015 SRR1205282.fastq.gz
