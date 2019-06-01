@@ -1,10 +1,10 @@
 
-## MSIB32500 Advanced Bioinformatics Fall 2018
+## MSIB32500 Advanced Bioinformatics Spring 2019
 ## Class 09: RNAseq Data Analysis and Clinical Applications, Part II
 
 **Center for Research Informatics, University of Chicago**
 
-October - December 2018; Saturdays 9:00AM - 12:00PM
+April - June 2019; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -55,6 +55,8 @@ ls -al MSIB32500/
 
 1.2 Open `Rstudio` (or `R`) on your local computer. If your `Rstudio` (or `R`) is already open, restart it to have a new work environment to start with with no packages / variables loaded.
 
+If your `Rstudio` is already open, go to *Session* on the top menu, and then click *Restart R*.
+
 From here, All analysis steps will be conducted in R environment on local computers. 
 
 *** 
@@ -72,7 +74,7 @@ rm(list=ls())
 ```{R, echo=TRUE, eval=TRUE}
 ## replace [path] with your own project directory path
 ## on windows machines, replace [\] with [/]
-path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2018/MSIB32500/lectures'
+path <- 'C:/Users/rbaoc/Desktop/class/MSIB32500/lectures'
 # path <- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
 setwd(path)
 
@@ -95,9 +97,8 @@ ptm <- proc.time()
 
 ```{R, echo=TRUE, eval=TRUE}
 ##-- List packages required in this analysis
-cpan.pkg.list <- c('ggplot2', 'ape', 'scales', 'RColorBrewer', 
-                  'reshape','VennDiagram')
-bioc.pkg.list <- c('ctc',  'limma', 'edgeR', 'DESeq2', 
+cpan.pkg.list <- c('ggplot2', 'RColorBrewer')
+bioc.pkg.list <- c('edgeR', 'DESeq2', 
                    'vsn',
                   'genefilter', 'pheatmap', 
                   'clusterProfiler', 'pathview',
@@ -114,26 +115,24 @@ If promoted to answer `Update all/some/none? [a/s/n]:`, try `n` (none).
 ```{R, echo=TRUE, eval=FALSE}
 ##-- Install CPAN packages
 install.packages('ggplot2') 
-install.packages('scales') 
-install.packages('ape') 
 install.packages('RColorBrewer')
-install.packages('reshape') 
-install.packages('VennDiagram') 
-
-##-- Set up Bioconductor repo
-source("https://bioconductor.org/biocLite.R")
+install.packages('reshape2')
 
 ##-- Install Bioc packages
-biocLite('ctc')
-biocLite('limma')
-biocLite('edgeR')
-biocLite('DESeq2')
-biocLite('vsn')
-biocLite('genefilter')
-biocLite('pheatmap')
-biocLite('clusterProfiler')
-biocLite('pathview')
-biocLite('AnnotationHub')
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install('checkmate')
+BiocManager::install('affy')
+# BiocManager::install('limma')
+BiocManager::install('edgeR')
+BiocManager::install('DESeq2')
+BiocManager::install('vsn')
+# BiocManager::install('genefilter')
+BiocManager::install('pheatmap')
+BiocManager::install('clusterProfiler')
+BiocManager::install('pathview')
+BiocManager::install('AnnotationHub')
 
 ```
 
@@ -825,7 +824,7 @@ sessionInfo()
 
 ***
 
-## 4 Homework (due next Sunday 06/03/2018 at 11:59 PM)
+## 4 Homework (due next Saturday 06/08/2019 at 11:59 PM)
 
 1. Try to filter the DEGs with a more stringent cutoff: 'fdr < 0.01', AND 'fold change (fc) >= 1.5 or <= -1.5'. Note that we want to apply both fdr (<0.01) and fold change filters, and for fold change we filter for genes upregulated (fc>=1.5) or downregulated (fc<=-1.5), then we count all genes that pass these thresholds. How many DEGs are left after filtering?
 2. Generate a new gene expression heatmap using significant DEGs from step 1 after applying the new filters. It could be in any format that you choose (e.g. pdf, png, tiff, etc.)
