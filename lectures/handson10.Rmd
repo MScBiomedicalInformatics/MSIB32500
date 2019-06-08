@@ -1,9 +1,9 @@
-## MSIB32500 Advanced Bioinformatics Fall 2018
+## MSIB32500 Advanced Bioinformatics Spring 2019
 ## Class 10: RNAseq Data Analysis and Clinical Applications, Part III
 
 **Center for Research Informatics, University of Chicago**
 
-October - December 2018; Saturdays 9:00AM - 12:00PM
+April - June 2019; Saturdays 9:00AM - 12:00PM
 
 **Instructor:** Riyue Bao, Ph.D.
 
@@ -91,7 +91,7 @@ rm(list=ls())
 ## replace [path]C:/Users/rbaoc/Desktop] with your own project directory path
 ## on windows machines, replace [\] with [/]
 # path <- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
-path <- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2018/MSIB32500/lectures'
+path <- 'C:/Users/rbaoc/Desktop/class/MSIB32500/lectures'
 setwd(path)
 
 ## check if the working directory has been successfully set

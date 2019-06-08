@@ -96,6 +96,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -103,14 +106,74 @@ button.code-folding-btn:focus {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -124,13 +187,13 @@ $(document).ready(function () {
 </div>
 
 
-<div id="msib32500-advanced-bioinformatics-fall-2018" class="section level2">
-<h2>MSIB32500 Advanced Bioinformatics Fall 2018</h2>
+<div id="msib32500-advanced-bioinformatics-spring-2019" class="section level2">
+<h2>MSIB32500 Advanced Bioinformatics Spring 2019</h2>
 </div>
 <div id="class-10-rnaseq-data-analysis-and-clinical-applications-part-iii" class="section level2">
 <h2>Class 10: RNAseq Data Analysis and Clinical Applications, Part III</h2>
 <p><strong>Center for Research Informatics, University of Chicago</strong></p>
-<p>October - December 2018; Saturdays 9:00AM - 12:00PM</p>
+<p>April - June 2019; Saturdays 9:00AM - 12:00PM</p>
 <p><strong>Instructor:</strong> Riyue Bao, Ph.D.</p>
 <p>The workshop materials are available on <a href="https://github.com/MScBiomedicalInformatics/MSIB32500">Github</a> licensed via <a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPLv3</a>.</p>
 <hr />
@@ -202,22 +265,22 @@ ls -al MSIB32500/</code></pre>
 <pre class="r"><code>## replace [path]C:/Users/rbaoc/Desktop] with your own project directory path
 ## on windows machines, replace [\] with [/]
 # path &lt;- 'C:/Users/rbaoc/Desktop/MSIB32500/lectures'
-path &lt;- 'C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2018/MSIB32500/lectures'
+path &lt;- 'C:/Users/rbaoc/Desktop/class/MSIB32500/lectures'
 setwd(path)
 
 ## check if the working directory has been successfully set
 getwd()</code></pre>
-<pre><code>## [1] &quot;C:/Users/rbaoc/Desktop/my_classes/Bioinfo_teaching/fall2018/MSIB32500/lectures&quot;</code></pre>
+<pre><code>## [1] &quot;C:/Users/rbaoc/Desktop/class/MSIB32500/lectures&quot;</code></pre>
 <pre class="r"><code>## list files in current directory
 list.files(path = '.')</code></pre>
-<pre><code>##  [1] &quot;handson10 - Copy.html&quot; &quot;handson10.html&quot;       
-##  [3] &quot;handson10.Rmd&quot;         &quot;handson8.html&quot;        
-##  [5] &quot;handson8.Rmd&quot;          &quot;handson9.html&quot;        
-##  [7] &quot;handson9.Rmd&quot;          &quot;lecture1.md&quot;          
-##  [9] &quot;Lecture10.pdf&quot;         &quot;lecture2.md&quot;          
-## [11] &quot;lecture3.md&quot;           &quot;lecture4.md&quot;          
-## [13] &quot;lecture5.md&quot;           &quot;lecture6.md&quot;          
-## [15] &quot;lecture7.md&quot;           &quot;Lecture8.pdf&quot;         
+<pre><code>##  [1] &quot;handson10.html&quot;                 &quot;handson10.Rmd&quot;                 
+##  [3] &quot;handson8.html&quot;                  &quot;handson8.Rmd&quot;                  
+##  [5] &quot;handson9.html&quot;                  &quot;handson9.Rmd&quot;                  
+##  [7] &quot;hsa04010.gene_all.pathview.png&quot; &quot;lecture1.md&quot;                   
+##  [9] &quot;Lecture10.pdf&quot;                  &quot;lecture2.md&quot;                   
+## [11] &quot;lecture3.md&quot;                    &quot;lecture4.md&quot;                   
+## [13] &quot;lecture5.md&quot;                    &quot;lecture6.md&quot;                   
+## [15] &quot;lecture7.md&quot;                    &quot;Lecture8.pdf&quot;                  
 ## [17] &quot;Lecture9.pdf&quot;</code></pre>
 <hr />
 <p>1.5 Start the clock</p>
@@ -249,8 +312,9 @@ for(pkg in c(cpan.pkg.list)) {
     print(pkg)
     suppressMessages(library(pkg, character.only = TRUE))
 }</code></pre>
-<pre><code>## [1] &quot;ggplot2&quot;
-## [1] &quot;RColorBrewer&quot;
+<pre><code>## [1] &quot;ggplot2&quot;</code></pre>
+<pre><code>## Warning: package 'ggplot2' was built under R version 3.5.3</code></pre>
+<pre><code>## [1] &quot;RColorBrewer&quot;
 ## [1] &quot;reshape&quot;
 ## [1] &quot;broom&quot;
 ## [1] &quot;gplots&quot;
@@ -624,10 +688,10 @@ print(paste0('(a) Univariate cox model for survival'))</code></pre>
 <pre class="r"><code>m1 &lt;- coxph(surv~(clinical.sub$cluster))
 tidy(m1)</code></pre>
 <pre><code>## # A tibble: 2 x 7
-##   term             estimate std.error statistic p.value conf.low conf.high
-##   &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-## 1 clinical.sub$cl~    0.484     0.146      3.32 8.99e-4   0.198      0.770
-## 2 clinical.sub$cl~    0.297     0.139      2.14 3.25e-2   0.0247     0.569</code></pre>
+##   term              estimate std.error statistic p.value conf.low conf.high
+##   &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+## 1 clinical.sub$clu~    0.484     0.146      3.32 8.99e-4   0.198      0.770
+## 2 clinical.sub$clu~    0.297     0.139      2.14 3.25e-2   0.0247     0.569</code></pre>
 <pre class="r"><code>separator</code></pre>
 <pre><code>## [1] &quot;========================================&quot;</code></pre>
 <pre class="r"><code>##-- full cox model
@@ -638,16 +702,16 @@ print(paste0('(b) Full multivariate cox model for survival'))</code></pre>
                  clinical.sub$tumor.grade))
 tidy(m2)</code></pre>
 <pre><code>## # A tibble: 8 x 7
-##   term             estimate std.error statistic p.value conf.low conf.high
-##   &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-## 1 clinical.sub$cl~   0.493    0.147       3.35  8.15e-4  0.204      0.781 
-## 2 clinical.sub$cl~   0.306    0.140       2.19  2.84e-2  0.0324     0.580 
-## 3 clinical.sub$ag~   0.0192   0.00538     3.56  3.65e-4  0.00864    0.0297
-## 4 clinical.sub$tu~   0.334    0.729       0.458 6.47e-1 -1.09       1.76  
-## 5 clinical.sub$tu~   0.661    0.715       0.924 3.55e-1 -0.741      2.06  
-## 6 clinical.sub$tu~   1.39     1.23        1.13  2.60e-1 -1.03       3.80  
-## 7 clinical.sub$tu~   0.737    1.23        0.598 5.50e-1 -1.68       3.15  
-## 8 clinical.sub$tu~   0.947    0.842       1.12  2.61e-1 -0.703      2.60</code></pre>
+##   term              estimate std.error statistic p.value conf.low conf.high
+##   &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+## 1 clinical.sub$clu~   0.493    0.147       3.35  8.15e-4  0.204      0.781 
+## 2 clinical.sub$clu~   0.306    0.140       2.19  2.84e-2  0.0324     0.580 
+## 3 clinical.sub$age~   0.0192   0.00538     3.56  3.65e-4  0.00864    0.0297
+## 4 clinical.sub$tum~   0.334    0.729       0.458 6.47e-1 -1.09       1.76  
+## 5 clinical.sub$tum~   0.661    0.715       0.924 3.55e-1 -0.741      2.06  
+## 6 clinical.sub$tum~   1.39     1.23        1.13  2.60e-1 -1.03       3.80  
+## 7 clinical.sub$tum~   0.737    1.23        0.598 5.50e-1 -1.68       3.15  
+## 8 clinical.sub$tum~   0.947    0.842       1.12  2.61e-1 -0.703      2.60</code></pre>
 <pre class="r"><code>separator</code></pre>
 <pre><code>## [1] &quot;========================================&quot;</code></pre>
 <pre class="r"><code>##-- reduced cox model
@@ -659,11 +723,11 @@ print(paste0('(c) Reduced multivariate cox model for survival'))</code></pre>
                  clinical.sub$age.at.diagnosis.year))
 tidy(m3)</code></pre>
 <pre><code>## # A tibble: 3 x 7
-##   term             estimate std.error statistic p.value conf.low conf.high
-##   &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-## 1 clinical.sub$cl~   0.452    0.146        3.10 1.96e-3  0.166      0.738 
-## 2 clinical.sub$cl~   0.309    0.139        2.23 2.57e-2  0.0375     0.581 
-## 3 clinical.sub$ag~   0.0196   0.00535      3.66 2.57e-4  0.00908    0.0301</code></pre>
+##   term              estimate std.error statistic p.value conf.low conf.high
+##   &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+## 1 clinical.sub$clu~   0.452    0.146        3.10 1.96e-3  0.166      0.738 
+## 2 clinical.sub$clu~   0.309    0.139        2.23 2.57e-2  0.0375     0.581 
+## 3 clinical.sub$age~   0.0196   0.00535      3.66 2.57e-4  0.00908    0.0301</code></pre>
 <pre class="r"><code>##-- Set up R plot display options in notebook
 options(jupyter.plot_mimetypes = &quot;image/svg+xml&quot;)
 options(repr.plot.width = 10, repr.plot.height = 8)
@@ -698,14 +762,14 @@ print(p2)</code></pre>
 <p>Stop the clock!</p>
 <pre class="r"><code>proc.time() - ptm</code></pre>
 <pre><code>##    user  system elapsed 
-##    9.53    1.25   11.19</code></pre>
+##   10.72    1.16   12.26</code></pre>
 <hr />
 <p>Always save sessionInfo from R for reproducible analysis.</p>
 <pre class="r"><code>print('Program run finished!')</code></pre>
 <pre><code>## [1] &quot;Program run finished!&quot;</code></pre>
 <pre class="r"><code>##-- Print analysis environment (for reproducible research)
 sessionInfo()</code></pre>
-<pre><code>## R version 3.5.1 (2018-07-02)
+<pre><code>## R version 3.5.2 (2018-12-20)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 14393)
 ## 
@@ -723,37 +787,38 @@ sessionInfo()</code></pre>
 ## [8] base     
 ## 
 ## other attached packages:
-##  [1] survminer_0.4.3     ggpubr_0.1.7        imager_0.41.1      
-##  [4] magrittr_1.5        NMF_0.21.0          Biobase_2.40.0     
-##  [7] BiocGenerics_0.26.0 cluster_2.0.7-1     rngtools_1.3.1     
-## [10] pkgmaker_0.27       registry_0.5        survival_2.42-3    
-## [13] gplots_3.0.1        broom_0.5.0         reshape_0.8.7      
-## [16] RColorBrewer_1.1-2  ggplot2_3.0.0      
+##  [1] survminer_0.4.3     ggpubr_0.2          imager_0.41.2      
+##  [4] magrittr_1.5        NMF_0.21.0          Biobase_2.42.0     
+##  [7] BiocGenerics_0.28.0 cluster_2.0.7-1     rngtools_1.3.1     
+## [10] pkgmaker_0.27       registry_0.5        survival_2.43-3    
+## [13] gplots_3.0.1.1      broom_0.5.1         reshape_0.8.8      
+## [16] RColorBrewer_1.1-2  ggplot2_3.1.1      
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyr_0.8.1        splines_3.5.1      foreach_1.4.4     
+##  [1] tidyr_0.8.2        splines_3.5.2      foreach_1.4.4     
 ##  [4] gtools_3.8.1       assertthat_0.2.0   tiff_0.1-5        
-##  [7] pillar_1.3.0       backports_1.1.2    lattice_0.20-35   
-## [10] glue_1.3.0         digest_0.6.16      colorspace_1.3-2  
-## [13] readbitmap_0.1.5   cowplot_0.9.3      cmprsk_2.2-7      
-## [16] htmltools_0.3.6    Matrix_1.2-14      plyr_1.8.4        
-## [19] pkgconfig_2.0.1    bibtex_0.4.2       purrr_0.2.5       
-## [22] xtable_1.8-2       scales_0.5.0       gdata_2.18.0      
+##  [7] pillar_1.3.1       backports_1.1.3    lattice_0.20-38   
+## [10] glue_1.3.0         digest_0.6.18      colorspace_1.4-0  
+## [13] readbitmap_0.1.5   cowplot_0.9.4      cmprsk_2.2-7      
+## [16] htmltools_0.3.6    Matrix_1.2-15      plyr_1.8.4        
+## [19] pkgconfig_2.0.2    bibtex_0.4.2       purrr_0.3.0       
+## [22] xtable_1.8-3       scales_1.0.0       gdata_2.18.0      
 ## [25] km.ci_0.5-2        jpeg_0.1-8         KMsurv_0.1-5      
-## [28] tibble_1.4.2       withr_2.1.2        lazyeval_0.2.1    
-## [31] cli_1.0.0          crayon_1.3.4       evaluate_0.11     
-## [34] fansi_0.2.3        doParallel_1.0.11  nlme_3.1-137      
-## [37] data.table_1.11.4  tools_3.5.1        bmp_0.3           
-## [40] gridBase_0.4-7     stringr_1.3.1      munsell_0.5.0     
-## [43] bindrcpp_0.2.2     compiler_3.5.1     caTools_1.17.1.1  
-## [46] rlang_0.2.1        grid_3.5.1         iterators_1.0.10  
-## [49] igraph_1.2.1       labeling_0.3       bitops_1.0-6      
-## [52] rmarkdown_1.10     gtable_0.2.0       codetools_0.2-15  
-## [55] reshape2_1.4.3     R6_2.2.2           zoo_1.8-3         
-## [58] gridExtra_2.3      knitr_1.20         dplyr_0.7.6       
-## [61] utf8_1.1.4         survMisc_0.5.5     bindr_0.1.1       
-## [64] rprojroot_1.3-2    KernSmooth_2.23-15 stringi_1.1.7     
-## [67] Rcpp_0.12.18       png_0.1-7          tidyselect_0.2.4</code></pre>
+## [28] tibble_2.0.1       generics_0.0.2     withr_2.1.2       
+## [31] lazyeval_0.2.1     cli_1.0.1          crayon_1.3.4      
+## [34] evaluate_0.12      fansi_0.4.0        doParallel_1.0.14 
+## [37] nlme_3.1-137       data.table_1.12.0  tools_3.5.2       
+## [40] bmp_0.3            gridBase_0.4-7     stringr_1.3.1     
+## [43] munsell_0.5.0      bindrcpp_0.2.2     compiler_3.5.2    
+## [46] caTools_1.17.1.1   rlang_0.3.1        grid_3.5.2        
+## [49] iterators_1.0.10   igraph_1.2.2       labeling_0.3      
+## [52] bitops_1.0-6       rmarkdown_1.11     gtable_0.2.0      
+## [55] codetools_0.2-15   reshape2_1.4.3     R6_2.3.0          
+## [58] zoo_1.8-4          gridExtra_2.3      knitr_1.21        
+## [61] dplyr_0.7.8        utf8_1.1.4         survMisc_0.5.5    
+## [64] bindr_0.1.1        KernSmooth_2.23-15 stringi_1.2.4     
+## [67] Rcpp_1.0.0         png_0.1-7          tidyselect_0.2.5  
+## [70] xfun_0.4</code></pre>
 <hr />
 </div>
 <div id="summary-top" class="section level2">
